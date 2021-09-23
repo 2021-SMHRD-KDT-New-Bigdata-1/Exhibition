@@ -72,9 +72,9 @@
 							<!-- Main -->
 							<div id="main">
 							    <div class="inner">
-							    	<div class="table-wrapper">
+							    	<div class="table-wrapper" method = "post">
 									<div class="field">
-									<form>
+									<form action = "tagpost">
 										<table>
 										<colgroup>
 
