@@ -137,7 +137,7 @@ import VO.postVO;
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
 					
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag);
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1);
 					
 					list.add(vo);
 				}
