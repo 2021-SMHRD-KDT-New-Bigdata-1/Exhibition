@@ -157,68 +157,68 @@
 										<td><input type="checkbox" name="genre" value="Western" id="genre1"><label for="genre1">서양화</label> 
 											<input type="checkbox" name="genre" value="Oriental" id="genre2">
 											<label for="genre2">동양화</label> 
-											<input type="checkbox" name="genre" value="design" id="genre3">
+											<input type="checkbox" name="genre" value="Design" id="genre3">
 											<label for="genre3">디자인</label>
-											<input type="checkbox" name="genre" value="installation" id="genre4">
+											<input type="checkbox" name="genre" value="Installation" id="genre4">
 											<label for="genre4">설치미술</label> 
-											<input type="checkbox" name="genre" value="formative" id="genre5">
+											<input type="checkbox" name="genre" value="Formative" id="genre5">
 											<label for="genre5">조형미술</label> 
-											<input type="checkbox" name="genre" value="crafts" id="genre6">
+											<input type="checkbox" name="genre" value="Crafts" id="genre6">
 											<label for="genre6">공예</label>
-											<input type="checkbox" name="genre" value="architecture" id="genre7">
+											<input type="checkbox" name="genre" value="Architecture" id="genre7">
 											<label for="genre7">건축</label> 
-											<input type="checkbox" name="genre" value="picture" id="genre8">
+											<input type="checkbox" name="genre" value="Picture" id="genre8">
 											<label for="genre8">사진</label> 
-											<input type="checkbox" name="genre" value="hands-on" id="genre9">
+											<input type="checkbox" name="genre" value="Hands-on" id="genre9">
 											<label for="genre9">체험형</label>
 										</td>
 									</tr>
 									<tr>
-										<td><strong>색감별 분위기 태그</strong></td>
+										<th>색감별 분위기 태그</th>
 										<td>
-											<input type="checkbox" name="color" value="white" id="color1">
+											<input type="checkbox" name="color" value="White" id="color1">
 											<label for="color1">White</label> 
-											<input type="checkbox" name="color" value="black" id="color2">
+											<input type="checkbox" name="color" value="Black" id="color2">
 											<label for="color2">Black</label> 
-											<input type="checkbox" name="color" value="gray" id="color3">
+											<input type="checkbox" name="color" value="Gray" id="color3">
 											<label for="color3">Gray</label> 
 											<input type="checkbox" name="color" value="brown" id="color4">
 											<label for="color4">Brown</label>
-											<input type="checkbox" name="color" value="beige" id="color5">
+											<input type="checkbox" name="color" value="Beige" id="color5">
 											<label for="color5">Beige</label> 
-											<input type="checkbox" name="color" value="green" id="color6">
+											<input type="checkbox" name="color" value="Green" id="color6">
 											<label for="color6">Green</label> 
-											<input type="checkbox" name="color" value="blue" id="color7">
+											<input type="checkbox" name="color" value="Blue" id="color7">
 											<label for="color7">Blue</label> 
-											<input type="checkbox" name="color" value="purple" id="color8">
+											<input type="checkbox" name="color" value="Purple" id="color8">
 											<label for="color8">Purple</label>
-											<input type="checkbox" name="color" value="yellow" id="color9">
+											<input type="checkbox" name="color" value="Yellow" id="color9">
 											<label for="color9">Yellow</label> 
-											<input type="checkbox" name="color" value="pink" id="color10">
+											<input type="checkbox" name="color" value="Pink" id="color10">
 											<label for="color10">Pink</label> 
-											<input type="checkbox" name="color" value="red" id="color11">
+											<input type="checkbox" name="color" value="Red" id="color11">
 											<label for="color11">Red</label> 
-											<input type="checkbox" name="color" value="ivory" id="color12">
+											<input type="checkbox" name="color" value="Ivory" id="color12">
 											<label for="color12">Ivory</label>
-											<input type="checkbox" name="color" value="lightgray" id="color13">
+											<input type="checkbox" name="color" value="Lightgray" id="color13">
 											<label for="color13">Light Gray</label>
-											<input type="checkbox" name="color" value="khaki" id="color14">
+											<input type="checkbox" name="color" value="Khaki" id="color14">
 											<label for="color14">Khaki</label> 
-											<input type="checkbox" name="color" value="mint" id="color15">
+											<input type="checkbox" name="color" value="Mint" id="color15">
 											<label for="color15">Mint</label> 
-											<input type="checkbox" name="color" value="neongreen" id="color16">
+											<input type="checkbox" name="color" value="Neongreen" id="color16">
 											<label for="color16">Neon Green</label> 
-											<input type="checkbox" name="color" value="olive" id="color17">
+											<input type="checkbox" name="color" value="Olive" id="color17">
 											<label for="color17">Olive</label> 
-											<input type="checkbox" name="color" value="navy" id="color18">
+											<input type="checkbox" name="color" value="Navy" id="color18">
 											<label for="color18">Navy</label> 
-											<input type="checkbox" name="color" value="skyblue" id="color19">
+											<input type="checkbox" name="color" value="Skyblue" id="color19">
 											<label for="color19">Sky Blue</label> 
-											<input type="checkbox" name="color" value="lavender" id="color20">
+											<input type="checkbox" name="color" value="Lavender" id="color20">
 											<label for="color20">Lavender</label> 
-											<input type="checkbox" name="color" value="mustard" id="color21">
+											<input type="checkbox" name="color" value="Mustard" id="color21">
 											<label for="color21">Mustard</label> 
-											<input type="checkbox" name="color" value="deepred" id="color22">
+											<input type="checkbox" name="color" value="Deepred" id="color22">
 											<label for="color22">Deep Red</label>
 									</tr>
 								</table>
