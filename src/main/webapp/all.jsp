@@ -81,7 +81,7 @@
 							    	<div class="table-wrapper" method = "post">
 									<div class="field">
 <<<<<<< HEAD
-									<form action = "tagpost">
+									
 =======
 									<form action = "SearchCon">
 >>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
