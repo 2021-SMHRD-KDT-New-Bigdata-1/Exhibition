@@ -1,10 +1,10 @@
 <%@ page import="VO.membersVO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="euc-kr">
 <title>Summernote</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/bootstrap5.css" />
@@ -28,7 +28,7 @@
 </head>
 <body class="is-preload">
 	<%
-	//ë¡œê·¸ì¸ í•œ ì„¸ì…˜ ë°›ì•„ì˜¤ê¸°
+	//·Î±×ÀÎ ÇÑ ¼¼¼Ç ¹Þ¾Æ¿À±â
 	membersVO vo = (membersVO) session.getAttribute("vo");
 	%>
 
@@ -41,7 +41,7 @@
 
 				<!-- Logo -->
 				<a href="index.html" class="logo"> <span class="symbol"><img
-						src="images/logo.svg" alt="" /></span><span class="title">38â„ƒ</span>
+						src="images/logo.svg" alt="" /></span><span class="title">38¡É</span>
 				</a>
 
 				<!-- Nav -->
@@ -63,27 +63,22 @@
 						<%
 						}
 						%>
-						<!-- ì†Œì•¼ë‹ˆ í™§íŒ… ã…Žã…Žã…Žã…Žã…Žã…Ž -->
-						<!-- <li><a href="#">ì´ë¦„4</a></li> -->
-						<!-- í•„ìš”ì—†ìœ¼ë©´ ê°œìˆ˜ ì§€ì›Œë„ ë¨ -->
+						<!-- ¼Ò¾ß´Ï È±ÆÃ ¤¾¤¾¤¾¤¾¤¾¤¾ -->
+						<!-- <li><a href="#">ÀÌ¸§4</a></li> -->
+						<!-- ÇÊ¿ä¾øÀ¸¸é °³¼ö Áö¿öµµ µÊ -->
 					</ul>
-					<%
-					if (vo != null) {
-					%>
-					<a href="bookMark.jsp"><img src="images/bookmark.svg" alt="" />
-						<span class="title"></span></a> <a href="myPage.jsp"><img
-						src="images/user.svg" alt="" /> <span class="title"></span></a>
-					<%
-					} else {
-					%>
-					<!-- ë¡œê·¸ì¸ ì•ˆë˜ì–´ ìžˆì„ ê²½ìš° ë‹¤ë¥¸ ì´ë²¤íŠ¸ ë„£ê¸° -->
-					<a href="bookMark.jsp"><img src="images/bookmark.svg" alt="" />
-						<span class="title"></span></a> <a href="login.jsp"><img
-						src="images/user.svg" alt="" /> <span class="title"></span></a>
-
-					<%
-					}
-					%>
+					<%if(vo!=null){ %>
+						<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
+						<span class="title"></span></a>
+						<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
+						<span class="title"></span></a>
+						<%}else{ %>
+						<!-- ·Î±×ÀÎ ¾ÈµÇ¾î ÀÖÀ» °æ¿ì ´Ù¸¥ ÀÌº¥Æ® ³Ö±â -->
+										
+						<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
+						<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
+										
+						<%} %>
 				</nav>
 
 			</div>
@@ -122,64 +117,64 @@
 									<td>Content</td>
 									<td><textarea id="summernote" name="content"></textarea></td></tr>
 									<tr>
-										<td><strong>ì§€ì—­íƒœê·¸</strong></td>
+										<td><strong>Áö¿ªÅÂ±×</strong></td>
 										<td>
 											<input type="checkbox" name="region" value="Seoul" id="region2">
-											<label for="region2">ì„œìš¸</label> 
+											<label for="region2">¼­¿ï</label> 
 											<input type="checkbox" name="region" value="Gyeonggi" id="region3">
-											<label for="region3">ê²½ê¸°</label> 
+											<label for="region3">°æ±â</label> 
 											<input type="checkbox" name="region" value="Gangwon" id="region4">
-											<label for="region4">ê°•ì›</label>
+											<label for="region4">°­¿ø</label>
 											<input type="checkbox" name="region" value="Daejeon" id="region5"> 
-											<label for="region5">ëŒ€ì „</label> 
+											<label for="region5">´ëÀü</label> 
 											<input type="checkbox" name="region" value="Daegu" id="region6">
-											<label for="region6">ëŒ€êµ¬</label> 
+											<label for="region6">´ë±¸</label> 
 											<input type="checkbox" name="region" value="Busan" id="region7"> 
-											<label for="region7">ë¶€ì‚°</label> 
+											<label for="region7">ºÎ»ê</label> 
 											<input type="checkbox" name="region" value="Gwangju" id="region8"> 
-											<label for="region8">ê´‘ì£¼</label>
+											<label for="region8">±¤ÁÖ</label>
 											<input type="checkbox" name="region" value="Ulsan" id="region9"> 
-											<label for="region9">ìš¸ì‚°</label> 
+											<label for="region9">¿ï»ê</label> 
 											<input type="checkbox" name="region" value="Incheon" id="region10">
-											<label for="region10">ì¸ì²œ</label> 
+											<label for="region10">ÀÎÃµ</label> 
 											<input type="checkbox" name="region" value="Jeju" id="region11"> 
-											<label for="region11">ì œì£¼</label> 
+											<label for="region11">Á¦ÁÖ</label> 
 											<input type="checkbox" name="region" value="Chungnam" id="region12"> 
-											<label for="region12">ì¶©ë‚¨</label> 
+											<label for="region12">Ãæ³²</label> 
 											<input type="checkbox" name="region" value="Chungbuk" id="region13"> 
-											<label for="region13">ì¶©ë¶</label> 
+											<label for="region13">ÃæºÏ</label> 
 											<input type="checkbox" name="region" value="Gyeongnam" id="region14"> 
-											<label for="region14">ê²½ë‚¨</label> 
+											<label for="region14">°æ³²</label> 
 											<input type="checkbox" name="region" value="Kyeongbuk" id="region15"> 
-											<label for="region15">ê²½ë¶</label> 
+											<label for="region15">°æºÏ</label> 
 											<input type="checkbox" name="region" value="Jeonnam" id="region16"> 
-											<label for="region16">ì „ë‚¨</label> 
+											<label for="region16">Àü³²</label> 
 											<input type="checkbox" name="region" value="Jeonbuk" id="region17">
-											<label for="region17">ì „ë¶</label>
+											<label for="region17">ÀüºÏ</label>
 									</tr>
 									<tr>
-										<td><strong>ìž¥ë¥´íƒœê·¸</strong></td>
-										<td><input type="checkbox" name="genre" value="Western" id="genre1"><label for="genre1">ì„œì–‘í™”</label> 
+										<td><strong>Àå¸£ÅÂ±×</strong></td>
+										<td><input type="checkbox" name="genre" value="Western" id="genre1"><label for="genre1">¼­¾çÈ­</label> 
 											<input type="checkbox" name="genre" value="Oriental" id="genre2">
-											<label for="genre2">ë™ì–‘í™”</label> 
+											<label for="genre2">µ¿¾çÈ­</label> 
 											<input type="checkbox" name="genre" value="design" id="genre3">
-											<label for="genre3">ë””ìžì¸</label>
+											<label for="genre3">µðÀÚÀÎ</label>
 											<input type="checkbox" name="genre" value="installation" id="genre4">
-											<label for="genre4">ì„¤ì¹˜ë¯¸ìˆ </label> 
+											<label for="genre4">¼³Ä¡¹Ì¼ú</label> 
 											<input type="checkbox" name="genre" value="formative" id="genre5">
-											<label for="genre5">ì¡°í˜•ë¯¸ìˆ </label> 
+											<label for="genre5">Á¶Çü¹Ì¼ú</label> 
 											<input type="checkbox" name="genre" value="crafts" id="genre6">
-											<label for="genre6">ê³µì˜ˆ</label>
+											<label for="genre6">°ø¿¹</label>
 											<input type="checkbox" name="genre" value="architecture" id="genre7">
-											<label for="genre7">ê±´ì¶•</label> 
+											<label for="genre7">°ÇÃà</label> 
 											<input type="checkbox" name="genre" value="picture" id="genre8">
-											<label for="genre8">ì‚¬ì§„</label> 
+											<label for="genre8">»çÁø</label> 
 											<input type="checkbox" name="genre" value="hands-on" id="genre9">
-											<label for="genre9">ì²´í—˜í˜•</label>
+											<label for="genre9">Ã¼ÇèÇü</label>
 										</td>
 									</tr>
 									<tr>
-										<td><strong>ìƒ‰ê°ë³„ ë¶„ìœ„ê¸° íƒœê·¸</strong></td>
+										<td><strong>»ö°¨º° ºÐÀ§±â ÅÂ±×</strong></td>
 										<td>
 											<input type="checkbox" name="color" value="white" id="color1">
 											<label for="color1">White</label> 
@@ -227,7 +222,7 @@
 											<label for="color22">Deep Red</label>
 									</tr>
 								</table>
-								<input type="submit" value="ê²Œì‹œ">
+								<input type="submit" value="°Ô½Ã">
 								</form>
 							</div>
 							</div>
@@ -240,13 +235,13 @@
 
 
 		<script>
-			// ë©”ì¸í™”ë©´ íŽ˜ì´ì§€ ë¡œë“œ í•¨ìˆ˜
+			// ¸ÞÀÎÈ­¸é ÆäÀÌÁö ·Îµå ÇÔ¼ö
 			$(document).ready(function() {
 				$('#summernote').summernote({
-					placeholder : 'ë‚´ìš©ì„ ìž‘ì„±í•˜ì„¸ìš”',
+					placeholder : '³»¿ëÀ» ÀÛ¼ºÇÏ¼¼¿ä',
 					height : 400,
 					maxHeight : 400,
-					callbacks: {	//ì—¬ê¸° ë¶€ë¶„ì´ ì´ë¯¸ì§€ë¥¼ ì²¨ë¶€í•˜ëŠ” ë¶€ë¶„
+					callbacks: {	//¿©±â ºÎºÐÀÌ ÀÌ¹ÌÁö¸¦ Ã·ºÎÇÏ´Â ºÎºÐ
 						onImageUpload : function(files) {
 							uploadSummernoteImageFile(files[0],this);
 						},

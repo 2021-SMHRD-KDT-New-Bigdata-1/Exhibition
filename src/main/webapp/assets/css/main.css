@@ -2270,8 +2270,8 @@ input, select, textarea {
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: 1.25em;
-				margin: 6px 0px 0 0;
+				width: 0.8em;
+				margin: 6px 0 9px 0;
   				margin-top: 1px \9;
   				line-height: normal;
 			}
@@ -2280,15 +2280,15 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #585858;
-			color: #008040;
+			color: rgb(0, 0, 0);
 			content: '\f00c';
 		}
 		
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f2849e;
-			box-shadow: 0 0 0 1px #f2849e;
+			border-color: #f23453;
+			box-shadow: 0 0 0 1px rgb(0, 128, 64);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2460,6 +2460,17 @@ input, select, textarea {
 			}
 
 /* Button */
+
+	.btn_c{
+		position : absolute;
+		top:30px;
+		left:1500px;
+	}
+	.btn_d{
+		position : absolute;
+		top:30px;
+		left:1550px;
+	}
 
 	input[type="submit"],
 	input[type="reset"],
