@@ -148,4 +148,30 @@ public class membersDAO {
 			
 			return check;
 		}
+		
+		//태그 수정 메소드
+		public int likeupdate(String like_region_tag, String like_genre_tag, String like_color_tag, String nick) {
+			
+			conn();
+			
+			int cnt =0;
+			try {
+			String sql  = "update members set LIKE_REGION_TAG=?, LIKE_GENRE_TAG=?,LIKE_COLOR_TAG=? WHERE MB_NICK=? ";
+		
+			psmt=conn.prepareStatement(sql);
+			
+			psmt.setString(1,like_region_tag );
+			psmt.setString(2,like_genre_tag );
+			psmt.setString(3,like_color_tag );
+			psmt.setString(4,nick );
+			
+			cnt = psmt.executeUpdate();
+			
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return cnt;
+		}
 }
