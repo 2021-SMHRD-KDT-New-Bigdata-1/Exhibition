@@ -260,6 +260,7 @@
 			}else{
 				out.print(genre+"</td>");
 			}
+			
 			out.print("<td>");
 			if(dao.count(color,'|')!=0){
 				for(int j =0; j<color_tag.length; j++){
@@ -272,6 +273,11 @@
 			}
 			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
 			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
+			%>
+			<!-- 추가 -->
+			<td><a href="onepost.jsp?seq=<%=list.get(i).getSeq()%>">게시물 보기</a></td>
+			
+			<%
 			out.print("</tr>");
 		} %>
 	</table>

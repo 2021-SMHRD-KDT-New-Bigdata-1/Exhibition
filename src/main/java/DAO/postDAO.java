@@ -145,6 +145,38 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return list;
 		}
+	
+		//게시물 보기 기능 - seq값에 맞는 게시물 출력
+		public ArrayList<postVO> onepost(int seq){
+			
+			conn();
+			ArrayList<postVO> list = new ArrayList<postVO>();
+			
+			try {
+				String sql = "select * from post_reviews where rv_seq= ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, seq);
+				
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					String content = rs.getString(2);
+					int cnt = rs.getInt(3);
+					String nick = rs.getString(4);
+					String title = rs.getString(5);
+					String region_tag1 = rs.getString(6);
+					String genre_tag1 = rs.getString(7);
+					String color_tag1 = rs.getString(8);
+					
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1);
+					
+					list.add(vo);
+				}
+				
+				
+			} catch(Exception e) {e.printStackTrace();} finally {close();}
+			
+			return list; 
+		}
 	}
 
 
