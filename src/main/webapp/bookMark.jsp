@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	연동테스트
-	<form>
-		<input type = "text">
-	</form>
-
+	<h1>북마크 페이지</h1>
 </body>
 </html>
