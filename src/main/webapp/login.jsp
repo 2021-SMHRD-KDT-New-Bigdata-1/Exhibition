@@ -14,16 +14,19 @@
                     <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
                     <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
                 </div>
-                <form id="login" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="User name or Email" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                <form id="login" action="loginCon" class="input-group">
+                    <input type="text" class="input-field" name="id" placeholder="User name" required>
+                    <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
                 </form>
-                <form id="register" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="User name or Email" required>
-                    <input type="email" class="input-field" placeholder="Your Email" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                <form id="register" action="joinCon" class="input-group">
+                    <input type="text" class="input-field" name="id" placeholder="Your id" required>
+                    <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
+                    <input type="text" class="input-field" name="nick"placeholder="Enter nickname" required>
+                    <input type="text" class="input-field" name="name" placeholder="User name" required>
+                    <input type="text" class="input-field" name="tel"placeholder="Enter tel" required>
+                    <input type="text" class="input-field" name="bn"placeholder="business number">
                     <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
                     <button class="submit">REGISTER</button>
                 </form>
