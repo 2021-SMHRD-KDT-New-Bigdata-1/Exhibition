@@ -72,7 +72,7 @@ import VO.postVO;
 		conn();
 		ArrayList<postVO> list = new ArrayList<postVO>();
 		
-		String sql = "select * from post_reviews";
+		String sql = "select * from post_reviews order by like_cnt desc";
 		
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -117,7 +117,7 @@ import VO.postVO;
 			conn();
 			ArrayList<postVO> list = new ArrayList<postVO>();
 			
-			String sql = "select * from post_reviews where region_tag = ? or genre_tag = ? or color_tag = ?";
+			String sql = "select * from post_reviews where region_tag = ? or genre_tag = ? or color_tag = ? order by like_cnt desc";
 			
 			try {
 				psmt = conn.prepareStatement(sql);
