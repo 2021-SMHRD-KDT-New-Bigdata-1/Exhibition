@@ -45,7 +45,7 @@
 											<li><a href="all.jsp">ALL POSTING</a></li>
 											
 											<%if(vo!=null){ %>
-											<li><a href="posting.jsp">POST</a></li>
+											<li><a href="summernote.jsp">POST</a></li>
 											<%}else{ %>
 											<li><a href="login.jsp">POST</a></li>
 											<%} %>
@@ -53,19 +53,20 @@
 											<!-- <li><a href="#">이름4</a></li> -->
 											<!-- 필요없으면 개수 지워도 됨 -->
 										</ul>
+										
 										<%if(vo!=null){ %>
-										<a href="bookMark.jsp"><img src="images/bookmark.svg" alt=""/></span>
+										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
 											<span class="title"></span></a>
-										<a href="myPage.jsp"><img src="images/user.svg" alt=""/></span>
+										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
 											<span class="title"></span></a>
 										<%}else{ %>
 										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										<a href="bookMark.jsp"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="login.jsp"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
+										
+										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
+										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
 										
 										<%} %>
+										
 									</nav>
 								
 								

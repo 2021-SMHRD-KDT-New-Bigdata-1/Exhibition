@@ -17,10 +17,15 @@
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
     postDAO dao = new postDAO();
-	ArrayList<postVO> list = dao.allpost();
 	request.setCharacterEncoding("euc-kr");
 	
-    
+	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("AL");
+	
+	
+	
+	
+	
+	
     %>
     <%if(vo!=null){ %>
    		<%=vo.getMB_nick() %> 님 어서오세영
@@ -56,15 +61,16 @@
 											
 										</ul>
 										<%if(vo!=null){ %>
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
+										<a href="bookMark.jsp"><img src="images/bookmark.svg" alt=""/></span>
 											<span class="title"></span></a>
-										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
+										<a href="myPage.jsp"><img src="images/user.svg" alt=""/></span>
 											<span class="title"></span></a>
 										<%}else{ %>
 										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
+										<a href="bookMark.jsp"><img src="images/bookmark.svg" alt=""/></span>
+											<span class="title"></span></a>
+										<a href="login.jsp"><img src="images/user.svg" alt=""/></span>
+											<span class="title"></span></a>
 										
 										<%} %>
 									</nav>
@@ -78,13 +84,9 @@
 							<!-- Main -->
 							<div id="main">
 							    <div class="inner">
-							    	<div class="table-wrapper" method = "post">
+							    	<div class="table-wrapper">
 									<div class="field">
-<<<<<<< HEAD
-									<form action = "tagpost">
-=======
 									<form action = "SearchCon">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 										<table>
 										<colgroup>
 
@@ -224,10 +226,11 @@
 			<td><strong>장르</strong></td>
 			<td><strong>색감</strong></td>
 		</tr>
+		
+		
+		
 		<%
-
-		
-		
+		//if()
 		for(int i = 0; i<list.size(); i++){
 			String region = list.get(i).getRegion_tag();
 			String[] region_tag = region.split("\\|");

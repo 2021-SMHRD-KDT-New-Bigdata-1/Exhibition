@@ -2221,7 +2221,7 @@ input, select, textarea {
 		opacity: 0;
 		width: 1em;
 		z-index: -1;
-		margin: 0px 0 0;
+		margin: 0px 0 0 0;
   		margin-top: 1px \9;
   		line-height: normal;
 	}
@@ -2230,7 +2230,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #004080;
+			color: #000000;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2260,35 +2260,35 @@ input, select, textarea {
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				border-radius: 4px;
-				border: solid 1px #ffff00;
+				border: solid 1px #000000;
 				content: '';
 				display: inline-block;
 				font-size: 1.25em;
-				height: 1.25em;
+				height: 0.8em;
 				left: 0;
-				line-height: 1.25em;
+				line-height: 0.8em;
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: 1.25em;
-				margin: 0px 2px 0 0;
+				width: 0.8em;
+				margin: 6px 0 9px 0;
   				margin-top: 1px \9;
   				line-height: normal;
 			}
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #80ff80;
+			background: #ffffff;
 			border-color: #585858;
-			color: #008040;
+			color: rgb(0, 0, 0);
 			content: '\f00c';
 		}
 		
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f2849e;
-			box-shadow: 0 0 0 1px #f2849e;
+			border-color: #f23453;
+			box-shadow: 0 0 0 1px rgb(0, 128, 64);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2460,6 +2460,17 @@ input, select, textarea {
 			}
 
 /* Button */
+
+	.btn_c{
+		position : absolute;
+		top:30px;
+		left:1500px;
+	}
+	.btn_d{
+		position : absolute;
+		top:30px;
+		left:1550px;
+	}
 
 	input[type="submit"],
 	input[type="reset"],
@@ -2896,7 +2907,7 @@ input, select, textarea {
 				display: inline-block;
 				border-radius: 0.35em;
 				box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.823);
-				/* 硫붾돱諛� 諛뺤뒪 �깋 諛붽씀湲� */
+				/* 筌롫뗀�뤀獄쏉옙 獄쏅벡�뮞 占쎄퉳 獄쏅떽��疫뀐옙 */
 				padding: 0 1.5em 0 1.5em;
 			}
 	
@@ -2913,7 +2924,7 @@ input, select, textarea {
 					#nav > ul > li > a, #nav > ul > li > span {
 						display: block;
 						color: rgb(27, 25, 138);
-						color: rgba(148, 37, 170, 0.75);/* 硫붾돱 �씠由꾨뱾 �깋 */
+						color: rgba(148, 37, 170, 0.75);/* 筌롫뗀�뤀 占쎌뵠�뵳袁⑤굶 占쎄퉳 */
 						text-transform: uppercase;
 						text-decoration: none;
 						font-size: 0.7em;

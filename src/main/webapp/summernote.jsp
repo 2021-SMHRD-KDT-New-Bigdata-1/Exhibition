@@ -1,10 +1,10 @@
 <%@ page import="VO.membersVO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="euc-kr">
 <title>Summernote</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/bootstrap5.css" />
@@ -28,7 +28,7 @@
 </head>
 <body class="is-preload">
 	<%
-	//ë¡œê·¸ì¸ í•œ ì„¸ì…˜ ë°›ì•„ì˜¤ê¸°
+	//·Î±×ÀÎ ÇÑ ¼¼¼Ç ¹Ş¾Æ¿À±â
 	membersVO vo = (membersVO) session.getAttribute("vo");
 	%>
 
@@ -41,7 +41,7 @@
 
 				<!-- Logo -->
 				<a href="index.html" class="logo"> <span class="symbol"><img
-						src="images/logo.svg" alt="" /></span><span class="title">38â„ƒ</span>
+						src="images/logo.svg" alt="" /></span><span class="title">38¡É</span>
 				</a>
 
 				<!-- Nav -->
@@ -63,27 +63,22 @@
 						<%
 						}
 						%>
-						<!-- ì†Œì•¼ë‹ˆ í™§íŒ… ã…ã…ã…ã…ã…ã… -->
-						<!-- <li><a href="#">ì´ë¦„4</a></li> -->
-						<!-- í•„ìš”ì—†ìœ¼ë©´ ê°œìˆ˜ ì§€ì›Œë„ ë¨ -->
+						<!-- ¼Ò¾ß´Ï È±ÆÃ ¤¾¤¾¤¾¤¾¤¾¤¾ -->
+						<!-- <li><a href="#">ÀÌ¸§4</a></li> -->
+						<!-- ÇÊ¿ä¾øÀ¸¸é °³¼ö Áö¿öµµ µÊ -->
 					</ul>
-					<%
-					if (vo != null) {
-					%>
-					<a href="bookMark.jsp"><img src="images/bookmark.svg" alt="" />
-						<span class="title"></span></a> <a href="myPage.jsp"><img
-						src="images/user.svg" alt="" /> <span class="title"></span></a>
-					<%
-					} else {
-					%>
-					<!-- ë¡œê·¸ì¸ ì•ˆë˜ì–´ ìˆì„ ê²½ìš° ë‹¤ë¥¸ ì´ë²¤íŠ¸ ë„£ê¸° -->
-					<a href="bookMark.jsp"><img src="images/bookmark.svg" alt="" />
-						<span class="title"></span></a> <a href="login.jsp"><img
-						src="images/user.svg" alt="" /> <span class="title"></span></a>
-
-					<%
-					}
-					%>
+					<%if(vo!=null){ %>
+						<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
+						<span class="title"></span></a>
+						<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
+						<span class="title"></span></a>
+						<%}else{ %>
+						<!-- ·Î±×ÀÎ ¾ÈµÇ¾î ÀÖÀ» °æ¿ì ´Ù¸¥ ÀÌº¥Æ® ³Ö±â -->
+										
+						<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
+						<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
+										
+						<%} %>
 				</nav>
 
 			</div>
@@ -96,118 +91,14 @@
 				<section>
 					<div class="table-wrapper">
 						<div class="fields">
-							<div class="field">
-								<div id="summernote"></div>
-								
-								<div class="field">
-											<!-- <h3>ì§€ì—­íƒœê·¸</h3>
-											<input type="checkbox" name="region" value="allregion" id="region1">
-											<label for="region1">ì „ì²´ì§€ì—­</label>
-											<input type="checkbox" name="region" value="seoul" id="region2">
-											<label for="region2">ì„œìš¸</label> 
-											<input type="checkbox" name="region" value="Gyeonggi" id="region3">
-											<label for="region3">ê²½ê¸°</label> 
-											<input type="checkbox" name="region" value="Gangwon" id="region4">
-											<label for="region4">ê°•ì›</label>
-											<input type="checkbox" name="region" value="Daejeon" id="region5"> 
-											<label for="region5">ëŒ€ì „</label> 
-											<input type="checkbox" name="region" value="Daegu" id="region6">
-											<label for="region6">ëŒ€êµ¬</label> 
-											<input type="checkbox" name="region" value="Busan" id="region7"> 
-											<label for="region7">ë¶€ì‚°</label> 
-											<input type="checkbox" name="region" value="Gwangju" id="region8"> 
-											<label for="region8">ê´‘ì£¼</label>
-											<input type="checkbox" name="region" value="ulsan" id="region9"> 
-											<label for="region9">ìš¸ì‚°</label> 
-											<input type="checkbox" name="region" value="Incheon" id="region10">
-											<label for="region10">ì¸ì²œ</label> 
-											<input type="checkbox" name="region" value="Jeju" id="region11"> 
-											<label for="region11">ì œì£¼</label> 
-											<input type="checkbox" name="region" value="Chungnam" id="region12"> 
-											<label for="region12">ì¶©ë‚¨</label> 
-											<input type="checkbox" name="region" value="Chungbuk" id="region13"> 
-											<label for="region13">ì¶©ë¶</label> 
-											<input type="checkbox" name="region" value="Gyeongnam" id="region14"> 
-											<label for="region14">ê²½ë‚¨</label> 
-											<input type="checkbox" name="region" value="Kyeongbuk" id="region15"> 
-											<label for="region15">ê²½ë¶</label> 
-											<input type="checkbox" name="region" value="Jeonman" id="region16"> 
-											<label for="region16">ì „ë‚¨</label> 
-											<input type="checkbox" name="region" value="Jeonbuk" id="region17">
-											<label for="region17">ì „ë¶</label>
-										</div>
-																		
-								<div class="field">
-											<h3>ìƒ‰ê°ë³„(ë¶„ìœ„ê¸°) íƒœê·¸</h3>
-									
-											<input type="checkbox" name="color" value="white" id="color1">
-											<label for="color1">White</label> 
-											<input type="checkbox" name="color" value="black" id="color2">
-											<label for="color2">Black</label> 
-											<input type="checkbox" name="color" value="gray" id="color3">
-											<label for="color3">Gray</label> 
-											<input type="checkbox" name="color" value="brown" id="color4">
-											<label for="color4">Brown</label>
-											<input type="checkbox" name="color" value="beige" id="color5">
-											<label for="color5">Beige</label> 
-											<input type="checkbox" name="color" value="green" id="color6">
-											<label for="color6">Green</label> 
-											<input type="checkbox" name="color" value="blue" id="color7">
-											<label for="color7">Blue</label> 
-											<input type="checkbox" name="color" value="purple" id="color8">
-											<label for="color8">Purple</label>
-											<input type="checkbox" name="color" value="yellow" id="color9">
-											<label for="color9">Yellow</label> 
-											<input type="checkbox" name="color" value="pink" id="color10">
-											<label for="color10">Pink</label> 
-											<input type="checkbox" name="color" value="red" id="color11">
-											<label for="color11">Red</label> 
-											<input type="checkbox" name="color" value="ivory" id="color12">
-											<label for="color12">Ivory</label>
-											<input type="checkbox" name="color" value="lightgray" id="color13">
-											<label for="color13">Light Gray</label>
-											<input type="checkbox" name="color" value="khaki" id="color14">
-											<label for="color14">Khaki</label> 
-											<input type="checkbox" name="color" value="mint" id="color15">
-											<label for="color15">Mint</label> 
-											<input type="checkbox" name="color" value="neongreen" id="color16">
-											<label for="color16">Neon Green</label> 
-											<input type="checkbox" name="color" value="olive" id="color17">
-											<label for="color17">Olive</label> 
-											<input type="checkbox" name="color" value="navy" id="color18">
-											<label for="color18">Navy</label> 
-											<input type="checkbox" name="color" value="skyblue" id="color19">
-											<label for="color19">Sky Blue</label> 
-											<input type="checkbox" name="color" value="lavender" id="color20">
-											<label for="color20">Lavender</label> 
-											<input type="checkbox" name="color" value="mustard" id="color21">
-											<label for="color21">Mustard</label> 
-											<input type="checkbox" name="color" value="deepred" id="color22">
-											<label for="color22">Deep Red</label>
-											
-										</div>	
-																	
-								<div class="field">
-											<h3>ì¥ë¥´</h3>
-											<input type="checkbox" name="genre" value="Western" id="genre1"><label for="genre1">ì„œì–‘í™”</label> 
-											<input type="checkbox" name="genre" value="Oriental" id="genre2">
-											<label for="genre2">ë™ì–‘í™”</label> 
-											<input type="checkbox" name="genre" value="design" id="genre3">
-											<label for="genre3">ë””ìì¸</label>
-											<input type="checkbox" name="genre" value="installation" id="genre4">
-											<label for="genre4">ì„¤ì¹˜ë¯¸ìˆ </label> 
-											<input type="checkbox" name="genre" value="formative" id="genre5">
-											<label for="genre5">ì¡°í˜•ë¯¸ìˆ </label> 
-											<input type="checkbox" name="genre" value="crafts" id="genre6">
-											<label for="genre6">ê³µì˜ˆ</label>
-											<input type="checkbox" name="genre" value="architecture" id="genre7">
-											<label for="genre7">ê±´ì¶•</label> 
-											<input type="checkbox" name="genre" value="picture" id="genre8">
-											<label for="genre8">ì‚¬ì§„</label> 
-											<input type="checkbox" name="genre" value="hands-on" id="genre9">
-											<label for="genre9">ì²´í—˜í˜•</label>
-										</div> -->								
+						<div class="field">
+					
+						<!-- <div class="field">
+								<div id="summernote"></div> -->
 							
+								
+													
+							<form action="Posting" method="post">
 								<table border="1px">
 								<colgroup>
 
@@ -217,112 +108,122 @@
 									
 									</colgroup>
 									<tr>
-										<th>ì§€ì—­íƒœê·¸</th>
-										<td><input type="checkbox" name="region" value="allregion" id="region1">
-											<label for="region1">ì „ì²´ì§€ì—­</label>
-											<input type="checkbox" name="region" value="seoul" id="region2">
-											<label for="region2">ì„œìš¸</label> 
+									<td>Title</td>
+									<td><input type="text" id="title" name="title"></td>
+									
+									</tr>
+									
+									<tr>
+									<td>Content</td>
+									<td><textarea id="summernote" name="content"></textarea></td></tr>
+									<tr>
+										<td><strong>Áö¿ªÅÂ±×</strong></td>
+										<td>
+											<input type="checkbox" name="region" value="Seoul" id="region2">
+											<label for="region2">¼­¿ï</label> 
 											<input type="checkbox" name="region" value="Gyeonggi" id="region3">
-											<label for="region3">ê²½ê¸°</label> 
+											<label for="region3">°æ±â</label> 
 											<input type="checkbox" name="region" value="Gangwon" id="region4">
-											<label for="region4">ê°•ì›</label>
+											<label for="region4">°­¿ø</label>
 											<input type="checkbox" name="region" value="Daejeon" id="region5"> 
-											<label for="region5">ëŒ€ì „</label> 
+											<label for="region5">´ëÀü</label> 
 											<input type="checkbox" name="region" value="Daegu" id="region6">
-											<label for="region6">ëŒ€êµ¬</label> 
+											<label for="region6">´ë±¸</label> 
 											<input type="checkbox" name="region" value="Busan" id="region7"> 
-											<label for="region7">ë¶€ì‚°</label> 
+											<label for="region7">ºÎ»ê</label> 
 											<input type="checkbox" name="region" value="Gwangju" id="region8"> 
-											<label for="region8">ê´‘ì£¼</label>
-											<input type="checkbox" name="region" value="ulsan" id="region9"> 
-											<label for="region9">ìš¸ì‚°</label> 
+											<label for="region8">±¤ÁÖ</label>
+											<input type="checkbox" name="region" value="Ulsan" id="region9"> 
+											<label for="region9">¿ï»ê</label> 
 											<input type="checkbox" name="region" value="Incheon" id="region10">
-											<label for="region10">ì¸ì²œ</label> 
+											<label for="region10">ÀÎÃµ</label> 
 											<input type="checkbox" name="region" value="Jeju" id="region11"> 
-											<label for="region11">ì œì£¼</label> 
+											<label for="region11">Á¦ÁÖ</label> 
 											<input type="checkbox" name="region" value="Chungnam" id="region12"> 
-											<label for="region12">ì¶©ë‚¨</label> 
+											<label for="region12">Ãæ³²</label> 
 											<input type="checkbox" name="region" value="Chungbuk" id="region13"> 
-											<label for="region13">ì¶©ë¶</label> 
+											<label for="region13">ÃæºÏ</label> 
 											<input type="checkbox" name="region" value="Gyeongnam" id="region14"> 
-											<label for="region14">ê²½ë‚¨</label> 
+											<label for="region14">°æ³²</label> 
 											<input type="checkbox" name="region" value="Kyeongbuk" id="region15"> 
-											<label for="region15">ê²½ë¶</label> 
-											<input type="checkbox" name="region" value="Jeonman" id="region16"> 
-											<label for="region16">ì „ë‚¨</label> 
+											<label for="region15">°æºÏ</label> 
+											<input type="checkbox" name="region" value="Jeonnam" id="region16"> 
+											<label for="region16">Àü³²</label> 
 											<input type="checkbox" name="region" value="Jeonbuk" id="region17">
-											<label for="region17">ì „ë¶</label>
+											<label for="region17">ÀüºÏ</label>
 									</tr>
 									<tr>
-										<th>ì¥ë¥´íƒœê·¸</th>
-										<td><input type="checkbox" name="genre" value="Western" id="genre1"><label for="genre1">ì„œì–‘í™”</label> 
+										<td><strong>Àå¸£ÅÂ±×</strong></td>
+										<td><input type="checkbox" name="genre" value="Western" id="genre1"><label for="genre1">¼­¾çÈ­</label> 
 											<input type="checkbox" name="genre" value="Oriental" id="genre2">
-											<label for="genre2">ë™ì–‘í™”</label> 
-											<input type="checkbox" name="genre" value="design" id="genre3">
-											<label for="genre3">ë””ìì¸</label>
-											<input type="checkbox" name="genre" value="installation" id="genre4">
-											<label for="genre4">ì„¤ì¹˜ë¯¸ìˆ </label> 
-											<input type="checkbox" name="genre" value="formative" id="genre5">
-											<label for="genre5">ì¡°í˜•ë¯¸ìˆ </label> 
-											<input type="checkbox" name="genre" value="crafts" id="genre6">
-											<label for="genre6">ê³µì˜ˆ</label>
-											<input type="checkbox" name="genre" value="architecture" id="genre7">
-											<label for="genre7">ê±´ì¶•</label> 
-											<input type="checkbox" name="genre" value="picture" id="genre8">
-											<label for="genre8">ì‚¬ì§„</label> 
-											<input type="checkbox" name="genre" value="hands-on" id="genre9">
-											<label for="genre9">ì²´í—˜í˜•</label>
+											<label for="genre2">µ¿¾çÈ­</label> 
+											<input type="checkbox" name="genre" value="Design" id="genre3">
+											<label for="genre3">µğÀÚÀÎ</label>
+											<input type="checkbox" name="genre" value="Installation" id="genre4">
+											<label for="genre4">¼³Ä¡¹Ì¼ú</label> 
+											<input type="checkbox" name="genre" value="Formative" id="genre5">
+											<label for="genre5">Á¶Çü¹Ì¼ú</label> 
+											<input type="checkbox" name="genre" value="Crafts" id="genre6">
+											<label for="genre6">°ø¿¹</label>
+											<input type="checkbox" name="genre" value="Architecture" id="genre7">
+											<label for="genre7">°ÇÃà</label> 
+											<input type="checkbox" name="genre" value="Picture" id="genre8">
+											<label for="genre8">»çÁø</label> 
+											<input type="checkbox" name="genre" value="Hands-on" id="genre9">
+											<label for="genre9">Ã¼ÇèÇü</label>
 										</td>
 									</tr>
 									<tr>
-										<th>ìƒ‰ê°ë³„ ë¶„ìœ„ê¸° íƒœê·¸</th>
+										<th>»ö°¨º° ºĞÀ§±â ÅÂ±×</th>
 										<td>
-											<input type="checkbox" name="color" value="white" id="color1">
+											<input type="checkbox" name="color" value="White" id="color1">
 											<label for="color1">White</label> 
-											<input type="checkbox" name="color" value="black" id="color2">
+											<input type="checkbox" name="color" value="Black" id="color2">
 											<label for="color2">Black</label> 
-											<input type="checkbox" name="color" value="gray" id="color3">
+											<input type="checkbox" name="color" value="Gray" id="color3">
 											<label for="color3">Gray</label> 
 											<input type="checkbox" name="color" value="brown" id="color4">
 											<label for="color4">Brown</label>
-											<input type="checkbox" name="color" value="beige" id="color5">
+											<input type="checkbox" name="color" value="Beige" id="color5">
 											<label for="color5">Beige</label> 
-											<input type="checkbox" name="color" value="green" id="color6">
+											<input type="checkbox" name="color" value="Green" id="color6">
 											<label for="color6">Green</label> 
-											<input type="checkbox" name="color" value="blue" id="color7">
+											<input type="checkbox" name="color" value="Blue" id="color7">
 											<label for="color7">Blue</label> 
-											<input type="checkbox" name="color" value="purple" id="color8">
+											<input type="checkbox" name="color" value="Purple" id="color8">
 											<label for="color8">Purple</label>
-											<input type="checkbox" name="color" value="yellow" id="color9">
+											<input type="checkbox" name="color" value="Yellow" id="color9">
 											<label for="color9">Yellow</label> 
-											<input type="checkbox" name="color" value="pink" id="color10">
+											<input type="checkbox" name="color" value="Pink" id="color10">
 											<label for="color10">Pink</label> 
-											<input type="checkbox" name="color" value="red" id="color11">
+											<input type="checkbox" name="color" value="Red" id="color11">
 											<label for="color11">Red</label> 
-											<input type="checkbox" name="color" value="ivory" id="color12">
+											<input type="checkbox" name="color" value="Ivory" id="color12">
 											<label for="color12">Ivory</label>
-											<input type="checkbox" name="color" value="lightgray" id="color13">
+											<input type="checkbox" name="color" value="Lightgray" id="color13">
 											<label for="color13">Light Gray</label>
-											<input type="checkbox" name="color" value="khaki" id="color14">
+											<input type="checkbox" name="color" value="Khaki" id="color14">
 											<label for="color14">Khaki</label> 
-											<input type="checkbox" name="color" value="mint" id="color15">
+											<input type="checkbox" name="color" value="Mint" id="color15">
 											<label for="color15">Mint</label> 
-											<input type="checkbox" name="color" value="neongreen" id="color16">
+											<input type="checkbox" name="color" value="Neongreen" id="color16">
 											<label for="color16">Neon Green</label> 
-											<input type="checkbox" name="color" value="olive" id="color17">
+											<input type="checkbox" name="color" value="Olive" id="color17">
 											<label for="color17">Olive</label> 
-											<input type="checkbox" name="color" value="navy" id="color18">
+											<input type="checkbox" name="color" value="Navy" id="color18">
 											<label for="color18">Navy</label> 
-											<input type="checkbox" name="color" value="skyblue" id="color19">
+											<input type="checkbox" name="color" value="Skyblue" id="color19">
 											<label for="color19">Sky Blue</label> 
-											<input type="checkbox" name="color" value="lavender" id="color20">
+											<input type="checkbox" name="color" value="Lavender" id="color20">
 											<label for="color20">Lavender</label> 
-											<input type="checkbox" name="color" value="mustard" id="color21">
+											<input type="checkbox" name="color" value="Mustard" id="color21">
 											<label for="color21">Mustard</label> 
-											<input type="checkbox" name="color" value="deepred" id="color22">
+											<input type="checkbox" name="color" value="Deepred" id="color22">
 											<label for="color22">Deep Red</label>
 									</tr>
 								</table>
+								<input type="submit" value="°Ô½Ã">
+								</form>
 							</div>
 							</div>
 						</div>
@@ -334,13 +235,25 @@
 
 
 		<script>
-			// ë©”ì¸í™”ë©´ í˜ì´ì§€ ë¡œë“œ í•¨ìˆ˜
+			// ¸ŞÀÎÈ­¸é ÆäÀÌÁö ·Îµå ÇÔ¼ö
 			$(document).ready(function() {
 				$('#summernote').summernote({
-					placeholder : 'ë‚´ìš©ì„ ì‘ì„±í•˜ì„¸ìš”',
+					placeholder : '³»¿ëÀ» ÀÛ¼ºÇÏ¼¼¿ä',
 					height : 400,
-					maxHeight : 400
-				});
+					maxHeight : 400,
+					callbacks: {	//¿©±â ºÎºĞÀÌ ÀÌ¹ÌÁö¸¦ Ã·ºÎÇÏ´Â ºÎºĞ
+						onImageUpload : function(files) {
+							uploadSummernoteImageFile(files[0],this);
+						},
+						onPaste: function (e) {
+							var clipboardData = e.originalEvent.clipboardData;
+							if (clipboardData && clipboardData.items && clipboardData.items.length) {
+								var item = clipboardData.items[0];
+								if (item.kind === 'file' && item.type.indexOf('image/') !== -1) {
+									e.preventDefault();
+								}
+							}}
+					}});
 			});
 		</script>
 		<!--  <script src="assets/js/jquery.min.js"></script>-->
