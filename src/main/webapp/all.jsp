@@ -1,3 +1,6 @@
+<%@page import="VO.postVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAO.postDAO"%>
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -13,6 +16,10 @@
     <%
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
+    postDAO dao = new postDAO();
+	ArrayList<postVO> list = dao.allpost();
+	request.setCharacterEncoding("euc-kr");
+	
     
     %>
     <%if(vo!=null){ %>
@@ -84,11 +91,11 @@
 										
 										</colgroup>
 											<tr>
-												<th>지역별 태그</th>
+												<td><strong>지역별 태그</strong></td>
 												<td>
-													<input type="checkbox" name="region" value="allregion" id="region1">
+													<input type="checkbox" name="region" value="" id="region1">
 													<label for="region1">전체지역</label>
-													<input type="checkbox" name="region" value="seoul" id="region2">
+													<input type="checkbox" name="region" value="Seoul" id="region2">
 													<label for="region2">서울</label> 
 													<input type="checkbox" name="region" value="Gyeonggi" id="region3">
 													<label for="region3">경기</label> 
@@ -102,7 +109,7 @@
 													<label for="region7">부산</label> 
 													<input type="checkbox" name="region" value="Gwangju" id="region8"> 
 													<label for="region8">광주</label>
-													<input type="checkbox" name="region" value="ulsan" id="region9"> 
+													<input type="checkbox" name="region" value="Ulsan" id="region9"> 
 													<label for="region9">울산</label> 
 													<input type="checkbox" name="region" value="Incheon" id="region10">
 													<label for="region10">인천</label> 
@@ -116,88 +123,159 @@
 													<label for="region14">경남</label> 
 													<input type="checkbox" name="region" value="Kyeongbuk" id="region15"> 
 													<label for="region15">경북</label> 
-													<input type="checkbox" name="region" value="Jeonman" id="region16"> 
+													<input type="checkbox" name="region" value="Jeonnam" id="region16"> 
 													<label for="region16">전남</label> 
 													<input type="checkbox" name="region" value="Jeonbuk" id="region17">
 													<label for="region17">전북</label>
 												</td>
 											</tr>	
 											<tr>
-												<th>장르별 태그</th>
+												<td><strong>장르별 태그</strong></th>
 												<td>
 													<input type="checkbox" name="genre" value="Western" id="genre1">
 													<label for="genre1">서양화</label> 
 													<input type="checkbox" name="genre" value="Oriental" id="genre2">
 													<label for="genre2">동양화</label> 
-													<input type="checkbox" name="genre" value="design" id="genre3">
+													<input type="checkbox" name="genre" value="Design" id="genre3">
 													<label for="genre3">디자인</label>
-													<input type="checkbox" name="genre" value="installation" id="genre4">
+													<input type="checkbox" name="genre" value="Installation" id="genre4">
 													<label for="genre4">설치미술</label> 
-													<input type="checkbox" name="genre" value="formative" id="genre5">
+													<input type="checkbox" name="genre" value="Formative" id="genre5">
 													<label for="genre5">조형미술</label> 
-													<input type="checkbox" name="genre" value="crafts" id="genre6">
+													<input type="checkbox" name="genre" value="Crafts" id="genre6">
 													<label for="genre6">공예</label>
-													<input type="checkbox" name="genre" value="architecture" id="genre7">
+													<input type="checkbox" name="genre" value="Architecture" id="genre7">
 													<label for="genre7">건축</label> 
-													<input type="checkbox" name="genre" value="picture" id="genre8">
+													<input type="checkbox" name="genre" value="Picture" id="genre8">
 													<label for="genre8">사진</label> 
-													<input type="checkbox" name="genre" value="hands-on" id="genre9">
+													<input type="checkbox" name="genre" value="Hands-on" id="genre9">
 													<label for="genre9">체험형</label>
 												</td>
 											</tr>
 											<tr>
-												<th>색감별(분위기) 태그</th>
+												<td><strong>색감별(분위기) 태그</strong></td>
 												<td>
-													<input type="checkbox" name="color" value="white" id="color1">
+													<input type="checkbox" name="color" value="White" id="color1">
 													<label for="color1">White</label> 
-													<input type="checkbox" name="color" value="black" id="color2">
+													<input type="checkbox" name="color" value="Black" id="color2">
 													<label for="color2">Black</label> 
-													<input type="checkbox" name="color" value="gray" id="color3">
+													<input type="checkbox" name="color" value="Gray" id="color3">
 													<label for="color3">Gray</label> 
-													<input type="checkbox" name="color" value="brown" id="color4">
+													<input type="checkbox" name="color" value="Brown" id="color4">
 													<label for="color4">Brown</label>
-													<input type="checkbox" name="color" value="beige" id="color5">
+													<input type="checkbox" name="color" value="Beige" id="color5">
 													<label for="color5">Beige</label> 
-													<input type="checkbox" name="color" value="green" id="color6">
+													<input type="checkbox" name="color" value="Green" id="color6">
 													<label for="color6">Green</label> 
-													<input type="checkbox" name="color" value="blue" id="color7">
+													<input type="checkbox" name="color" value="Blue" id="color7">
 													<label for="color7">Blue</label> 
-													<input type="checkbox" name="color" value="purple" id="color8">
+													<input type="checkbox" name="color" value="Purple" id="color8">
 													<label for="color8">Purple</label>
-													<input type="checkbox" name="color" value="yellow" id="color9">
+													<input type="checkbox" name="color" value="Yellow" id="color9">
 													<label for="color9">Yellow</label> 
-													<input type="checkbox" name="color" value="pink" id="color10">
+													<input type="checkbox" name="color" value="Pink" id="color10">
 													<label for="color10">Pink</label> 
-													<input type="checkbox" name="color" value="red" id="color11">
+													<input type="checkbox" name="color" value="Red" id="color11">
 													<label for="color11">Red</label> 
-													<input type="checkbox" name="color" value="ivory" id="color12">
+													<input type="checkbox" name="color" value="Ivory" id="color12">
 													<label for="color12">Ivory</label>
-													<input type="checkbox" name="color" value="lightgray" id="color13">
+													<input type="checkbox" name="color" value="LightGray" id="color13">
 													<label for="color13">Light Gray</label>
-													<input type="checkbox" name="color" value="khaki" id="color14">
+													<input type="checkbox" name="color" value="Khaki" id="color14">
 													<label for="color14">Khaki</label> 
-													<input type="checkbox" name="color" value="mint" id="color15">
+													<input type="checkbox" name="color" value="Mint" id="color15">
 													<label for="color15">Mint</label> 
-													<input type="checkbox" name="color" value="neongreen" id="color16">
+													<input type="checkbox" name="color" value="NeonGreen" id="color16">
 													<label for="color16">Neon Green</label> 
-													<input type="checkbox" name="color" value="olive" id="color17">
+													<input type="checkbox" name="color" value="Olive" id="color17">
 													<label for="color17">Olive</label> 
-													<input type="checkbox" name="color" value="navy" id="color18">
+													<input type="checkbox" name="color" value="Navy" id="color18">
 													<label for="color18">Navy</label> 
-													<input type="checkbox" name="color" value="skyblue" id="color19">
+													<input type="checkbox" name="color" value="SkyBlue" id="color19">
 													<label for="color19">Sky Blue</label> 
-													<input type="checkbox" name="color" value="lavender" id="color20">
+													<input type="checkbox" name="color" value="Lavender" id="color20">
 													<label for="color20">Lavender</label> 
-													<input type="checkbox" name="color" value="mustard" id="color21">
+													<input type="checkbox" name="color" value="Mustard" id="color21">
 													<label for="color21">Mustard</label> 
-													<input type="checkbox" name="color" value="deepred" id="color22">
+													<input type="checkbox" name="color" value="DeepRed" id="color22">
 													<label for="color22">Deep Red</label>
 														
 													</td>
 												</tr>
 											</table>
+											<div align="right"><input type="submit" value="검색" id="search_btn"></div>
+											
 										</form>
 										</div>
+										</div>
+										
+										<div class="table-wrapper">
+										<table>
+		<tr>
+			<td><strong>게시물번호</strong></td>
+			<td><strong>내용</strong></td>
+			<td><strong>좋아요</strong></td>
+			<td><strong>작성자</strong></td>
+			<td><strong>제목</strong></td>
+			<td><strong>지역</strong></td>
+			<td><strong>장르</strong></td>
+			<td><strong>색감</strong></td>
+		</tr>
+		<%
+
+		
+		
+		for(int i = 0; i<list.size(); i++){
+			String region = list.get(i).getRegion_tag();
+			String[] region_tag = region.split("\\|");
+			String genre = list.get(i).getGenre_tag();
+			String[] genre_tag = genre.split("\\|");
+			String color = list.get(i).getColor_tag();
+			String[] color_tag = color.split("\\|");
+			
+			//region.replace(String.valueOf('|'),"");
+			
+			out.print("<tr>");
+			out.print("<td>"+list.get(i).getSeq()+"</td>");
+			out.print("<td>"+list.get(i).getContent()+"</td>");
+			out.print("<td>"+list.get(i).getCnt()+"</td>");
+			out.print("<td>"+list.get(i).getNick()+"</td>");
+			out.print("<td>"+list.get(i).getTitle()+"</td>");
+			out.print("<td>");
+			if(dao.count(region,'|')!=0){
+				for(int j =0; j<region_tag.length; j++){
+					out.print(region_tag[j]);
+					}
+			
+			out.print("</td>");
+			}else{
+				out.print(region+"</td>");
+			}
+			out.print("<td>");
+			if(dao.count(genre,'|')!=0){
+				for(int j =0; j<genre_tag.length; j++){
+					out.print(genre_tag[j]);
+					}
+			
+			out.print("</td>");
+			}else{
+				out.print(genre+"</td>");
+			}
+			out.print("<td>");
+			if(dao.count(color,'|')!=0){
+				for(int j =0; j<color_tag.length; j++){
+					out.print(color_tag[j]);
+					}
+			
+			out.print("</td>");
+			}else{
+				out.print(color+"</td>");
+			}
+			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
+			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
+			out.print("</tr>");
+		} %>
+	</table>
 										</div>
 										
         
@@ -207,14 +285,14 @@
 			                <img src="images/pic01.jpg" alt=""/>
 			            </span>
 			            
-			            <a href="generic.html">
+			            <a href="onepost.jsp">
 			                <h2>Magna</h2>
 			                <div class="content">
 			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 			                </div>
 			            </a>
 			        </article>
-			        <article class="style2">
+			       <!--  <article class="style2">
 			            <span class="image">
 			                <img src="images/pic02.jpg" alt=""/>
 			            </span>
@@ -335,7 +413,7 @@
 			                </div>
 			            </a>
 			        </article>
-			    </section>
+			    </section>-->
 			    </div>
 			</div>
 			</div>
