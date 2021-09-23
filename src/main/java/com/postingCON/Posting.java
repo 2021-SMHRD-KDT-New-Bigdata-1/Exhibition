@@ -43,8 +43,10 @@ public class Posting extends HttpServlet {
 		int cnt = dao.posting(pvo);
 		
 		if(cnt>0) {
-				System.out.println("포스팅 완료");
-				response.sendRedirect("Main.jsp");
+			System.out.println("포스팅 완료");
+			response.sendRedirect("all.jsp");
+		}else {
+			System.out.println("포스팅 실패..");
 		}
 	}
 	

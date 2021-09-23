@@ -49,17 +49,18 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(SAVED_REVIEWS_SEQ.nextval, ?, null, ?, ?, ?, ?, ?)";
+	         String sql = "insert into POST_REVIEWS values(SAVED_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
 	         
 	         psmt.setString(1, vo.getContent());
-	         psmt.setString(2, vo.getNick());
-	         psmt.setString(3, vo.getTitle());
-	         psmt.setString(4, vo.getRegion_tag());
-	         psmt.setString(5, vo.getGenre_tag());
-	         psmt.setString(6, vo.getColor_tag());
+	         psmt.setInt(2, 0); //좋아요 카운트 null로 넣는거를 0으로 변경
+	         psmt.setString(3, vo.getNick());
+	         psmt.setString(4, vo.getTitle());
+	         psmt.setString(5, vo.getRegion_tag());
+	         psmt.setString(6, vo.getGenre_tag());
+	         psmt.setString(7, vo.getColor_tag());
 	         
 	         cnt = psmt.executeUpdate();
 	         
