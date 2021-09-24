@@ -145,15 +145,7 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return list;
 		}
-<<<<<<< HEAD
 
-		
-			
-			
-
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-	
 		//게시물 보기 기능 - seq값에 맞는 게시물 출력
 		public ArrayList<postVO> onepost(int seq){
 			
