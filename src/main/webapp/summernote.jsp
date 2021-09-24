@@ -48,14 +48,14 @@
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="Main.jsp">HOME</a></li>
-						<li><a href="schedule.jsp">SCHEDULE</a></li>
+						<li><a href="sched.jsp">SCHEDULE</a></li>
 						<li><a href="all.jsp">ALL POSTING</a></li>
 
 						<%
 						if (vo != null) {
 						%>
 						<!-- <li><a href="posting.jsp">POST</a></li>-->
-						<li><a href="posting.jsp">POST</a></li>
+						<li><a href="summernote.jsp">POST</a></li>
 						<%
 						} else {
 						%>
