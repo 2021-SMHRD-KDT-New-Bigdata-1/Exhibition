@@ -1,3 +1,6 @@
+<%@page import="VO.postVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAO.postDAO"%>
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -15,6 +18,26 @@
 	<%
 	//로그인 한 세션 받아오기
 	membersVO vo = (membersVO) session.getAttribute("vo");
+	
+	//파라미터 받아오기
+	//우선 all_posting에서 '게시물 보기'를 클릭했을 경우에만 실행됨
+	
+	int seq = 0;
+	if(vo!=null){
+		seq = Integer.parseInt(request.getParameter("seq"));
+	}else{
+		response.sendRedirect("login.jsp");
+	}
+	
+	%>
+	<%=seq %>
+	
+	<%
+	//DB랑 연결해서 해당 시퀀스의 게시물 vo 받아오기 - DB랑 연결 안해도 될거같긴 한뎅.. 좋아요나 댓글 생각해서 연결했음!
+	postDAO dao = new postDAO();
+	ArrayList<postVO> list = dao.onepost(seq);
+		
+	
 	%>
 
 	<!-- Wrapper -->
@@ -52,7 +75,7 @@
 						<!-- <li><a href="#">이름4</a></li> -->
 						<!-- 필요없으면 개수 지워도 됨 -->
 					</ul>
-					<%if(vo!=null){ %>
+						<%if(vo!=null){ %>
 										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
 											<span class="title"></span></a>
 										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
@@ -74,11 +97,16 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>게시글 한 번 해보자</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
+							<%if(list!=null && vo!=null){%>
+								<h1>TITLE:<%=list.get(0).getTitle() %></h1>
+								<p>WRITER:<%=list.get(0).getNick() %></p>
+								<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+								<p>CONTENT:<%=list.get(0).getContent() %></p>
+							<%}else{
+								
+							}%>
+							
 							<div id="like_btn"><button></button></div>
 							<div id="bookmark_btn"><button></button></div>
 						

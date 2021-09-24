@@ -49,17 +49,18 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(SAVED_REVIEWS_SEQ.nextval, ?, null, ?, ?, ?, ?, ?)";
+	         String sql = "insert into POST_REVIEWS values(SAVED_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
 	         
 	         psmt.setString(1, vo.getContent());
-	         psmt.setString(2, vo.getNick());
-	         psmt.setString(3, vo.getTitle());
-	         psmt.setString(4, vo.getRegion_tag());
-	         psmt.setString(5, vo.getGenre_tag());
-	         psmt.setString(6, vo.getColor_tag());
+	         psmt.setInt(2, 0); //좋아요 카운트 null로 넣는거를 0으로 변경
+	         psmt.setString(3, vo.getNick());
+	         psmt.setString(4, vo.getTitle());
+	         psmt.setString(5, vo.getRegion_tag());
+	         psmt.setString(6, vo.getGenre_tag());
+	         psmt.setString(7, vo.getColor_tag());
 	         
 	         cnt = psmt.executeUpdate();
 	         
@@ -144,6 +145,7 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return list;
 		}
+
 		
 		public ArrayList<postVO> post_select(String region) {
 			ArrayList<postVO> list = new ArrayList<postVO>();
@@ -173,8 +175,42 @@ import VO.postVO;
 				e.printStackTrace();
 			}finally{close();}
 			return list;
+		}
 			
 			
+
+	
+		//게시물 보기 기능 - seq값에 맞는 게시물 출력
+		public ArrayList<postVO> onepost(int seq){
+			
+			conn();
+			ArrayList<postVO> list = new ArrayList<postVO>();
+			
+			try {
+				String sql = "select * from post_reviews where rv_seq= ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, seq);
+				
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					String content = rs.getString(2);
+					int cnt = rs.getInt(3);
+					String nick = rs.getString(4);
+					String title = rs.getString(5);
+					String region_tag1 = rs.getString(6);
+					String genre_tag1 = rs.getString(7);
+					String color_tag1 = rs.getString(8);
+					
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1);
+					
+					list.add(vo);
+				}
+				
+				
+			} catch(Exception e) {e.printStackTrace();} finally {close();}
+			
+			return list; 
+
 		}
 	}
 
