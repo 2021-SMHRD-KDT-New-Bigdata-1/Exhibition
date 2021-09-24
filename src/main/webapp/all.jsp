@@ -36,7 +36,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="Main.jsp" class="logo">
+								<a href="main.html" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
 								</a>
 
@@ -44,7 +44,7 @@
 									<nav id="nav">
 										<ul>
 											<li class="current"><a href="Main.jsp">HOME</a></li>
-											<li><a href="sched.jsp">SCHEDULE</a></li>
+											<li><a href="schedule.jsp">SCHEDULE</a></li>
 											<li><a href="all.jsp">ALL POSTING</a></li>
 											
 											<%if(vo!=null){ %>
@@ -208,8 +208,8 @@
 										</div>
 										</div>
 										
-										<div class="table-wrapper">
-										<table>
+		<div class="table-wrapper">
+		<table>
 		<tr>
 			<td><strong>게시물번호</strong></td>
 			<td><strong>내용</strong></td>
@@ -220,10 +220,8 @@
 			<td><strong>장르</strong></td>
 			<td><strong>색감</strong></td>
 		</tr>
+		
 		<%
-
-		
-		
 		for(int i = 0; i<list.size(); i++){
 			String region = list.get(i).getRegion_tag();
 			String[] region_tag = region.split("\\|");
