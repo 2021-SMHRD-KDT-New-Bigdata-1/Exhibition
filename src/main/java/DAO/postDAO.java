@@ -147,35 +147,6 @@ import VO.postVO;
 		}
 
 		
-		public ArrayList<postVO> post_select(String region) {
-			ArrayList<postVO> list = new ArrayList<postVO>();
-			conn();
-			
-			try {
-				String sql = "select * from post_reviews where region_tag = ?";
-				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, region);
-				rs = psmt.executeQuery();
-				
-				while(rs.next()) {
-					int seq = rs.getInt(1);
-					String content = rs.getString(2);
-					int cnt = rs.getInt(3);
-					String nick = rs.getString(4);
-					String title = rs.getString(5);
-					String genre_tag = rs.getString(7);
-					String color_tag = rs.getString(8);
-					
-					postVO vo = new postVO(seq, content, cnt, nick, title, region, genre_tag, color_tag);
-					list.add(vo);
-				}
-				
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally{close();}
-			return list;
-		}
 			
 			
 
