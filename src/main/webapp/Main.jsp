@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Phantom by HTML5 UP</title>
+        <title>38℃</title>
         <meta charset="utf-8"/>
         <meta
             name="viewport"
@@ -22,7 +22,7 @@
     <%if(vo!=null){ %>
    		<%=vo.getMB_nick() %> 님 어서오세영
    	<%}else{ %>
-   	로그인하세요
+   	
    	<%} %>
     
         <!-- Wrapper -->
