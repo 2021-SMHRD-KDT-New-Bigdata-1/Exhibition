@@ -18,6 +18,8 @@
 			xsmall:   [ '361px',   '480px'  ],
 			xxsmall:  [ null,      '360px'  ]
 		});
+		
+
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
