@@ -20,12 +20,20 @@ public class saveBookmark extends HttpServlet {
 		String nick = request.getParameter("nick");
 		
 		saveDAO dao = new saveDAO();
-		int cnt = dao.save(seq, nick);
-		if(cnt>0) {
-			System.out.println("저장 성공");
-			response.sendRedirect("Main.jsp");
+		
+		//이미 저장이 되어있는지 확인한 후, 없다면 저장하기!
+		boolean result = dao.check(seq,nick);
+		if(result == false) {
+			int cnt = dao.save(seq, nick);
+			if(cnt>0) {
+				System.out.println("저장 성공");
+				response.sendRedirect("Main.jsp");
+			}else {
+				System.out.println("저장 실패");
+			}
 		}else {
-			System.out.println("저장 실패");
+			System.out.println("이미 저장되어있어영~~ 중복저장 안됌"); //alert띄울 수 없나영?
+			response.sendRedirect("Main.jsp");
 		}
 	}
 

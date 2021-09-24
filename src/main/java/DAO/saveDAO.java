@@ -150,4 +150,27 @@ public class saveDAO {
 		return mm;
 		
 	}
+	
+	//이미 저장되어있는지 확인하는 메소드
+	public boolean check(int seq, String nick) {
+		conn();
+		boolean result = false;
+		try {
+			String sql = "select * from saved_reviews where rv_num=? and mb_nick = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1,seq);
+			psmt.setString(2, nick);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				result=true;
+			}else {
+				result=false;
+			}
+			
+		} catch(Exception e) {e.printStackTrace();} finally {close();}
+		return result;
+		
+		
+		
+	}
 }
