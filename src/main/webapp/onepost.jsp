@@ -106,8 +106,7 @@
 							<%}else{
 								
 							}%>
-							
-							<div id="like_btn"><button></button></div>
+							<div id="like_btn"><button onclick='location.href="likePost?seq=<%=seq %>"'>좋아요</button><%=list.get(0).getCnt() %></div>
 							
 							<!-- 저장 버튼 클릭 시 saved_reviews에 해당 유저의 닉네임과 게시물시퀀스 추가-->
 							<div id="bookmark_btn"><button onclick='location.href="saveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장하기</button></div>
