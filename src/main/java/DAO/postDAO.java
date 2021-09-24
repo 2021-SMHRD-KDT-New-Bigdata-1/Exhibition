@@ -49,7 +49,7 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(SAVED_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
+	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
@@ -145,40 +145,6 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return list;
 		}
-
-		
-		public ArrayList<postVO> post_select(String region) {
-			ArrayList<postVO> list = new ArrayList<postVO>();
-			conn();
-			
-			try {
-				String sql = "select * from post_reviews where region_tag = ?";
-				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, region);
-				rs = psmt.executeQuery();
-				
-				while(rs.next()) {
-					int seq = rs.getInt(1);
-					String content = rs.getString(2);
-					int cnt = rs.getInt(3);
-					String nick = rs.getString(4);
-					String title = rs.getString(5);
-					String genre_tag = rs.getString(7);
-					String color_tag = rs.getString(8);
-					
-					postVO vo = new postVO(seq, content, cnt, nick, title, region, genre_tag, color_tag);
-					list.add(vo);
-				}
-				
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally{close();}
-			return list;
-		}
-			
-			
-
 	
 		//게시물 보기 기능 - seq값에 맞는 게시물 출력
 		public ArrayList<postVO> onepost(int seq){
@@ -210,7 +176,6 @@ import VO.postVO;
 			} catch(Exception e) {e.printStackTrace();} finally {close();}
 			
 			return list; 
-
 		}
 	}
 
