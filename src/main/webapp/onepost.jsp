@@ -4,17 +4,6 @@
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 	<%
 	//로그인 한 세션 받아오기
 	membersVO vo = (membersVO) session.getAttribute("vo");
@@ -30,7 +19,18 @@
 	}
 	
 	%>
-	<%=seq %>
+	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>38℃ - <%=seq %>번째 글</title>
+<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 	
 	<%
 	//DB랑 연결해서 해당 시퀀스의 게시물 vo 받아오기 - DB랑 연결 안해도 될거같긴 한뎅.. 좋아요나 댓글 생각해서 연결했음!
@@ -48,7 +48,7 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="index.html" class="logo"> <span class="symbol"><img
+				<a href="Main.jsp" class="logo"> <span class="symbol"><img
 						src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
 				</a>
 
@@ -56,18 +56,18 @@
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="Main.jsp">HOME</a></li>
-						<li><a href="schedule.jsp">SCHEDULE</a></li>
-						<li><a href="all.jsp">ALL POSTING</a></li>
+						<li><a href="sched.jsp">SCHEDULE</a></li>
+						<li><a href="all.jsp">ALL POST</a></li>
 
 						<%
 						if (vo != null) {
 						%>
 						<!-- <li><a href="posting.jsp">POST</a></li>-->
-						<li><a href="posting.jsp">POST</a></li>
+						<li><a href="summernote.jsp">POSTING</a></li>
 						<%
 						} else {
 						%>
-						<li><a href="login.jsp">POST</a></li>
+						<li><a href="login.jsp">POSTING</a></li>
 						<%
 						}
 						%>

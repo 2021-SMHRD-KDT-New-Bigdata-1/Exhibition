@@ -6,16 +6,6 @@
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/main.css" />
-</head>
-<body>
-	<!-- <h1>북마크 페이지</h1> -->
 	<%
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
@@ -30,12 +20,20 @@
 	%>
     
     
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>38℃ - <%=vo.getMB_nick() %>의 저장된 게시물</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+	<!-- <h1>북마크 페이지</h1> -->
+   	<!-- Wrapper -->
     <%if(vo!=null){ %>
    		<%=vo.getMB_nick() %> 님 어서오세영~~~ 저장된 게시물 페이지임당~~~
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
-   	<!-- Wrapper -->
+   	<%}%>
         <div id="wrapper">
 
             	<!-- Header -->
@@ -43,41 +41,31 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="main.html" class="logo">
+								<a href="Main.jsp" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
 								</a>
 									<nav id="nav">
 										<ul>
 											<li class="current"><a href="Main.jsp">HOME</a></li>
-											<li><a href="schedule.jsp">SCHEDULE</a></li>
-											<li><a href="all.jsp">ALL POSTING</a></li>
+											<li><a href="sched.jsp">SCHEDULE</a></li>
+											<li><a href="all.jsp">ALL POST</a></li>
+											<li><a href="summernote.jsp">POSTING</a></li>
 											
-											<%if(vo!=null){ %>
-											<!-- <li><a href="posting.jsp">POST</a></li>-->
-											<li><a href="summernote.jsp">POST</a></li>
-											<%}else{ %>
-											<li><a href="login.jsp">POST</a></li>
-											<%} %>
 											
 										</ul>
-										<%if(vo!=null){ %>
+										
 										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
 											<span class="title"></span></a>
 										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
 											<span class="title"></span></a>
-										<%}else{ %>
-										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
 										
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
-										
-										<%} %>
 									</nav>
 								
 								
 						</div>
 					</header>
-					
+					<div id="main">
+					<div class="inner">
 					<div class="table-wrapper">
 		<table>
 		<tr>
@@ -153,6 +141,11 @@
 			out.print("</tr>");
 		} %>
 	</table>
+					</div>
+					</div>
+					</div>
+					
+					
 	</div>
 </body>
 </html>

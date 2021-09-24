@@ -145,7 +145,7 @@ input, select, textarea {
 		-webkit-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		-ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		transition: border-bottom-color 0.2s ease, color 0.2s ease;
-		text-decoration: none;
+		text-decoration: none !important;
 		color: #585858;
 		border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
 	}
@@ -1830,6 +1830,7 @@ input, select, textarea {
 
 		.icon.solid:before {
 			font-weight: 900;
+			
 		}
 
 		.icon.brands:before {
@@ -2272,7 +2273,7 @@ input, select, textarea {
 				top: 0;
 				width: 0.8em;
 				margin: 6px 0 9px 0;
-  				margin-top: 1px \9;
+  				margin-top: 1px;
   				line-height: normal;
 			}
 
@@ -2280,7 +2281,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #585858;
-			color: rgb(0, 0, 0);
+			color: rgb(0, 128, 64);
 			content: '\f00c';
 		}
 		
@@ -2322,6 +2323,24 @@ input, select, textarea {
 			border-radius: 0;
 			padding: 0;
 		}
+		
+		
+		.field input[type="checkbox"] {
+			display: none;}
+		.field input[type="checkbox"] + label { 
+			width:17px; 
+			height: 17px; 
+			background: #fa3062; 
+			cursor: pointer;
+			 border-radius: 3px;
+			 float: right;}
+		.field input[type="checkbox"]:checked + label {
+			background:#00eeee no-repeat center/10px 10px; 
+			float: right}
+		.field input[type="checkbox"] + label span {
+			position: absolute; 
+			left:0px; 
+			display: block; }
 
 /* Image */
 
@@ -2907,7 +2926,7 @@ input, select, textarea {
 				display: inline-block;
 				border-radius: 0.35em;
 				box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.823);
-				/* 筌롫뗀�뤀獄쏉옙 獄쏅벡�뮞 占쎄퉳 獄쏅떽��疫뀐옙 */
+				/* 嶺뚮∥��占쎈��뛾�룊�삕 �뛾�룆踰∽옙裕� �뜝�럡�돰 �뛾�룆�뼺占쏙옙�뼨�먯삕 */
 				padding: 0 1.5em 0 1.5em;
 			}
 	
@@ -2924,7 +2943,7 @@ input, select, textarea {
 					#nav > ul > li > a, #nav > ul > li > span {
 						display: block;
 						color: rgb(27, 25, 138);
-						color: rgba(148, 37, 170, 0.75);/* 筌롫뗀�뤀 占쎌뵠�뵳袁⑤굶 占쎄퉳 */
+						color: rgba(148, 37, 170, 0.75);/* 嶺뚮∥��占쎈� �뜝�럩逾좑옙逾녘쥈�뫀援� �뜝�럡�돰 */
 						text-transform: uppercase;
 						text-decoration: none;
 						font-size: 0.7em;

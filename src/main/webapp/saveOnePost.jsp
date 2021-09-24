@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>38℃ - Saved Posts</title>
 <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -48,7 +48,7 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="index.html" class="logo"> <span class="symbol"><img
+				<a href="Main.jsp" class="logo"> <span class="symbol"><img
 						src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
 				</a>
 
@@ -56,18 +56,18 @@
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="Main.jsp">HOME</a></li>
-						<li><a href="schedule.jsp">SCHEDULE</a></li>
-						<li><a href="all.jsp">ALL POSTING</a></li>
+						<li><a href="sched.jsp">SCHEDULE</a></li>
+						<li><a href="all.jsp">ALL POST</a></li>
 
 						<%
 						if (vo != null) {
 						%>
 						<!-- <li><a href="posting.jsp">POST</a></li>-->
-						<li><a href="posting.jsp">POST</a></li>
+						<li><a href="posting.jsp">POSTING</a></li>
 						<%
 						} else {
 						%>
-						<li><a href="login.jsp">POST</a></li>
+						<li><a href="login.jsp">POSTING</a></li>
 						<%
 						}
 						%>
