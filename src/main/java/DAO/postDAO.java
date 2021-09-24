@@ -49,7 +49,7 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(SAVED_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
+	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
@@ -145,11 +145,14 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return list;
 		}
+<<<<<<< HEAD
 
 		
 			
 			
 
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 	
 		//게시물 보기 기능 - seq값에 맞는 게시물 출력
 		public ArrayList<postVO> onepost(int seq){
@@ -181,7 +184,6 @@ import VO.postVO;
 			} catch(Exception e) {e.printStackTrace();} finally {close();}
 			
 			return list; 
-
 		}
 	}
 

@@ -78,13 +78,9 @@
 							<!-- Main -->
 							<div id="main">
 							    <div class="inner">
-							    	<div class="table-wrapper" method = "post">
+							    	<div class="table-wrapper">
 									<div class="field">
-<<<<<<< HEAD
-									
-=======
 									<form action = "SearchCon">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 										<table>
 										<colgroup>
 
@@ -237,8 +233,10 @@
 			String[] color_tag = color.split("\\|");
 			
 			//region.replace(String.valueOf('|'),"");
+			%>
+			<tr onclick="location.href='onepost.jsp?seq=<%=list.get(i).getSeq()%>'">
 			
-			out.print("<tr>");
+			<%
 			out.print("<td>"+list.get(i).getSeq()+"</td>");
 			out.print("<td>"+list.get(i).getContent()+"</td>");
 			out.print("<td>"+list.get(i).getCnt()+"</td>");
@@ -278,8 +276,10 @@
 			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
 			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
 			%>
-			<!-- 추가 -->
-			<td><a href="onepost.jsp?seq=<%=list.get(i).getSeq()%>">게시물 보기</a></td>
+			
+			<!-- 게시물보기 버튼 삭제하고 tr자체 클릭 시 onepost로 가도록 설정했음, tr태그의 onclick속성 참고 -->
+			<!-- <td><a href="onepost.jsp?seq=<'%=list.get(i).getSeq()%>">게시물 보기</a></td> -->
+			<!-- tr에 커서 올리면 모양 바뀌게 설정??? 어떻게 하더랑 -->
 			
 			<%
 			out.print("</tr>");

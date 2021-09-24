@@ -108,7 +108,10 @@
 							}%>
 							
 							<div id="like_btn"><button></button></div>
-							<div id="bookmark_btn"><button></button></div>
+							
+							<!-- 저장 버튼 클릭 시 saved_reviews에 해당 유저의 닉네임과 게시물시퀀스 추가-->
+							<div id="bookmark_btn"><button onclick='location.href="saveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장하기</button></div>
+							<!-- 저장되면 '저장되었습니다' alert뜨도록 설정 -->
 						
 						</div>
 					</div>
