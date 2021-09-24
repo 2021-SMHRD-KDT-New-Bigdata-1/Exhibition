@@ -97,4 +97,57 @@ public class saveDAO {
 		
 		return AL;
 	}
+	
+	//저장 취소 버튼 클릭 시 저장 테이블에서 삭제
+	public int delSave(int seq, String nick) {
+		
+		int cnt = 0;
+		conn();
+		try {
+			String sql = "delete from saved_reviews where rv_num=? and mb_nick=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, seq);
+			psmt.setString(2, nick);
+			cnt = psmt.executeUpdate();
+		} catch(Exception e) {e.printStackTrace();} finally {close();}
+		return cnt;
+	}
+	
+	//메모
+	public int memo(int seq, String nick, String memo) {
+		int cnt = 0;
+		conn();
+		try {
+			String sql = "update saved_reviews set my_memo = ? where rv_num=? and mb_nick=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, memo);
+			psmt.setInt(2, seq);
+			psmt.setString(3, nick);
+			cnt = psmt.executeUpdate();
+		} catch(Exception e) {e.printStackTrace();} finally {close();}
+		
+		return cnt;
+	}
+	
+	//메모 출력을 위함
+	public String memoSelect(int seq, String nick) {
+		String mm = null;
+		conn();
+		try {
+			String sql = "select my_memo from saved_reviews where rv_num=? and mb_nick = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, seq);
+			psmt.setString(2, nick);
+			
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				mm = rs.getString(1);
+			}
+			
+		} catch(Exception e) {e.printStackTrace();} finally {close();}
+		
+		
+		return mm;
+		
+	}
 }

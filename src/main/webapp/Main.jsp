@@ -62,7 +62,7 @@
 										<%}else{ %>
 										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
 										
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
+										<a href="login.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
 										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
 										
 										<%} %>

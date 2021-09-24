@@ -1,3 +1,4 @@
+<%@page import="DAO.saveDAO"%>
 <%@page import="VO.postVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.postDAO"%>
@@ -22,13 +23,7 @@
 	//파라미터 받아오기
 	//우선 all_posting에서 '게시물 보기'를 클릭했을 경우에만 실행됨
 	
-	int seq = 0;
-	if(vo!=null){
-		seq = Integer.parseInt(request.getParameter("seq"));
-	}else{
-		response.sendRedirect("login.jsp");
-	}
-	
+	int seq = Integer.parseInt(request.getParameter("seq"));
 	%>
 	<%=seq %>
 	
@@ -37,7 +32,12 @@
 	postDAO dao = new postDAO();
 	ArrayList<postVO> list = dao.onepost(seq);
 		
-	
+	%>
+	<%
+	//메모 세션 받아오기 - 세션 말고 다른 방법 생각하기......................그냥 디비에서 가져오자...
+	//String memo = (String)session.getAttribute("memo");
+	saveDAO sdao = new saveDAO();
+	String memo = sdao.memoSelect(seq, vo.getMB_nick());
 	%>
 
 	<!-- Wrapper -->
@@ -110,7 +110,8 @@
 							<div id="like_btn"><button></button></div>
 							
 							<!-- 저장 버튼 클릭 시 saved_reviews에 해당 유저의 닉네임과 게시물시퀀스 추가-->
-							<div id="bookmark_btn"><button onclick='location.href="saveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장하기</button></div>
+							<!-- 이거 저장 취소 버튼으로 변경 -->
+							<div id="bookmark_btn"><button onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장취소</button></div>
 							<!-- 저장되면 '저장되었습니다' alert뜨도록 설정 -->
 						
 						</div>
@@ -120,8 +121,12 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>댓글 작성</h2>
-								<form method="post" action="#">
+								<h2>메모 작성</h2>
+								<%if(memo!=null){
+									out.print("<p>"+memo+"</p>");
+								}%>
+								
+								<form method="post" action="savememo?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>">
 									<div class="fields">
 										<div class="field">
 											<textarea name="message" id="message" placeholder="Message"></textarea>
