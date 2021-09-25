@@ -18,7 +18,7 @@
     height: 700px;
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    background: #ffffff;
     padding: 5px;
     overflow: hidden;
 }
@@ -26,7 +26,7 @@
     width: 230px;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 600px 9px #fcae8f;
+    box-shadow: 0 0 600px 9px #ffffff;
     border-radius: 30px;
 }
 .togglebtn {

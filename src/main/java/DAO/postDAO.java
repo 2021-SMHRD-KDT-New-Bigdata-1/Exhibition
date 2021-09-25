@@ -89,8 +89,16 @@ import VO.postVO;
 				String genre_tag = rs.getString(7);
 				String color_tag = rs.getString(8);
 				String rv_comment = rs.getString(9);
+<<<<<<< HEAD
+=======
+				String like_nick = rs.getString(10);
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 				
+<<<<<<< HEAD
 				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment);
+=======
+				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick);
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 				
 				list.add(vo);
 			}
@@ -139,8 +147,16 @@ import VO.postVO;
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
+<<<<<<< HEAD
+=======
+					String like_nick = rs.getString(10);
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 					
+<<<<<<< HEAD
 					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment);
+=======
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 					
 					list.add(vo);
 				}
@@ -169,8 +185,16 @@ import VO.postVO;
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
+<<<<<<< HEAD
+=======
+					String like_nick = rs.getString(10);
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 					
+<<<<<<< HEAD
 					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment);
+=======
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 					
 					list.add(vo);
 				}
@@ -216,6 +240,75 @@ import VO.postVO;
 			
 			return cnt;
 		}
+<<<<<<< HEAD
+=======
+		
+		//좋아요 눌렀는지 확인위한 데이터 꺼내기
+		public String likeselect(int seq) {
+			String like_origin = "";
+			conn();
+			try {
+				String sql = "select rv_like_nick from post_reviews where rv_seq = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, seq);
+				
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					like_origin = rs.getString(1);
+				}
+				
+			} catch(Exception e) {e.printStackTrace();} finally {close();}
+			return like_origin;
+		}
+		
+		//좋아요+1
+		public int likeplus(int seq, String nick) {
+			int cnt = 0;
+			conn();
+			try {
+				String sql = "update post_reviews set like_cnt=like_cnt+1 where rv_seq=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, seq);
+				
+				cnt = psmt.executeUpdate();
+				
+			}catch(Exception e) {e.printStackTrace();}finally {close();}
+			return cnt;
+		}
+
+		public int likenickUpdate(int seq, String like_new) {
+			int cnt = 0;
+			conn();
+			try {
+				String sql = "update post_reviews set rv_like_nick = ? where rv_seq=?";
+				psmt = conn.prepareStatement(sql);
+				System.out.println(seq);
+				System.out.println(like_new);
+				psmt.setString(1, like_new);
+				psmt.setInt(2, seq);
+				
+				cnt = psmt.executeUpdate();
+				
+				
+			}catch(Exception e) {e.printStackTrace();}finally {close();}
+			return cnt;
+		}
+		
+		//좋아요-1
+		public int likeminus(int seq, String nick) {
+			int cnt = 0;
+			conn();
+			try {
+				String sql = "update post_reviews set like_cnt=like_cnt-1 where rv_seq=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, seq);
+				
+				cnt = psmt.executeUpdate();
+				
+			}catch(Exception e) {e.printStackTrace();}finally {close();}
+			return cnt;
+		}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 	}
 
 

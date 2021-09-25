@@ -2216,7 +2216,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		display: block;
+		display: none;
 		float: left;
 		margin-right: -2em;
 		opacity: 0;
@@ -2239,6 +2239,7 @@ input, select, textarea {
 			padding-left: 1.55em;
 			padding-right: 0.75em;
 			position: relative;
+		
 		}
 
 			input[type="checkbox"] + label:before,
@@ -2261,7 +2262,7 @@ input, select, textarea {
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				border-radius: 4px;
-				border: solid 1px #000000;
+				
 				content: '';
 				display: inline-block;
 				font-size: 1.25em;
@@ -2279,7 +2280,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #ffffff;
+			background: none;
 			border-color: #585858;
 			color: rgb(0, 128, 64);
 			content: '\f00c';
@@ -2288,7 +2289,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f23453;
+			/*border-color: rgb(0, 128, 64);*/
 			box-shadow: 0 0 0 1px rgb(0, 128, 64);
 		}
 
@@ -2325,22 +2326,7 @@ input, select, textarea {
 		}
 		
 		
-		.field input[type="checkbox"] {
-			display: none;}
-		.field input[type="checkbox"] + label { 
-			width:17px; 
-			height: 17px; 
-			background: #fa3062; 
-			cursor: pointer;
-			 border-radius: 3px;
-			 float: right;}
-		.field input[type="checkbox"]:checked + label {
-			background:#00eeee no-repeat center/10px 10px; 
-			float: right}
-		.field input[type="checkbox"] + label span {
-			position: absolute; 
-			left:0px; 
-			display: block; }
+		
 
 /* Image */
 
@@ -2926,7 +2912,7 @@ input, select, textarea {
 				display: inline-block;
 				border-radius: 0.35em;
 				box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.823);
-				/* 嶺뚮∥��占쎈��뛾�룊�삕 �뛾�룆踰∽옙裕� �뜝�럡�돰 �뛾�룆�뼺占쏙옙�뼨�먯삕 */
+				/* �솾�꺂�뒧占쎈떔�뜝�룞�삕占쎈쐻占쎈윥�뜝�룞�삕占쎌럸�뜝�럥利멨뜝�럩援� �뜝�럥�럸�뜝�럥利당뵓寃몃뙔占쎌굲�뜏類㏃삕 �뜝�럥�맶�뜝�럥�쐾�뜝�럥猷� �뜝�럥�럸�뜝�럥利닷뜝�럥�꽦占쎈쐻占쎈짗占쎌굲�뜝�럥���뜝�럥흮占쎄뎡 */
 				padding: 0 1.5em 0 1.5em;
 			}
 	
@@ -2943,7 +2929,7 @@ input, select, textarea {
 					#nav > ul > li > a, #nav > ul > li > span {
 						display: block;
 						color: rgb(27, 25, 138);
-						color: rgba(148, 37, 170, 0.75);/* 嶺뚮∥��占쎈� �뜝�럩逾좑옙逾녘쥈�뫀援� �뜝�럡�돰 */
+						color: rgba(148, 37, 170, 0.75);/* �솾�꺂�뒧占쎈떔�뜝�룞�삕占쎈쐻占쎈윥�뜝占� �뜝�럥�맶�뜝�럥�쑋占쎌뼚伊쒙옙�굲占쎌뼔�▽펺�뜉�삕泳�占쏙옙琉껃뜝占� �뜝�럥�맶�뜝�럥�쐾�뜝�럥猷� */
 						text-transform: uppercase;
 						text-decoration: none;
 						font-size: 0.7em;

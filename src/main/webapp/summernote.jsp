@@ -174,7 +174,7 @@
 										</td>
 									</tr>
 									<tr>
-										<th>색감별 분위기 태그</th>
+										<td><strong>색감별 분위기 태그</strong></td>
 										<td>
 											<input type="checkbox" name="color" value="White" id="color1">
 											<label for="color1">White</label> 

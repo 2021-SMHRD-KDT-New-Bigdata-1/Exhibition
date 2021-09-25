@@ -129,7 +129,7 @@
 												</td>
 											</tr>	
 											<tr>
-												<td><strong>장르별 태그</strong></th>
+												<td><strong>장르별 태그</strong></td>
 												<td>
 													<input type="checkbox" name="genre" value="Western" id="genre1">
 													<label for="genre1">서양화</label> 
