@@ -89,16 +89,10 @@ import VO.postVO;
 				String genre_tag = rs.getString(7);
 				String color_tag = rs.getString(8);
 				String rv_comment = rs.getString(9);
-<<<<<<< HEAD
-=======
 				String like_nick = rs.getString(10);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-				
-<<<<<<< HEAD
-				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment);
-=======
+
 				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 				
 				list.add(vo);
 			}
@@ -147,17 +141,10 @@ import VO.postVO;
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
-<<<<<<< HEAD
-=======
 					String like_nick = rs.getString(10);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-					
-<<<<<<< HEAD
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment);
-=======
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-					
+
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment, like_nick);
+
 					list.add(vo);
 				}
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
@@ -185,17 +172,10 @@ import VO.postVO;
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
-<<<<<<< HEAD
-=======
 					String like_nick = rs.getString(10);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-					
-<<<<<<< HEAD
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment);
-=======
+
 					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-					
+
 					list.add(vo);
 				}
 				
@@ -240,8 +220,6 @@ import VO.postVO;
 			
 			return cnt;
 		}
-<<<<<<< HEAD
-=======
 		
 		//좋아요 눌렀는지 확인위한 데이터 꺼내기
 		public String likeselect(int seq) {
@@ -308,7 +286,7 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return cnt;
 		}
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 	}
 
 

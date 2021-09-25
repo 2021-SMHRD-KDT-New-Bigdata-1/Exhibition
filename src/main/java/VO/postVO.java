@@ -13,19 +13,13 @@ public class postVO {
 	private String genre_tag;
 	private String color_tag;
 	private String comment;
-<<<<<<< HEAD
-
-=======
 	private String like_nick;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 
 
 		public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
-<<<<<<< HEAD
-			String color_tag, String comment) {
-=======
+
 			String color_tag, String comment, String like_nick) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 		super();
 		this.seq = seq;
 		this.content = content;
@@ -36,10 +30,8 @@ public class postVO {
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
 		this.comment = comment;
-<<<<<<< HEAD
-=======
 		this.like_nick = like_nick;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 	}
 
 
