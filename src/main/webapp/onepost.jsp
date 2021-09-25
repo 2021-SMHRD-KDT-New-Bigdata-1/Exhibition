@@ -119,11 +119,20 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>¥Ò±€ ¿€º∫</h2>
-								<form method="post" action="#">
+								<h2>¥Ò±€</h2>
+								<%
+								if(list.get(0).getComment()!=null){
+									String comm = list.get(0).getComment();
+									String[] commentlist = comm.split("\\|");
+									for(int i = 0; i<commentlist.length; i++){%>
+										<p><%=commentlist[i]%></p>
+								<%}}%>
+							
+								
+								<form method="post" action="commentCON?seq=<%=seq%>">
 									<div class="fields">
 										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
+											<textarea name="comment" id="message" placeholder="comment"></textarea>
 										</div>
 									</div>
 									<ul class="actions">

@@ -12,17 +12,12 @@ public class postVO {
 	private String region_tag;
 	private String genre_tag;
 	private String color_tag;
-	
-	
-		
-
-
-
+	private String comment;
 
 
 
 		public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
-			String color_tag) {
+			String color_tag, String comment) {
 		super();
 		this.seq = seq;
 		this.content = content;
@@ -32,7 +27,10 @@ public class postVO {
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
+		this.comment = comment;
 	}
+
+
 
 
 		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
@@ -129,8 +127,13 @@ public class postVO {
 		this.cnt = cnt;
 	}
 
+	public String getComment() {
+		return comment;
+	}
 
-	
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 
 	
 	
