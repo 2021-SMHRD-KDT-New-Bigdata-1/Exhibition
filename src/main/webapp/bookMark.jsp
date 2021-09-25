@@ -143,9 +143,11 @@
 	</table>
 					</div>
 					</div>
-					</div>
 					
+					<!-- 광고게시물 a링크 생성 -->
+					<a href="ad.jsp">광고게시물 보기</a>
 					
+		</div>
 	</div>
 </body>
 </html>
