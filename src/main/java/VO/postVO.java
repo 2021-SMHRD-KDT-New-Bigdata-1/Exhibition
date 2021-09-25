@@ -13,11 +13,11 @@ public class postVO {
 	private String genre_tag;
 	private String color_tag;
 	private String comment;
-
+	private String like_nick;
 
 
 		public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
-			String color_tag, String comment) {
+			String color_tag, String comment, String like_nick) {
 		super();
 		this.seq = seq;
 		this.content = content;
@@ -28,9 +28,8 @@ public class postVO {
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
 		this.comment = comment;
+		this.like_nick = like_nick;
 	}
-
-
 
 
 		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
