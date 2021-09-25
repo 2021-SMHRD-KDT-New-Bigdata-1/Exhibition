@@ -232,7 +232,7 @@
 			
 			//region.replace(String.valueOf('|'),"");
 			%>
-			<tr onclick="location.href='onepost.jsp?seq=<%=list.get(i).getSeq()%>'">
+			<tr onclick="location.href='onepost.jsp?seq=<%=list.get(i).getSeq()%>'" style="cursor:pointer;">
 			
 			<%
 			out.print("<td>"+list.get(i).getSeq()+"</td>");
