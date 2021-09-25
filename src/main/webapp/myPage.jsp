@@ -1,24 +1,22 @@
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%
+    //로그인 한 세션 받아오기
+    membersVO vo = (membersVO)session.getAttribute("vo");
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Prologue by HTML5 UP</title>
+<title>38℃ - Modify </title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/mypage_main.css" />
 </head>
 <body class="is-preload">
-<%
-    //로그인 한 세션 받아오기
-    membersVO vo = (membersVO)session.getAttribute("vo");
     
-    %>
-    <%if(vo==null){ %>
-   		<a href="Main.jsp">로그인</a> 후 이용 가능합니다.
-   	<%}else{ %>
    
     
 	<div id="header">
@@ -34,10 +32,10 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#myInfo" id="portfolio-link"><span class="icon solid fa-th">개인 정보 수정</span></a></li>
-								<li><a href="#myTag" id="about-link"><span class="icon solid fa-user">관심 분야 설정</span></a></li>
-								<li><a href="logOutCon" id="contact-link"><span class="icon solid fa-envelope">로그아웃</span></a></li>
+								<li><a href="Main.jsp" id="Main-link"><span class="icon solid fa-home">Home</span></a></li>
+								<li><a href="#myInfo" id="myInfo-link"><span class="icon solid fa-user-edit">개인 정보 수정</span></a></li>
+								<li><a href="#myTag" id="myTag-link"><span class="icon solid fa-th">관심 분야 설정</span></a></li>
+								<li><a href="logOutCon" id="contact-link"><span class="icon solid fa-power-off">로그아웃</span></a></li>
 							</ul>
 						</nav>
 
@@ -55,21 +53,16 @@
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
-								site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
-								<p>Ligula scelerisque justo sem accumsan diam quis<br />
-								vitae natoque dictum sollicitudin elementum.</p>
+								관심태그를 설정하시면 맞춤형 추천을 받을 수 있어요!
 							</header>
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-							</footer>
+							
 
 						</div>
 					</section>
 
 				<!-- Portfolio -->
-					<section id="myInfo" class="two">
+					<section id="myInfo" >
 						<div class="container">
 
 							<header>
@@ -79,7 +72,7 @@
 
 							<div class="row">
 							<form action = "modifyCon" method = "post">
-							<table align="center">
+							<table>
 							
 							<tr>
 								<td>이름</td>
@@ -131,7 +124,7 @@
 					</section>
 
 				<!-- About Me -->
-					<section id="myTag" class="three">
+					<section id="myTag" class="select_t">
 						<div class="container">
 
 							<header>
@@ -139,7 +132,7 @@
 							</header>
 
 							<form action="likeTagCon" method="post">
-	<table>
+							<table>
 										<colgroup>
 
 										<col style="width:20%;">
@@ -294,7 +287,7 @@
 		<li><a href="logOutCon">로그아웃</a></li>
 
 	</ul>
-	<%} %>
+	
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

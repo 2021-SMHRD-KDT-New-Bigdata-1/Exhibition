@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%out.print("schedule페이지입니다.");
-%>
+<h1>저장된 광고게시물 페이지</h1>
 </body>
 </html>

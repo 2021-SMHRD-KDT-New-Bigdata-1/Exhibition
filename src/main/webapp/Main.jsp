@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Phantom by HTML5 UP</title>
+        <title>38℃</title>
         <meta charset="utf-8"/>
         <meta
             name="viewport"
@@ -19,11 +19,7 @@
     membersVO vo = (membersVO)session.getAttribute("vo");
     
     %>
-    <%if(vo!=null){ %>
-   		<%=vo.getMB_nick() %> 님 어서오세영
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
+    
     
         <!-- Wrapper -->
         <div id="wrapper">
@@ -33,7 +29,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="main.html" class="logo">
+								<a href="Main.jsp" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
 								</a>
 
@@ -41,17 +37,15 @@
 									<nav id="nav">
 										<ul>
 											<li class="current"><a href="Main.jsp">HOME</a></li>
-											<li><a href="schedule.jsp">SCHEDULE</a></li>
-											<li><a href="all.jsp">ALL POSTING</a></li>
+											<li><a href="sched.jsp">SCHEDULE</a></li>
+											<li><a href="all.jsp">ALL POST</a></li>
 											
 											<%if(vo!=null){ %>
-											<li><a href="summernote.jsp">POST</a></li>
+											<li><a href="summernote.jsp">POSTING</a></li>
 											<%}else{ %>
-											<li><a href="login.jsp">POST</a></li>
+											<li><a href="login.jsp">POSTING</a></li>
 											<%} %>
 											
-											<!-- <li><a href="#">이름4</a></li> -->
-											<!-- 필요없으면 개수 지워도 됨 -->
 										</ul>
 										
 										<%if(vo!=null){ %>
@@ -61,10 +55,10 @@
 											<span class="title"></span></a>
 										<%}else{ %>
 										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
-										
+										<a href="login.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
+											<span class="title"></span></a>
+										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
+											<span class="title"></span></a>
 										<%} %>
 										
 									</nav>
@@ -78,12 +72,8 @@
     <div class="inner">
         <header>
             <h1>38℃<br></h1>
-            template designed by
-            <a href="http://html5up.net">HTML5 UP</a>.</h1>
-        <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet
-            nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci
-            lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam
-            dolore.</p>
+           
+        <p>전시회 후기를 남겨주세요!</p>
     </header>
     <section class="tiles">
         <article class="style1">
@@ -222,7 +212,7 @@
 </div>
 </div>
 
-<!-- Footer -->
+<!-- Footer 
 <footer id="footer">
 <div class="inner">
     <section>
@@ -288,7 +278,7 @@
         </li>
     </ul>
 </div>
-</footer>
+</footer>-->
 
 </div>
 

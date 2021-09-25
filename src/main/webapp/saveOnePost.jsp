@@ -1,9 +1,21 @@
+<%@page import="DAO.saveDAO"%>
 <%@page import="VO.postVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.postDAO"%>
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>38℃ - Saved Posts</title>
+<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 	<%
 	//로그인 한 세션 받아오기
 	membersVO vo = (membersVO) session.getAttribute("vo");
@@ -11,33 +23,21 @@
 	//파라미터 받아오기
 	//우선 all_posting에서 '게시물 보기'를 클릭했을 경우에만 실행됨
 	
-	int seq = 0;
-	if(vo!=null){
-		seq = Integer.parseInt(request.getParameter("seq"));
-	}else{
-		response.sendRedirect("login.jsp");
-	}
-	
+	int seq = Integer.parseInt(request.getParameter("seq"));
 	%>
-	
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>38℃ - <%=seq %>번째 글</title>
-<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+	<%=seq %>
 	
 	<%
 	//DB랑 연결해서 해당 시퀀스의 게시물 vo 받아오기 - DB랑 연결 안해도 될거같긴 한뎅.. 좋아요나 댓글 생각해서 연결했음!
 	postDAO dao = new postDAO();
 	ArrayList<postVO> list = dao.onepost(seq);
 		
-	
+	%>
+	<%
+	//메모 세션 받아오기 - 세션 말고 다른 방법 생각하기......................그냥 디비에서 가져오자...
+	//String memo = (String)session.getAttribute("memo");
+	saveDAO sdao = new saveDAO();
+	String memo = sdao.memoSelect(seq, vo.getMB_nick());
 	%>
 
 	<!-- Wrapper -->
@@ -63,7 +63,7 @@
 						if (vo != null) {
 						%>
 						<!-- <li><a href="posting.jsp">POST</a></li>-->
-						<li><a href="summernote.jsp">POSTING</a></li>
+						<li><a href="posting.jsp">POSTING</a></li>
 						<%
 						} else {
 						%>
@@ -106,10 +106,12 @@
 							<%}else{
 								
 							}%>
-							<div id="like_btn"><button onclick='location.href="likePost?seq=<%=seq %>"'>좋아요</button><%=list.get(0).getCnt() %></div>
+							
+							<div id="like_btn"><button></button></div>
 							
 							<!-- 저장 버튼 클릭 시 saved_reviews에 해당 유저의 닉네임과 게시물시퀀스 추가-->
-							<div id="bookmark_btn"><button onclick='location.href="saveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장하기</button></div>
+							<!-- 이거 저장 취소 버튼으로 변경 -->
+							<div id="bookmark_btn"><button onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장취소</button></div>
 							<!-- 저장되면 '저장되었습니다' alert뜨도록 설정 -->
 						
 						</div>
@@ -119,8 +121,12 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>댓글 작성</h2>
-								<form method="post" action="#">
+								<h2>메모 작성</h2>
+								<%if(memo!=null){
+									out.print("<p>"+memo+"</p>");
+								}%>
+								
+								<form method="post" action="savememo?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>">
 									<div class="fields">
 										<div class="field">
 											<textarea name="message" id="message" placeholder="Message"></textarea>

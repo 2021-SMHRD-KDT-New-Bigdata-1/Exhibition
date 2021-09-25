@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>38℃ - All Post</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
@@ -36,7 +36,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="main.html" class="logo">
+								<a href="Main.jsp" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
 								</a>
 
@@ -44,14 +44,14 @@
 									<nav id="nav">
 										<ul>
 											<li class="current"><a href="Main.jsp">HOME</a></li>
-											<li><a href="schedule.jsp">SCHEDULE</a></li>
-											<li><a href="all.jsp">ALL POSTING</a></li>
+											<li><a href="sched.jsp">SCHEDULE</a></li>
+											<li><a href="all.jsp">ALL POST</a></li>
 											
 											<%if(vo!=null){ %>
 											<!-- <li><a href="posting.jsp">POST</a></li>-->
-											<li><a href="summernote.jsp">POST</a></li>
+											<li><a href="summernote.jsp">POSTING</a></li>
 											<%}else{ %>
-											<li><a href="login.jsp">POST</a></li>
+											<li><a href="login.jsp">POSTING</a></li>
 											<%} %>
 											
 										</ul>
@@ -208,8 +208,8 @@
 										</div>
 										</div>
 										
-										<div class="table-wrapper">
-										<table>
+		<div class="table-wrapper">
+		<table>
 		<tr>
 			<td><strong>게시물번호</strong></td>
 			<td><strong>내용</strong></td>
@@ -220,10 +220,8 @@
 			<td><strong>장르</strong></td>
 			<td><strong>색감</strong></td>
 		</tr>
+		
 		<%
-
-		
-		
 		for(int i = 0; i<list.size(); i++){
 			String region = list.get(i).getRegion_tag();
 			String[] region_tag = region.split("\\|");
@@ -299,6 +297,7 @@
 			                <div class="content">
 			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 			                </div>
+			               
 			            </a>
 			        </article>
 			       <!--  <article class="style2">
@@ -421,8 +420,8 @@
 			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 			                </div>
 			            </a>
-			        </article>
-			    </section>-->
+			        </article>-->
+			    </section>
 			    </div>
 			</div>
 			</div>

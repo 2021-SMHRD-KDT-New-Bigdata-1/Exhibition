@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="euc-kr">
-<title>Summernote</title>
+<title>38℃ - Posting</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/bootstrap5.css" />
 <link rel="stylesheet" href="assets/css/main.css" />
@@ -48,18 +48,18 @@
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="Main.jsp">HOME</a></li>
-						<li><a href="schedule.jsp">SCHEDULE</a></li>
-						<li><a href="all.jsp">ALL POSTING</a></li>
+						<li><a href="sched.jsp">SCHEDULE</a></li>
+						<li><a href="all.jsp">ALL POST</a></li>
 
 						<%
 						if (vo != null) {
 						%>
 						<!-- <li><a href="posting.jsp">POST</a></li>-->
-						<li><a href="posting.jsp">POST</a></li>
+						<li><a href="summernote.jsp">POSTING</a></li>
 						<%
 						} else {
 						%>
-						<li><a href="login.jsp">POST</a></li>
+						<li><a href="login.jsp">POSTING</a></li>
 						<%
 						}
 						%>
