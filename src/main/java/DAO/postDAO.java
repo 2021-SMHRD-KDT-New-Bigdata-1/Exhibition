@@ -49,7 +49,7 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
+	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,' ')";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
@@ -88,8 +88,9 @@ import VO.postVO;
 				String region_tag = rs.getString(6);
 				String genre_tag = rs.getString(7);
 				String color_tag = rs.getString(8);
+				String rv_comment = rs.getString(9);
 				
-				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag);
+				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment);
 				
 				list.add(vo);
 			}
@@ -137,19 +138,16 @@ import VO.postVO;
 					String region_tag1 = rs.getString(6);
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
+					String comment = rs.getString(9);
 					
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1);
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment);
 					
 					list.add(vo);
 				}
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return list;
 		}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 		//게시물 보기 기능 - seq값에 맞는 게시물 출력
 		public ArrayList<postVO> onepost(int seq){
 			
@@ -170,8 +168,9 @@ import VO.postVO;
 					String region_tag1 = rs.getString(6);
 					String genre_tag1 = rs.getString(7);
 					String color_tag1 = rs.getString(8);
+					String comment = rs.getString(9);
 					
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1);
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment);
 					
 					list.add(vo);
 				}
@@ -180,6 +179,42 @@ import VO.postVO;
 			} catch(Exception e) {e.printStackTrace();} finally {close();}
 			
 			return list; 
+		}
+		
+		//기존의 댓글 셀렉으로 가져옴
+		public String selectComment(int seq) {
+			
+			conn();
+			String c_origin = "";
+			try {
+				String sql = "select rv_comment from post_reviews where rv_seq= ?";
+				psmt= conn.prepareStatement(sql);
+				psmt.setInt(1,seq);
+				
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					c_origin = rs.getString(1);
+				}
+			}catch(Exception e) {e.printStackTrace();}finally {close();}
+			
+			return c_origin;
+		}
+
+		public int updateComment(int seq, String comment) {
+			int cnt = 0;
+			conn();
+			try {
+				String sql = "update post_reviews set rv_comment = ? where rv_seq=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, comment);
+				psmt.setInt(2, seq);
+				
+				cnt = psmt.executeUpdate();
+				
+			}catch(Exception e) {e.printStackTrace();}finally {close();}
+			
+			
+			return cnt;
 		}
 	}
 

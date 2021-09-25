@@ -121,6 +121,15 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
+								<h2>댓글</h2>
+								<%
+								if(list.get(0).getComment()!=null){
+									String comm = list.get(0).getComment();
+									String[] commentlist = comm.split("\\|");
+									for(int i = 0; i<commentlist.length; i++){%>
+										<p><%=commentlist[i]%></p>
+								<%}}%>
+							
 								<h2>메모 작성</h2>
 								<%if(memo!=null){
 									out.print("<p>"+memo+"</p>");
