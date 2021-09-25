@@ -49,7 +49,7 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,' ')";
+	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,' ',' ')";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
