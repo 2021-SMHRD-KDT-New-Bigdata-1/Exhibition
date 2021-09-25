@@ -23,7 +23,7 @@ public class delsaveBookmark extends HttpServlet {
 		int cnt = dao.delSave(seq, nick);
 		if(cnt>0) {
 			System.out.println("삭제 성공");
-			response.sendRedirect("bookMark.jsp");
+			response.sendRedirect("onepost.jsp?seq="+seq);
 		}else {
 			System.out.println("삭제 실패");
 		}
