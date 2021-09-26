@@ -182,25 +182,25 @@
 											<label for="color11">Red</label> 
 											<input type="checkbox" name="color" value="Ivory" id="color12" onclick=CountChecked(this)>
 											<label for="color12">Ivory</label>
-											<input type="checkbox" name="color" value="Lightgray" id="color13" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="LightGray" id="color13" onclick=CountChecked(this)>
 											<label for="color13">Light Gray</label>
 											<input type="checkbox" name="color" value="Khaki" id="color14" onclick=CountChecked(this)>
 											<label for="color14">Khaki</label> 
 											<input type="checkbox" name="color" value="Mint" id="color15" onclick=CountChecked(this)>
 											<label for="color15">Mint</label> 
-											<input type="checkbox" name="color" value="Neongreen" id="color16" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="NeonGreen" id="color16" onclick=CountChecked(this)>
 											<label for="color16">Neon Green</label> 
 											<input type="checkbox" name="color" value="Olive" id="color17" onclick=CountChecked(this)>
 											<label for="color17">Olive</label> 
 											<input type="checkbox" name="color" value="Navy" id="color18" onclick=CountChecked(this)>
 											<label for="color18">Navy</label> 
-											<input type="checkbox" name="color" value="Skyblue" id="color19" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="SkyBlue" id="color19" onclick=CountChecked(this)>
 											<label for="color19">Sky Blue</label> 
 											<input type="checkbox" name="color" value="Lavender" id="color20" onclick=CountChecked(this)>
 											<label for="color20">Lavender</label> 
 											<input type="checkbox" name="color" value="Mustard" id="color21" onclick=CountChecked(this)>
 											<label for="color21">Mustard</label> 
-											<input type="checkbox" name="color" value="Deepred" id="color22" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="DeepRed" id="color22" onclick=CountChecked(this)>
 											<label for="color22">Deep Red</label>
 													</td>
 												</tr>

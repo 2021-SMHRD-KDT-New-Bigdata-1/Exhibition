@@ -2,6 +2,7 @@ package com.allpostCON;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,10 +27,14 @@ public class SearchCon extends HttpServlet {
 	
 		request.setCharacterEncoding("euc-kr");
 		
+		System.out.println("searchCON시작2");
 		//검색한 태그
 		String[] region_tag = request.getParameterValues("region");
+		System.out.println(Arrays.toString(region_tag));
 		String[] genre_tag = request.getParameterValues("genre");
+		System.out.println(Arrays.toString(genre_tag));
 		String[] color_tag = request.getParameterValues("color");
+		System.out.println(Arrays.toString(color_tag));
 		
 		//배열 형태 -->String형태로 변환
 		String search_region_tag = arrayJoin("|",region_tag);
@@ -49,6 +54,9 @@ public class SearchCon extends HttpServlet {
 			color_tag = search_color_tag.split("\\|");
 			search_color_tag = arrayJoin("|",color_tag);
 		}
+		System.out.println(search_region_tag);
+		System.out.println(search_genre_tag);
+		System.out.println(search_color_tag);
 
 		postDAO dao = new postDAO();
 

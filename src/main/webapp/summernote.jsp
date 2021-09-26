@@ -201,7 +201,7 @@
 											<label for="color11">Red</label> 
 											<input type="checkbox" name="color" value="Ivory" id="color12" onclick=CountChecked(this)>
 											<label for="color12">Ivory</label>
-											<input type="checkbox" name="color" value="Lightgray" id="color13" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="LightGray" id="color13" onclick=CountChecked(this)>
 											<label for="color13">Light Gray</label>
 											<input type="checkbox" name="color" value="Khaki" id="color14" onclick=CountChecked(this)>
 											<label for="color14">Khaki</label> 
