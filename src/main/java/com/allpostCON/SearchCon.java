@@ -35,6 +35,20 @@ public class SearchCon extends HttpServlet {
 		String search_region_tag = arrayJoin("|",region_tag);
 		String search_genre_tag = arrayJoin("|",genre_tag);
 		String search_color_tag = arrayJoin("|",color_tag);
+		
+		//all_region, all_genre, all_color º±≈√ Ω√
+		if(search_region_tag.contains("|")) {
+			region_tag = search_region_tag.split("\\|");
+			search_region_tag = arrayJoin("|",region_tag);
+		}
+		if(search_genre_tag.contains("|")) {
+			genre_tag = search_genre_tag.split("\\|");
+			search_genre_tag = arrayJoin("|",genre_tag);
+		}
+		if(search_color_tag.contains("|")) {
+			color_tag = search_color_tag.split("\\|");
+			search_color_tag = arrayJoin("|",color_tag);
+		}
 
 		postDAO dao = new postDAO();
 
