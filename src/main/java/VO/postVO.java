@@ -2,7 +2,6 @@ package VO;
 
 public class postVO {
 	
-	
 
 	private int seq;
 	private String content;
@@ -14,6 +13,7 @@ public class postVO {
 	private String color_tag;
 	private String comment;
 	private String like_nick;
+
 	
 	//전체생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
@@ -27,9 +27,8 @@ public class postVO {
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
-		this.comment = comment;
-		this.like_nick = like_nick;
-	}
+		this.like_nick= like_nick;	
+		}
 	
 	//postselect을 위한 생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
@@ -45,7 +44,10 @@ public class postVO {
 		this.color_tag = color_tag;
 	}
 
-	//?
+
+
+
+
 		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
 		super();
 		this.title = content;

@@ -18,8 +18,14 @@
     membersVO vo = (membersVO)session.getAttribute("vo");
     postDAO dao = new postDAO();
 	request.setCharacterEncoding("euc-kr");
+
+
+	
+
+
 	
 	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
+
 	
 	
 	
@@ -263,16 +269,19 @@
 				out.print(region+"</td>");
 			}
 			out.print("<td>");
+			
 			if(dao.count(genre,'|')!=0){
 				for(int j =0; j<genre_tag.length; j++){
 					out.print(genre_tag[j]);
 					}
 			
 			out.print("</td>");
+			
 			}else{
 				out.print(genre+"</td>");
 			}
 			out.print("<td>");
+			
 			if(dao.count(color,'|')!=0){
 				for(int j =0; j<color_tag.length; j++){
 					out.print(color_tag[j]);

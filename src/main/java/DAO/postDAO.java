@@ -90,8 +90,9 @@ import VO.postVO;
 				String color_tag = rs.getString(8);
 				String rv_comment = rs.getString(9);
 				String like_nick = rs.getString(10);
-				
+
 				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick);
+
 				
 				list.add(vo);
 			}
@@ -141,9 +142,9 @@ import VO.postVO;
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
 					String like_nick = rs.getString(10);
-					
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
-					
+
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment, like_nick);
+
 					list.add(vo);
 				}
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
@@ -172,9 +173,9 @@ import VO.postVO;
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
 					String like_nick = rs.getString(10);
-					
+
 					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
-					
+
 					list.add(vo);
 				}
 				
@@ -285,6 +286,7 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return cnt;
 		}
+
 		
 		
 		//ÆZπŒ¿« postselect..
@@ -320,6 +322,7 @@ import VO.postVO;
 	          
 	          
 	       }
+
 	}
 
 
