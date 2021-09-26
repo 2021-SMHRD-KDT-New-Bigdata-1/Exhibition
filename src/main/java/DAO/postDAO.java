@@ -103,38 +103,6 @@ import VO.postVO;
 		
 	}	
 	
-	public ArrayList<postVO> postselect(String region) {
-		ArrayList<postVO> list = new ArrayList<postVO>();
-		conn();
-		
-		try {
-			String sql = "select * from post_reviews where region_tag = ? ";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, region);
-			rs = psmt.executeQuery();
-			
-			while(rs.next()) {
-				int seq = rs.getInt(1);
-				String content = rs.getString(2);
-				int cnt = rs.getInt(3);
-				String nick = rs.getString(4);
-				String title = rs.getString(5);
-				String genre_tag = rs.getString(7);
-				String color_tag = rs.getString(8);
-				
-				postVO vo = new postVO(seq, content, cnt, nick, title, region, genre_tag, color_tag);
-				list.add(vo);
-			}
-			
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally{close();}
-		return list;
-		
-		
-	}
-	
 	public int count(String tag, char bar){
 		int cnt = 0;
 		
@@ -318,9 +286,7 @@ import VO.postVO;
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			return cnt;
 		}
-<<<<<<< HEAD
 
-=======
 		
 		
 		//®Z¹ÎÀÇ postselect..
@@ -355,7 +321,7 @@ import VO.postVO;
 	          
 	          
 	       }
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 	}
 
 
