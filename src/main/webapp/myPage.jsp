@@ -130,7 +130,7 @@
 							<header>
 								<h2>관심 태그 설정</h2>
 							</header>
-
+<div class="row">
 							<form action="likeTagCon" method="post">
 							<table>
 										<colgroup>
@@ -259,6 +259,7 @@
 											</table>
 											
 										</form>
+										</div>
 
 						</div>
 					</section>
