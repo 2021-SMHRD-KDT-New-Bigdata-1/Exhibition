@@ -107,7 +107,15 @@
 								
 							}%>
 							
-							<div id="like_btn"><button onclick='location.href="likePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요</button><%=list.get(0).getCnt() %></div>
+							<%
+							//좋아요 관련 버튼 다르게
+							String like_origin = dao.likeselect(seq);
+							if(like_origin.contains(vo.getMB_nick())){%>
+								<div id="like_btn"><button onclick='location.href="likePostSaveLink?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요 취소</button><%=list.get(0).getCnt() %></div>
+							<%}else{%>
+								<div id="like_btn"><button onclick='location.href="likePostSaveLink?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요</button><%=list.get(0).getCnt() %></div>
+							<%} %>
+							
 							<!-- 저장 버튼 클릭 시 saved_reviews에 해당 유저의 닉네임과 게시물시퀀스 추가-->
 							<!-- 이거 저장 취소 버튼으로 변경 -->
 							<div id="bookmark_btn"><button onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장취소</button></div>

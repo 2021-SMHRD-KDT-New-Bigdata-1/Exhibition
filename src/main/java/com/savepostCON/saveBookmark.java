@@ -27,13 +27,13 @@ public class saveBookmark extends HttpServlet {
 			int cnt = dao.save(seq, nick);
 			if(cnt>0) {
 				System.out.println("저장 성공");
-				response.sendRedirect("Main.jsp");
+				response.sendRedirect("onepost.jsp?seq="+seq);
 			}else {
 				System.out.println("저장 실패");
 			}
 		}else {
 			System.out.println("이미 저장되어있어영~~ 중복저장 안됌"); //alert띄울 수 없나영?
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect("onepost.jsp?seq="+seq);
 		}
 	}
 
