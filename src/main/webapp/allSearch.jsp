@@ -19,11 +19,9 @@
     postDAO dao = new postDAO();
 	request.setCharacterEncoding("euc-kr");
 	
-<<<<<<< HEAD
-	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list1");
-=======
+
 	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 	
 	
 	
