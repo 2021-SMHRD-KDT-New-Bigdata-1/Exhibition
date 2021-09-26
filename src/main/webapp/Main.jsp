@@ -49,16 +49,16 @@
 										</ul>
 										
 										<%if(vo!=null){ %>
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
+										<a href="bookMark.jsp" class="btn_c">
+											<span class="icon solid fa-bookmark fa-2x"></span></a>
+										<a href="myPage.jsp" class="btn_d">
+											<span class="icon solid fa-user fa-2x"></span></a>
 										<%}else{ %>
 										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										<a href="login.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
+										<a href="login.jsp" class="btn_c">
+											<span class="icon solid fa-bookmark fa-2x"></span></a>
+										<a href="login.jsp" class="btn_d">
+											<span class="icon solid fa-user fa-2x"></span></a>
 										<%} %>
 										
 									</nav>
