@@ -19,7 +19,7 @@
     postDAO dao = new postDAO();
 	request.setCharacterEncoding("euc-kr");
 	
-	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
+	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("AL");
 	
 	
 	
@@ -97,113 +97,114 @@
 											<tr>
 												<td><strong>지역별 태그</strong></td>
 												<td>
-													<input type="checkbox" name="region" value="" id="region1">
+													<input type="checkbox" name="region" value="" id="region1"  onclick=CountChecked(this)>
 													<label for="region1">전체지역</label>
-													<input type="checkbox" name="region" value="Seoul" id="region2">
+													<input type="checkbox" name="region" value="Seoul" id="region2" onclick=CountChecked(this)>
 													<label for="region2">서울</label> 
-													<input type="checkbox" name="region" value="Gyeonggi" id="region3">
+													<input type="checkbox" name="region" value="Gyeonggi" id="region3" onclick=CountChecked(this)>
 													<label for="region3">경기</label> 
-													<input type="checkbox" name="region" value="Gangwon" id="region4">
+													<input type="checkbox" name="region" value="Gangwon" id="region4" onclick=CountChecked(this)>
 													<label for="region4">강원</label>
-													<input type="checkbox" name="region" value="Daejeon" id="region5"> 
+													<input type="checkbox" name="region" value="Daejeon" id="region5" onclick=CountChecked(this)> 
 													<label for="region5">대전</label> 
-													<input type="checkbox" name="region" value="Daegu" id="region6">
+													<input type="checkbox" name="region" value="Daegu" id="region6" onclick=CountChecked(this)>
 													<label for="region6">대구</label> 
-													<input type="checkbox" name="region" value="Busan" id="region7"> 
+													<input type="checkbox" name="region" value="Busan" id="region7" onclick=CountChecked(this)> 
 													<label for="region7">부산</label> 
-													<input type="checkbox" name="region" value="Gwangju" id="region8"> 
+													<input type="checkbox" name="region" value="Gwangju" id="region8" onclick=CountChecked(this)> 
 													<label for="region8">광주</label>
-													<input type="checkbox" name="region" value="Ulsan" id="region9"> 
+													<input type="checkbox" name="region" value="Ulsan" id="region9" onclick=CountChecked(this)> 
 													<label for="region9">울산</label> 
-													<input type="checkbox" name="region" value="Incheon" id="region10">
+													<input type="checkbox" name="region" value="Incheon" id="region10" onclick=CountChecked(this)>
 													<label for="region10">인천</label> 
-													<input type="checkbox" name="region" value="Jeju" id="region11"> 
+													<input type="checkbox" name="region" value="Jeju" id="region11" onclick=CountChecked(this)> 
 													<label for="region11">제주</label> 
-													<input type="checkbox" name="region" value="Chungnam" id="region12"> 
+													<input type="checkbox" name="region" value="Chungnam" id="region12" onclick=CountChecked(this)> 
 													<label for="region12">충남</label> 
-													<input type="checkbox" name="region" value="Chungbuk" id="region13"> 
+													<input type="checkbox" name="region" value="Chungbuk" id="region13" onclick=CountChecked(this)> 
 													<label for="region13">충북</label> 
-													<input type="checkbox" name="region" value="Gyeongnam" id="region14"> 
+													<input type="checkbox" name="region" value="Gyeongnam" id="region14" onclick=CountChecked(this)> 
 													<label for="region14">경남</label> 
-													<input type="checkbox" name="region" value="Kyeongbuk" id="region15"> 
+													<input type="checkbox" name="region" value="Kyeongbuk" id="region15" onclick=CountChecked(this)> 
 													<label for="region15">경북</label> 
-													<input type="checkbox" name="region" value="Jeonnam" id="region16"> 
+													<input type="checkbox" name="region" value="Jeonnam" id="region16" onclick=CountChecked(this)> 
 													<label for="region16">전남</label> 
-													<input type="checkbox" name="region" value="Jeonbuk" id="region17">
+													<input type="checkbox" name="region" value="Jeonbuk" id="region17" onclick=CountChecked(this)>
 													<label for="region17">전북</label>
 												</td>
 											</tr>	
 											<tr>
-												<td><strong>장르별 태그</strong></th>
+												<td><strong>장르별 태그</strong></td>
 												<td>
-													<input type="checkbox" name="genre" value="Western" id="genre1">
+													<input type="checkbox" name="genre" value="AllGenre" id="genre0" onclick=CountChecked(this)>
+													<label for="genre0">All Genre</label> 
+													<input type="checkbox" name="genre" value="Western" id="genre1" onclick=CountChecked(this)>
 													<label for="genre1">서양화</label> 
-													<input type="checkbox" name="genre" value="Oriental" id="genre2">
+													<input type="checkbox" name="genre" value="Oriental" id="genre2" onclick=CountChecked(this)>
 													<label for="genre2">동양화</label> 
-													<input type="checkbox" name="genre" value="Design" id="genre3">
+													<input type="checkbox" name="genre" value="Design" id="genre3" onclick=CountChecked(this)>
 													<label for="genre3">디자인</label>
-													<input type="checkbox" name="genre" value="Installation" id="genre4">
+													<input type="checkbox" name="genre" value="Installation" id="genre4" onclick=CountChecked(this)>
 													<label for="genre4">설치미술</label> 
-													<input type="checkbox" name="genre" value="Formative" id="genre5">
+													<input type="checkbox" name="genre" value="Formative" id="genre5" onclick=CountChecked(this)>
 													<label for="genre5">조형미술</label> 
-													<input type="checkbox" name="genre" value="Crafts" id="genre6">
+													<input type="checkbox" name="genre" value="Crafts" id="genre6" onclick=CountChecked(this)>
 													<label for="genre6">공예</label>
-													<input type="checkbox" name="genre" value="Architecture" id="genre7">
+													<input type="checkbox" name="genre" value="Architecture" id="genre7" onclick=CountChecked(this)>
 													<label for="genre7">건축</label> 
-													<input type="checkbox" name="genre" value="Picture" id="genre8">
+													<input type="checkbox" name="genre" value="Picture" id="genre8" onclick=CountChecked(this)>
 													<label for="genre8">사진</label> 
-													<input type="checkbox" name="genre" value="Hands-on" id="genre9">
+													<input type="checkbox" name="genre" value="Hands-on" id="genre9" onclick=CountChecked(this)>
 													<label for="genre9">체험형</label>
 												</td>
 											</tr>
 											<tr>
 												<td><strong>색감별(분위기) 태그</strong></td>
 												<td>
-													<input type="checkbox" name="color" value="White" id="color1">
-													<label for="color1">White</label> 
-													<input type="checkbox" name="color" value="Black" id="color2">
-													<label for="color2">Black</label> 
-													<input type="checkbox" name="color" value="Gray" id="color3">
-													<label for="color3">Gray</label> 
-													<input type="checkbox" name="color" value="Brown" id="color4">
-													<label for="color4">Brown</label>
-													<input type="checkbox" name="color" value="Beige" id="color5">
-													<label for="color5">Beige</label> 
-													<input type="checkbox" name="color" value="Green" id="color6">
-													<label for="color6">Green</label> 
-													<input type="checkbox" name="color" value="Blue" id="color7">
-													<label for="color7">Blue</label> 
-													<input type="checkbox" name="color" value="Purple" id="color8">
-													<label for="color8">Purple</label>
-													<input type="checkbox" name="color" value="Yellow" id="color9">
-													<label for="color9">Yellow</label> 
-													<input type="checkbox" name="color" value="Pink" id="color10">
-													<label for="color10">Pink</label> 
-													<input type="checkbox" name="color" value="Red" id="color11">
-													<label for="color11">Red</label> 
-													<input type="checkbox" name="color" value="Ivory" id="color12">
-													<label for="color12">Ivory</label>
-													<input type="checkbox" name="color" value="LightGray" id="color13">
-													<label for="color13">Light Gray</label>
-													<input type="checkbox" name="color" value="Khaki" id="color14">
-													<label for="color14">Khaki</label> 
-													<input type="checkbox" name="color" value="Mint" id="color15">
-													<label for="color15">Mint</label> 
-													<input type="checkbox" name="color" value="NeonGreen" id="color16">
-													<label for="color16">Neon Green</label> 
-													<input type="checkbox" name="color" value="Olive" id="color17">
-													<label for="color17">Olive</label> 
-													<input type="checkbox" name="color" value="Navy" id="color18">
-													<label for="color18">Navy</label> 
-													<input type="checkbox" name="color" value="SkyBlue" id="color19">
-													<label for="color19">Sky Blue</label> 
-													<input type="checkbox" name="color" value="Lavender" id="color20">
-													<label for="color20">Lavender</label> 
-													<input type="checkbox" name="color" value="Mustard" id="color21">
-													<label for="color21">Mustard</label> 
-													<input type="checkbox" name="color" value="DeepRed" id="color22">
-													<label for="color22">Deep Red</label>
-														
+													<input type="checkbox" name="color" value="White" id="color1"  onclick=CountChecked(this)>
+											<label for="color1">White</label> 
+											<input type="checkbox" name="color" value="Black" id="color2"  onclick=CountChecked(this)>
+											<label for="color2">Black</label> 
+											<input type="checkbox" name="color" value="Gray" id="color3"  onclick=CountChecked(this)>
+											<label for="color3">Gray</label> 
+											<input type="checkbox" name="color" value="Brown" id="color4"  onclick=CountChecked(this)>
+											<label for="color4">Brown</label>
+											<input type="checkbox" name="color" value="Beige" id="color5"  onclick=CountChecked(this)>
+											<label for="color5">Beige</label> 
+											<input type="checkbox" name="color" value="Green" id="color6"  onclick=CountChecked(this)>
+											<label for="color6">Green</label> 
+											<input type="checkbox" name="color" value="Blue" id="color7"  onclick=CountChecked(this)>
+											<label for="color7">Blue</label> 
+											<input type="checkbox" name="color" value="Purple" id="color8"  onclick=CountChecked(this)>
+											<label for="color8">Purple</label>
+											<input type="checkbox" name="color" value="Yellow" id="color9"  onclick=CountChecked(this)>
+											<label for="color9">Yellow</label> 
+											<input type="checkbox" name="color" value="Pink" id="color10"  onclick=CountChecked(this)>
+											<label for="color10">Pink</label> 
+											<input type="checkbox" name="color" value="Red" id="color11"  onclick=CountChecked(this)>
+											<label for="color11">Red</label> 
+											<input type="checkbox" name="color" value="Ivory" id="color12" onclick=CountChecked(this)>
+											<label for="color12">Ivory</label>
+											<input type="checkbox" name="color" value="Lightgray" id="color13" onclick=CountChecked(this)>
+											<label for="color13">Light Gray</label>
+											<input type="checkbox" name="color" value="Khaki" id="color14" onclick=CountChecked(this)>
+											<label for="color14">Khaki</label> 
+											<input type="checkbox" name="color" value="Mint" id="color15" onclick=CountChecked(this)>
+											<label for="color15">Mint</label> 
+											<input type="checkbox" name="color" value="Neongreen" id="color16" onclick=CountChecked(this)>
+											<label for="color16">Neon Green</label> 
+											<input type="checkbox" name="color" value="Olive" id="color17" onclick=CountChecked(this)>
+											<label for="color17">Olive</label> 
+											<input type="checkbox" name="color" value="Navy" id="color18" onclick=CountChecked(this)>
+											<label for="color18">Navy</label> 
+											<input type="checkbox" name="color" value="Skyblue" id="color19" onclick=CountChecked(this)>
+											<label for="color19">Sky Blue</label> 
+											<input type="checkbox" name="color" value="Lavender" id="color20" onclick=CountChecked(this)>
+											<label for="color20">Lavender</label> 
+											<input type="checkbox" name="color" value="Mustard" id="color21" onclick=CountChecked(this)>
+											<label for="color21">Mustard</label> 
+											<input type="checkbox" name="color" value="Deepred" id="color22" onclick=CountChecked(this)>
+											<label for="color22">Deep Red</label>
 													</td>
 												</tr>
 											</table>
@@ -427,5 +428,26 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script> 
+			<script language="JavaScript">
+			// 설정 시작
+			var maxChecked = 3;
+			var totalChecked = 0;
+			// 설정 끝
+			function CountChecked(field) {
+			if (field.checked)
+			totalChecked += 1;
+			else
+			totalChecked -= 1; 
+			if (totalChecked > maxChecked) {
+			alert ("최대 3개 까지만 가능합니다.");
+			field.checked = false;
+			totalChecked -= 1;
+			} 
+			}
+			function ResetCount(){
+			totalChecked = 0;
+			}
+			
+			</script>
 </body>
 </html>
