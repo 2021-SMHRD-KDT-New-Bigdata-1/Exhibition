@@ -14,9 +14,9 @@ public class postVO {
 	private String color_tag;
 	private String comment;
 	private String like_nick;
-
-
-		public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
+	
+	//전체생성자
+	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
 			String color_tag, String comment, String like_nick) {
 		super();
 		this.seq = seq;
@@ -30,8 +30,22 @@ public class postVO {
 		this.comment = comment;
 		this.like_nick = like_nick;
 	}
+	
+	//postselect을 위한 생성자
+	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
+			String color_tag) {
+		super();
+		this.seq = seq;
+		this.content = content;
+		this.cnt = cnt;
+		this.nick = nick;
+		this.title = title;
+		this.region_tag = region_tag;
+		this.genre_tag = genre_tag;
+		this.color_tag = color_tag;
+	}
 
-
+	//?
 		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
 		super();
 		this.title = content;

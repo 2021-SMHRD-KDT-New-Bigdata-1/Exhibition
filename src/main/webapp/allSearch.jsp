@@ -19,7 +19,7 @@
     postDAO dao = new postDAO();
 	request.setCharacterEncoding("euc-kr");
 	
-	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("AL");
+	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
 	
 	
 	
