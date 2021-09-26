@@ -12,11 +12,33 @@ public class postVO {
 	private String genre_tag;
 	private String color_tag;
 	private String comment;
+<<<<<<< HEAD
 	private String like_nick;
 
 	
 	
 
+	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
+			String color_tag) {
+=======
+	private String like_nick;
+	
+	//전체생성자
+	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
+			String color_tag, String comment, String like_nick) {
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+		super();
+		this.seq = seq;
+		this.content = content;
+		this.cnt = cnt;
+		this.nick = nick;
+		this.title = title;
+		this.region_tag = region_tag;
+		this.genre_tag = genre_tag;
+		this.color_tag = color_tag;
+	}
+	
+	//postselect을 위한 생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
 			String color_tag) {
 		super();
@@ -30,6 +52,7 @@ public class postVO {
 		this.color_tag = color_tag;
 	}
 
+<<<<<<< HEAD
 
 		public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
 
@@ -52,6 +75,9 @@ public class postVO {
 
 
 
+=======
+	//?
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
 		super();
 		this.title = content;
