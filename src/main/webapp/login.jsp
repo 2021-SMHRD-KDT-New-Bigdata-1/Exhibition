@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>38℃ - Login / Register</title>
+        <title>로그인 / 회원가입 폼 템플릿</title>
         <link rel="stylesheet" href="STYLE.css">
     </head>
     <body>
@@ -21,9 +21,17 @@
                     <button class="submit">Login</button>
                 </form>
                 <form id="register" action="joinCon" class="input-group">
-                    <input type="text" class="input-field" name="id" placeholder="Your id" required>
+                    <input type="text" class="input-field" id="input_id1" name="id" placeholder="Your id" required >
+                   
+                   <button class="check" onclick="idcheck()">ID Check<span id="sp1"></span></button>
+                
+                   
                     <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
-                    <input type="text" class="input-field" name="nick"placeholder="Enter nickname" required>
+                    <input type="text" class="input-field" id="input_id2" name="nick"placeholder="Enter nickname" required>
+                    
+                    <button class="check" onclick="nickcheck()">NICK check<span id="sp2"></span></button>
+                
+                   
                     <input type="text" class="input-field" name="name" placeholder="User name" required>
                     <input type="text" class="input-field" name="tel"placeholder="Enter tel" required>
                     <input type="text" class="input-field" name="bn"placeholder="business number">
@@ -50,4 +58,54 @@
                 z.style.left = "110px";
             }
         </script>
+        
+    <script src="assets/js/jquery.min.js"></script>    
+   <script>
+    function idcheck(){
+         var input1 = document.getElementById("input_id1");
+         $.ajax({
+            
+            url : "idcheckCon", 
+            type : "post", 
+            data : {id : input1.value}, 
+            dataType : "text",
+            success : function(data){
+
+            var span_tag1 = document.getElementById("sp1");
+               if(data=="true"){
+                  alert("중복된 아이디입니다.")
+                  
+               }else{
+            	   alert("사용가능한 아이디입니다.")
+               }
+            },
+            error : function(){
+               alert("통신실패")
+            }
+         })}
+   
+      function nickcheck(){
+         var input2 = document.getElementById("input_id2");
+         $.ajax({
+            
+            url : "nickcheckCon", 
+            type : "post",
+            data : {nick : input2.value},
+            dataType : "text", 
+            success : function(data){ 
+
+            var span_tag2 = document.getElementById("sp2");
+               if(data=="true"){
+                  alert("중복된 닉네임입니다.")
+                  
+               }else{
+            	   alert("사용가능한 닉네임입니다.")
+               }
+            },
+            error : function(){
+               alert("통신실패")
+            }
+            
+         })}
+   </script>
     </body>
