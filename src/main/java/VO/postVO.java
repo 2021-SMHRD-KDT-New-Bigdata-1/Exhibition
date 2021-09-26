@@ -2,7 +2,6 @@ package VO;
 
 public class postVO {
 	
-	
 
 	private int seq;
 	private String content;
@@ -14,6 +13,22 @@ public class postVO {
 	private String color_tag;
 	private String comment;
 	private String like_nick;
+
+	
+	
+
+	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
+			String color_tag) {
+		super();
+		this.seq = seq;
+		this.content = content;
+		this.cnt = cnt;
+		this.nick = nick;
+		this.title = title;
+		this.region_tag = region_tag;
+		this.genre_tag = genre_tag;
+		this.color_tag = color_tag;
+	}
 
 
 		public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
