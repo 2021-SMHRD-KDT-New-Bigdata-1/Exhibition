@@ -62,7 +62,7 @@
 					</section>
 
 				<!-- Portfolio -->
-					<section id="myInfo" >
+					<section id="myInfo" class="select_t">
 						<div class="container">
 
 							<header>
@@ -272,9 +272,7 @@
 			<div id="footer">
 
 				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+					
 
 			</div>
 
@@ -297,6 +295,78 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script language="JavaScript">
+			// 설정 시작
+			var maxChecked1 = 3;
+			var totalChecked1 = 0;
+			var maxChecked2 = 3;
+			var totalChecked2 = 0;
+			var maxChecked3 = 3;
+			var totalChecked3 = 0;
+			// 설정 끝
+			
+			/*function CountChecked(field) {
+				if (field.checked)
+					totalChecked += 1;
+				else
+					totalChecked -= 1; 
+				if (totalChecked > maxChecked) {
+					alert ("최대 3개 까지만 가능합니다.");
+					field.checked = false;
+					totalChecked -= 1;
+					} 
+				}
+			function ResetCount(){
+				totalChecked = 0;
+				}*/
+			
+			 $('input[type="checkbox"][name="region"]').click(function(){
+ 
+ 				 if($(this).prop('checked'))
+ 					 totalChecked1 +=1;
+ 				 else
+ 					 totalChecked1 -=1;
+ 				 
+ 				 if(totalChecked1 > maxChecked1){
+ 					 alert("최대 3개까지 선택 가능합니다.");
+ 					 $(this).prop('checked', false);
+ 					 totalChecked1 -=1;
+ 					 
+ 				 }});
+				
+ 				
+ 				
+			 $('input[type="checkbox"][name="color"]').click(function(){
+ 
+ 				 if($(this).prop('checked'))
+ 					 totalChecked2 +=1;
+ 				 else
+ 					 totalChecked2 -=1;
+ 				 
+ 				 if(totalChecked2 > maxChecked2){
+ 					 alert("최대 3개까지 선택 가능합니다.");
+ 					 $(this).prop('checked', false);
+ 					 totalChecked2 -=1;
+ 					 
+ 				 }});
+ 				
+			 $('input[type="checkbox"][name="genre"]').click(function(){
+ 
+ 				 if($(this).prop('checked'))
+ 					 totalChecked3 +=1;
+ 				 else
+ 					 totalChecked3 -=1;
+ 				 
+ 				 if(totalChecked3 > maxChecked3){
+ 					 alert("최대 3개까지 선택 가능합니다.");
+ 					 $(this).prop('checked', false);
+ 					 totalChecked3 -=1;
+ 					 
+ 				 }});
+ 				
+  
+  		 
+			</script>
 	
 	
 </body>

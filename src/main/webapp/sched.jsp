@@ -123,7 +123,12 @@
 			<div id="sidebar">
 
 				<!-- Logo -->
-					<h1 id="logo"><a href="Main.jsp">38กษ</a></h1>
+					<!--<h1 id="logo"><a href="Main.jsp">38กษ</a></h1>-->
+					  <a href="Main.jsp" id="logo"> <span class="symbol">
+										<img src="images/logo.png" alt="" style="width: 100%; max-width: 760px; vertical-align: middle"
+
+/></span></a>
+										
 
 				<!-- Calendar -->
 					<section class="box calendar">
