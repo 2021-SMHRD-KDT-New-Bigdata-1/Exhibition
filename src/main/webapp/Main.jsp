@@ -29,12 +29,12 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="Main.jsp" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">38กษ</span>
-								</a>
-
+								
 							
 									<nav id="nav">
+										<a href="Main.jsp" class="logo"> <span class="symbol">
+										<img src="images/logo.png" alt="" /></span>
+										</a>
 										<ul>
 											<li class="current"><a href="Main.jsp">HOME</a></li>
 											<li><a href="sched.jsp">SCHEDULE</a></li>
