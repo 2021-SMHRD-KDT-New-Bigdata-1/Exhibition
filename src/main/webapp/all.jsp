@@ -37,7 +37,7 @@
 
 							<!-- Logo -->
 								<a href="Main.jsp" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">38กษ</span>
+									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title"></span>
 								</a>
 
 							
