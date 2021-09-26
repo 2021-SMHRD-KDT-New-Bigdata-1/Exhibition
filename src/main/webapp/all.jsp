@@ -80,7 +80,7 @@
 							    <div class="inner">
 							    	<div class="table-wrapper">
 									<div class="field">
-									<form action = "tagpost">
+									<form action = "SearchCon">
 										<table>
 										<colgroup>
 

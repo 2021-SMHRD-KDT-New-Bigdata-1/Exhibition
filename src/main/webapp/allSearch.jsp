@@ -91,7 +91,7 @@
 							    <div class="inner">
 							    	<div class="table-wrapper">
 									<div class="field">
-									<form action = "tagpostCon">
+									<form action = "SearchCon">
 										<table>
 										<colgroup>
 
