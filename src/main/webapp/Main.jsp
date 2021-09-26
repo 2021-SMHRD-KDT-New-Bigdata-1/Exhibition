@@ -71,9 +71,7 @@
 <div id="main">
     <div class="inner">
         <header>
-            <h1>38℃<br></h1>
-           
-        <p>전시회 후기를 남겨주세요!</p>
+        
     </header>
     <section class="tiles">
         <article class="style1">
