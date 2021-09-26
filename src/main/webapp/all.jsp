@@ -92,7 +92,7 @@
 											<tr>
 												<td><strong>지역별 태그</strong></td>
 												<td>
-													<input type="checkbox" name="region" value="" id="region1"  onclick=CountChecked(this)>
+													<input type="checkbox" name="region" value="Seoul|Gyeonggi|Gangwon|Daejeon|Daegu|Busan|Gwangju|Ulsan|Incheon|Jeju|Chungnam|Chungbuk|Gyeongnam|Kyeongbuk|Jeonnam|Jeonbuk" id="region1">
 													<label for="region1">전체지역</label>
 													<input type="checkbox" name="region" value="Seoul" id="region2" onclick=CountChecked(this)>
 													<label for="region2">서울</label> 
@@ -131,8 +131,8 @@
 											<tr>
 												<td><strong>장르별 태그</strong></td>
 												<td>
-													<input type="checkbox" name="genre" value="AllGenre" id="genre0" onclick=CountChecked(this)>
-													<label for="genre0">All Genre</label> 
+													<input type="checkbox" name="genre" value="Western|Oriental|Design|Installation|Formative|Crafts|Architecture|Picture|Hands-on" id="genre0">
+													<label for="genre0">모든 장르</label>
 													<input type="checkbox" name="genre" value="Western" id="genre1" onclick=CountChecked(this)>
 													<label for="genre1">서양화</label> 
 													<input type="checkbox" name="genre" value="Oriental" id="genre2" onclick=CountChecked(this)>
@@ -156,7 +156,9 @@
 											<tr>
 												<td><strong>색감별(분위기) 태그</strong></td>
 												<td>
-													<input type="checkbox" name="color" value="White" id="color1"  onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="White|Black|Gray|Brown|Beige|Green|Blue|Purple|Yellow|Pink|Red|Ivory|LightGray|Khaki|Mint|NeonGreen|Olive|Navy|SkyBlue|Lavender|Mustard|DeepRed" id="color0">
+											<label for="color0">ALL COLOR</label>
+											<input type="checkbox" name="color" value="White" id="color1"  onclick=CountChecked(this)>
 											<label for="color1">White</label> 
 											<input type="checkbox" name="color" value="Black" id="color2"  onclick=CountChecked(this)>
 											<label for="color2">Black</label> 
