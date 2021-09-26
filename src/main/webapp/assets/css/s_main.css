@@ -1916,7 +1916,7 @@ input, select, textarea {
 
 	.box.calendar .inner {
 		position: fixed;
-		background-color: rgb(0, 64, 64);
+		background-color:rgba(47, 98, 0, 0.651);
 		border-radius: 0.4em;
 		padding: 0.75em 0.5em 0.75em 0.5em;
 		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
@@ -2275,7 +2275,7 @@ input, select, textarea {
 		text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5);
 		width: 14em;
 		padding: 3em 1.35em 1em 1.15em;
-		background: rgb(255, 255, 255) url("images/bg01.png");
+		background: #e8e8e8;
 		overflow-y: auto;
 		left: 0;
 		box-shadow: inset -0.1em 0em 0.35em 0em rgba(0, 0, 0, 0.15);
@@ -2505,7 +2505,7 @@ input, select, textarea {
 
 				#logo a {
 					display: block;
-					background-color: rgb(0, 64, 64);
+					background-color: rgba(47, 98, 0, 0.651);
 					background-image: url("images/bg01.png");
 					padding: 0.875em 0.25em;
 					border-radius: 0.2em;
@@ -2591,7 +2591,7 @@ input, select, textarea {
 				position: absolute;
 				width: 5.5em;
 				overflow: hidden;
-				background-color: #fff;
+				background-color: rgba(47, 98, 0, 0.651);
 				background-image: url("images/bg02.png");
 				left: -10.5em;
 				top: 0;
@@ -2609,7 +2609,7 @@ input, select, textarea {
 					text-align: center;
 					display: block;
 					font-size: 1.5em;
-					color: #999;
+					color: #1b252a;
 					border-bottom: solid 1px #ddd;
 					padding: 0 0 1em 0;
 					margin: 0 0 0.75em 0;

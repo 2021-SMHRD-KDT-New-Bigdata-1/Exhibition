@@ -1956,7 +1956,7 @@ input[type="checkbox"],
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				border-radius: 4px;
-				border: solid 1px #000000;
+				
 				content: '';
 				display: inline-block;
 				font-size: 1.25em;
@@ -1968,22 +1968,22 @@ input[type="checkbox"],
 				top: 0;
 				width: 0.8em;
 				margin: 6px 0 9px 0;
-  				margin-top: 1px \9;
+  				margin-top: 1px;
   				line-height: normal;
 			}
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #ffffff;
+			background: none;
 			border-color: #585858;
-			color: rgb(0, 0, 0);
+			color:#0b610b;
 			content: '\f00c';
 		}
 		
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f23453;
+			
 			box-shadow: 0 0 0 1px rgb(0, 128, 64);
 		}
 
