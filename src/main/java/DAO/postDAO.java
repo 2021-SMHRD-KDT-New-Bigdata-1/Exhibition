@@ -288,14 +288,14 @@ import VO.postVO;
 		
 		
 		//ÆZπŒ¿« postselect..
-	      public ArrayList<postVO> postselect(String region) {
+	      public ArrayList<postVO> postselect() {
 	          ArrayList<postVO> list = new ArrayList<postVO>();
 	          conn();
 	          
 	          try {
-	             String sql = "select * from post_reviews where region_tag = ?";
+	             String sql = "select * from post_reviews";
 	             psmt = conn.prepareStatement(sql);
-	             psmt.setString(1, region);
+	             //psmt.setString(1, region);
 	             rs = psmt.executeQuery();
 	             
 	             while(rs.next()) {
@@ -304,10 +304,11 @@ import VO.postVO;
 	                int cnt = rs.getInt(3);
 	                String nick = rs.getString(4);
 	                String title = rs.getString(5);
+	                String region_tag = rs.getString(6);
 	                String genre_tag = rs.getString(7);
 	                String color_tag = rs.getString(8);
 	                
-	                postVO vo = new postVO(seq, content, cnt, nick, title, region, genre_tag, color_tag);
+	                postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag);
 	                list.add(vo);
 	             }
 	             

@@ -35,64 +35,60 @@ public class SearchCon extends HttpServlet {
 		String search_region_tag = arrayJoin("|",region_tag);
 		String search_genre_tag = arrayJoin("|",genre_tag);
 		String search_color_tag = arrayJoin("|",color_tag);
-				
-//		System.out.println(region_tag);
-//		System.out.println(genre_tag);
-//		System.out.println(color_tag);
 
-		
 		postDAO dao = new postDAO();
-		
-//		ArrayList<postVO> AL = dao.search(region_tag,genre_tag,color_tag);
-//		if(AL!=null) {
-//			System.out.println("우선됨..");
-//			response.sendRedirect("allSearch.jsp");
-//			session.setAttribute("AL", AL);
-//		}else {
-//			System.out.println("놉");
-//		}
-		
-		ArrayList<postVO> AL = dao.postselect(search_region_tag);
+
+		ArrayList<postVO> AL = dao.postselect();
 		ArrayList<postVO> list = new ArrayList<postVO>();
 		
 		for (int i = 0; i < AL.size(); i++) {
+			String post_region = AL.get(i).getRegion_tag();
 			String post_genre = AL.get(i).getGenre_tag();
 			String post_color = AL.get(i).getColor_tag();
+			
+			String[] post_regioin_ar = post_region.split("\\|");
 			String[] post_genre_ar = post_genre.split("\\|");
 			String[] post_color_ar = post_color.split("\\|");
 			
-			if(search_genre_tag.contains(post_genre)) {
-				System.out.println("장르필터링통과");
-				int cnt = 0;
-				if(post_color_ar.length>color_tag.length) {
-					for(int j = 0; j<color_tag.length;j++) {
-						if(post_color.contains(color_tag[j])) { //내가 검색한 태그가 post태그에 포함되어있는지 검색!
-							cnt ++;
+			
+			if(search_region_tag.contains(post_region)) {
+				System.out.println("지역필터링통과");
+				if(search_genre_tag.contains(post_genre)) {
+					System.out.println("장르필터링통과");
+					int cnt = 0;
+					if(post_color_ar.length>color_tag.length) {
+						for(int j = 0; j<color_tag.length;j++) {
+							if(post_color.contains(color_tag[j])) { //내가 검색한 태그가 post태그에 포함되어있는지 검색!
+								cnt ++;
+							}
 						}
-					}
-					if(cnt == color_tag.length) { //*
-						System.out.println("컬러필터링 통과");
-						System.out.println(AL.get(i).getColor_tag());
-						list.add(AL.get(i));
-					}
-				}else{
-					for(int j = 0; j<color_tag.length;j++) {
-						if(post_color.contains(color_tag[j])) {
-							cnt ++;
+						if(cnt == color_tag.length) { //*
+							System.out.println("컬러필터링 통과");
+							System.out.println(AL.get(i).getGenre_tag());
+							System.out.println(AL.get(i).getColor_tag());
+							list.add(AL.get(i));
 						}
-					}
-					if(cnt == color_tag.length) { 	//*
-						System.out.println("컬러필터링 통과");
-						System.out.println(AL.get(i).getColor_tag());
-						list.add(AL.get(i));
+					}else{
+						for(int j = 0; j<color_tag.length;j++) {
+							if(post_color.contains(color_tag[j])) {
+								cnt ++;
+							}
+						}
+						if(cnt == post_color_ar.length) { 	//*
+							System.out.println("컬러필터링 통과");
+							System.out.println(AL.get(i).getGenre_tag());
+							System.out.println(AL.get(i).getColor_tag());
+							list.add(AL.get(i));
+						}
 					}
 				}
 			}
 		}
-		
-		if(list!=null) {
-			session.setAttribute("list", list);
-			response.sendRedirect("allSearch.jsp");
+			
+			if(list!=null) {
+				session.setAttribute("list", list);
+				response.sendRedirect("allSearch.jsp");
+				
 			
 		}
 		
