@@ -3,11 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<<<<<<< HEAD
         <title>ë¡œê·¸ì¸ / íšŒì›ê°€ì… í¼ í…œí”Œë¦¿</title>
-=======
-        <title>·Î±×ÀÎ / È¸¿ø°¡ÀÔ </title>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
         <link rel="stylesheet" href="STYLE.css">
     </head>
     <body>
@@ -19,35 +15,26 @@
                     <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
                 </div>
                 <form id="login" action="loginCon" class="input-group">
-                    <input type="text" class="input-field" name="id" placeholder="Enter ID" required>
+                    <input type="text" class="input-field" name="id" placeholder="User name" required>
                     <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
                 </form>
-<<<<<<< HEAD
                 <form id="register" action="joinCon" name = "f" class="input-group">
                     <input type="text" class="input-field" id="input_id" name="id" placeholder="Your id" required >
-=======
-                <form id="register" action="joinCon" class="input-group">
-                    <input type="text" class="input-field" id="input_id1" name="id" placeholder="Enter ID" required >
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
                    
                    <button class="check" onclick="idcheck()">ID Check<span id="sp1"></span></button>
                 
                    
                     <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
-<<<<<<< HEAD
                     <input type="text" class="input-field" id="input_nick" name="nick"placeholder="Enter nickname" required>
-=======
-                    <input type="text" class="input-field" id="input_id2" name="nick"placeholder="Enter Nickname" required>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
                     
                     <button class="check" onclick="nickcheck()">NICK check<span id="sp2"></span></button>
                 
                    
-                    <input type="text" class="input-field" name="name" placeholder="Enter Name" required>
+                    <input type="text" class="input-field" name="name" placeholder="User name" required>
                     <input type="text" class="input-field" name="tel"placeholder="Enter tel" required>
-                    <input type="text" class="input-field" name="bn"placeholder="Enter Business number">
+                    <input type="text" class="input-field" name="bn"placeholder="business number">
                     <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
                     <button type="button" class="submit" onclick = "allcheck()" >REGISTER</button>
                 </form>
@@ -63,16 +50,12 @@
                 x.style.left = "50px";
                 y.style.left = "450px";
                 z.style.left = "0";
-                x.style.outline = red;
-                z.style.outline = red;
-                
             }
 
             function register(){
                 x.style.left = "-400px";
                 y.style.left = "50px";
                 z.style.left = "110px";
-               
             }
         </script>
         
@@ -103,11 +86,7 @@
                   alert("ì¤‘ë³µëœ ì•„ì´ë””ì…ë‹ˆë‹¤.")
                   
                }else{
-<<<<<<< HEAD
             	   alert("ì‚¬ìš©ê°€ëŠ¥í•œ ì•„ì´ë””ì…ë‹ˆë‹¤.")
-=======
-                  alert("»ç¿ë°¡´ÉÇÑ ¾ÆÀÌµğÀÔ´Ï´Ù.")
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
                }
             },
             error : function(){
@@ -140,11 +119,7 @@
                   alert("ì¤‘ë³µëœ ë‹‰ë„¤ì„ì…ë‹ˆë‹¤.")
                   
                }else{
-<<<<<<< HEAD
             	   alert("ì‚¬ìš©ê°€ëŠ¥í•œ ë‹‰ë„¤ì„ì…ë‹ˆë‹¤.")
-=======
-                  alert("»ç¿ë°¡´ÉÇÑ ´Ğ³×ÀÓÀÔ´Ï´Ù.")
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
                }
             },
             error : function(){
