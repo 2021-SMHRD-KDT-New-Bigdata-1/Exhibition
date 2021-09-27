@@ -44,18 +44,21 @@
             var x = document.getElementById("login");
             var y = document.getElementById("register");
             var z = document.getElementById("btn");
+            var s = document.getElementById("togglebtn");
             
             
             function login(){
                 x.style.left = "50px";
                 y.style.left = "450px";
                 z.style.left = "0";
+                s.style.borderColor="#0b610b";
             }
 
             function register(){
                 x.style.left = "-400px";
                 y.style.left = "50px";
                 z.style.left = "110px";
+                s.style.borderColor="#0b610b";
             }
         </script>
         
