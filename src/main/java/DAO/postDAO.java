@@ -295,7 +295,7 @@ import VO.postVO;
 	          conn();
 	          
 	          try {
-	             String sql = "select * from post_reviews";
+	             String sql = "select * from post_reviews order by like_cnt desc";
 	             psmt = conn.prepareStatement(sql);
 	             //psmt.setString(1, region);
 	             rs = psmt.executeQuery();

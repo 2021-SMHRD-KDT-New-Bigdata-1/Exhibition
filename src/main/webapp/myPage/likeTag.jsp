@@ -20,15 +20,15 @@
 		<tr>
 			<td>지역별 태그</td>
 			<td>
-				전체보기<input type="checkbox" name="region" value="allregion">
-			 	서울<input type="checkbox" name="region" value="seoul">
+				전체지역<input type="checkbox" name="region" value="Seoul|Gyeonggi|Gangwon|Daejeon|Daegu|Busan|Gwangju|Ulsan|Incheon|Jeju|Chungnam|Chungbuk|Gyeongnam|Kyeongbuk|Jeonnam|Jeonbuk">
+			 	서울<input type="checkbox" name="region" value="Seoul">
 				경기<input type="checkbox" name="region" value="Gyeonggi">
 				강원<input type="checkbox" name="region" value="Gangwon">
 				대전<input type="checkbox" name="region" value="Daejeon">
 				대구<input type="checkbox" name="region" value="Daegu">
 				부산<input type="checkbox" name="region" value="Busan">
 				광주<input type="checkbox" name="region" value="Gwangju">
-			 	울산<input type="checkbox" name="region" value="ulsan">
+			 	울산<input type="checkbox" name="region" value="Ulsan">
 				인천<input type="checkbox" name="region" value="Incheon">
 				제주<input type="checkbox" name="region" value="Jeju">
 				충남<input type="checkbox" name="region" value="Chungnam">
@@ -42,42 +42,44 @@
 		<tr>
 			<td>장르별 태그</td>
 			<td>
+				모든 장르<input type="checkbox" name="genre" value="Western|Oriental|Design|Installation|Formative|Crafts|Architecture|Picture|Hands-on">
 				서양화<input type="checkbox" name="genre" value="Western">
 				동양화<input type="checkbox" name="genre" value="Oriental">
-				디자인<input type="checkbox" name="genre" value="design">
-				설치미술<input type="checkbox" name="genre" value="installation">
-				조형미술<input type="checkbox" name="genre" value="formative">
-				공예<input type="checkbox" name="genre" value="crafts">
-				건축<input type="checkbox" name="genre" value="architecture">
-				사진<input type="checkbox" name="genre" value="picture">
-				체험형<input type="checkbox" name="genre" value="hands-on">
+				디자인<input type="checkbox" name="genre" value="Design">
+				설치미술<input type="checkbox" name="genre" value="Installation">
+				조형미술<input type="checkbox" name="genre" value="Formative">
+				공예<input type="checkbox" name="genre" value="Crafts">
+				건축<input type="checkbox" name="genre" value="Architecture">
+				사진<input type="checkbox" name="genre" value="Picture">
+				체험형<input type="checkbox" name="genre" value="Hands-on">
 			</td>
 		</tr>
 		<tr>
 			<td>색감별(분위기) 태그</td>
 			<td>
-				white<input type="checkbox" name="color" value="white">
-				black<input type="checkbox" name="color" value="black">
-				gray<input type="checkbox" name="color" value="gray">
-				brown<input type="checkbox" name="color" value="brown">
-				beige<input type="checkbox" name="color" value="beige">
-				green<input type="checkbox" name="color" value="green">
-				blue<input type="checkbox" name="color" value="blue">
-				purple<input type="checkbox" name="color" value="purple">
-				yellow<input type="checkbox" name="color" value="yellow">
-				pink<input type="checkbox" name="color" value="pink">
-				red<input type="checkbox" name="color" value="red">
-				ivory<input type="checkbox" name="color" value="ivory">
-				light gray<input type="checkbox" name="color" value="lightgray">
-				khaki<input type="checkbox" name="color" value="khaki">
-				mint<input type="checkbox" name="color" value="mint">
-				neon green<input type="checkbox" name="color" value="neongreen">
-				olive<input type="checkbox" name="color" value="olive">
-				navy<input type="checkbox" name="color" value="navy">
-				sky blue<input type="checkbox" name="color" value="skyblue">
-				lavender<input type="checkbox" name="color" value="lavender">
-				mustard<input type="checkbox" name="color" value="mustard">
-				deepred<input type="checkbox" name="color" value="deepred">
+				ALL COLOR <input type="checkbox" name="color" value="White|Black|Gray|Brown|Beige|Green|Blue|Purple|Yellow|Pink|Red|Ivory|LightGray|Khaki|Mint|NeonGreen|Olive|Navy|SkyBlue|Lavender|Mustard|DeepRed">
+				White<input type="checkbox" name="color" value="White">
+				Black<input type="checkbox" name="color" value="Black">
+				Gray<input type="checkbox" name="color" value="Gray">
+				Brown<input type="checkbox" name="color" value="Brown">
+				Beige<input type="checkbox" name="color" value="Beige">
+				Green<input type="checkbox" name="color" value="Green">
+				Blue<input type="checkbox" name="color" value="Blue">
+				Purple<input type="checkbox" name="color" value="Purple">
+				Yellow<input type="checkbox" name="color" value="Yellow">
+				Pink<input type="checkbox" name="color" value="Pink">
+				Red<input type="checkbox" name="color" value="Red">
+				Ivory<input type="checkbox" name="color" value="Ivory">
+				Light Gray<input type="checkbox" name="color" value="LightGray">
+				Khaki<input type="checkbox" name="color" value="Khaki">
+				Mint<input type="checkbox" name="color" value="Mint">
+				Neon Green<input type="checkbox" name="color" value="NeonGreen">
+				Olive<input type="checkbox" name="color" value="Olive">
+				Navy<input type="checkbox" name="color" value="Navy">
+				Sky Blue<input type="checkbox" name="color" value="SkyBlue">
+				Lavender<input type="checkbox" name="color" value="Lavender">
+				Mustard<input type="checkbox" name="color" value="Mustard">
+				DeepRed<input type="checkbox" name="color" value="DeepRed">
 				
 			</td>
 		</tr>

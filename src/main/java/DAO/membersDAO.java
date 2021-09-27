@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import VO.membersVO;
 
@@ -173,5 +174,25 @@ public class membersDAO {
 				close();
 			}
 			return cnt;
+		}
+		
+		//관심분야 태그가 존재하는지 확인하는 메소드
+		public ArrayList<membersVO> checklike(String nick) {
+			conn();
+			ArrayList<membersVO> AL = new ArrayList<>();
+			
+			try {
+				String sql = "select mb_nick,like_region_tag,like_genre_tag,like_color_tag from members where mb_nick = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, nick);
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					String region_tag = rs.getString(2);
+					String genre_tag = rs.getString(3);
+					String color_tag = rs.getString(4);
+					AL.add(new membersVO(nick,region_tag,genre_tag,color_tag));
+				}
+			}catch(Exception e) {e.printStackTrace();}finally {close();}
+			return AL;
 		}
 }

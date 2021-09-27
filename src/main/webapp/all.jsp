@@ -1,3 +1,5 @@
+<%@page import="java.util.Collections"%>
+<%@page import="DAO.membersDAO"%>
 <%@page import="VO.postVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.postDAO"%>
@@ -11,22 +13,40 @@
 <title>38℃ - All Post</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/main.css" />
+<script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    	<link rel="stylesheet" href="assets/css/app.css">
+    	<link rel="stylesheet" href="assets/css/theme.css">
 </head>
  <body class="is-preload">
     <%
+	request.setCharacterEncoding("euc-kr");
+
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
     postDAO dao = new postDAO();
-	ArrayList<postVO> list = dao.allpost();
-	request.setCharacterEncoding("euc-kr");
+    membersDAO mdao = new membersDAO();
+    
+    ArrayList<postVO> list = dao.allpost();
+	
+    //로그인이 되어 있다면
+    if(vo!=null){
+    	//관심분야가 null값인지 확인하는 메소드 : checklike
+	    ArrayList<membersVO> AL = mdao.checklike(vo.getMB_nick());
+	    if(AL.get(0).getLike_region_tag()==null && AL.get(0).getLike_genre_tag()==null && AL.get(0).getLike_color_tag()==null){
+		    //만약 관심분야 설정하지 않은 사람의 경우
+	    	list = dao.allpost();
+	    }else{
+			//관심분야를 설정한 사람의 경우->정렬기준을 줘야되는데...
+	    	response.sendRedirect("orderbyCON?nick="+vo.getMB_nick()); //새로운 list를 받아와야함 !!
+	    	//list = (ArrayList<postVO>)session.getAttribute("list");
+			
+	    }//else문 끝
+    }
 	
     
     %>
-    <%if(vo!=null){ %>
-   		<%=vo.getMB_nick() %> 님 어서오세영
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
+   
+   	
     
         <!-- Wrapper -->
         <div id="wrapper">
@@ -37,42 +57,78 @@
 
 							<!-- Logo -->
 								<a href="Main.jsp" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">38℃</span>
+									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title"></span>
 								</a>
 
+
+								 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima"></a>
+					<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarsDefault">
+					   <ul class="navbar-nav mr-auto align-items-center">
+					      <form class="bd-search hidden-sm-down">
+					         <div class="dropdown-menu bd-search-results" id="search-results">
+					         </div>
+					      </form>
+					   </ul>
+					   <ul class="navbar-nav ml-auto align-items-center">
+					      <li class="nav-item">
+					      <a class="nav-link active" href="Main.jsp">HOME</a>
+					      </li>
+					      <li class="nav-item">
+					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
+					      </li>
+					      <li class="nav-item">
+					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      </li>
+					      <%if(vo!=null){ %>
+					      <li class="nav-item">
+					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      </li>
+					      <%}else{ %>
+					      <li class="nav-item">
+					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      </li>
+					      
+					       <%} %>
+                        <%if(vo!=null){ %>
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 </li>
+                                 
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="myPage.jsp"><span class="icon solid fa-user"></span></a>
+                                 </li>
+                              
+                              <%}else{ %>
+                              <!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
+                              <li class="nav-item">
+                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 </li>
+                                 
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-user"></span></a>
+                                 </li>
+                              
+                              
+                              <%} %>
+     
+							   </ul>
+							</div>
+							</nav>
 							
-									<nav id="nav">
-										<ul>
-											<li class="current"><a href="Main.jsp">HOME</a></li>
-											<li><a href="sched.jsp">SCHEDULE</a></li>
-											<li><a href="all.jsp">ALL POST</a></li>
-											
-											<%if(vo!=null){ %>
-											<!-- <li><a href="posting.jsp">POST</a></li>-->
-											<li><a href="summernote.jsp">POSTING</a></li>
-											<%}else{ %>
-											<li><a href="login.jsp">POSTING</a></li>
-											<%} %>
-											
-										</ul>
-										<%if(vo!=null){ %>
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<%}else{ %>
-										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
-										
-										<%} %>
-									</nav>
+									
 								
 								
 						</div>
 					</header>
-					
+					 <%if(vo!=null){ %>
+   		<%=vo.getMB_nick() %> 님 어서오세영
+   	<%}else{ %>
+   	로그인하세요
+   	<%} %>
 			
 
 							<!-- Main -->
@@ -224,6 +280,8 @@
 			<td><strong>지역</strong></td>
 			<td><strong>장르</strong></td>
 			<td><strong>색감</strong></td>
+			<!-- 잠시 -->
+			<td><strong>cnt</strong></td>
 		</tr>
 		
 		<%
@@ -278,6 +336,7 @@
 			}
 			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
 			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
+			out.print("<td>"+list.get(i).getLike_tag_cnt()+"</td>");
 			%>
 			
 			<!-- 게시물보기 버튼 삭제하고 tr자체 클릭 시 onepost로 가도록 설정했음, tr태그의 onclick속성 참고 -->

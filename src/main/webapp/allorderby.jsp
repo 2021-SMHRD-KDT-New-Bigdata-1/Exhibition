@@ -1,3 +1,5 @@
+<%@page import="java.util.Collections"%>
+<%@page import="DAO.membersDAO"%>
 <%@page import="VO.postVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.postDAO"%>
@@ -8,27 +10,27 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>38℃ - Selected Post</title>
+<title>38℃ - All Post</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/main.css" />
+<script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    	<link rel="stylesheet" href="assets/css/app.css">
+    	<link rel="stylesheet" href="assets/css/theme.css">
 </head>
  <body class="is-preload">
     <%
+	request.setCharacterEncoding("euc-kr");
+
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
     postDAO dao = new postDAO();
-	request.setCharacterEncoding("euc-kr");
-
-	
-	ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
-
+    membersDAO mdao = new membersDAO();
+    
+    ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
 	
     %>
-    <%if(vo!=null){ %>
-   		<%=vo.getMB_nick() %> 님 어서오세영
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
+    
+   	
     
         <!-- Wrapper -->
         <div id="wrapper">
@@ -38,45 +40,72 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="Main.jsp" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">38℃</span>
-								</a>
-
-							
-									<nav id="nav">
-										<ul>
-											<li class="current"><a href="Main.jsp">HOME</a></li>
-											<li><a href="sched.jsp">SCHEDULE</a></li>
-											<li><a href="all.jsp">ALL POST</a></li>
-											
-											<%if(vo!=null){ %>
-											<!-- <li><a href="posting.jsp">POST</a></li>-->
-											<li><a href="summernote.jsp">POSTING</a></li>
-											<%}else{ %>
-											<li><a href="login.jsp">POSTING</a></li>
-											<%} %>
-											
-										</ul>
-										<%if(vo!=null){ %>
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<%}else{ %>
-										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										<a href="login.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<%} %>
-									</nav>
-								
-								
+								 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima"></a>
+					<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarsDefault">
+					   <ul class="navbar-nav mr-auto align-items-center">
+					      <form class="bd-search hidden-sm-down">
+					         <div class="dropdown-menu bd-search-results" id="search-results">
+					         </div>
+					      </form>
+					   </ul>
+					   <ul class="navbar-nav ml-auto align-items-center">
+					      <li class="nav-item">
+					      <a class="nav-link active" href="Main.jsp">HOME</a>
+					      </li>
+					      <li class="nav-item">
+					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
+					      </li>
+					      <li class="nav-item">
+					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      </li>
+					      <%if(vo!=null){ %>
+					      <li class="nav-item">
+					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      </li>
+					      <%}else{ %>
+					      <li class="nav-item">
+					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      </li>
+					      
+					       <%} %>
+                        <%if(vo!=null){ %>
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 </li>
+                                 
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="myPage.jsp"><span class="icon solid fa-user"></span></a>
+                                 </li>
+                              
+                              <%}else{ %>
+                              <!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
+                              <li class="nav-item">
+                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 </li>
+                                 
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-user"></span></a>
+                                 </li>
+                              
+                              
+                              <%} %>
+     
+							   </ul>
+							</div>
+							</nav>
 						</div>
 					</header>
 					
 			
-
+<%if(vo!=null){ %>
+   		<%=vo.getMB_nick() %> 님 관심분야 자동정렬
+   	<%}else{ %>
+   	로그인하세요
+   	<%} %>
 							<!-- Main -->
 							<div id="main">
 							    <div class="inner">
@@ -84,7 +113,6 @@
 									<div class="field">
 									<form action = "SearchCon">
 										<table>
-										
 										<colgroup>
 
 										<col style="width:20%;">
@@ -216,8 +244,8 @@
 										</div>
 										</div>
 										
-										<div class="table-wrapper">
-										<table>
+		<div class="table-wrapper">
+		<table>
 		<tr>
 			<td><strong>게시물번호</strong></td>
 			<td><strong>내용</strong></td>
@@ -227,12 +255,11 @@
 			<td><strong>지역</strong></td>
 			<td><strong>장르</strong></td>
 			<td><strong>색감</strong></td>
+			<!-- 잠시 -->
+			<td><strong>cnt</strong></td>
 		</tr>
 		
-		
-		
 		<%
-		//if()
 		for(int i = 0; i<list.size(); i++){
 			String region = list.get(i).getRegion_tag();
 			String[] region_tag = region.split("\\|");
@@ -242,8 +269,10 @@
 			String[] color_tag = color.split("\\|");
 			
 			//region.replace(String.valueOf('|'),"");
+			%>
+			<tr onclick="location.href='onepost.jsp?seq=<%=list.get(i).getSeq()%>'" style="cursor:pointer;">
 			
-			out.print("<tr>");
+			<%
 			out.print("<td>"+list.get(i).getSeq()+"</td>");
 			out.print("<td>"+list.get(i).getContent()+"</td>");
 			out.print("<td>"+list.get(i).getCnt()+"</td>");
@@ -260,19 +289,17 @@
 				out.print(region+"</td>");
 			}
 			out.print("<td>");
-			
 			if(dao.count(genre,'|')!=0){
 				for(int j =0; j<genre_tag.length; j++){
 					out.print(genre_tag[j]);
 					}
 			
 			out.print("</td>");
-			
 			}else{
 				out.print(genre+"</td>");
 			}
-			out.print("<td>");
 			
+			out.print("<td>");
 			if(dao.count(color,'|')!=0){
 				for(int j =0; j<color_tag.length; j++){
 					out.print(color_tag[j]);
@@ -284,6 +311,14 @@
 			}
 			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
 			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
+			out.print("<td>"+list.get(i).getLike_tag_cnt()+"</td>");
+			%>
+			
+			<!-- 게시물보기 버튼 삭제하고 tr자체 클릭 시 onepost로 가도록 설정했음, tr태그의 onclick속성 참고 -->
+			<!-- <td><a href="onepost.jsp?seq=<'%=list.get(i).getSeq()%>">게시물 보기</a></td> -->
+			<!-- tr에 커서 올리면 모양 바뀌게 설정??? 어떻게 하더랑 -->
+			
+			<%
 			out.print("</tr>");
 		} %>
 	</table>
@@ -301,6 +336,7 @@
 			                <div class="content">
 			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 			                </div>
+			               
 			            </a>
 			        </article>
 			       <!--  <article class="style2">
@@ -423,8 +459,8 @@
 			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 			                </div>
 			            </a>
-			        </article>
-			    </section>-->
+			        </article>-->
+			    </section>
 			    </div>
 			</div>
 			</div>
@@ -504,6 +540,11 @@
  				
   
   		 
+			
+  
+ 		
+			
+			
 			</script>
 </body>
 </html>

@@ -12,8 +12,19 @@ public class membersVO {
 	private String like_region_tag;
 	private String like_genre_tag;
 	private String like_color_tag;
+
 	
 	
+	//checklike를 위한 생성자
+	public membersVO(String mB_nick, String like_region_tag, String like_genre_tag, String like_color_tag) {
+		super();
+		MB_nick = mB_nick;
+		this.like_region_tag = like_region_tag;
+		this.like_genre_tag = like_genre_tag;
+		this.like_color_tag = like_color_tag;
+	}
+
+
 	public membersVO(String mB_nick, String mB_id, String mB_pw, String mB_tel, String mB_nm, String mB_type,
 			String mB_bn, String like_region_tag, String like_genre_tag, String like_color_tag) {
 		super();
