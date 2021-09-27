@@ -14,7 +14,6 @@
        <link rel="stylesheet" href="assets/css/theme.css">
         
         <link rel="stylesheet" href="assets/css/main.css"/>
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
     </head> 
 
     <body class="is-preload">
@@ -61,7 +60,7 @@
 					      </li>
 					      <%}else{ %>
 					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      <a class="nav-link" href="login.jsp">POSTING</a>
 					      </li>
 					      
 					       <%} %>

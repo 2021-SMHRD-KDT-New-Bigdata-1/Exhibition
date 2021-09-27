@@ -12,6 +12,9 @@
 <title>38℃ - Saved Posts</title>
 <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+       <link rel="stylesheet" href="assets/css/app.css">
+       <link rel="stylesheet" href="assets/css/theme.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -48,46 +51,63 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="Main.jsp" class="logo"> <span class="symbol"><img
-						src="images/logo.svg" alt="" /></span><span class="title">38℃</span>
-				</a>
-
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="Main.jsp">HOME</a></li>
-						<li><a href="sched.jsp">SCHEDULE</a></li>
-						<li><a href="all.jsp">ALL POST</a></li>
-
-						<%
-						if (vo != null) {
-						%>
-						<!-- <li><a href="posting.jsp">POST</a></li>-->
-						<li><a href="posting.jsp">POSTING</a></li>
-						<%
-						} else {
-						%>
-						<li><a href="login.jsp">POSTING</a></li>
-						<%
-						}
-						%>
-						<!-- 소야니 홧팅 ㅎㅎㅎㅎㅎㅎ -->
-						<!-- <li><a href="#">이름4</a></li> -->
-						<!-- 필요없으면 개수 지워도 됨 -->
-					</ul>
-						<%if(vo!=null){ %>
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<a href="myPage.jsp" class="btn_d"><img src="images/user.svg" alt=""/></span>
-											<span class="title"></span></a>
-										<%}else{ %>
-										<!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-										
-										<a href="bookMark.jsp" class="btn_c"><img src="images/bookmark.svg" alt=""/></a>
-										<a href="login.jsp" class="btn_d"><img src="images/user.svg" alt=""/></a>
-										
-										<%} %>
-				</nav>
+				<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima"></a>
+					<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarsDefault">
+					   <ul class="navbar-nav mr-auto align-items-center">
+					      <form class="bd-search hidden-sm-down">
+					         <div class="dropdown-menu bd-search-results" id="search-results">
+					         </div>
+					      </form>
+					   </ul>
+					   <ul class="navbar-nav ml-auto align-items-center">
+					      <li class="nav-item">
+					      <a class="nav-link active" href="Main.jsp">HOME</a>
+					      </li>
+					      <li class="nav-item">
+					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
+					      </li>
+					      <li class="nav-item">
+					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      </li>
+					      <%if(vo!=null){ %>
+					      <li class="nav-item">
+					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      </li>
+					      <%}else{ %>
+					      <li class="nav-item">
+					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      </li>
+					      
+					       <%} %>
+                        <%if(vo!=null){ %>
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 </li>
+                                 
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="myPage.jsp"><span class="icon solid fa-user"></span></a>
+                                 </li>
+                              
+                              <%}else{ %>
+                              <!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
+                              <li class="nav-item">
+                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 </li>
+                                 
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-user"></span></a>
+                                 </li>
+                              
+                              
+                              <%} %>
+     
+							   </ul>
+							</div>
+							</nav>
 
 			</div>
 		</header>

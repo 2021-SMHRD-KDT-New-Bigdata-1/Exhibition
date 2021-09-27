@@ -12,10 +12,10 @@
 <meta charset="EUC-KR">
 <title>38℃ - All Post</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/main.css" />
 <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
     	<link rel="stylesheet" href="assets/css/app.css">
     	<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/main.css" />
 </head>
  <body class="is-preload">
     <%
@@ -95,10 +95,11 @@
                               <%} %>
      
 							   </ul>
-							</div>
+							
 							</nav>
 						</div>
 					</header>
+					
 					
 			
 <%if(vo!=null){ %>
@@ -538,13 +539,8 @@
  					 
  				 }});
  				
-  
-  		 
-			
-  
- 		
-			
-			
 			</script>
+			<script src="assets/js/app.js"></script>
+<script src="assets/js/theme.js"></script>
 </body>
 </html>

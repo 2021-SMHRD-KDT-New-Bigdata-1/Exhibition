@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>로그인 / 회원가입 폼 템플릿</title>
+        <title>38℃ - 로그인 / 회원가입 </title>
         <link rel="stylesheet" href="STYLE.css">
     </head>
     <body>

@@ -12,10 +12,10 @@
 <meta charset="EUC-KR">
 <title>38℃ - All Post</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/main.css" />
 <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
     	<link rel="stylesheet" href="assets/css/app.css">
     	<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/main.css" />
 </head>
  <body class="is-preload">
     <%
@@ -56,12 +56,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="Main.jsp" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title"></span>
-								</a>
-
-
-								 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+					<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
 					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima"></a>
 					<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -89,7 +84,7 @@
 					      </li>
 					      <%}else{ %>
 					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      <a class="nav-link" href="login.jsp">POSTING</a>
 					      </li>
 					      
 					       <%} %>
@@ -118,17 +113,13 @@
 							   </ul>
 							</div>
 							</nav>
-							
-									
-								
-								
 						</div>
 					</header>
-					 <%if(vo!=null){ %>
-   		<%=vo.getMB_nick() %> 님 어서오세영
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
+						 <%if(vo!=null){ %>
+				   		<%=vo.getMB_nick() %> 님 어서오세영
+				   	<%}else{ %>
+				   	로그인하세요
+				   	<%} %>			
 			
 
 							<!-- Main -->
@@ -563,13 +554,8 @@
  					 
  				 }});
  				
-  
-  		 
-			
-  
- 		
-			
-			
 			</script>
+			<script src="assets/js/app.js"></script>
+<script src="assets/js/theme.js"></script>
 </body>
 </html>

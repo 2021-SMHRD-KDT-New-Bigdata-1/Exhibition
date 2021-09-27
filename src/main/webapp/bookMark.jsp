@@ -26,10 +26,10 @@
 <meta charset="EUC-KR">
 <title>38℃ - <%=vo.getMB_nick() %>의 저장된 게시물</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/main.css" />
 <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
        <link rel="stylesheet" href="assets/css/app.css">
        <link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="is-preload">
 	<!-- <h1>북마크 페이지</h1> -->
