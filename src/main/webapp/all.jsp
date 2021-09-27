@@ -1,3 +1,5 @@
+<%@page import="java.util.Collections"%>
+<%@page import="DAO.membersDAO"%>
 <%@page import="VO.postVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.postDAO"%>
@@ -14,11 +16,29 @@
 </head>
  <body class="is-preload">
     <%
+	request.setCharacterEncoding("euc-kr");
+
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
     postDAO dao = new postDAO();
-	ArrayList<postVO> list = dao.allpost();
-	request.setCharacterEncoding("euc-kr");
+    membersDAO mdao = new membersDAO();
+    
+    ArrayList<postVO> list = dao.allpost();
+	
+    //로그인이 되어 있다면
+    if(vo!=null){
+    	//관심분야가 null값인지 확인하는 메소드 : checklike
+	    ArrayList<membersVO> AL = mdao.checklike(vo.getMB_nick());
+	    if(AL.get(0).getLike_region_tag()==null && AL.get(0).getLike_genre_tag()==null && AL.get(0).getLike_color_tag()==null){
+		    //만약 관심분야 설정하지 않은 사람의 경우
+	    	list = dao.allpost();
+	    }else{
+			//관심분야를 설정한 사람의 경우->정렬기준을 줘야되는데...
+	    	response.sendRedirect("orderbyCON?nick="+vo.getMB_nick()); //새로운 list를 받아와야함 !!
+	    	//list = (ArrayList<postVO>)session.getAttribute("list");
+			
+	    }//else문 끝
+    }
 	
     
     %>
@@ -27,6 +47,7 @@
    	<%}else{ %>
    	로그인하세요
    	<%} %>
+   	
     
         <!-- Wrapper -->
         <div id="wrapper">
@@ -224,6 +245,8 @@
 			<td><strong>지역</strong></td>
 			<td><strong>장르</strong></td>
 			<td><strong>색감</strong></td>
+			<!-- 잠시 -->
+			<td><strong>cnt</strong></td>
 		</tr>
 		
 		<%
@@ -278,6 +301,7 @@
 			}
 			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
 			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
+			out.print("<td>"+list.get(i).getLike_tag_cnt()+"</td>");
 			%>
 			
 			<!-- 게시물보기 버튼 삭제하고 tr자체 클릭 시 onepost로 가도록 설정했음, tr태그의 onclick속성 참고 -->

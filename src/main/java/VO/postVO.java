@@ -13,8 +13,30 @@ public class postVO {
 	private String color_tag;
 	private String comment;
 	private String like_nick;
+	//태그별 정렬을 위한 필드 하나 만듦
+	private int like_tag_cnt;
 
-	
+
+
+
+	//태그별 정렬을 위한 생성자
+	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
+			String color_tag, String comment, String like_nick, int like_tag_cnt) {
+		super();
+		this.seq = seq;
+		this.content = content;
+		this.cnt = cnt;
+		this.nick = nick;
+		this.title = title;
+		this.region_tag = region_tag;
+		this.genre_tag = genre_tag;
+		this.color_tag = color_tag;
+		this.comment = comment;
+		this.like_nick = like_nick;
+		this.like_tag_cnt = like_tag_cnt;
+	}
+
+
 	//전체생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
 			String color_tag, String comment, String like_nick) {
@@ -29,6 +51,7 @@ public class postVO {
 		this.color_tag = color_tag;
 		this.like_nick= like_nick;	
 		}
+	
 	
 	//postselect을 위한 생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
@@ -149,7 +172,21 @@ public class postVO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	public String getLike_nick() {
+		return like_nick;
+	}
 
+	public void setLike_nick(String like_nick) {
+		this.like_nick = like_nick;
+	}
+
+	public int getLike_tag_cnt() {
+		return like_tag_cnt;
+	}
+
+	public void setLike_tag_cnt(int like_tag_cnt) {
+		this.like_tag_cnt = like_tag_cnt;
+	}
 	
 	
 }
