@@ -77,12 +77,7 @@
 					      <li class="nav-item">
 					      <a class="nav-link" href="summernote.jsp">POSTING</a>
 					      </li>
-					      <%}else{ %>
-					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
-					      </li>
-					      
-					       <%} %>
+					      <%}%>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
                                  <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
@@ -92,18 +87,8 @@
                                  <a class="nav-link" href="myPage.jsp"><span class="icon solid fa-user"></span></a>
                                  </li>
                               
-                              <%}else{ %>
-                              <!-- 로그인 안되어 있을 경우 다른 이벤트 넣기 -->
-                              <li class="nav-item">
-                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-bookmark"></span></a>
-                                 </li>
-                                 
-                                 <li class="nav-item">
-                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-user"></span></a>
-                                 </li>
+                              <%}%>
                               
-                              
-                              <%} %>
      
 							   </ul>
 							</div>
