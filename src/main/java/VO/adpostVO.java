@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class adpostVO {
 	
+
 	private int seq;
 	private String nick;
 	private String content;
@@ -11,7 +12,25 @@ public class adpostVO {
 	private Date date;
 	private String genre;
 	private String color;
+	private int like_cnt;
+	private String like_nick;
+	private String ad_comment;
 	
+	//穿端持失切
+	public adpostVO(int seq, String nick, String content, String region, Date date, String genre, String color,
+			int like_cnt, String like_nick, String ad_comment) {
+		super();
+		this.seq = seq;
+		this.nick = nick;
+		this.content = content;
+		this.region = region;
+		this.date = date;
+		this.genre = genre;
+		this.color = color;
+		this.like_cnt = like_cnt;
+		this.like_nick = like_nick;
+		this.ad_comment = ad_comment;
+	}
 	
 	public adpostVO(String nick, String content, String region, String genre, String color) {
 		super();
@@ -89,6 +108,28 @@ public class adpostVO {
 		this.color = color;
 	}
 	
-	
+	public int getLike_cnt() {
+		return like_cnt;
+	}
+
+	public void setLike_cnt(int like_cnt) {
+		this.like_cnt = like_cnt;
+	}
+
+	public String getLike_nick() {
+		return like_nick;
+	}
+
+	public void setLike_nick(String like_nick) {
+		this.like_nick = like_nick;
+	}
+
+	public String getAd_comment() {
+		return ad_comment;
+	}
+
+	public void setAd_comment(String ad_comment) {
+		this.ad_comment = ad_comment;
+	}
 
 }

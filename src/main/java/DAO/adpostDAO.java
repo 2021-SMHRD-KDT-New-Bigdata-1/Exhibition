@@ -41,18 +41,14 @@ public class adpostDAO {
 			}
 		}
 		
+		//광고게시물 포스팅 메소드
 		public int adposting(adpostVO vo) {
-			
 			 int cnt = 0;
-		      
 			 conn();
-		      
-		      try {
-		    	  							
-		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, sysdate, ?, ?, ?)";
-		         
+		     
+			 try {
+		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, sysdate, ?, ?, ?, ?,?,?)";
 		         psmt = conn.prepareStatement(sql);
-		         
 		         
 		         psmt.setString(1, vo.getNick());
 		         psmt.setString(2, vo.getContent()); //좋아요 카운트 null로 넣는거를 0으로 변경
@@ -60,7 +56,9 @@ public class adpostDAO {
 		         //psmt.setDate(3, (Date) vo.getDate());
 		         psmt.setString(4, vo.getGenre());
 		         psmt.setString(5, vo.getColor());
-		         
+		         psmt.setInt(6, vo.getLike_cnt());
+		         psmt.setString(7, vo.getLike_nick());
+		         psmt.setString(8, vo.getAd_comment());
 		         
 		         cnt = psmt.executeUpdate();
 		         
@@ -68,18 +66,14 @@ public class adpostDAO {
 		      return cnt;
 		}
 		
+		//쓸모없는거 - 창민 zzz
 		public ArrayList<adpostVO> allsearchAD(){
-			
 			ArrayList<adpostVO> list = new ArrayList<adpostVO>();
 			conn();
-			
 			try {
 				String sql = "select * from post_reviews p INNER JOIN members m ON p.mb_nick = m.mb_nick where m.mb_bn is not null  ";
-				
 				psmt = conn.prepareStatement(sql);
-				
 				rs = psmt.executeQuery();
-				
 				while(rs.next()) {
 					int ad_seq = rs.getInt(1);
 					String ad_nick = rs.getString(2);
@@ -90,11 +84,7 @@ public class adpostDAO {
 					String ad_color = rs.getString(7);
 					String m_nick = rs.getString(8);
 					String m_id = rs.getString(9);
-					
 				}
-					
-					
-				
 				
 			} catch(Exception e) {} finally {}
 			return list;
