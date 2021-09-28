@@ -71,20 +71,20 @@
                      <form action = "modifyCon" method = "post" >
                      <table border=1>
                      
-                     
-                     <td colspan=2><h3>개인 정보 수정</h3></td>
+                     <tr>
+                     <td colspan=2><h3><strong>개인 정보 수정</strong></h3></td>
                      </tr>
                      
                      <tr>
-                        <th>이름</th>
+                        <td>이름</td>
                         <td><input type = "text" name = "name" required></td>
                      </tr>
                      <tr>
-                        <th>아이디</th>
+                        <td>아이디</td>
                         <td><input type = "text" name = "id" required></td>
                      </tr>
                      <tr>
-                        <th>비밀번호</th>
+                        <td>비밀번호</td>
                         <td><input type = "password" name = "pw" required></td>
                      </tr>
                      <!-- 
@@ -94,7 +94,7 @@
                      </tr>
                      -->
                      <tr>
-                        <th>전화번호</th>
+                        <td>전화번호</td>
                         <td><input type = "text" name = "tel" required> (인증하는거 넣기)</td>
                      </tr>
                      <!-- 
@@ -142,7 +142,7 @@
                               
                      	<tr>
                      	<td colspan=2">
-                     	<h3>관심 태그 설정</h3>
+                     	<h3><strong>관심 태그 설정</strong></h3>
                      	<td>
                      	</tr>
                                  <tr>
@@ -259,7 +259,7 @@
                                     </tr>
    
                                     <tr>
-                                       <td colspan="2" align="center"><input type="submit" value="수정"> </td>
+                                       <td colspan="2" ><input type="submit" value="수정"> </td>
                                     </tr>
                                  </table>
                                  
