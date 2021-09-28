@@ -112,10 +112,8 @@ input, select, textarea {
 
    h1, h2, h3, h4, h5, h6 {
       font-weight: 300;
-      color:white;
+      color: #666;
       line-height: 1.5em;
-      text-align:center;
-      background-color: none;
    }
 
    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -126,12 +124,6 @@ input, select, textarea {
       h1 a strong, h2 a strong, h3 a strong, h4 a strong, h5 a strong, h6 a strong {
          color: #333;
       }
-      
-   h4{
-   background-color: black;
-  
-   
-   }
 
    h2 {
       font-size: 2em;
@@ -2037,11 +2029,6 @@ input[type="checkbox"],
       table td {
          padding: 0.5em 0.5em;
       }
-      
-      
-      .tdcenter{
-      	text-align: center;
-      }
 
       table th {
          font-size: 1.3em;
@@ -2115,7 +2102,7 @@ input[type="checkbox"],
       input[type="reset"]:hover,
       button:hover,
       .button:hover {
-         background-color: #9ececc;
+         background-color: rgba(47, 98, 0, 0.651);
       }
 
       input[type="button"]:active,
@@ -2449,7 +2436,7 @@ input[type="checkbox"],
       /* Main */
 
          #main > section {
-            padding: 6em 0;
+            padding: 3em 0;
          }
 
          #main section.cover {
