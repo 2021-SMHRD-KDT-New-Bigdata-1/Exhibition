@@ -112,6 +112,26 @@ public class membersDAO {
 		return cnt;
 		}
 		
+		
+		public boolean bncheck(String nick) {
+			boolean check = false;
+			conn();
+			
+			try {
+				
+				String sql = "select * from members where mb_bn is not null ";
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+				
+				if(rs.next()) {
+					check = true;
+				}else {
+					check = false;
+				}
+			} catch(Exception e) {e.printStackTrace();} finally {}
+			return check;
+		}
+		
 		public boolean idcheck(String id){
 			
 			boolean check = false;

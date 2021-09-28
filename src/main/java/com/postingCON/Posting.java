@@ -17,8 +17,10 @@ import javax.servlet.http.HttpSession;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import DAO.adpostDAO;
 import DAO.membersDAO;
 import DAO.postDAO;
+import VO.adpostVO;
 import VO.membersVO;
 import VO.postVO;
 
@@ -120,15 +122,35 @@ public class Posting extends HttpServlet {
 		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag,genre_tag,color_tag);
 		
 		postDAO dao = new postDAO();
+		membersDAO  mdao = new membersDAO(); 
+		adpostDAO adao = new adpostDAO();
+		adpostVO avo = new adpostVO(vo.getMB_nick(), content, region_tag, genre_tag, color_tag);
 		
-		int cnt = dao.posting(pvo);
 		
-		if(cnt>0) {
-			System.out.println("포스팅 완료");
-			response.sendRedirect("all.jsp");
+		int cnt1 = 0;
+		int cnt2 = 0;
+		
+		if(mdao.bncheck(vo.getMB_nick()) == true) {
+			cnt2 = adao.adposting(avo);
 		}else {
+			cnt1 = dao.posting(pvo);
+		}
+		response.sendRedirect("all.jsp");
+		
+		
+		
+		
+		if(cnt1 + cnt2>0) {
+			if(cnt2>0) {
+				System.out.println("광고포스팅 완료");
+			}else {
+				System.out.println("일반포스팅 완료");
+				
+			}
+		}else if(cnt1 + cnt2==0) {
 			System.out.println("포스팅 실패..");
 		}
+		
 	}
 	
 	 public static String arrayJoin(String glue, String array[]) {
