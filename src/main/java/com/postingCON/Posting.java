@@ -137,16 +137,13 @@ public class Posting extends HttpServlet {
 		}
 		response.sendRedirect("all.jsp");
 		
-		
-		
-		
 		if(cnt1 + cnt2>0) {
 			if(cnt2>0) {
 				System.out.println("광고포스팅 완료");
 			}else {
 				System.out.println("일반포스팅 완료");
-				
 			}
+			
 		}else if(cnt1 + cnt2==0) {
 			System.out.println("포스팅 실패..");
 		}
