@@ -72,19 +72,19 @@
                      <table border=1>
                      
                      
-                     <td colspan=2><h3><strong>개인 정보 수정</strong></h3></td>
+                     <td colspan=2><h3>개인 정보 수정</h3></td>
                      </tr>
                      
                      <tr>
-                        <td>이름</td>
+                        <th>이름</th>
                         <td><input type = "text" name = "name" required></td>
                      </tr>
                      <tr>
-                        <td>아이디</td>
+                        <th>아이디</th>
                         <td><input type = "text" name = "id" required></td>
                      </tr>
                      <tr>
-                        <td>비밀번호</td>
+                        <th>비밀번호</th>
                         <td><input type = "password" name = "pw" required></td>
                      </tr>
                      <!-- 
@@ -94,7 +94,7 @@
                      </tr>
                      -->
                      <tr>
-                        <td>전화번호</td>
+                        <th>전화번호</th>
                         <td><input type = "text" name = "tel" required> (인증하는거 넣기)</td>
                      </tr>
                      <!-- 
@@ -142,7 +142,7 @@
                               
                      	<tr>
                      	<td colspan=2">
-                     	<h3><strong>관심 태그 설정</strong></h3>
+                     	<h3>관심 태그 설정</h3>
                      	<td>
                      	</tr>
                                  <tr>

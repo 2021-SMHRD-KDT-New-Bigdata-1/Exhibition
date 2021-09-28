@@ -140,8 +140,9 @@ input, select, textarea {
 
    h3 {
       font-size: 2em;
+      color:white;
       text-align : center;
-      background : black;
+      background :black;
    }
 
    header {
