@@ -49,6 +49,7 @@ public class postVO {
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
+		this.comment = comment;
 		this.like_nick= like_nick;	
 		}
 	
