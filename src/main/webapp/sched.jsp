@@ -54,20 +54,13 @@
    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
        <link rel="stylesheet" href="assets/css/app.css">
        <link rel="stylesheet" href="assets/css/theme.css">
+      <link rel="stylesheet" href="assets/css/s_main.css" />
       <link rel="stylesheet" href="assets/css/main.css" />
       
    </head>
    <body class="is-preload">
-
-     <!-- Wrapper -->
-        <div id="wrapper">
-
-               <!-- Header -->
-               <header id="header">
-                  <div class="inner">
-
-                     <!-- Logo -->
-                 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<header id="header">
+         <div class="inner"><nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
 					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima"></a>
 					<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -124,19 +117,16 @@
 							   </ul>
 							</div>
 							</nav>
-                     
-                   
-                  </div>
-               </header>
-   
+     </div>
+         </header>
 
-
-    
-      <!-- Content -->
          <div id="content">
+         
+         
             <div class="inner">
-
+				
                <!-- Post -->
+               
                   <article class="box post post-excerpt">
                      <header>
                         
@@ -207,15 +197,10 @@
 
             <!-- Logo -->
                <!--<h1 id="logo"><a href="Main.jsp">38¡É</a></h1>-->
-                 <a href="Main.jsp" id="logo"> <span class="symbol">
-                              <img src="images/logo.png" alt="" style="width: 100%; max-width: 760px; vertical-align: middle"
-
-/></span></a>
                               
 
             <!-- Calendar -->
-               <section class="box calendar">
-                  <div class="inner">
+                  <div class="box calendar inner">
                   <table>
                       <tr height="30">
                        <td width="30" align="center"> <a href="javascript:goMonth(<%=month-1%>);">¢¸</a> </td>
@@ -306,12 +291,11 @@
                       <input type="hidden" name="month" value="" />
                      </form>
 
-
+				</div>
                   
                   
                      
                   </div>
-               </section>
 
             <!-- Copyright -->
                

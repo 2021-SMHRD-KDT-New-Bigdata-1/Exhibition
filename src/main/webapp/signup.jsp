@@ -30,7 +30,7 @@
                     <input type="text" class="input-field" name="bn"placeholder="Enter business number">
                     <input type="checkbox" class="checkbox">Terms and conditions
                     <button type="button" class="submit" onclick = "allcheck()" ><font color="white"><h5 >REGISTER</h5></font></button>
-                <br>가입한 적이 있으시다면! <a href="login2.jsp">Sign in</a>
+                <br>가입한 적이 있으시다면! <a href="login2.jsp">Login</a>
                 </form>
             </div>
         </div>

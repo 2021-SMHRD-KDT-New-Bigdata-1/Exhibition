@@ -1916,7 +1916,8 @@ input, select, textarea {
 
 	.box.calendar .inner {
 		position: fixed;
-		background-color:rgba(47, 98, 0, 0.651);
+		width : 10%;
+		background-color: rgba(47, 98, 0, 0.651);
 		border-radius: 0.4em;
 		padding: 0.75em 0.5em 0.75em 0.5em;
 		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
