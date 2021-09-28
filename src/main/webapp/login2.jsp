@@ -15,8 +15,8 @@
                     <input type="text" class="input-field" name="id" placeholder="Enter ID" required>
                     <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox">Remember Password
-                    <button class="submit">Login</button>
-     				<br>가입한 적이 없으시다면! <a href="signup.jsp">Sign up</a>
+                    <button class="submit"><font color="white"><h5 >Login</h5></font></button>
+     				<br>계정이 없다면! <a href="signup.jsp">Sign up</a>
                 </form>
                 
             </div>

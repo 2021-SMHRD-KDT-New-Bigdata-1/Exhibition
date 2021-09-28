@@ -80,7 +80,7 @@
                                  </li>
                                  
                                  <li class="nav-item">
-                                 <a class="nav-link" href="login.jsp"><span class="icon solid fa-user"></span></a>
+                                 <a class="nav-link" href="login2.jsp"><span class="icon solid fa-user"></span></a>
                                  </li>
                               
                               

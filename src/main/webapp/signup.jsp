@@ -16,20 +16,20 @@
                 <br>
                     <input type="text" class="input-field" id="input_id" name="id" placeholder="Enter Id" required >
                    
-                   <button class="check" onclick="idcheck()">ID Check<span id="sp1"></span></button>
+                   <button class="check" onclick="idcheck()"><font color="white"><h4 class="textcolor1">ID Check</h4></font><span id="sp1"></span></button>
                 
                    
                     <input type="password" class="input-field" name="pw" placeholder="Enter Password" required>
                     <input type="text" class="input-field" id="input_nick" name="nick"placeholder="Enter nickname" required>
                     
-                    <button class="check" onclick="nickcheck()">NICK check<span id="sp2"></span></button>
+                    <button class="check" onclick="nickcheck()"><font color="white"><h4>NICK check</h4></font><span id="sp2"></span></button>
                 
                    
                     <input type="text" class="input-field" name="name" placeholder="Enter name" required>
                     <input type="text" class="input-field" name="tel"placeholder="Enter tel" required>
                     <input type="text" class="input-field" name="bn"placeholder="Enter business number">
                     <input type="checkbox" class="checkbox">Terms and conditions
-                    <button type="button" class="submit" onclick = "allcheck()" >REGISTER</button>
+                    <button type="button" class="submit" onclick = "allcheck()" ><font color="white"><h5 >REGISTER</h5></font></button>
                 <br>가입한 적이 있으시다면! <a href="login2.jsp">Sign in</a>
                 </form>
             </div>
