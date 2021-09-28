@@ -71,7 +71,7 @@
                      <form action = "modifyCon" method = "post" >
                      <table border=1>
                      
-                     <tr>
+                     
                      <td colspan=2><h3><strong>개인 정보 수정</strong></h3></td>
                      </tr>
                      
@@ -259,7 +259,7 @@
                                     </tr>
    
                                     <tr>
-                                       <td colspan="2" ><input type="submit" value="수정"> </td>
+                                       <td colspan="2" align="center"><input type="submit" value="수정"> </td>
                                     </tr>
                                  </table>
                                  
