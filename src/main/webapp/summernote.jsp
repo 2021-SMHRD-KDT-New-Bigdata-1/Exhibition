@@ -118,7 +118,7 @@
 							
 								
 													
-							<form action="Posting" method="post">
+							<form action="Posting" method="post" enctype="multipart/form-data">
 								<table border="1px">
 								<colgroup>
 
@@ -137,6 +137,23 @@
 									<td>Content</td>
 									<td><textarea id="summernote" name="content"></textarea></td></tr>
 									<tr>
+									
+									<!-- 사진첨부 -->
+									<tr>
+									<td>사진첨부</td>
+									<td>
+									<%
+									//postDAO pdao = new postDAO();
+									//ArrayList<postVO> list = pdao.allpost_order_seq();
+									//int new_seq = list.get(0).getSeq()+2;
+									%>
+									
+									<input type="file" name="img1" accept="image/gif,image/jpeg,image/png"><br>
+									<input type="file" name="img2" accept="image/gif,image/jpeg,image/png"><br>
+									<input type="file" name="img3" accept="image/gif,image/jpeg,image/png"><br>
+									</td>
+									</tr>
+									
 										<td><strong>지역태그</strong></td>
 										<td>
 											<input type="radio" name="region" value="Seoul" id="region2">

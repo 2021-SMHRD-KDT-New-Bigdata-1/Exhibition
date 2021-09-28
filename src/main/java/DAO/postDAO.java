@@ -322,6 +322,40 @@ import VO.postVO;
 	          
 	          
 	       }
+	      
+	      public ArrayList<postVO> allpost_order_seq() {
+	  		conn();
+	  		ArrayList<postVO> list = new ArrayList<postVO>();
+	  		
+	  		String sql = "select * from post_reviews order by rv_seq desc";
+	  		
+	  		try {
+	  			psmt = conn.prepareStatement(sql);
+	  			rs = psmt.executeQuery();
+	  			
+	  			while(rs.next()) {
+	  				int seq = rs.getInt(1);
+	  				String content = rs.getString(2);
+	  				int cnt = rs.getInt(3);
+	  				String nick = rs.getString(4);
+	  				String title = rs.getString(5);
+	  				String region_tag = rs.getString(6);
+	  				String genre_tag = rs.getString(7);
+	  				String color_tag = rs.getString(8);
+	  				String rv_comment = rs.getString(9);
+	  				String like_nick = rs.getString(10);
+
+	  				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick);
+
+	  				
+	  				list.add(vo);
+	  			}
+	  		}catch(Exception e) {
+	  			e.printStackTrace();
+	  		}finally {close();}
+	  		return list;
+	  		
+	  	}
 
 	}
 
