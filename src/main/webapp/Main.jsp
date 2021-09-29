@@ -1,3 +1,6 @@
+<%@page import="VO.postVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAO.postDAO"%>
 <%@page import="DAO.membersDAO"%>
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -23,6 +26,12 @@
     membersVO vo = (membersVO)session.getAttribute("vo");
     membersDAO mdao = new membersDAO();
     %>
+    
+    <%
+    postDAO pdao = new postDAO();
+    ArrayList<postVO> list = pdao.allpost(); //cnt 내림차순으로 나올 것임
+    %>
+    
     
     
         <!-- Wrapper -->
@@ -99,21 +108,45 @@
                </header>
 
 <!-- Main -->
+
+
+
+
+
+
+
+
 <div id="main">
     <div class="inner">
-        
+       
     <section class="tiles">
-        <article class="style1">
+    
+    <%for(int i = 0;i<list.size();i++){ %>
+    	<%
+    	String f = list.get(i).getImg_name();
+    	f.replaceAll("null", "");
+    	String[] img_nm = f.split("\\|");
+    	%>
+    	<%
+    	for(int j = 0; j<4;j++){
+    	%>
+			<%if(!img_nm[j].equals("null")){ %>
+        <article class="style3">
             <span class="image">
-                <img src="images/pic01.jpg" alt=""/>
+                <img src="images/<%=img_nm[j]%>" alt=""/>
             </span>
-            <a href="generic.html">
-                <h2>Magna</h2>
+            <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
+                <h2><%=list.get(i).getTitle()%></h2>
                 <div class="content">
-                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    <p>writer :<%=list.get(i).getNick() %></p>
                 </div>
             </a>
         </article>
+        <%j=3;}}%>
+        <%} %>
+        
+        
+        <!-- 
         <article class="style2">
             <span class="image">
                 <img src="images/pic02.jpg" alt=""/>
@@ -234,7 +267,9 @@
                     <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                 </div>
             </a>
-        </article>
+        </article> -->
+        
+        
     </section>
 </div>
 </div>

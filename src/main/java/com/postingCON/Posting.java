@@ -34,7 +34,12 @@ public class Posting extends HttpServlet {
 		membersVO vo= (membersVO)session.getAttribute("vo");
 		membersDAO mdao = new membersDAO();
 		
+		String img1 = "";
+		String img2 = "";
+		String img3 = "";
+		
 		request.setCharacterEncoding("euc-kr");
+			
 		
 				//이미지를 위한 코드
 				PrintWriter out = response.getWriter();
@@ -66,6 +71,8 @@ public class Posting extends HttpServlet {
 				
 				String filename = "";
 				
+				String f_db = "";
+				
 				try {//dhktlqkf
 					MultipartRequest multi = new MultipartRequest(
 						request,
@@ -75,12 +82,15 @@ public class Posting extends HttpServlet {
 						new DefaultFileRenamePolicy());
 					
 					Enumeration files = multi.getFileNames();
+					ArrayList<String> f_name = new ArrayList<>(); //+
 					
 					while(files.hasMoreElements()) {
 						String file = (String) files.nextElement();
 						
 						filename = multi.getFilesystemName(file); //원본파일명
+						System.out.println("업로드된 파일명 : "+filename);
 						
+						f_name.add(filename); //+
 						//String uploadFilePath2 = uploadFilePath+"\\";
 						
 						//System.out.println(uploadFilePath2 + filename);
@@ -100,6 +110,16 @@ public class Posting extends HttpServlet {
 						//죽어도 파일명 변경이 안되네 ㅎ......화이팅....
 					}
 					
+					//f_name.remove(0); //null값 삭제 - 흠 이건 패스
+					String f_name_string = "";
+					for (int i = 0; i < f_name.size(); i++) {
+						System.out.println(f_name.get(i));
+						f_name_string = f_name_string+f_name.get(i)+"|";
+					}
+					System.out.println("컬럼에 들어갈 사진 이름들을 한 문자열로 : "+f_name_string.substring(0, f_name_string.length()-1));
+					f_db = f_name_string.substring(0, f_name_string.length()-1); //db에 넣을 값
+					
+					
  					title = multi.getParameter("title");
 					content = multi.getParameter("content");
 					
@@ -117,6 +137,11 @@ public class Posting extends HttpServlet {
 					like_genre_tag = multi.getParameterValues("genre");
 					like_color_tag = multi.getParameterValues("color");
 					
+					img1 = multi.getFilesystemName("img1");
+					img2 = multi.getFilesystemName("img2");
+					img3 = multi.getFilesystemName("img3");
+					
+					
 					
 //					if(filename==null) {
 //						System.out.println("파일이 업로드 되지 않았음");
@@ -133,7 +158,7 @@ public class Posting extends HttpServlet {
 		String genre_tag = arrayJoin("|",like_genre_tag);
 		String color_tag = arrayJoin("|",like_color_tag);
 		
-		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag, genre_tag, color_tag);
+		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag, genre_tag, color_tag,f_db);
 		
 		postDAO dao = new postDAO();
 		adpostDAO adao = new adpostDAO();

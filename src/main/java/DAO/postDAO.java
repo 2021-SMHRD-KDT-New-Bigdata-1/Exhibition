@@ -49,7 +49,7 @@ import VO.postVO;
 	      
 	      try {
 	    	  							//이미 지정된 SEQ의 이름은 Developer에서 확인!
-	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,' ',' ')";
+	         String sql = "insert into POST_REVIEWS values(POST_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,' ',' ',?)";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         
@@ -61,6 +61,7 @@ import VO.postVO;
 	         psmt.setString(5, vo.getRegion_tag());
 	         psmt.setString(6, vo.getGenre_tag());
 	         psmt.setString(7, vo.getColor_tag());
+	         psmt.setString(8, vo.getImg_name());
 	         
 	         cnt = psmt.executeUpdate();
 	         
@@ -90,8 +91,9 @@ import VO.postVO;
 				String color_tag = rs.getString(8);
 				String rv_comment = rs.getString(9);
 				String like_nick = rs.getString(10);
+				String img_name = rs.getString(11);
 
-				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick);
+				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick,img_name);
 
 				
 				list.add(vo);
@@ -142,8 +144,9 @@ import VO.postVO;
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
 					String like_nick = rs.getString(10);
+					String img_name = rs.getString(11);
 
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment, like_nick);
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment, like_nick,img_name);
 
 					list.add(vo);
 				}
@@ -173,8 +176,9 @@ import VO.postVO;
 					String color_tag1 = rs.getString(8);
 					String comment = rs.getString(9);
 					String like_nick = rs.getString(10);
+					String img_name = rs.getString(11);
 
-					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick);
+					postVO vo = new postVO(seq, content, cnt, nick, title, region_tag1, genre_tag1, color_tag1, comment,like_nick,img_name);
 
 					list.add(vo);
 				}
@@ -344,8 +348,9 @@ import VO.postVO;
 	  				String color_tag = rs.getString(8);
 	  				String rv_comment = rs.getString(9);
 	  				String like_nick = rs.getString(10);
+	  				String img_name = rs.getString(11);
 
-	  				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick);
+	  				postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick,img_name);
 
 	  				
 	  				list.add(vo);
