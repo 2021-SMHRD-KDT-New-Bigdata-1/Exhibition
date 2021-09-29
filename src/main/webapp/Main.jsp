@@ -56,11 +56,9 @@
 					      <a class="nav-link" href="all.jsp">ALL POST</a>
 					      </li>
       						<%if(vo!=null){%>
-      						
-					      <%=mdao.bncheck(vo.getMB_nick()) %>
 					      		<%if(mdao.bncheck(vo.getMB_nick()) == true) {%>
 									<li class="nav-item">
-					      				<a class="nav-link" href="bnsummernote.jsp">POSTING</a>
+					      				<a class="nav-link" href="summernoteBN.jsp">POSTING</a>
 					      			</li>
 							<%}else{%>
 					    	  		<li class="nav-item">

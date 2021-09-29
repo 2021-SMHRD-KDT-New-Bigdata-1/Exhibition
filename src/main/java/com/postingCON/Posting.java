@@ -55,6 +55,9 @@ public class Posting extends HttpServlet {
 				
 				String title = null; 
 				String content = null;
+				String start_date = "";
+				String end_date = "";
+				String date = "";
 				
 				String[] like_region_tag = null;
 				String[] like_genre_tag = null;
@@ -99,6 +102,14 @@ public class Posting extends HttpServlet {
  					title = multi.getParameter("title");
 					content = multi.getParameter("content");
 					
+					start_date = multi.getParameter("s_date");
+					end_date = multi.getParameter("e_date");
+					
+					String s[] = start_date.split("-");
+					String e[] = end_date.split("-");
+					date = s[0]+"/"+s[1]+"/"+s[2]+"-"+e[0]+"/"+e[1]+"/"+e[2];
+					System.out.println(date);
+					
 					like_region_tag = multi.getParameterValues("region");
 					like_genre_tag = multi.getParameterValues("genre");
 					like_color_tag = multi.getParameterValues("color");
@@ -124,7 +135,8 @@ public class Posting extends HttpServlet {
 		postDAO dao = new postDAO();
 		membersDAO  mdao = new membersDAO(); 
 		adpostDAO adao = new adpostDAO();
-		adpostVO avo = new adpostVO(vo.getMB_nick(), content, region_tag, genre_tag, color_tag);
+		
+		adpostVO avo = new adpostVO(vo.getMB_nick(), content, date, region_tag, genre_tag, color_tag, title);
 		
 		int cnt1 = 0;
 		int cnt2 = 0;

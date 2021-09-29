@@ -48,19 +48,19 @@ public class adpostDAO {
 			 conn();
 		     
 			 try {
-		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, '', ?, ?, ?, ?,?,?,?)";
+		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
 		         psmt = conn.prepareStatement(sql);
 		         
 		         psmt.setString(1, vo.getNick());
 		         psmt.setString(2, vo.getContent()); //좋아요 카운트 null로 넣는거를 0으로 변경
-		         psmt.setString(3, vo.getRegion());
-		         //psmt.setString(3, ); date 우선 null
-		         psmt.setString(4, vo.getGenre());
-		         psmt.setString(5, vo.getColor());
-		         psmt.setInt(6, vo.getLike_cnt());
-		         psmt.setString(7, vo.getLike_nick());
-		         psmt.setString(8, vo.getAd_comment());
-		         psmt.setString(9, vo.getAd_title());
+		         psmt.setString(3, vo.getDate() ); //date
+		         psmt.setString(4, vo.getRegion());
+		         psmt.setString(5, vo.getGenre());
+		         psmt.setString(6, vo.getColor());
+		         psmt.setInt(7, vo.getLike_cnt());
+		         psmt.setString(8, vo.getLike_nick());
+		         psmt.setString(9, vo.getAd_comment());
+		         psmt.setString(10, vo.getAd_title());
 		         
 		         cnt = psmt.executeUpdate();
 		         
