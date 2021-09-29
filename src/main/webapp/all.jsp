@@ -402,9 +402,7 @@
 			    <section class="tiles">
 			        <article class="style1">
 			            <span class="image">
-			            
-			            
-			                <img src="images/1.jfif alt=""/>
+			                <img src="images/pic01.jpg" alt=""/>
 			            </span>
 			            
 			            <a href="onepost.jsp">
