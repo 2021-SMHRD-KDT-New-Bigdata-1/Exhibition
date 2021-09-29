@@ -131,7 +131,7 @@
     	for(int j = 0; j<4;j++){
     	%>
 			<%if(!img_nm[j].equals("null")){ %>
-        <article class="style3">
+        <article class="style1">
             <span class="image">
                 <img src="images/<%=img_nm[j]%>" alt=""/>
             </span>
