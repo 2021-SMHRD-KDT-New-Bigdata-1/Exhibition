@@ -8,7 +8,7 @@ public class adpostVO {
 	private int seq;
 	private String nick;
 	private String content;
-	private Date date;
+	private String date;
 	private String region;
 	private String genre;
 	private String color;
@@ -18,7 +18,7 @@ public class adpostVO {
 	private String ad_title;
 	
 	//穿端持失切
-	public adpostVO(int seq, String nick, String content, Date date, String region, String genre, String color,
+	public adpostVO(int seq, String nick, String content, String date, String region, String genre, String color,
 			int like_cnt, String like_nick, String ad_comment, String ad_title) {
 		super();
 		this.seq = seq;
@@ -43,7 +43,7 @@ public class adpostVO {
 		this.color = color;
 	}
 
-	public adpostVO(int seq, String nick, String content, Date date, String region, String genre, String color) {
+	public adpostVO(int seq, String nick, String content, String date, String region, String genre, String color) {
 		super();
 		this.seq = seq;
 		this.nick = nick;
@@ -78,11 +78,11 @@ public class adpostVO {
 		this.content = content;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
