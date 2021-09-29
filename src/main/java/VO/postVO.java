@@ -15,6 +15,9 @@ public class postVO {
 	private String like_nick;
 	//태그별 정렬을 위한 필드 하나 만듦
 	private int like_tag_cnt;
+	//추가 - 이미지 이름 저장을 위한 컬럼
+	private String img_name;
+	
 
 
 	//태그별 정렬을 위한 생성자
@@ -37,7 +40,7 @@ public class postVO {
 
 	//전체생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
-			String color_tag, String comment, String like_nick) {
+			String color_tag, String comment, String like_nick, String img_name) {
 		super();
 		this.seq = seq;
 		this.content = content;
@@ -48,7 +51,8 @@ public class postVO {
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
 		this.comment = comment;
-		this.like_nick= like_nick;	
+		this.like_nick= like_nick;
+		this.img_name = img_name;
 		}
 	
 	
@@ -69,8 +73,18 @@ public class postVO {
 
 
 
+//추가
+		public String getImg_name() {
+		return img_name;
+	}
 
-		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
+
+	public void setImg_name(String img_name) {
+		this.img_name = img_name;
+	}
+
+
+		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag, String img_name) {
 		super();
 		this.title = content;
 		this.content = nick;
@@ -78,6 +92,7 @@ public class postVO {
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
+		this.img_name = img_name;
 	}
 		
 
