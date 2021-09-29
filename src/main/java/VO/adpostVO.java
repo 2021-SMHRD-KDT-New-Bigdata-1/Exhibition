@@ -1,6 +1,5 @@
 package VO;
 
-import java.util.Date;
 
 public class adpostVO {
 	
@@ -52,6 +51,19 @@ public class adpostVO {
 		this.region = region;
 		this.genre = genre;
 		this.color = color;
+	}
+
+	//ad posting Âð¸·
+	public adpostVO(String nick, String content, String date, String region, String genre, String color,
+			String ad_title) {
+		super();
+		this.nick = nick;
+		this.content = content;
+		this.date = date;
+		this.region = region;
+		this.genre = genre;
+		this.color = color;
+		this.ad_title = ad_title;
 	}
 
 	public int getSeq() {
