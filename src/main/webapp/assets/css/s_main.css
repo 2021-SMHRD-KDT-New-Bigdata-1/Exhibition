@@ -1914,7 +1914,7 @@ input, select, textarea {
 
 /* Box */
 
-	.box.calendar .inner {
+	.box_calendar_inner {
 		position: fixed;
 		width : 10%;
 		background-color: rgba(47, 98, 0, 0.651);
@@ -1930,7 +1930,7 @@ input, select, textarea {
 	}
 
 	.box.calendar tbody tr:nth-child(2n+2) {
-		background: transparent;
+		background: rgba(47, 98, 0, 0.651);
 	}
 
 	.box.calendar table {
@@ -2592,7 +2592,7 @@ input, select, textarea {
 				position: absolute;
 				width: 5.5em;
 				overflow: hidden;
-				background-color: rgba(47, 98, 0, 0.651);
+				background-color: #000000;
 				background-image: url("images/bg02.png");
 				left: -10.5em;
 				top: 0;
@@ -2610,7 +2610,7 @@ input, select, textarea {
 					text-align: center;
 					display: block;
 					font-size: 1.5em;
-					color: #1b252a;
+					color: aliceblue;
 					border-bottom: solid 1px #ddd;
 					padding: 0 0 1em 0;
 					margin: 0 0 0.75em 0;
@@ -2621,12 +2621,12 @@ input, select, textarea {
 						display: none;
 					}
 
-					.box.post .info .date .day {
+					.box.post.info.date.day.month {
 						display: block;
 						margin: 0.25em 0 0 0;
 						font-size: 1.5em;
 						font-weight: 700;
-						color: #1b252a;
+						color: aliceblue;
 					}
 
 				.box.post .info .stats {
