@@ -136,7 +136,7 @@
             <span class="image">
                 <img src="images/<%=img_nm[j]%>" alt=""/>
             </span>
-            <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
+            <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
                 <h2><%=list.get(i).getTitle()%></h2>
                 <div class="content">
                     <p>writer :<%=list.get(i).getNick() %></p>
