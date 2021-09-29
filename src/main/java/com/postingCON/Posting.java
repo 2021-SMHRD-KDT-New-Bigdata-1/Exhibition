@@ -103,6 +103,7 @@ public class Posting extends HttpServlet {
  					title = multi.getParameter("title");
 					content = multi.getParameter("content");
 					
+
 					if(mdao.bncheck(vo.getMB_nick()) == true) {
 					start_date = multi.getParameter("s_date");
 					end_date = multi.getParameter("e_date");
