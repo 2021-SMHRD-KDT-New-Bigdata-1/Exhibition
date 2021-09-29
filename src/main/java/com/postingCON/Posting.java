@@ -119,7 +119,7 @@ public class Posting extends HttpServlet {
 		String genre_tag = arrayJoin("|",like_genre_tag);
 		String color_tag = arrayJoin("|",like_color_tag);
 		
-		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag,genre_tag,color_tag);
+		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag, genre_tag, color_tag);
 		
 		postDAO dao = new postDAO();
 		membersDAO  mdao = new membersDAO(); 

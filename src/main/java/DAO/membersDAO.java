@@ -119,10 +119,11 @@ public class membersDAO {
 			
 			try {
 				
-				String sql = "select * from members where mb_bn is not null ";
+				String sql = "select * from members where mb_nick = ? and mb_bn is not null"; //사업자면 
 				psmt = conn.prepareStatement(sql);
-				rs = psmt.executeQuery();
 				
+				rs = psmt.executeQuery();
+				psmt.setString(1,nick);
 				if(rs.next()) {
 					check = true;
 				}else {
