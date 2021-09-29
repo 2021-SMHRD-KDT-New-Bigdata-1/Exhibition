@@ -149,7 +149,7 @@
 									//ArrayList<postVO> list = pdao.allpost_order_seq();
 									//int new_seq = list.get(0).getSeq()+2;
 									%>
-<<<<<<< HEAD
+
 									<input type="file" name="img1" accept="image/gif,image/jpeg,image/png" ><br>
 									<input type="file" name="img2" accept="image/gif,image/jpeg,image/png" ><br>
 									<input type="file" name="img3" accept="image/gif,image/jpeg,image/png" ><br>
@@ -162,7 +162,7 @@
 									</script>
 									
 									
-=======
+
 								<div class="filebox1">
 									<input type="text" class="fileName1" readonly="readonly">
 									<label for="ex1_file" class="btn_file" >ªÁ¡¯√∑∫Œ I. (JPG/GIF/PNG)</label>
@@ -182,7 +182,7 @@
 								
   								
   								
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
 									</td>
 									</tr>
 									
