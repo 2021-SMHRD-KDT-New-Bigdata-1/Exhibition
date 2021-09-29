@@ -72,9 +72,9 @@ public class postVO {
 
 		public postVO(String content, String nick,String title, String region_tag, String genre_tag, String color_tag) {
 		super();
-		this.title = title;
-		this.content = content;
-		this.nick = nick;
+		this.title = content;
+		this.content = nick;
+		this.nick = title;
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
