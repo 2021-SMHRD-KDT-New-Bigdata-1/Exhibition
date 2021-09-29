@@ -31,9 +31,6 @@
     postDAO pdao = new postDAO();
     ArrayList<postVO> list = pdao.allpost(); //cnt 내림차순으로 나올 것임
     %>
-    
-    
-    
         <!-- Wrapper -->
         <div id="wrapper">
 
@@ -96,26 +93,14 @@
                                  <li class="nav-item">
                                  <a class="nav-link" href="login2.jsp"><span class="icon solid fa-user"></span></a>
                                  </li>
-                              
-                              
                               <%} %>
-     
 							   </ul>
 							</div>
 							</nav>
-                     
-                        
                   </div>
                </header>
 
 <!-- Main -->
-
-
-
-
-
-
-
 
 <div id="main">
     <div class="inner">
@@ -136,12 +121,21 @@
             <span class="image">
                 <img src="images/<%=img_nm[j]%>" alt=""/>
             </span>
+            <%if(vo!=null){ %>
             <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
                 <h2><%=list.get(i).getTitle()%></h2>
                 <div class="content">
                     <p>writer :<%=list.get(i).getNick() %></p>
                 </div>
             </a>
+             <%}else{ %>
+            <a href="login2.jsp">
+            <h2><%=list.get(i).getTitle()%></h2>
+                <div class="content">
+                    <p><%=list.get(i).getNick() %></p>
+                </div>
+            </a>
+            <%} %>
         </article>
         <%j=3;}}%>
         <%} %>
