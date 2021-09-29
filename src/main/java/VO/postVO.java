@@ -17,8 +17,6 @@ public class postVO {
 	private int like_tag_cnt;
 
 
-
-
 	//태그별 정렬을 위한 생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
 			String color_tag, String comment, String like_nick, int like_tag_cnt) {

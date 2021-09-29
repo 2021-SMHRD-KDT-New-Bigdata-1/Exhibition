@@ -1,3 +1,5 @@
+<%@page import="DAO.adpostDAO"%>
+<%@page import="VO.adpostVO"%>
 <%@page import="java.util.Collections"%>
 <%@page import="DAO.membersDAO"%>
 <%@page import="VO.postVO"%>
@@ -27,7 +29,9 @@
     membersDAO mdao = new membersDAO();
     
     ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
-	
+    
+    adpostDAO adao = new adpostDAO();
+    ArrayList<adpostVO> adlist = adao.allpost(); //광고게시물들
     %>
     
    	
@@ -261,6 +265,61 @@
 		</tr>
 		
 		<%
+		//광고게시물
+				for(int i = 0; i<adlist.size(); i++){
+					String region1 = adlist.get(i).getRegion();
+					String[] region_tag1 = region1.split("\\|");
+					String genre1 = adlist.get(i).getGenre();
+					String[] genre_tag1 = genre1.split("\\|");
+					String color1 = adlist.get(i).getColor();
+					String[] color_tag1 = color1.split("\\|");
+					
+					//region.replace(String.valueOf('|'),"");
+					%>
+					<tr onclick="location.href='adOnePost.jsp?seq=<%=adlist.get(i).getSeq()%>'" style="cursor:pointer;">
+					
+					<%
+					out.print("<td>"+adlist.get(i).getSeq()+"</td>");
+					out.print("<td>"+adlist.get(i).getContent()+"</td>");
+					out.print("<td>"+adlist.get(i).getLike_cnt()+"</td>");
+					out.print("<td>"+adlist.get(i).getNick()+"</td>");
+					out.print("<td>"+adlist.get(i).getAd_title()+"</td>");
+					out.print("<td>");
+					if(adao.count(region1,'|')!=0){
+						for(int j =0; j<region_tag1.length; j++){
+							out.print(region_tag1[j]);
+							}
+					
+					out.print("</td>");
+					}else{
+						out.print(region1+"</td>");
+					}
+					out.print("<td>");
+					if(dao.count(genre1,'|')!=0){
+						for(int j =0; j<genre_tag1.length; j++){
+							out.print(genre_tag1[j]);
+							}
+					
+					out.print("</td>");
+					}else{
+						out.print(genre1+"</td>");
+					}
+					
+					out.print("<td>");
+					if(dao.count(color1,'|')!=0){
+						for(int j =0; j<color_tag1.length; j++){
+							out.print(color_tag1[j]);
+							}
+					
+					out.print("</td>");
+					}else{
+						out.print(color1+"</td>");
+					}
+					out.print("</tr>");}
+					
+				
+				//일반게시물
+		
 		for(int i = 0; i<list.size(); i++){
 			String region = list.get(i).getRegion_tag();
 			String[] region_tag = region.split("\\|");

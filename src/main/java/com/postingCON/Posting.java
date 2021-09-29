@@ -126,7 +126,6 @@ public class Posting extends HttpServlet {
 		adpostDAO adao = new adpostDAO();
 		adpostVO avo = new adpostVO(vo.getMB_nick(), content, region_tag, genre_tag, color_tag);
 		
-		
 		int cnt1 = 0;
 		int cnt2 = 0;
 		
@@ -137,13 +136,16 @@ public class Posting extends HttpServlet {
 		}
 		response.sendRedirect("all.jsp");
 		
+		
+		
+		
 		if(cnt1 + cnt2>0) {
 			if(cnt2>0) {
 				System.out.println("광고포스팅 완료");
 			}else {
 				System.out.println("일반포스팅 완료");
+				
 			}
-			
 		}else if(cnt1 + cnt2==0) {
 			System.out.println("포스팅 실패..");
 		}

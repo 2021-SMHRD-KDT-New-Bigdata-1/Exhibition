@@ -54,8 +54,13 @@
 					      <li class="nav-item">
 					      <a class="nav-link" href="all.jsp">ALL POST</a>
 					      </li>
-					      <%if(vo!=null){ %>
+					      <%
+					      //비즈니스 아니냐 dao. 메소드도 불러와서 a링크 따로주기, summerBusiness.jsp : 기존서머노트 에서 날짜 추가해주면 됨 
+					      
+					      if(vo!=null){ %>
 					      <li class="nav-item">
+					      <!-- 조건 : 비지니스 아니냐 dao.check() == true~ :비지 {<a>}else{}-->
+					      
 					      <a class="nav-link" href="summernote.jsp">POSTING</a>
 					      </li>
 					      <%}else{ %>

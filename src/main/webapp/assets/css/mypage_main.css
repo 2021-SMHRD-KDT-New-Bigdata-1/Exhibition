@@ -14,7 +14,7 @@ code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
+tfoot, thead, tr, th, td, article, aside,h3
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
@@ -110,7 +110,7 @@ input, select, textarea {
       color: #888;
    }
 
-   h1, h2, h3, h4, h5, h6 {
+    h1,h2, h3, h4, h5, h6 {
       font-weight: 300;
       color: #666;
       line-height: 1.5em;
@@ -140,7 +140,9 @@ input, select, textarea {
 
    h3 {
       font-size: 2em;
+      color:white;
       text-align : center;
+      background :black;
    }
 
    header {
@@ -158,7 +160,7 @@ input, select, textarea {
 
    strong, b {
       font-weight: 300;
-      color: black;
+      color:black;
    }
 
    em, i {
