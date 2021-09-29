@@ -163,12 +163,12 @@ public class Posting extends HttpServlet {
 		postDAO dao = new postDAO();
 		adpostDAO adao = new adpostDAO();
 		
-		adpostVO avo = new adpostVO(vo.getMB_nick(), content, date, region_tag, genre_tag, color_tag, title);
+		adpostVO avo = new adpostVO(vo.getMB_nick(), content, date, region_tag, genre_tag, color_tag, title, f_db); 
 		
 		int cnt1 = 0;
 		int cnt2 = 0;
 		
-		if(mdao.bncheck(vo.getMB_nick()) == true) {
+		if(mdao.bncheck(vo.getMB_nick()) == true) { 
 			cnt2 = adao.adposting(avo);
 		}else {
 			cnt1 = dao.posting(pvo);

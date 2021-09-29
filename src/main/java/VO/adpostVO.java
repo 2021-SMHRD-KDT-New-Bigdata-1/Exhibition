@@ -16,9 +16,12 @@ public class adpostVO {
 	private String ad_comment;
 	private String ad_title;
 	
+	//이미지 이름을 넣어줄 컬럼 추가생성했음
+	private String ad_img_name;
+	
 	//전체생성자
 	public adpostVO(int seq, String nick, String content, String date, String region, String genre, String color,
-			int like_cnt, String like_nick, String ad_comment, String ad_title) {
+			int like_cnt, String like_nick, String ad_comment, String ad_title, String ad_img_name) {
 		super();
 		this.seq = seq;
 		this.nick = nick;
@@ -31,8 +34,11 @@ public class adpostVO {
 		this.like_nick = like_nick;
 		this.ad_comment = ad_comment;
 		this.ad_title = ad_title;
+		this.ad_img_name = ad_img_name;
 	}
 	
+	
+
 	public adpostVO(String nick, String content, String region, String genre, String color) {
 		super();
 		this.nick = nick;
@@ -55,7 +61,7 @@ public class adpostVO {
 
 	//ad posting 찐막
 	public adpostVO(String nick, String content, String date, String region, String genre, String color,
-			String ad_title) {
+			String ad_title, String ad_img_name) {
 		super();
 		this.nick = nick;
 		this.content = content;
@@ -64,6 +70,7 @@ public class adpostVO {
 		this.genre = genre;
 		this.color = color;
 		this.ad_title = ad_title;
+		this.ad_img_name = ad_img_name;
 	}
 
 	public int getSeq() {
@@ -153,4 +160,14 @@ public class adpostVO {
 	public void setAd_title(String ad_title) {
 		this.ad_title = ad_title;
 	}
+
+	public String getAd_img_name() {
+		return ad_img_name;
+	}
+
+	public void setAd_img_name(String ad_img_name) {
+		this.ad_img_name = ad_img_name;
+	}
+	
+
 }

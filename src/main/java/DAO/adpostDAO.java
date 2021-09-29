@@ -48,7 +48,7 @@ public class adpostDAO {
 			 conn();
 		     
 			 try {
-		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
+		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
 		         psmt = conn.prepareStatement(sql);
 		         
 		         psmt.setString(1, vo.getNick());
@@ -61,6 +61,7 @@ public class adpostDAO {
 		         psmt.setString(8, vo.getLike_nick());
 		         psmt.setString(9, vo.getAd_comment());
 		         psmt.setString(10, vo.getAd_title());
+		         psmt.setString(11, vo.getAd_img_name());
 		         
 		         cnt = psmt.executeUpdate();
 		         
@@ -116,11 +117,12 @@ public class adpostDAO {
 							String ad_like_nick = rs.getString(9);
 							String ad_like_comment = rs.getString(10);
 							String ad_title = rs.getString(11);
+							String ad_img_name = rs.getString(12);
 							
 							list.add(new adpostVO(
 									ad_seq,ad_nick,ad_content,date,
 									ad_region,ad_genre,ad_color,
-									ad_like_cnt,ad_like_nick,ad_like_comment,ad_title));
+									ad_like_cnt,ad_like_nick,ad_like_comment,ad_title,ad_img_name));
 						}
 						
 					} catch(Exception e) {e.printStackTrace();} finally {close();}
@@ -133,7 +135,7 @@ public class adpostDAO {
 					conn();
 					ArrayList<adpostVO> list = new ArrayList<>();
 					try {
-						String sql = "select * from ad_reviews";
+						String sql = "select * from ad_reviews order by ad_like_cnt desc";
 						psmt = conn.prepareStatement(sql);
 						rs = psmt.executeQuery();
 						
@@ -149,11 +151,12 @@ public class adpostDAO {
 							String ad_like_nick = rs.getString(9);
 							String ad_like_comment = rs.getString(10);
 							String ad_title = rs.getString(11);
+							String ad_img_name = rs.getString(12);
 							
 							list.add(new adpostVO(
 									ad_seq,ad_nick,ad_content,date,
 									ad_region,ad_genre,ad_color,
-									ad_like_cnt,ad_like_nick,ad_like_comment,ad_title));
+									ad_like_cnt,ad_like_nick,ad_like_comment,ad_title,ad_img_name));
 						}
 					} catch(Exception e) {e.printStackTrace();} finally {close();}
 					return list;
