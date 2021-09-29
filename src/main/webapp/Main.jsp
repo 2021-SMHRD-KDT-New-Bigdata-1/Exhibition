@@ -141,7 +141,7 @@
         <%} %>
         
         
-        <!-- 
+        
         <article class="style2">
             <span class="image">
                 <img src="images/pic02.jpg" alt=""/>
@@ -153,6 +153,7 @@
                 </div>
             </a>
         </article>
+        <!-- 
         <article class="style3">
             <span class="image">
                 <img src="images/pic03.jpg" alt=""/>
