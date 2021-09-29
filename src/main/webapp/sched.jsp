@@ -40,6 +40,7 @@
   int month = currentCal.get(Calendar.MONTH);
   // 현재 '일'을 취득
   int day = currentCal.get(Calendar.DATE);
+  int tday = todayCheck_currentCal.get(Calendar.DATE);
   //int day = currentCal.get(Calendar.DAY_OF_MONTH);
 
 %>
@@ -129,65 +130,23 @@
                
                   <article class="box post post-excerpt">
                      <header>
-                        
-                        <h2><a href="#">Welcome to Striped</a></h2>
-                        <p>A free, fully responsive HTML5 site template by HTML5 UP</p>
+                        <h3><a href="#"><%=month+1 %>월 <%=tday %>일자 전시회 일정</a></h3><br>
                      </header>
                      <div class="info">
                         
-                        <span class="date"><span class="month">Jul<span>y</span></span> <span class="day">14</span><span class="year">, 2014</span></span>
+                        <span class="date">
+                        <span class="month"><%=month+1 %> /</span> 
+                        <span class="day"><%=tday %></span>
+                        <span class="year">, <%=year %></span>
+                        </span>
                         
                      </div>
-                     <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-                     <p>
-                        <strong>Hello!</strong> You're looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a>
-                        for <a href="http://html5up.net">HTML5 UP</a> It features a clean, minimalistic design, styling for all basic page elements (including blockquotes, tables and lists), a
-                        repositionable sidebar (left or right), and HTML5/CSS3 code designed for quick and easy customization (see code comments for details).
-                     </p>
-                     <p>
-                        Striped is released for free under the <a href="http://html5up.net/license">Creative Commons Attribution license</a> so feel free to use it for personal projects
-                        or even commercial ones &ndash; just be sure to credit <a href="http://html5up.net">HTML5 UP</a> for the design. If you like what you see here, be sure to check out
-                        <a href="http://html5up.net">HTML5 UP</a> for more cool designs or follow me on <a href="http://twitter.com/ajlkn">Twitter</a> for new releases and updates.
-                     </p>
+                     <div class="c">
+                     
+                       </div>
                   </article>
 
-               <!-- Post -->
-                  <article class="box post post-excerpt">
-                     <header>
-                        <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                        <p>Feugiat interdum sed commodo ipsum consequat dolor nullam metus</p>
-                     </header>
-                     <div class="info">
-                        <span class="date"><span class="month">Jul<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
-                        <ul class="stats">
-                           <li><a href="#" class="icon fa-comment">16</a></li>
-                           <li><a href="#" class="icon fa-heart">32</a></li>
-                           <li><a href="#" class="icon brands fa-twitter">64</a></li>
-                           <li><a href="#" class="icon brands fa-facebook-f">128</a></li>
-                        </ul>
-                     </div>
-                     <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-                     <p>
-                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
-                        Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore.
-                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
-                        Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
-                     </p>
-                  </article>
-
-               <!-- Pagination -->
-                  <div class="pagination">
-                     <!--<a href="#" class="button previous">Previous Page</a>-->
-                     <div class="pages">
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <span>&hellip;</span>
-                        <a href="#">20</a>
-                     </div>
-                     <a href="#" class="button next">Next Page</a>
-                  </div>
+                 
 
             </div>
          </div>
@@ -357,6 +316,40 @@
            form.submit();
           }
          </script>
+
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script>
+             $.ajax({
+                    url:'exlists_44.csv',
+                    type:'post',
+//                    contentType: 'application/x-www-form-urlencoded;charset=EUC-KR',
+                    contentType: 'text/html;charset=utf-8',
+                    
+                    dataType:'text'
+                }).done(successFunction);	
+      
+	function successFunction(data) {
+		/*let decoder = new TextDecoder('euc-kr');
+		let encoder = new TextEncoder();
+		data_en = encoder.encode(data);
+		data = decoder.decode(data_en);*/
+        var allRows = data.split("\|") //한줄씩으로 만들어줌 
+        var table = '<table border="1px">';
+        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+          
+          var rowCells = allRows[singleRow]
+          
+              table += '<tr><td>';
+              table += rowCells;
+              table += '</td></tr>';
+           
+          
+         
+        } 
+        table += '</table>';
+        $('div.c').append(table);
+      }
+	</script>
 
    </body>
 </html>
