@@ -153,7 +153,7 @@ public class adsaveDAO {
 						int seq = rs.getInt(5); //ad_rv_seq
 						String nick1 = rs.getString(6); //mb_nick_1
 						String content = rs.getString(7); //ad_content
-						Date date = rs.getDate(8); //ad_date
+						String date = rs.getString(8); //ad_date
 						String region_tag = rs.getString(9); //region_tag
 						String genre_tag = rs.getString(10); //genre_tag
 						String color_tag = rs.getString(11); //color_tag

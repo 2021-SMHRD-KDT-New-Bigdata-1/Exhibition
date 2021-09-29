@@ -12,7 +12,7 @@ public class adsaveVO {
 	private int ad_rv_seq ; //ad_rv_seq
 	private String mb_nick; //mb_nick_1
 	private String ad_content ; //ad_content
-	private Date ad_date ; //ad_date
+	private String ad_date ; //ad_date
 	private String region_tag; //region_tag
 	private String genre_tag ; //genre_tag
 	private String color_tag ; //color_tag
@@ -23,7 +23,7 @@ public class adsaveVO {
 	
 	//기본생성자 + innerjoin 결과 객체 담기 위함
 	public adsaveVO(int saved_ad_rv_seq, String ad_my_memo, String ad_mb_nick, int ad_rv_num, int ad_rv_seq,
-			String mb_nick, String ad_content, Date ad_date, String region_tag, String genre_tag, String color_tag,
+			String mb_nick, String ad_content, String ad_date, String region_tag, String genre_tag, String color_tag,
 			int ad_like_cnt, String ad_like_nick, String ad_comment, String ad_title) {
 		super();
 		this.saved_ad_rv_seq = saved_ad_rv_seq;
@@ -109,11 +109,11 @@ public class adsaveVO {
 		this.ad_content = ad_content;
 	}
 
-	public Date getAd_date() {
+	public String getAd_date() {
 		return ad_date;
 	}
 
-	public void setAd_date(Date ad_date) {
+	public void setAd_date(String ad_date) {
 		this.ad_date = ad_date;
 	}
 

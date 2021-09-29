@@ -48,13 +48,13 @@ public class adpostDAO {
 			 conn();
 		     
 			 try {
-		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, sysdate, ?, ?, ?, ?,?,?,?)";
+		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, '', ?, ?, ?,?,?,?)";
 		         psmt = conn.prepareStatement(sql);
 		         
 		         psmt.setString(1, vo.getNick());
 		         psmt.setString(2, vo.getContent()); //좋아요 카운트 null로 넣는거를 0으로 변경
 		         psmt.setString(3, vo.getRegion());
-		         //psmt.setDate(3, (Date) vo.getDate());
+		         //psmt.setString(3, ); date 우선 null
 		         psmt.setString(4, vo.getGenre());
 		         psmt.setString(5, vo.getColor());
 		         psmt.setInt(6, vo.getLike_cnt());
@@ -80,7 +80,7 @@ public class adpostDAO {
 					int ad_seq = rs.getInt(1);
 					String ad_nick = rs.getString(2);
 					String ad_content = rs.getString(3);
-					Date date = rs.getDate(4);
+					String date = rs.getString(4);
 					String ad_region = rs.getString(5);
 					String ad_genre = rs.getString(6);
 					String ad_color = rs.getString(7);
@@ -108,7 +108,7 @@ public class adpostDAO {
 							int ad_seq = rs.getInt(1);
 							String ad_nick = rs.getString(2);
 							String ad_content = rs.getString(3);
-							Date date = rs.getDate(4);
+							String date = rs.getString(4);
 							String ad_region = rs.getString(5);
 							String ad_genre = rs.getString(6);
 							String ad_color = rs.getString(7);
@@ -141,7 +141,7 @@ public class adpostDAO {
 							int ad_seq = rs.getInt(1);
 							String ad_nick = rs.getString(2);
 							String ad_content = rs.getString(3);
-							Date date = rs.getDate(4);
+							String date = rs.getString(4);
 							String ad_region = rs.getString(5);
 							String ad_genre = rs.getString(6);
 							String ad_color = rs.getString(7);
