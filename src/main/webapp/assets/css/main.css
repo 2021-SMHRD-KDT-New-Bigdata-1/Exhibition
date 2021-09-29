@@ -150,10 +150,10 @@ input, select, textarea {
 		border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
 	}
 
-		a:hover {
+		/*a:hover {
 			border-bottom-color: transparent;
 			color: #f2849e !important;
-		}
+		}*/
 
 	strong, b {
 		font-weight: 900;
@@ -1858,8 +1858,8 @@ input, select, textarea {
 			}
 
 			.icon.style2:hover {
-				color: #f2849e;
-				border-color: #f2849e;
+				color: rgba(47, 98, 0, 0.651);
+				border-color: rgba(47, 98, 0, 0.651);
 			}
 
 			.icon.style2:active {
@@ -2129,13 +2129,13 @@ input, select, textarea {
 		}
 
 	label {
-		display: block;
+		display: inline-block;
 		font-size: 0.9em;
 		font-weight: 900;
 		margin: 0 0 1em 0;
 	}
 
-	input[type="text"],
+	
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
@@ -2157,7 +2157,7 @@ input, select, textarea {
 		width: 100%;
 	}
 
-		input[type="text"]:invalid,
+		
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		input[type="tel"]:invalid,
@@ -2166,14 +2166,14 @@ input, select, textarea {
 			box-shadow: none;
 		}
 
-		input[type="text"]:focus,
+		
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-bottom-color: #f2849e;
-			box-shadow: inset 0 -1px 0 0 #f2849e;
+			border-bottom-color: rgba(47, 98, 0, 0.651);
+			box-shadow: inset 0 -1px 0 0 rgba(47, 98, 0, 0.651);
 		}
 
 	select {
@@ -2198,7 +2198,7 @@ input, select, textarea {
 			display: none;
 		}
 
-	input[type="text"],
+	
 	input[type="password"],
 	input[type="email"],
 	select {
@@ -2674,7 +2674,7 @@ input, select, textarea {
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		background-color: transparent;
 		border-radius: 4px;
-		border: 0;
+		border: 1px solid black;
 		box-shadow: inset 0 0 0 1px #c0c0c0;
 		color: #585858 !important;
 		cursor: pointer;
@@ -2692,6 +2692,76 @@ input, select, textarea {
 		text-transform: uppercase;
 		white-space: nowrap;
 	}
+	
+	input[type="submit"]{
+		color: rgba(47, 98, 0, 0.651);
+	
+	
+	
+	}
+	
+	
+.fileName1 {
+		display:inline-block;
+		width:300px;
+		height:30px;
+		padding-left:10px;
+		margin-right:5px;
+		line-height:30px;
+		border:1px solid #aaa;
+		background-color:#fff;
+		vertical-align:middle
+}
+.fileName2 {
+		display:inline-block;
+		width:300px;
+		height:30px;
+		padding-left:10px;
+		margin-right:5px;
+		line-height:30px;
+		border:1px solid #aaa;
+		background-color:#fff;
+		vertical-align:middle
+}
+
+.fileName3 {
+		display:inline-block;
+		width:300px;
+		height:30px;
+		padding-left:10px;
+		margin-right:5px;
+		line-height:30px;
+		border:1px solid #aaa;
+		background-color:#fff;
+		vertical-align:middle
+}
+
+
+.fileBox .btn_file {
+		display:inline-block;
+		border:3px solid black;
+		width:100px;
+		height:30px;
+		font-size:0.8em;
+		line-height:30px;
+		text-align:center;
+		vertical-align:middle
+}
+
+
+	#ex3_file, #ex2_file, #ex1_file {
+		position:absolute;
+		width:1px;
+		height:1px;
+		padding:0;
+		margin:-1px;
+		overflow:hidden;
+		clip:rect(0,0,0,0);
+		border:0
+	}
+
+		
+	
 
 		input[type="submit"].icon:before,
 		input[type="reset"].icon:before,
@@ -2709,14 +2779,14 @@ input, select, textarea {
 			width: 100%;
 		}
 
-		input[type="submit"]:hover,
+		/*input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
 			color: #f2849e !important;
 			box-shadow: inset 0 0 0 2px #f2849e;
-		}
+		}*/
 
 		input[type="submit"]:active,
 		input[type="reset"]:active,
@@ -2757,16 +2827,16 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #f2849e;
+				background-color: rgba(47, 98, 0, 0.651);
 			}
 
-			input[type="submit"].primary:active,
+			/*input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
 				background-color: #ee5f81;
-			}
+			}*/
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
@@ -3111,7 +3181,7 @@ input, select, textarea {
 					#nav > ul > li > a, #nav > ul > li > span {
 						display: block;
 						color: rgb(27, 25, 138);
-						color: rgba(148, 37, 170, 0.75);/* �뜝�럩�뀋�뜝�럡�땽�뜝�럥裕쏉옙�쐻占쎈윥占쎈펽�뜝�럥�맶�뜝�럥吏쀥뜝�럩援뀐옙�쐻占쎈윥占쎈㎍占쎈쐻占쎈윥占쎌몗�뜝�럥�맶占쎈쐻�뜝占� �뜝�럥�맶�뜝�럥�쑅�뜝�럥�럪�뜝�럥�맶�뜝�럥�쑅�뜝�럩紐앾옙�쐻占쎈윪�젆�떐�렭占쎈츐占쎌굲�뜝�럡�렊占쎈쐻占쎈윪�젆酉귥삕占쎈성占쎈젺�뜝�럥�맋�뜝�럩援뀐쫲�냲�삕占쎈쐻占쎈짗占쎌굲嶺뚮슡�뜉占쎌맶占쎈쐻�뜝占� �뜝�럥�맶�뜝�럥�쑅�뜝�럥�럪�뜝�럥�맶�뜝�럥�쑅�뜝�럩留썲뜝�럥�맶�뜝�럥�쑅占쎈쇀�뜝占� */
+						color: rgba(148, 37, 170, 0.75);/* 占쎈쐻占쎈윪占쎈�뗰옙�쐻占쎈윞占쎈빟占쎈쐻占쎈윥獒뺤룊�삕占쎌맶�뜝�럥�쑅�뜝�럥�렰占쎈쐻占쎈윥占쎈㎍占쎈쐻占쎈윥筌욎�λ쐻占쎈윪�뤃�먯삕占쎌맶�뜝�럥�쑅�뜝�럥�럪�뜝�럥�맶�뜝�럥�쑅�뜝�럩紐쀯옙�쐻占쎈윥占쎈㎍�뜝�럥�맶占쎈쐻�뜝占� 占쎈쐻占쎈윥占쎈㎍占쎈쐻占쎈윥占쎌몗占쎈쐻占쎈윥占쎈윫占쎈쐻占쎈윥占쎈㎍占쎈쐻占쎈윥占쎌몗占쎈쐻占쎈윪筌륁빢�삕占쎌맶�뜝�럥�쑋占쎌젂占쎈뼆占쎈젺�뜝�럥痢먨뜝�럩援뀐옙�쐻占쎈윞占쎈젇�뜝�럥�맶�뜝�럥�쑋占쎌젂�뀎洹μ굲�뜝�럥�꽦�뜝�럥�졋占쎈쐻占쎈윥占쎈쭓占쎈쐻占쎈윪�뤃�먯ゲ占쎈꺋占쎌굲�뜝�럥�맶�뜝�럥吏쀥뜝�럩援뀐┼�슢�뒦占쎈쐣�뜝�럩留뜹뜝�럥�맶占쎈쐻�뜝占� 占쎈쐻占쎈윥占쎈㎍占쎈쐻占쎈윥占쎌몗占쎈쐻占쎈윥占쎈윫占쎈쐻占쎈윥占쎈㎍占쎈쐻占쎈윥占쎌몗占쎈쐻占쎈윪筌띿뜴�쐻占쎈윥占쎈㎍占쎈쐻占쎈윥占쎌몗�뜝�럥��占쎈쐻�뜝占� */
 						text-transform: uppercase;
 						text-decoration: none;
 						font-size: 0.7em;

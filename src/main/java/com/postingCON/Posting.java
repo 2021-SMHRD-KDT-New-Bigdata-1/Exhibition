@@ -71,6 +71,8 @@ public class Posting extends HttpServlet {
 				
 				String filename = "";
 				
+				String f_db = "";
+				
 				try {//dhktlqkf
 					MultipartRequest multi = new MultipartRequest(
 						request,
@@ -80,12 +82,15 @@ public class Posting extends HttpServlet {
 						new DefaultFileRenamePolicy());
 					
 					Enumeration files = multi.getFileNames();
+					ArrayList<String> f_name = new ArrayList<>(); //+
 					
 					while(files.hasMoreElements()) {
 						String file = (String) files.nextElement();
 						
 						filename = multi.getFilesystemName(file); //원본파일명
+						System.out.println("업로드된 파일명 : "+filename);
 						
+						f_name.add(filename); //+
 						//String uploadFilePath2 = uploadFilePath+"\\";
 						
 						//System.out.println(uploadFilePath2 + filename);
@@ -104,6 +109,16 @@ public class Posting extends HttpServlet {
 						//oldFile.renameTo(newFile); //파일명변경
 						//죽어도 파일명 변경이 안되네 ㅎ......화이팅....
 					}
+					
+					//f_name.remove(0); //null값 삭제 - 흠 이건 패스
+					String f_name_string = "";
+					for (int i = 0; i < f_name.size(); i++) {
+						System.out.println(f_name.get(i));
+						f_name_string = f_name_string+f_name.get(i)+"|";
+					}
+					System.out.println("컬럼에 들어갈 사진 이름들을 한 문자열로 : "+f_name_string.substring(0, f_name_string.length()-1));
+					f_db = f_name_string.substring(0, f_name_string.length()-1); //db에 넣을 값
+					
 					
  					title = multi.getParameter("title");
 					content = multi.getParameter("content");
@@ -143,7 +158,7 @@ public class Posting extends HttpServlet {
 		String genre_tag = arrayJoin("|",like_genre_tag);
 		String color_tag = arrayJoin("|",like_color_tag);
 		
-		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag, genre_tag, color_tag);
+		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag, genre_tag, color_tag,f_db);
 		
 		postDAO dao = new postDAO();
 		adpostDAO adao = new adpostDAO();

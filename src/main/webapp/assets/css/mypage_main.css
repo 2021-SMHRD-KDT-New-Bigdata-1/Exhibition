@@ -160,7 +160,7 @@ input, select, textarea {
 
    strong, b {
       font-weight: 300;
-      color:black;
+      color:white;
    }
 
    em, i {
@@ -2033,10 +2033,10 @@ input[type="checkbox"],
       }
 
       table th {
-         font-size: 1.3em;
-         font-weight: 900;
-         padding: 20 20 20 20;
-         text-align: left;
+         font-size: 0.9em;
+         font-weight: 600;
+        /* padding: 20 20 20 20;*/
+         text-align: center;
       }
 
       table thead {

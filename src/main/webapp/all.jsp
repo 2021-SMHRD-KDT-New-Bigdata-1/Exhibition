@@ -128,7 +128,7 @@
 
 							<!-- Main -->
 							<div id="main">
-							    <div class="innser">
+							    <div class="inner">
 							    	<div class="table-wrapper">
 									<div class="field">
 									<form action = "SearchCon">
