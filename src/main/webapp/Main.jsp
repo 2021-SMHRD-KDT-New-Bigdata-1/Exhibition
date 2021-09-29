@@ -64,18 +64,19 @@
 					      <li class="nav-item">
 					      <a class="nav-link" href="all.jsp">ALL POST</a>
 					      </li>
+					      <li class="nav-item">
       						<%if(vo!=null){%>
 					      		<%if(mdao.bncheck(vo.getMB_nick()) == true) {%>
-									<li class="nav-item">
 					      				<a class="nav-link" href="summernoteBN.jsp">POSTING</a>
-					      			</li>
-							<%}else{%>
-					    	  		<li class="nav-item">
+					      			
+								<%}else{%>
 					  					<a class="nav-link" href="summernote.jsp">POSTING</a>
-					    			</li>
 					      
-					       <%} %>
-					       <%} %>
+					       		<%} %>
+					       	<%}else{%>
+					    	   <a class="nav-link" href="login2.jsp">POSTING</a>
+					       	<%} %>
+					       </li>
 
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
