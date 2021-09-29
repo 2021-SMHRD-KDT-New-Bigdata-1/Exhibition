@@ -121,7 +121,7 @@
 							
 								
 													
-							<form action="Posting" method="post" name = "p" enctype="multipart/form-data">
+							<form action="Posting" method="post" enctype="multipart/form-data">
 								<table border="1px">
 								<colgroup>
 
@@ -149,20 +149,6 @@
 									//ArrayList<postVO> list = pdao.allpost_order_seq();
 									//int new_seq = list.get(0).getSeq()+2;
 									%>
-
-									<input type="file" name="img1" accept="image/gif,image/jpeg,image/png" ><br>
-									<input type="file" name="img2" accept="image/gif,image/jpeg,image/png" ><br>
-									<input type="file" name="img3" accept="image/gif,image/jpeg,image/png" ><br>
-									
-									<script> 
-									var img1 = document.p.img1.value;
-									var img2 = document.p.img2.value;
-									var img3 = document.p.img3.value;
-										alert(img1);
-									</script>
-									
-									
-
 								<div class="filebox1">
 									<input type="text" class="fileName1" readonly="readonly">
 									<label for="ex1_file" class="btn_file" >ªÁ¡¯√∑∫Œ I. (JPG/GIF/PNG)</label>
@@ -182,7 +168,6 @@
 								
   								
   								
-
 									</td>
 									</tr>
 									
