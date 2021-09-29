@@ -2135,6 +2135,7 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 	}
 
+<<<<<<< HEAD
 	#title{
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -2151,6 +2152,9 @@ input, select, textarea {
 		text-decoration: none;
 		width: 100%;
 	}
+=======
+	
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
