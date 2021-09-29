@@ -48,7 +48,7 @@ public class adpostDAO {
 			 conn();
 		     
 			 try {
-		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, '', ?, ?, ?,?,?,?)";
+		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, '', ?, ?, ?, ?,?,?,?)";
 		         psmt = conn.prepareStatement(sql);
 		         
 		         psmt.setString(1, vo.getNick());
