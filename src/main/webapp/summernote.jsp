@@ -278,9 +278,13 @@
 											<input type="checkbox" name="color" value="DeepRed" id="color22" onclick=CountChecked(this)>
 											<label for="color22">Deep Red</label>
 									</tr>
+								
 								</table>
+								<div align="right">
 								<input type="submit" value="°Ô½Ã">
+									</div>
 								</form>
+							
 							</div>
 							</div>
 						</div>
