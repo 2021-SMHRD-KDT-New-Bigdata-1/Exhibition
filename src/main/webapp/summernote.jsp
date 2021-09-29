@@ -131,27 +131,43 @@
 									
 									</colgroup>
 									<tr>
-									<td>Title</td>
+									<td><strong>Title</strong></td>
 									<td><input type="text" id="title" name="title"></td>
 									
 									</tr>
 									
 									<tr>
-									<td>Content</td>
+									<td><strong>Content</strong></td>
 									<td><textarea id="summernote" name="content"></textarea></td></tr>
 									
 									<!-- 사진첨부 -->
 									<tr>
-									<td>사진첨부</td>
+									<td><strong>사진첨부</strong></td>
 									<td>
 									<%
 									//postDAO pdao = new postDAO();
 									//ArrayList<postVO> list = pdao.allpost_order_seq();
 									//int new_seq = list.get(0).getSeq()+2;
 									%>
-									<input type="file" name="img1" accept="image/gif,image/jpeg,image/png"><br>
-									<input type="file" name="img2" accept="image/gif,image/jpeg,image/png"><br>
-									<input type="file" name="img3" accept="image/gif,image/jpeg,image/png"><br>
+								<div class="filebox1">
+									<input type="text" class="fileName1" readonly="readonly">
+									<label for="ex1_file" class="btn_file" >사진첨부 I. (JPG/GIF/PNG)</label>
+									<input type="file" id="ex1_file" name="img1" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName1').value = this.value">
+								</div>	
+								<div class="filebox2"	>
+									<input type="text" class="fileName2" readonly="readonly">
+									<label for="ex2_file" class="btn_file">사진첨부 II. (JPG/GIF/PNG)</label>
+									<input type="file" id="ex2_file" name="img2" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName2').value = this.value">
+								</div>
+								<div class="filebox3"	>
+									<input type="text" class="fileName3" readonly="readonly">
+									<label for="ex3_file" class="btn_file">사진첨부 III.(JPG/GIF/PNG)</label>
+									<input type="file" id="ex3_file" name="img3" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName3').value = this.value">
+								</div>	
+									
+								
+  								
+  								
 									</td>
 									</tr>
 									
@@ -297,6 +313,58 @@
 					}});
 			});
 		</script>
+		
+		<script>
+		
+			$(document).ready(function(){ 
+				var fileTarget = $('.filebox1 #ex1_file'); 
+			   	 fileTarget.on('change', function(){ // 값이 변경되면
+			    	if(window.FileReader){ // modern browser 
+			        	var fileName1 = $(this)[0].files[0].name; 
+			        } else { // old IE 
+			        	var fileName1 = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+			        } 
+			        // 추출한 파일명 삽입 
+			        $(this).siblings('.fileName1').val(fileName1); 
+			    }); 
+			});
+				
+			$(document).ready(function(){ 
+				var fileTarget = $('.filebox2 #ex2_file'); 
+			   	 fileTarget.on('change', function(){ // 값이 변경되면
+			    	if(window.FileReader){ // modern browser 
+			        	var fileName2 = $(this)[0].files[0].name; 
+			        } else { // old IE 
+			        	var fileName2 = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+			        } 
+			        // 추출한 파일명 삽입 
+			        $(this).siblings('.fileName2').val(fileName2); 
+			    }); 
+			});
+			
+			$(document).ready(function(){ 
+				var fileTarget = $('.filebox3 #ex3_file'); 
+			   	 fileTarget.on('change', function(){ // 값이 변경되면
+			    	if(window.FileReader){ // modern browser 
+			        	var fileName3 = $(this)[0].files[0].name; 
+			        } else { // old IE 
+			        	var fileName3 = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+			        } 
+			        // 추출한 파일명 삽입 
+			        $(this).siblings('.fileName3').val(fileName3); 
+			    }); 
+			});
+		
+	
+	
+	
+	</script>
+		
+		
+		
+		
+		
+		
 		<!--  <script src="assets/js/jquery.min.js"></script>-->
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
