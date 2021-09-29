@@ -25,7 +25,7 @@
 
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
-    postDAO dao = new postDAO();
+    postDAO pdao = new postDAO();
     membersDAO mdao = new membersDAO();
     
     ArrayList<postVO> list = (ArrayList<postVO>)session.getAttribute("list");
@@ -295,7 +295,7 @@
 						out.print(region1+"</td>");
 					}
 					out.print("<td>");
-					if(dao.count(genre1,'|')!=0){
+					if(pdao.count(genre1,'|')!=0){
 						for(int j =0; j<genre_tag1.length; j++){
 							out.print(genre_tag1[j]);
 							}
@@ -306,7 +306,7 @@
 					}
 					
 					out.print("<td>");
-					if(dao.count(color1,'|')!=0){
+					if(pdao.count(color1,'|')!=0){
 						for(int j =0; j<color_tag1.length; j++){
 							out.print(color_tag1[j]);
 							}
@@ -339,7 +339,7 @@
 			out.print("<td>"+list.get(i).getNick()+"</td>");
 			out.print("<td>"+list.get(i).getTitle()+"</td>");
 			out.print("<td>");
-			if(dao.count(region,'|')!=0){
+			if(pdao.count(region,'|')!=0){
 				for(int j =0; j<region_tag.length; j++){
 					out.print(region_tag[j]);
 					}
@@ -349,7 +349,7 @@
 				out.print(region+"</td>");
 			}
 			out.print("<td>");
-			if(dao.count(genre,'|')!=0){
+			if(pdao.count(genre,'|')!=0){
 				for(int j =0; j<genre_tag.length; j++){
 					out.print(genre_tag[j]);
 					}
@@ -360,7 +360,7 @@
 			}
 			
 			out.print("<td>");
-			if(dao.count(color,'|')!=0){
+			if(pdao.count(color,'|')!=0){
 				for(int j =0; j<color_tag.length; j++){
 					out.print(color_tag[j]);
 					}
@@ -382,23 +382,40 @@
 			out.print("</tr>");
 		} %>
 	</table>
-										</div>
-										
-        
-			    <section class="tiles">
-			        <article class="style1">
-			            <span class="image">
-			                <img src="images/pic01.jpg" alt=""/>
-			            </span>
-			            
-			            <a href="onepost.jsp">
-			                <h2>Magna</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			               
-			            </a>
-			        </article>
+	</div>
+		<section class="tiles">
+		<%for(int i = 0;i<list.size();i++){ %>
+    	<%
+    	String f = list.get(i).getImg_name();
+    	f.replaceAll("null", "");
+    	String[] img_nm = f.split("\\|");
+    	%>
+    	<%
+    	for(int j = 0; j<4;j++){
+    	%>
+			<%if(!img_nm[j].equals("null")){ %>
+        <article class="style1">
+            <span class="image">
+                <img src="images/<%=img_nm[j]%>" alt=""/>
+            </span>
+            <%if(vo!=null){ %>
+            <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
+                <h2><%=list.get(i).getTitle()%></h2>
+                <div class="content">
+                    <p>writer :<%=list.get(i).getNick() %></p>
+                </div>
+            </a>
+             <%}else{ %>
+            <a href="login2.jsp">
+            <h2><%=list.get(i).getTitle()%></h2>
+                <div class="content">
+                    <p><%=list.get(i).getNick() %></p>
+                </div>
+            </a>
+            <%} %>
+        </article>
+        <%j=3;}}%>
+        <%} %>
 			       <!--  <article class="style2">
 			            <span class="image">
 			                <img src="images/pic02.jpg" alt=""/>

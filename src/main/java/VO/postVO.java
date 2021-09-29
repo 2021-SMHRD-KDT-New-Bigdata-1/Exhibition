@@ -22,7 +22,7 @@ public class postVO {
 
 	//태그별 정렬을 위한 생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
-			String color_tag, String comment, String like_nick, int like_tag_cnt) {
+			String color_tag, String comment, String like_nick, int like_tag_cnt,String img_name) {
 		super();
 		this.seq = seq;
 		this.content = content;
@@ -35,6 +35,7 @@ public class postVO {
 		this.comment = comment;
 		this.like_nick = like_nick;
 		this.like_tag_cnt = like_tag_cnt;
+		this.img_name = img_name;
 	}
 
 
@@ -58,7 +59,7 @@ public class postVO {
 	
 	//postselect을 위한 생성자
 	public postVO(int seq, String content, int cnt, String nick, String title, String region_tag, String genre_tag,
-			String color_tag) {
+			String color_tag,String img_name) {
 		super();
 		this.seq = seq;
 		this.content = content;
@@ -68,6 +69,7 @@ public class postVO {
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
+		this.img_name = img_name;
 	}
 
 

@@ -313,11 +313,11 @@ import VO.postVO;
 	                String region_tag = rs.getString(6);
 	                String genre_tag = rs.getString(7);
 	                String color_tag = rs.getString(8);
+	                String img_nick = rs.getString(11);
 	                
-	                postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag);
+	                postVO vo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,img_nick);
 	                list.add(vo);
 	             }
-	             
 	             
 	          }catch(Exception e) {
 	             e.printStackTrace();

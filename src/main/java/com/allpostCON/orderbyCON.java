@@ -74,7 +74,8 @@ public class orderbyCON extends HttpServlet{
 					all_list.get(i).getColor_tag(),
 					all_list.get(i).getComment(),
 					all_list.get(i).getLike_nick(),
-					cnt)); 
+					cnt,
+					all_list.get(i).getImg_name())); 
 		}//for문 끝
 		//이제 cnt 기준으로 정렬을 해줘야하는데.. -> 알고리즘을 짜..? 응 그냥 알고리즘을 짜..
 		//Collections.sort(orderList, new comparator());
