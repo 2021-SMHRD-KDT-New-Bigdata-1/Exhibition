@@ -48,7 +48,7 @@ public class adpostDAO {
 			 conn();
 		     
 			 try {
-		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
+		         String sql = "insert into ad_reviews values(AD_REVIEWS_SEQ.nextval, ?, ?, ?, ?, ?, ?, 0,' ',?,?,?)";
 		         psmt = conn.prepareStatement(sql);
 		         
 		         psmt.setString(1, vo.getNick());
@@ -57,11 +57,11 @@ public class adpostDAO {
 		         psmt.setString(4, vo.getRegion());
 		         psmt.setString(5, vo.getGenre());
 		         psmt.setString(6, vo.getColor());
-		         psmt.setInt(7, vo.getLike_cnt());
-		         psmt.setString(8, vo.getLike_nick());
-		         psmt.setString(9, vo.getAd_comment());
-		         psmt.setString(10, vo.getAd_title());
-		         psmt.setString(11, vo.getAd_img_name());
+		         //psmt.setInt(7, vo.getLike_cnt());
+		         //psmt.setString(8, vo.getLike_nick());
+		         psmt.setString(7, vo.getAd_comment());
+		         psmt.setString(8, vo.getAd_title());
+		         psmt.setString(9, vo.getAd_img_name());
 		         
 		         cnt = psmt.executeUpdate();
 		         

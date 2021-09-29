@@ -128,19 +128,16 @@
             </span>
             <%if(vo!=null){ %>
             <a href="adOnePost.jsp?seq=<%=ad_list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
-                <h2><%=ad_list.get(i).getAd_title()%></h2>
-                <div class="content">
-                    <p><%=ad_list.get(i).getNick() %></p>
-                </div>
-            </a>
              <%}else{ %>
             <a href="login2.jsp">
+            <%} %>
+            
             <h2><%=ad_list.get(i).getAd_title()%></h2>
                 <div class="content">
                     <p><%=ad_list.get(i).getNick() %></p>
                 </div>
             </a>
-            <%} %>
+            
         </article>
         <%j=3;}}%>
         <%} %>
