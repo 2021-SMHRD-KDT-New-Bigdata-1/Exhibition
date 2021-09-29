@@ -72,19 +72,19 @@
                      <table border=1>
                      
                      <tr>
-                     <td colspan=2><h3><strong>개인 정보 수정</strong></h3></td>
+                     <td colspan=2 ><h3><strong><font color="white">개인 정보 수정</font></strong></h3></td>
                      </tr>
                      
                      <tr>
-                        <td>이름</td>
+                        <td align="center">이름</td>
                         <td><input type = "text" name = "name" required></td>
                      </tr>
                      <tr>
-                        <td>아이디</td>
+                        <td align="center">아이디</td>
                         <td><input type = "text" name = "id" required></td>
                      </tr>
                      <tr>
-                        <td>비밀번호</td>
+                        <td align="center">비밀번호</td>
                         <td><input type = "password" name = "pw" required></td>
                      </tr>
                      <!-- 
@@ -94,7 +94,7 @@
                      </tr>
                      -->
                      <tr>
-                        <td>전화번호</td>
+                        <td align="center">전화번호</td>
                         <td><input type = "text" name = "tel" required> (인증하는거 넣기)</td>
                      </tr>
                      <!-- 
@@ -142,11 +142,11 @@
                               
                      	<tr>
                      	<td colspan=2">
-                     	<h3><strong>관심 태그 설정</strong></h3>
+                     	<h3><strong><font color="white">관심 태그 설정</font></strong></h3>
                      	<td>
                      	</tr>
                                  <tr>
-                                    <td><strong>지역별 태그</strong></td>
+                                    <td align="center">지역별 태그</td>
                                     <td>
                                        <input type="checkbox" name="region" value="" id="region1">
                                        <label for="region1">전체지역</label>
@@ -185,7 +185,7 @@
                                     </td>
                                  </tr>   
                                  <tr>
-                                    <td><strong>장르별 태그</strong></td>
+                                    <td align="center">장르별 태그</td>
                                     <td>
                                        <input type="checkbox" name="genre" value="Western" id="genre1">
                                        <label for="genre1">서양화</label> 
@@ -208,7 +208,7 @@
                                     </td>
                                  </tr>
                                  <tr>
-                                    <td><strong>색감별(분위기) 태그</strong></td>
+                                    <td align="center">색감별(분위기) 태그</td>
                                     <td>
                                        <input type="checkbox" name="color" value="White" id="color1">
                                        <label for="color1">White</label> 
@@ -259,7 +259,7 @@
                                     </tr>
    
                                     <tr>
-                                       <td colspan="2" ><input type="submit" value="수정"> </td>
+                                       <td colspan="2" align="center" ><input type="submit" value="수정"> </td>
                                     </tr>
                                  </table>
                                  
@@ -274,17 +274,10 @@
          </div>
 
       <!-- Footer -->
-         <div id="footer">
-
-            <!-- Copyright -->
-               
-
-         </div>
-
+     
    
    
-   
-   <h1>로그인 한 상태 마이페이지</h1>
+
    <ul>
       <li><a href="./myPage/modify.jsp">개인 정보 수정</a></li>
       <li><a href="./myPage/likeTag.jsp">관심 분야 설정</a></li>
