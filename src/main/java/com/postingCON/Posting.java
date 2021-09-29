@@ -34,7 +34,12 @@ public class Posting extends HttpServlet {
 		membersVO vo= (membersVO)session.getAttribute("vo");
 		membersDAO mdao = new membersDAO();
 		
+		String img1 = "";
+		String img2 = "";
+		String img3 = "";
+		
 		request.setCharacterEncoding("euc-kr");
+			
 		
 				//이미지를 위한 코드
 				PrintWriter out = response.getWriter();
@@ -116,6 +121,11 @@ public class Posting extends HttpServlet {
 					like_region_tag = multi.getParameterValues("region");
 					like_genre_tag = multi.getParameterValues("genre");
 					like_color_tag = multi.getParameterValues("color");
+					
+					img1 = multi.getFilesystemName("img1");
+					img2 = multi.getFilesystemName("img2");
+					img3 = multi.getFilesystemName("img3");
+					
 					
 					
 //					if(filename==null) {
