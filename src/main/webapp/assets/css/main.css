@@ -2136,7 +2136,7 @@ input, select, textarea {
 	}
 
 	
-	input[type="password"],
+	input#title,input[type="password"],
 	input[type="email"],
 	input[type="tel"],
 	select,
@@ -2158,7 +2158,7 @@ input, select, textarea {
 	}
 
 		
-		input[type="password"]:invalid,
+		input#title, input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		input[type="tel"]:invalid,
 		select:invalid,
@@ -2167,7 +2167,7 @@ input, select, textarea {
 		}
 
 		
-		input[type="password"]:focus,
+		input#title, input[type="password"]:focus,
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
 		select:focus,
