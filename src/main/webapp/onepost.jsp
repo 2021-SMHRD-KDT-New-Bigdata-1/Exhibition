@@ -119,9 +119,15 @@
 						<div class="inner">
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
-								<h1>TITLE:<%=list.get(0).getTitle() %></h1>
-								<p>WRITER:<%=list.get(0).getNick() %></p>
-								<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+                        		<h1>TITLE:<%=list.get(0).getTitle() %></h1>
+                        		<p> WRITER:<%=list.get(0).getNick() %></p>
+                        		<%for(int i =0; i<4; i++){ %>
+                        		<%String f = list.get(0).getImg_name();
+                       			 f.replaceAll("null", "");
+                        		String[] img_name = f.split("\\|");
+                           		if(!img_name[i].equals("null")){%>
+                              <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
+                           <% }}%>
 								<p>CONTENT:<%=list.get(0).getContent() %></p>
 							<%}else{
 								
