@@ -80,7 +80,7 @@
 					       <%} %>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
-                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>
                                  </li>
                                  
                                  <li class="nav-item">
