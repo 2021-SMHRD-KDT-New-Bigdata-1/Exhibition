@@ -72,7 +72,7 @@
                      <table border=1>
                      
                      <tr>
-                     <td colspan=2 ><h3><strong><font color="white">개인 정보 수정</font></strong></h3></td>
+                     <td colspan=2 ><h3><strong><font color="black">개인 정보 수정</font></strong></h3></td>
                      </tr>
                      
                      <tr>
@@ -142,7 +142,7 @@
                               
                      	<tr>
                      	<td colspan=2">
-                     	<h3><strong><font color="white">관심 태그 설정</font></strong></h3>
+                     	<h3><strong><font color="black">관심 태그 설정</font></strong></h3>
                      	<td>
                      	</tr>
                                  <tr>
