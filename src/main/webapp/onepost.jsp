@@ -71,7 +71,7 @@
 					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="all.jsp">SEARCH</a>
+					      <a class="nav-link" href="all.jsp">ALL POST</a>
 					      </li>
 					      <%if(vo!=null){ %>
 					      <li class="nav-item">
@@ -85,7 +85,7 @@
 					       <%} %>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
-                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>
                                  </li>
                                  
                                  <li class="nav-item">
@@ -112,7 +112,8 @@
 			</div>
 		</header>
 
-			
+				
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
@@ -128,12 +129,6 @@
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
 								<p>CONTENT:<%=list.get(0).getContent() %></p>
-								<p>
-								#<%=list.get(0).getRegion_tag() %><br>
-								#<%=list.get(0).getGenre_tag() %><br>
-								#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></p>
-								
-								
 							<%}else{
 								
 							}%>
@@ -142,9 +137,13 @@
 							//좋아요 버튼 다르게
 							String like_origin = dao.likeselect(seq);
 							if(like_origin.contains(vo.getMB_nick())){%>
-								<div id="like_btn"><button onclick='location.href="likePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요 취소</button><%=list.get(0).getCnt() %></div>
+								<button  class="like_btn"><%=list.get(0).getCnt() %></button>
+								<button class="like_btn" onclick='location.href="likePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class=" fas fa-thumbs-up fa-2x"></i></button>
 							<%}else{%>
-								<div id="like_btn"><button onclick='location.href="likePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요</button><%=list.get(0).getCnt() %></div>
+								<button  class="like_btn"><%=list.get(0).getCnt() %></button>
+								<button class="like_btn" onclick='location.href="likePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class="far fa-thumbs-up fa-2x"></i></button>
 							<%} %>
 							
 							
@@ -153,9 +152,12 @@
 							//저장 버튼 다르게
 							saveDAO sdao = new saveDAO();
 							if(sdao.check(seq,vo.getMB_nick())==true){//이미 저장되어 있는경우%>
-								<div id="bookmark_btn"><button onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장취소</button></div>
+								<button class="bookmark_btn" onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class="fas fa-share-square fa-2x"></i></button>
+							
 							<%}else{%>
-								<div id="bookmark_btn"><button onclick='location.href="saveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장하기</button></div>
+								<button class="bookmark_btn" onclick='location.href="saveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class="far fa-share-square fa-2x"></i></button>
 							<%}%>
 						
 						</div>
