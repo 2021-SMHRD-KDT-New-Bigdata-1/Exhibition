@@ -201,7 +201,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 					for (int j = 0; (7 > j); j++) {
 						out.println("<td align='center'>");
 
-						// 현재 달의 1을의 요일에 해당하는 곳부터 출력하기위함
+						// 현재 달의 1일의 요일에 해당하는 곳부터 출력하기위함
 						if (oneDayNum == j + 1 || dayCheck) {
 					// 현재 달의 최대 일수일경우
 					if (monthMaxNum >= day) {
