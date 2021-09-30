@@ -34,7 +34,7 @@
     ArrayList<postVO> list = pdao.allpost(); //cnt 내림차순으로 나올 것임
     
     adpostDAO adao = new adpostDAO();
-    ArrayList<adpostVO> ad_list = adao.allpost();
+    ArrayList<adpostVO> ad_list = adao.allpost(); //우선 여기에 저희도 아냐팡이ㅏ냐 잠깐??
     %>
         <!-- Wrapper -->
         <div id="wrapper">
