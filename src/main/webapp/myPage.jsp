@@ -95,7 +95,7 @@
                      -->
                      <tr>
                         <td align="center">전화번호</td>
-                        <td><input type = "text" name = "tel" required> (인증하는거 넣기)</td>
+                        <td><input type = "text" name = "tel" required></td>
                      </tr>
                      <!-- 
                      <tr> 
