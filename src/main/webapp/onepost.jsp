@@ -71,7 +71,7 @@
 					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      <a class="nav-link" href="all.jsp">SEARCH</a>
 					      </li>
 					      <%if(vo!=null){ %>
 					      <li class="nav-item">
@@ -112,8 +112,7 @@
 			</div>
 		</header>
 
-				
-
+			
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
@@ -142,6 +141,12 @@
                            <% }}%>
 >>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 								<p>CONTENT:<%=list.get(0).getContent() %></p>
+								<p>
+								#<%=list.get(0).getRegion_tag() %><br>
+								#<%=list.get(0).getGenre_tag() %><br>
+								#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></p>
+								
+								
 							<%}else{
 								
 							}%>

@@ -74,7 +74,7 @@
 					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      <a class="nav-link" href="all.jsp">SEARCH</a>
 					      </li>
 					      <%if(vo!=null){ %>
 					      <li class="nav-item">
@@ -132,6 +132,10 @@
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
 								<p>CONTENT:<%=list.get(0).getContent() %></p>
+								<p>
+								#<%=list.get(0).getRegion() %><br>
+								#<%=list.get(0).getGenre() %><br>
+								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></p>
 							<%}else{
 								
 							}%>

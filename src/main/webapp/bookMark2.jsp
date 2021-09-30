@@ -1,6 +1,3 @@
-<%@page import="DAO.adpostDAO"%>
-<%@page import="VO.adsaveVO"%>
-<%@page import="DAO.adsaveDAO"%>
 <%@page import="VO.saveVO"%>
 <%@page import="DAO.saveDAO"%>
 <%@page import="VO.postVO"%>
@@ -14,11 +11,12 @@
 <%
     //로그인 한 세션 받아오기
     membersVO vo = (membersVO)session.getAttribute("vo");
-	membersDAO mdao = new membersDAO();
-    adsaveDAO adsdao = new adsaveDAO();
-	ArrayList<adsaveVO> adlist = adsdao.savepostselect(vo.getMB_nick());
+    membersDAO mdao = new membersDAO();
+    
+    saveDAO sdao = new saveDAO();
+	ArrayList<saveVO> list = sdao.savepostselect(vo.getMB_nick());
 	
-	adpostDAO apdao = new adpostDAO();
+	postDAO pdao = new postDAO();
 %>
         
 <!DOCTYPE html>
@@ -30,11 +28,9 @@
             name="viewport"
             content="width=device-width, initial-scale=1, user-scalable=no"/>
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
-
-
-
-	<link rel="stylesheet" href="assets/css/bookMark2.css"/>
-
+  
+     
+       <link rel="stylesheet" href="assets/css/bookMark2.css"/>
     </head> 
 
 	<div id="header">
@@ -49,14 +45,14 @@
 
 			<!-- Nav -->
 			<nav id="nav">
-						<ul>
+				<ul>
 					<li><a href="Main.jsp" id="Main-link"><span
-							 class="fas fa-home">Home</span></a></li>
-					<li><a href="bookMark2.jsp" id="myInfo-link"><span
-							class="fas fa-file-export">저장 게시물</span></a></li>
-					<li><a href="#" id="myTag-link"><span
+							class="icon solid fa-home">Home</span></a></li>
+					<li><a href="#" id="myInfo-link"><span
+							class="icon fas fa-file-export">저장 게시물</span></a></li>
+					<li><a href="ad.jsp" id="myTag-link"><span
 							class="icon solid fa-th">광고 저장 게시물</span></a></li>
-				</ul>	
+				</ul>
 			</nav>
 
 		</div>
@@ -67,17 +63,13 @@
 
 
 
-
-
-
-
     <body class="is-preload">
-    <!-- <h1>광고 북마크 페이지</h1> -->
+    <!-- <h1>북마크 페이지</h1> -->
         <!-- Wrapper -->
         <div id="wrapper">
 
-              
-       
+      
+
 <!-- Main -->
 
 <div id="main">
@@ -85,25 +77,25 @@
        
     <section class="tiles">
     
-    <%for(int i = 0;i<adlist.size();i++){ %>
+    <%for(int i = 0;i<list.size();i++){ %>
     	<%
-    	String f = adlist.get(i).getAd_img_name();  
+    	String f = list.get(i).getImg_name();
     	f.replaceAll("null", "");
-    	String[] ad_img_nm = f.split("\\|");
+    	String[] img_nm = f.split("\\|");
     	%>
     	<%
     	for(int j = 0; j<4;j++){
     	%>
-			<%if(!ad_img_nm[j].equals("null")){ %>
+			<%if(!img_nm[j].equals("null")){ %>
         <article class="style1">
             <span class="image">
-                <img src="images/<%=ad_img_nm[j]%>" alt=""/>
+                <img src="images/<%=img_nm[j]%>" alt=""/>
             </span>
             <%if(vo!=null){ %>
-            <a href='saveOneAdPost.jsp?seq=<%=adlist.get(i).getAd_rv_seq()%>'><!-- 쿼리스트링으로 seq 같이 넘기기 -->
-                <h2><%=adlist.get(i).getAd_title()%></h2>
+            <a href='saveOnePost.jsp?seq=<%=list.get(i).getSeq()%>'><!-- 쿼리스트링으로 seq 같이 넘기기 -->
+                <h2><%=list.get(i).getTitle()%></h2>
                 <div class="content">
-                    <p>writer :<%=adlist.get(i).getMb_nick() %></p>
+                    <p>writer :<%=list.get(i).getNick() %></p>
                 </div>
             </a>
             <%} %>
@@ -127,26 +119,26 @@
 		</tr>
 		<%
 		
-		for(int i = 0; i<adlist.size(); i++){
-			String region = adlist.get(i).getRegion_tag();
+		for(int i = 0; i<list.size(); i++){
+			String region = list.get(i).getRegion_tag();
 			String[] region_tag = region.split("\\|");
-			String genre = adlist.get(i).getGenre_tag();
+			String genre = list.get(i).getGenre_tag();
 			String[] genre_tag = genre.split("\\|");
-			String color = adlist.get(i).getColor_tag();
+			String color = list.get(i).getColor_tag();
 			String[] color_tag = color.split("\\|");
 			
 			//region.replace(String.valueOf('|'),"");
 			%>
-			<tr onclick="location.href='saveOneAdPost.jsp?seq=<%=adlist.get(i).getAd_rv_seq()%>'">
+			<tr onclick="location.href='saveOnePost.jsp?seq=<%=list.get(i).getSeq()%>'">
 			
 			<%
-			out.print("<td>"+adlist.get(i).getAd_rv_seq()+"</td>");
-			out.print("<td>"+adlist.get(i).getAd_content()+"</td>");
-			out.print("<td>"+adlist.get(i).getAd_like_cnt()+"</td>");
-			out.print("<td>"+adlist.get(i).getAd_mb_nick()+"</td>");
-			out.print("<td>"+adlist.get(i).getAd_title()+"</td>");
+			out.print("<td>"+list.get(i).getSeq()+"</td>");
+			out.print("<td>"+list.get(i).getContent()+"</td>");
+			out.print("<td>"+list.get(i).getCnt()+"</td>");
+			out.print("<td>"+list.get(i).getNick()+"</td>");
+			out.print("<td>"+list.get(i).getTitle()+"</td>");
 			out.print("<td>");
-			if(apdao.count(region,'|')!=0){
+			if(pdao.count(region,'|')!=0){
 				for(int j =0; j<region_tag.length; j++){
 					out.print(region_tag[j]);
 					}
@@ -156,7 +148,7 @@
 				out.print(region+"</td>");
 			}
 			out.print("<td>");
-			if(apdao.count(genre,'|')!=0){
+			if(pdao.count(genre,'|')!=0){
 				for(int j =0; j<genre_tag.length; j++){
 					out.print(genre_tag[j]);
 					}
@@ -167,7 +159,7 @@
 			}
 			
 			out.print("<td>");
-			if(apdao.count(color,'|')!=0){
+			if(pdao.count(color,'|')!=0){
 				for(int j =0; j<color_tag.length; j++){
 					out.print(color_tag[j]);
 					}

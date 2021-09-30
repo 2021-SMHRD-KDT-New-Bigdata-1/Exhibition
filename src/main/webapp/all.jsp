@@ -80,7 +80,7 @@
 					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      <a class="nav-link" href="all.jsp">SEARCH</a>
 					      </li>
 					      <%if(vo!=null){ %>
 					      <li class="nav-item">
@@ -94,7 +94,7 @@
 					       <%} %>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
-                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>
                                  </li>
                                  
                                  <li class="nav-item">
