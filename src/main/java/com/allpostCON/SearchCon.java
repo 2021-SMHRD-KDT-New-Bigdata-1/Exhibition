@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.adpostDAO;
 import DAO.membersDAO;
 import DAO.postDAO;
+import VO.adpostVO;
 import VO.membersVO;
 import VO.postVO;
 
@@ -27,7 +29,7 @@ public class SearchCon extends HttpServlet {
 	
 		request.setCharacterEncoding("euc-kr");
 		
-		System.out.println("searchCON시작2");
+		System.out.println("searchCON시작 - 태그를 기반으로 검색합니다");
 		//검색한 태그
 		String[] region_tag = request.getParameterValues("region");
 		System.out.println(Arrays.toString(region_tag));
@@ -58,9 +60,9 @@ public class SearchCon extends HttpServlet {
 		System.out.println(search_genre_tag);
 		System.out.println(search_color_tag);
 
-		postDAO dao = new postDAO();
+		postDAO pdao = new postDAO();
 
-		ArrayList<postVO> AL = dao.postselect();
+		ArrayList<postVO> AL = pdao.postselect();
 		ArrayList<postVO> list = new ArrayList<postVO>();
 		
 		for (int i = 0; i < AL.size(); i++) {
@@ -106,13 +108,63 @@ public class SearchCon extends HttpServlet {
 				}
 			}
 		}
+		
+		//adpost list도 정렬
+		adpostDAO adao = new adpostDAO();
+		ArrayList<adpostVO> AD_AL = adao.allpost();
+		ArrayList<adpostVO> adlist = new ArrayList<adpostVO>();
+		
+		//adpost list 태그 검색
+		for (int i = 0; i < AD_AL.size(); i++) {
+			String post_region = AD_AL.get(i).getRegion();
+			String post_genre = AD_AL.get(i).getGenre();
+			String post_color = AD_AL.get(i).getColor();
 			
+			String[] post_regioin_ar = post_region.split("\\|");
+			String[] post_genre_ar = post_genre.split("\\|");
+			String[] post_color_ar = post_color.split("\\|");
+			
+			if(search_region_tag.contains(post_region)) {
+				System.out.println("ad지역필터링통과");
+				if(search_genre_tag.contains(post_genre)) {
+					System.out.println("ad장르필터링통과");
+					int cnt = 0;
+					if(post_color_ar.length>color_tag.length) {
+						for(int j = 0; j<color_tag.length;j++) {
+							if(post_color.contains(color_tag[j])) { //내가 검색한 태그가 post태그에 포함되어있는지 검색!
+								cnt ++;
+							}
+						}
+						if(cnt == color_tag.length) { //*
+							System.out.println("ad컬러필터링 통과");
+							System.out.println(AD_AL.get(i).getGenre());
+							System.out.println(AD_AL.get(i).getColor());
+							adlist.add(AD_AL.get(i));
+						}
+					}else{
+						for(int j = 0; j<color_tag.length;j++) {
+							if(post_color.contains(color_tag[j])) {
+								cnt ++;
+							}
+						}
+						if(cnt == post_color_ar.length) { 	//*
+							System.out.println("ad컬러필터링 통과");
+							System.out.println(AD_AL.get(i).getGenre());
+							System.out.println(AD_AL.get(i).getColor());
+							adlist.add(AD_AL.get(i));
+						}
+					}
+				}
+			}
+		}
+		
 			if(list!=null) {
 				session.setAttribute("list", list);
-				response.sendRedirect("allSearch.jsp");
-				
-			
-		}
+			}
+			if(adlist!=null) {
+				session.setAttribute("adlist", adlist);
+			}
+			response.sendRedirect("allSearch.jsp");
 		
 		
 		
