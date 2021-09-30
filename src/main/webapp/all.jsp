@@ -395,9 +395,42 @@
 			<%
 			out.print("</tr>");
 		} %>
-	</table>
+		</table>
 		</div>
+		
+		<!-- 이미지 그리드 형식으로 나타내기 -->
 		<section class="tiles">
+		
+		<!-- 광고 게시물들 -->
+		<%for(int i = 0;i<adlist.size();i++){ %>
+    	<%
+    	String f = adlist.get(i).getAd_img_name();
+    	f.replaceAll("null", "");
+    	String[] ad_img_nm = f.split("\\|");
+    	%>
+    	<%
+    	for(int j = 0; j<4;j++){
+    	%>
+			<%if(!ad_img_nm[j].equals("null")){ %>
+        <article class="style1">
+            <span class="image">
+                <img src="images/<%=ad_img_nm[j]%>" alt=""/>
+            </span>
+            <%if(vo!=null){ %>
+            <a href="adOnePost.jsp?seq=<%=adlist.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
+             <%}else{ %>
+            <a href="login2.jsp">
+            <%} %>
+            <h2><%=adlist.get(i).getAd_title()%></h2>
+                <div class="content">
+                    <p><%=adlist.get(i).getNick() %></p>
+                </div>
+            </a>
+        </article>
+        <%j=3;}}%>
+        <%} %>
+		
+		<!-- 일반 게시물들 -->
 		<%for(int i = 0;i<list.size();i++){ %>
     	<%
     	String f = list.get(i).getImg_name();
@@ -414,143 +447,18 @@
             </span>
             <%if(vo!=null){ %>
             <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
-                <h2><%=list.get(i).getTitle()%></h2>
-                <div class="content">
-                    <p>writer :<%=list.get(i).getNick() %></p>
-                </div>
-            </a>
              <%}else{ %>
             <a href="login2.jsp">
+            <%} %>
             <h2><%=list.get(i).getTitle()%></h2>
                 <div class="content">
                     <p><%=list.get(i).getNick() %></p>
                 </div>
             </a>
-            <%} %>
         </article>
         <%j=3;}}%>
         <%} %>
-			       <!--  <article class="style2">
-			            <span class="image">
-			                <img src="images/pic02.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Lorem</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style3">
-			            <span class="image">
-			                <img src="images/pic03.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Feugiat</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style4">
-			            <span class="image">
-			                <img src="images/pic04.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Tempus</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style5">
-			            <span class="image">
-			                <img src="images/pic05.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Aliquam</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style6">
-			            <span class="image">
-			                <img src="images/pic06.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Veroeros</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style2">
-			            <span class="image">
-			                <img src="images/pic07.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Ipsum</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style3">
-			            <span class="image">
-			                <img src="images/pic08.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Dolor</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style1">
-			            <span class="image">
-			                <img src="images/pic09.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Nullam</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style5">
-			            <span class="image">
-			                <img src="images/pic10.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Ultricies</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style6">
-			            <span class="image">
-			                <img src="images/pic11.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Dictum</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>
-			        <article class="style4">
-			            <span class="image">
-			                <img src="images/pic12.jpg" alt=""/>
-			            </span>
-			            <a href="generic.html">
-			                <h2>Pretium</h2>
-			                <div class="content">
-			                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-			                </div>
-			            </a>
-			        </article>-->
+			       
 			    </section>
 			    </div>
 			</div>

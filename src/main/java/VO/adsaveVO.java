@@ -21,10 +21,13 @@ public class adsaveVO {
 	private String ad_comment ; //ad_comment
 	private String ad_title ; //ad_title
 	
+	//+
+	private String ad_img_name; //ad_img_name
+	
 	//기본생성자 + innerjoin 결과 객체 담기 위함
 	public adsaveVO(int saved_ad_rv_seq, String ad_my_memo, String ad_mb_nick, int ad_rv_num, int ad_rv_seq,
 			String mb_nick, String ad_content, String ad_date, String region_tag, String genre_tag, String color_tag,
-			int ad_like_cnt, String ad_like_nick, String ad_comment, String ad_title) {
+			int ad_like_cnt, String ad_like_nick, String ad_comment, String ad_title, String ad_img_name) {
 		super();
 		this.saved_ad_rv_seq = saved_ad_rv_seq;
 		this.ad_my_memo = ad_my_memo;
@@ -41,6 +44,7 @@ public class adsaveVO {
 		this.ad_like_nick = ad_like_nick;
 		this.ad_comment = ad_comment;
 		this.ad_title = ad_title;
+		this.ad_img_name = ad_img_name;
 	}
 	
 	public adsaveVO(int saved_ad_rv_seq, String ad_my_memo, String ad_mb_nick, int ad_rv_num) {
@@ -171,6 +175,14 @@ public class adsaveVO {
 
 	public void setAd_title(String ad_title) {
 		this.ad_title = ad_title;
+	}
+
+	public String getAd_img_name() {
+		return ad_img_name;
+	}
+
+	public void setAd_img_name(String ad_img_name) {
+		this.ad_img_name = ad_img_name;
 	}
 
 }

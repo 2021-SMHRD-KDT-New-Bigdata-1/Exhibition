@@ -15,6 +15,8 @@ public class saveVO {
 	private String genre_tag;
 	private String color_tag;
 	
+	//img_name√ﬂ∞°
+	private String img_name;
 	
 	public saveVO(int saved_rv_seq, String my_memo, String mb_nick, int rv_num) {
 		super();
@@ -25,7 +27,7 @@ public class saveVO {
 	}
 	
 	public saveVO(int saved_rv_seq, String my_memo, String mb_nick, int rv_num, int seq, String content, int cnt,
-			String nick, String title, String region_tag, String genre_tag, String color_tag) {
+			String nick, String title, String region_tag, String genre_tag, String color_tag,String img_name) {
 		super();
 		this.saved_rv_seq = saved_rv_seq;
 		this.my_memo = my_memo;
@@ -39,6 +41,7 @@ public class saveVO {
 		this.region_tag = region_tag;
 		this.genre_tag = genre_tag;
 		this.color_tag = color_tag;
+		this.img_name = img_name;
 	}
 
 	public int getSaved_rv_seq() {
@@ -137,7 +140,13 @@ public class saveVO {
 		this.color_tag = color_tag;
 	}
 
+	public String getImg_name() {
+		return img_name;
+	}
 
+	public void setImg_name(String img_name) {
+		this.img_name = img_name;
+	}
 
 
 }

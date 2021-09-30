@@ -87,8 +87,9 @@ public class saveDAO {
 				String region_tag = rs.getString(10);
 				String genre_tag = rs.getString(11);
 				String color_tag = rs.getString(12);
+				String img_name = rs.getString(15);
 				
-				saveVO vo = new saveVO(col1,col2,col3,col4,seq,content,cnt,nick1,title,region_tag,genre_tag,color_tag);
+				saveVO vo = new saveVO(col1,col2,col3,col4,seq,content,cnt,nick1,title,region_tag,genre_tag,color_tag,img_name);
 				AL.add(vo);
 			}
 			

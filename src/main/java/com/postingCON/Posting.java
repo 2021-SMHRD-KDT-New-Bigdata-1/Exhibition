@@ -59,6 +59,7 @@ public class Posting extends HttpServlet {
 				System.out.println("서버상의 실제 디렉토리 : "+uploadFilePath);
 				System.out.println(uploadFilePath+"\\"+new_seq);
 				
+				//전역변수 처리
 				String title = null; 
 				String content = null;
 				String start_date = "";
@@ -114,9 +115,9 @@ public class Posting extends HttpServlet {
 					String f_name_string = "";
 					for (int i = 0; i < f_name.size(); i++) {
 						System.out.println(f_name.get(i));
-						f_name_string = f_name_string+f_name.get(i)+"|";
+						f_name_string = f_name_string+f_name.get(i)+"|"; //arrayjoin메소드 대신
 					}
-					System.out.println("컬럼에 들어갈 사진 이름들을 한 문자열로 : "+f_name_string.substring(0, f_name_string.length()-1));
+					System.out.println("컬럼에 들어갈 사진 이름들을 한 문자열로 : "+f_name_string.substring(0, f_name_string.length()-1)); //맨 마지막 bar 빼줌
 					f_db = f_name_string.substring(0, f_name_string.length()-1); //db에 넣을 값
 					
 					
@@ -163,12 +164,12 @@ public class Posting extends HttpServlet {
 		postDAO dao = new postDAO();
 		adpostDAO adao = new adpostDAO();
 		
-		adpostVO avo = new adpostVO(vo.getMB_nick(), content, date, region_tag, genre_tag, color_tag, title);
+		adpostVO avo = new adpostVO(vo.getMB_nick(), content, date, region_tag, genre_tag, color_tag, title, f_db); 
 		
 		int cnt1 = 0;
 		int cnt2 = 0;
 		
-		if(mdao.bncheck(vo.getMB_nick()) == true) {
+		if(mdao.bncheck(vo.getMB_nick()) == true) { 
 			cnt2 = adao.adposting(avo);
 		}else {
 			cnt1 = dao.posting(pvo);
