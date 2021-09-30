@@ -161,10 +161,11 @@ public class adsaveDAO {
 						String like_nick = rs.getString(13); //ad_like_nick
 						String comment = rs.getString(14); //ad_comment
 						String title = rs.getString(15); //ad_title
+						String ad_img_name = rs.getString(16); //ad_img_name
 						
 						adsaveVO vo = new adsaveVO(col1,col2,col3,col4,seq,nick1,content,date,
 								region_tag,genre_tag,color_tag,
-								like_cnt,like_nick,comment,title);
+								like_cnt,like_nick,comment,title,ad_img_name);
 						AL.add(vo);
 					}
 					
