@@ -2012,7 +2012,7 @@ input[type="checkbox"],
 
    table {
       margin: 0 0 2em 0;
-      width: 100%;
+      width: 80%;
       table-layout:fixed; 
 
       
@@ -2029,7 +2029,7 @@ input[type="checkbox"],
          }
 
       table td {
-         padding: 0.5em 0.5em;
+         padding: 0.2em 0.2em;
       }
 
       table th {
