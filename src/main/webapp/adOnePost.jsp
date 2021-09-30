@@ -26,6 +26,8 @@
 	
 <!DOCTYPE html>
 <html>
+
+
 <head>
 <meta charset="EUC-KR">
 <title>38℃ - <%=seq %>번째 글</title>
@@ -74,7 +76,7 @@
 					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="all.jsp">SEARCH</a>
+					      <a class="nav-link" href="all.jsp">ALL POST</a>
 					      </li>
 					      <%if(vo!=null){ %>
 					      <li class="nav-item">
@@ -132,10 +134,6 @@
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
 								<p>CONTENT:<%=list.get(0).getContent() %></p>
-								<p>
-								#<%=list.get(0).getRegion() %><br>
-								#<%=list.get(0).getGenre() %><br>
-								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></p>
 							<%}else{
 								
 							}%>
@@ -144,9 +142,13 @@
 							//좋아요 버튼 다르게
 							String like_origin = dao.likeselect(seq);
 							if(like_origin.contains(vo.getMB_nick())){%>
-								<div id="like_btn"><button onclick='location.href="adlikePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요 취소</button><%=list.get(0).getLike_cnt() %></div>
+								<button class="like_btn"><%=list.get(0).getLike_cnt() %></button>
+								<button class="like_btn" onclick='location.href="adlikePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class=" fas fa-thumbs-up fa-2x"></i></button>
 							<%}else{%>
-								<div id="like_btn"><button onclick='location.href="adlikePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요</button><%=list.get(0).getLike_cnt() %></div>
+								<button class="like_btn"><%=list.get(0).getLike_cnt() %></button>
+								<button class="like_btn" onclick='location.href="adlikePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class="far fa-thumbs-up fa-2x"></i></button>
 							<%} %>
 							
 							
@@ -155,9 +157,11 @@
 							//저장 버튼 다르게
 							adsaveDAO adsdao = new adsaveDAO();
 							if(adsdao.check(seq,vo.getMB_nick())==true){//이미 저장되어 있는경우%>
-								<div id="bookmark_btn"><button onclick='location.href="addelsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장취소</button></div>
+								<button class="bookmark_btn" onclick='location.href="addelsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class="fas fa-share-square fa-2x"></i></button>
 							<%}else{%>
-								<div id="bookmark_btn"><button onclick='location.href="adsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장하기</button></div>
+								<button class="bookmark_btn" onclick='location.href="adsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"' >
+								<i class="far fa-share-square fa-2x "></i></button>
 							<%}%>
 						
 						</div>

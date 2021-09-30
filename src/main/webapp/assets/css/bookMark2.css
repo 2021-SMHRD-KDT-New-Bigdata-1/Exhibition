@@ -137,7 +137,7 @@ input, select, textarea {
       }
 
    h2 {
-      font-size: 2em;
+      font-size: 1em;
       letter-spacing: -1px;
    }
 
@@ -2988,7 +2988,7 @@ input[type="checkbox"],
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		position: relative;
-		margin: -2.5em 0 0 -2.5em;
+		margin-right: 2em;
 	}
 
 		.tiles article {

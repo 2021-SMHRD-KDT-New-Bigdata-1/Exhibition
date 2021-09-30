@@ -117,7 +117,7 @@
 							    	<div class="table-wrapper">
 									<div class="field">
 									<form action = "SearchCon">
-										<table>
+										<table class="s_table">
 										
 										<colgroup>
 

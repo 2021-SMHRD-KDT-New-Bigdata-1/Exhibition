@@ -132,7 +132,7 @@
 							    	<div class="table-wrapper">
 									<div class="field">
 									<form action = "SearchCon">
-										<table>
+										<table class="s_table">
 										<colgroup>
 
 										<col style="width:20%;">
@@ -140,6 +140,7 @@
 										<col style="width:80%;">
 										
 										</colgroup>
+										
 											<tr>
 												<td><strong>지역별 태그</strong></td>
 												<td>
@@ -180,6 +181,7 @@
 												</td>
 											</tr>
 											
+											
 											<tr>
 												<td><strong>장르별 태그</strong></td>
 												<td>
@@ -205,6 +207,8 @@
 													<label for="genre9">체험형</label>
 												</td>
 											</tr>
+										
+										
 										
 											<tr>
 												<td><strong>색감별(분위기) 태그</strong></td>
@@ -257,6 +261,7 @@
 											<label for="color22">Deep Red</label>
 													</td>
 												</tr>
+												
 											</table>
 											<div align="right"><input type="submit" value="검색" id="search_btn"></div>
 											
