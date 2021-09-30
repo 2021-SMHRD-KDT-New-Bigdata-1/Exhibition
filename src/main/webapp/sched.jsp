@@ -130,7 +130,7 @@
                
                   <article class="box post post-excerpt">
                      <header>
-                        <h3><a href="#"><%=month+1 %>월 <%=tday %>일자 전시회 일정</a></h3><br>
+                        <h3>[<%=month+1 %>월 <%=tday %>일자 전시회 일정]</h3><br>
                      </header>
                      <div class="info">
                         
