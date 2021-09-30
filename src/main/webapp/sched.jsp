@@ -90,8 +90,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 							href="Main.jsp">HOME</a></li>
 						<li class="nav-item"><a class="nav-link" href="sched.jsp">SCHEDULE</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="all.jsp">ALL
-								POST</a></li>
+						<li class="nav-item"><a class="nav-link" href="all.jsp">SEARCH</a></li>
 						<%
 						if (vo != null) {
 						%>
@@ -144,12 +143,6 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 			<!-- Post -->
 
 			<article class="box post post-excerpt">
-				<header>
-					<h3>
-						<a href="#"><%=month + 1%>월 <%=day%>일자 전시회 일정</a>
-					</h3>
-					<br>
-				</header>
 				<div class="info">
 
 					<span class="date"> <span class="month"><%=month + 1%>

@@ -54,8 +54,8 @@
 							 class="fas fa-home">Home</span></a></li>
 					<li><a href="bookMark2.jsp" id="myInfo-link"><span
 							class="fas fa-file-export">저장 게시물</span></a></li>
-					<li><a href="ad.jsp" id="myTag-link"><span
-							class="#">광고 저장 게시물</span></a></li>
+					<li><a href="#" id="myTag-link"><span
+							class="icon solid fa-th">광고 저장 게시물</span></a></li>
 				</ul>	
 			</nav>
 

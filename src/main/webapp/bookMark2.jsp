@@ -49,7 +49,7 @@
 					<li><a href="Main.jsp" id="Main-link"><span
 							class="icon solid fa-home">Home</span></a></li>
 					<li><a href="#" id="myInfo-link"><span
-							class="icon solid fa-user-edit">저장 게시물</span></a></li>
+							class="icon fas fa-file-export">저장 게시물</span></a></li>
 					<li><a href="ad.jsp" id="myTag-link"><span
 							class="icon solid fa-th">광고 저장 게시물</span></a></li>
 				</ul>
