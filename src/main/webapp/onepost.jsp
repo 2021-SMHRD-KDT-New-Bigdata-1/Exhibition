@@ -38,8 +38,8 @@
 	
 	<%
 	//DB랑 연결해서 해당 시퀀스의 게시물 vo 받아오기 - DB랑 연결 안해도 될거같긴 한뎅.. 좋아요나 댓글 생각해서 연결했음!
-	postDAO dao = new postDAO();
-	ArrayList<postVO> list = dao.onepost(seq);
+	postDAO pdao = new postDAO();
+	ArrayList<postVO> list = pdao.onepost(seq);
 	
 	%>
 	
@@ -121,7 +121,14 @@
 							<%if(list!=null && vo!=null){%>
 								<h1>TITLE:<%=list.get(0).getTitle() %></h1>
 								<p>WRITER:<%=list.get(0).getNick() %></p>
-								<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+								<%for(int i =0; i<4; i++){ %>
+								<%String f = list.get(0).getImg_name();
+								f.replaceAll("null", "");
+								String[] img_name = f.split("\\|");
+									if(!img_name[i].equals("null")){%>
+										<span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
+									<% }}
+								%>
 								<p>CONTENT:<%=list.get(0).getContent() %></p>
 							<%}else{
 								
@@ -129,7 +136,7 @@
 							
 							<%
 							//좋아요 버튼 다르게
-							String like_origin = dao.likeselect(seq);
+							String like_origin = pdao.likeselect(seq);
 							if(like_origin.contains(vo.getMB_nick())){%>
 								<div id="like_btn"><button onclick='location.href="likePost2?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요 취소</button><%=list.get(0).getCnt() %></div>
 							<%}else{%>
