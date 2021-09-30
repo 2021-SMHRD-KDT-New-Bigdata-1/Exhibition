@@ -63,7 +63,7 @@
 					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="all.jsp">ALL POST</a>
+					      <a class="nav-link" href="all.jsp">SEARCH</a>
 					      </li>
 					      <li class="nav-item">
 					      	<%if(mdao.bncheck(vo.getMB_nick()) == true) {%>
