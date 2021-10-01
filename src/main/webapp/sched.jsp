@@ -151,7 +151,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 					</span>
 
 				</div>
-				<div class="d"></div>
+				<div class="d"> </div>
 				<div class="c"></div>
 			</article>
 
@@ -353,7 +353,10 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 			}
 			table += '</tbody>';
 			table += '</table>';
+			var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+day+'</strong>일 이외의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
+		
 			$('div.d').append(table);
+			$('div.d').append(ment)
 		}
 		
 		}

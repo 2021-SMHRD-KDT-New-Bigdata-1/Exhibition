@@ -89,7 +89,7 @@
                                  </li>
                                  
                                  <li class="nav-item">
-                                 <a class="nav-link" href="myPage.jsp"><span class="icon solid fa-user"></span></a>
+                                 <a class="nav-link" href="myPage2.jsp"><span class="icon solid fa-user"></span></a>
                                  </li>
                               
                               <%}else{ %>

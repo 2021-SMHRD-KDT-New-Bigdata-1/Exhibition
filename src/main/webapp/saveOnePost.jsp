@@ -80,7 +80,7 @@
 					      <%}%>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
-                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>
                                  </li>
                                  
                                  <li class="nav-item">
@@ -122,14 +122,19 @@
 							//좋아요 관련 버튼 다르게
 							String like_origin = dao.likeselect(seq);
 							if(like_origin.contains(vo.getMB_nick())){%>
-								<div id="like_btn"><button onclick='location.href="likePostSaveLink?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요 취소</button><%=list.get(0).getCnt() %></div>
+								<button class="like_btn"><%=list.get(0).getCnt() %></button>
+								<button class="like_btn" onclick='location.href="likePostSaveLink?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>
+								<i class=" fas fa-thumbs-up fa-2x"></i></button>
 							<%}else{%>
-								<div id="like_btn"><button onclick='location.href="likePostSaveLink?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>좋아요</button><%=list.get(0).getCnt() %></div>
+								<button class="like_btn"><%=list.get(0).getCnt() %></button>
+								<button class="like_btn" onclick='location.href="likePostSaveLink?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>
+								<i class="far fa-thumbs-up fa-2x"></i></button>
 							<%} %>
 							
 							<!-- 저장 버튼 클릭 시 saved_reviews에 해당 유저의 닉네임과 게시물시퀀스 추가-->
 							<!-- 이거 저장 취소 버튼으로 변경 -->
-							<div id="bookmark_btn"><button onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>저장취소</button></div>
+							<button class="bookmark_btn" onclick='location.href="delsaveBookmark?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>"'>
+							<i class="fas fa-share-square fa-2x"></i></button>
 							<!-- 저장되면 '저장되었습니다' alert뜨도록 설정 -->
 						
 						</div>
