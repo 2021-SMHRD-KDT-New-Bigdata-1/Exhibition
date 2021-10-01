@@ -48,17 +48,19 @@ public class exhDAO {
 				psmt = conn.prepareStatement(sql);
 				
 				rs = psmt.executeQuery();
-				int col1 = rs.getInt(1);
-				int col2 = rs.getInt(2);
-				int col3 = rs.getInt(3);
-				int col4 = rs.getInt(4);
-				String col5 = rs.getString(5);
-				String col6 = rs.getString(6);
-				String col7 = rs.getString(7);
-				String col8 = rs.getString(8);
-				String col9 = rs.getString(9);
-				
-				list.add(new exhVO(col1,col2,col3,col4,col5,col6,col7,col8,col9));
+				while(rs.next()) {
+					int col1 = rs.getInt(1);
+					int col2 = rs.getInt(2);
+					int col3 = rs.getInt(3);
+					int col4 = rs.getInt(4);
+					String col5 = rs.getString(5);
+					String col6 = rs.getString(6);
+					String col7 = rs.getString(7);
+					String col8 = rs.getString(8);
+					String col9 = rs.getString(9);
+					
+					list.add(new exhVO(col1,col2,col3,col4,col5,col6,col7,col8,col9));
+				}
 				
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			
@@ -78,17 +80,19 @@ public class exhDAO {
 				psmt.setInt(3, day);
 				
 				rs = psmt.executeQuery();
-				int col1 = rs.getInt(1);
-				//int col2 = rs.getInt(2);
-				//int col3 = rs.getInt(3);
-				//int col4 = rs.getInt(4);
-				String col5 = rs.getString(5);
-				String col6 = rs.getString(6);
-				String col7 = rs.getString(7);
-				String col8 = rs.getString(8);
-				String col9 = rs.getString(9);
+				while(rs.next()) {
+					int col1 = rs.getInt(1);
+					//int col2 = rs.getInt(2);
+					//int col3 = rs.getInt(3);
+					//int col4 = rs.getInt(4);
+					String col5 = rs.getString(5);
+					String col6 = rs.getString(6);
+					String col7 = rs.getString(7);
+					String col8 = rs.getString(8);
+					String col9 = rs.getString(9);
 				
 				list.add(new exhVO(col1,year,month,day,col5,col6,col7,col8,col9));
+				}
 				
 			}catch(Exception e) {e.printStackTrace();}finally {close();}
 			
