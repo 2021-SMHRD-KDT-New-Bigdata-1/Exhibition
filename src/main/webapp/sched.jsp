@@ -151,6 +151,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 					</span>
 
 				</div>
+				<div class="d"></div>
 				<div class="c"></div>
 			</article>
 
@@ -199,9 +200,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 
 					// 일주일이 7일 이니 7번 반복
 					for (int j = 0; (7 > j); j++) {
-						out.println("<td align='center'>");
+							out.println("<td");
 
-						// 현재 달의 1일의 요일에 해당하는 곳부터 출력하기위함
+						// 현재 달의 1을의 요일에 해당하는 곳부터 출력하기위함
 						if (oneDayNum == j + 1 || dayCheck) {
 					// 현재 달의 최대 일수일경우
 					if (monthMaxNum >= day) {
@@ -209,9 +210,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						if (currentCal.get(Calendar.DAY_OF_WEEK) == 1) {
 							// 일요일이면서 오늘일 경우 글자색은 '빨강', 글자 진하게 아니면 글자색만 '빨강'
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println("<font color='Indianred'><b>" + day + "</b></font>");
+								out.println(" id='"+day+"'  align='center' onclick='date("+day+")'><font color='Indianred'><b>" + day + "</b></font>");
 							} else {
-								out.println("<font color='Indianred'>" + day + "</font>");
+								out.println("id='"+day+"' align='center' onclick='date("+day+")'><font color='Indianred'>" + day + "</font>");
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -219,9 +220,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else if (currentCal.get(Calendar.DAY_OF_WEEK) == 7) {
 							// 토요일이면서 오늘일 경우 글자색은 '파랑', 글자 진하게 아니면 글자색만 '파랑'
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println("<font color='royalblue'><b>" + day + "</b></font>");
+								out.println(" id='"+day+"' align='center' onclick='date("+day+")'><font color='royalblue'><b>" + day + "</b></font>");
 							} else {
-								out.println("<font color='royalblue'>" + day + "</font>");
+								out.println(" id='"+day+"' align='center' onclick='date("+day+")'><font color='royalblue'>" + day + "</font>");
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -229,19 +230,19 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else {
 							//  일요일도 아니고 토요일도 아닌데 오늘이면 글자진하게
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println("<b>" + day + "</b>");
+								out.println(" id='"+day+"' align='center'onclick='date("+day+")'> <b>" + day + "</b>");
 							} else {
-								out.println(day);
+								out.println(" id='"+day+"' align='center'onclick='date("+day+")'>"+day);
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
 						}
 
 					} else {
-						out.println("&nbsp;");
+						out.println(" align='center'>&nbsp;");
 					}
 						} else {
-					out.println("&nbsp;");
+					out.println(" align='center'>&nbsp;");
 						}
 
 						out.println("</td>");
@@ -267,7 +268,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 
 	<!-- Copyright -->
 
-	</div>
+	
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -278,6 +279,87 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script lang="javascript">
+	
+	function date(day){
+		$.ajax({
+			url : 'exlist21oct.csv',
+			type : 'post',
+			//                    contentType: 'application/x-www-form-urlencoded;charset=EUC-KR',
+			contentType : 'text/html;charset=utf-8',
+
+			dataType : 'text'
+		}).done(successFunction);
+
+		function successFunction(data) {
+			var allRows = data.split("\|"); //allRows 한 줄씩으로 바꿔줌
+			var table = '<table>';
+			for (var singleRow = 0; singleRow < allRows.length - 1; singleRow++) {
+				if (singleRow === 0) { // singleRow 한줄 <tr> 해주는거
+					table += '<thead>';
+					table += '<tr>';
+				} else {
+					table += '<tr>';
+				}
+				var rowCells = allRows[singleRow].replace('<', '-').replace(
+						'전시소개 ', '').replace('>', '-').replace('전시기간 :', '')
+						.replace('전시기간:', '').replaceAll('"', '').replace('전시장소:', '').replace('전시장소 :', '')
+						.replace('전시명:', '').replace('전시명 :', '').split(',');
+				for (var rowCell = 0; rowCell < rowCells.length - 1; rowCell++) {
+					
+					if (singleRow === 0) {
+						
+						if (rowCell == 4) {
+							table += '<th colspan="2">';
+							table += rowCells[rowCell];
+							table += '</th>';
+						} else {
+
+							table += '<th>';
+							table += rowCells[rowCell];
+							table += '</th>';
+						}
+					} else {
+						//여기에 조건 주기
+						if (rowCells[0]==day){
+			
+						if (rowCell == 0){
+							table += '<td>';
+							table += rowCells[rowCell];
+							table += '일';
+							table += '</td>';
+						}
+						else if (rowCell == 4) {
+
+							table += '<td colspan="2">';
+							table += rowCells[rowCell];
+							table += '</td>';
+						} else {
+
+							table += '<td>';
+							table += rowCells[rowCell];
+							table += '</td>';
+						
+						}
+						
+					}}
+				}
+				if (singleRow === 0) {
+					table += '</tr>';
+					table += '</thead>';
+					table += '<tbody>';
+				} else {
+					table += '</tr>';
+				}
+			}
+			table += '</tbody>';
+			table += '</table>';
+			$('div.d').append(table);
+		}
+		
+		}
+	
+	
+	
 		function goCalendar() {
 			var form = document.calendarTextBoxForm;
 
@@ -306,26 +388,18 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 		function goMonth(month) {
 			var form = document.calendarHiddenForm;
 
-			if ((
-	<%=year%>
-		<= 1970) && (month == -1)) {
+			if ((<%=year%><= 1970) && (month == -1)) {
 				alert("1970년 1월 1일 이후로 검색해 주세요.");
 				return;
 			}
 			if (month == -1) {
-				form.year.value =
-	<%=year - 1%>
-		;
+				form.year.value = <%=year - 1%>;
 				form.month.value = 11;
 			} else if (month == 12) {
-				form.year.value =
-	<%=year + 1%>
-		;
+				form.year.value =<%=year + 1%>;
 				form.month.value = 0;
 			} else {
-				form.year.value =
-	<%=year%>
-		;
+				form.year.value =<%=year%>;
 				form.month.value = month;
 			}
 
@@ -362,6 +436,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						.replace('전시명:', '').replace('전시명 :', '').split(',');
 				for (var rowCell = 0; rowCell < rowCells.length - 1; rowCell++) {
 					if (singleRow === 0) {
+						
 						if (rowCell == 4) {
 							table += '<th colspan="2">';
 							table += rowCells[rowCell];
@@ -373,7 +448,13 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 							table += '</th>';
 						}
 					} else {
-						if (rowCell == 4) {
+						if (rowCell == 0){
+							table += '<td>';
+							table += rowCells[rowCell];
+							table += '일';
+							table += '</td>';
+						}
+						else if (rowCell == 4) {
 
 							table += '<td colspan="2">';
 							table += rowCells[rowCell];
