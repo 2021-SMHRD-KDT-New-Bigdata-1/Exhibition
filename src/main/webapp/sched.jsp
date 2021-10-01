@@ -145,13 +145,12 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 			<article class="box post post-excerpt">
 				<div class="info">
 
-					<span class="date"> <span class="month"><%=month + 1%>
-							/</span> <span class="day"><%=day%></span> <span class="year">,
-							<%=year%></span>
+					<span class="date"> <span class="month"><%=month + 1%>월</span>
+							
 					</span>
 
 				</div>
-				<div class="d"> </div>
+				<div class="d"></div>
 				<div class="c"></div>
 			</article>
 
@@ -210,9 +209,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						if (currentCal.get(Calendar.DAY_OF_WEEK) == 1) {
 							// 일요일이면서 오늘일 경우 글자색은 '빨강', 글자 진하게 아니면 글자색만 '빨강'
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println(" id='"+day+"'  align='center' onclick='date("+day+")'><font color='Indianred'><b>" + day + "</b></font>");
+								out.println(" id='"+day+"'  align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='Indianred'><b>" + day + "</b></font>");
 							} else {
-								out.println("id='"+day+"' align='center' onclick='date("+day+")'><font color='Indianred'>" + day + "</font>");
+								out.println("id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='Indianred'>" + day + "</font>");
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -220,9 +219,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else if (currentCal.get(Calendar.DAY_OF_WEEK) == 7) {
 							// 토요일이면서 오늘일 경우 글자색은 '파랑', 글자 진하게 아니면 글자색만 '파랑'
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println(" id='"+day+"' align='center' onclick='date("+day+")'><font color='royalblue'><b>" + day + "</b></font>");
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'><b>" + day + "</b></font>");
 							} else {
-								out.println(" id='"+day+"' align='center' onclick='date("+day+")'><font color='royalblue'>" + day + "</font>");
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'>" + day + "</font>");
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -230,9 +229,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else {
 							//  일요일도 아니고 토요일도 아닌데 오늘이면 글자진하게
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println(" id='"+day+"' align='center'onclick='date("+day+")'> <b>" + day + "</b>");
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'> <b>" + day + "</b>");
 							} else {
-								out.println(" id='"+day+"' align='center'onclick='date("+day+")'>"+day);
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'>"+day);
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -354,10 +353,12 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 			}
 			table += '</tbody>';
 			table += '</table>';
+<<<<<<< HEAD
 			var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+(month+1)+'</strong>월의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
 		
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 			$('div.d').append(table);
-			$('div.d').append(ment)
 		}
 		
 		}
