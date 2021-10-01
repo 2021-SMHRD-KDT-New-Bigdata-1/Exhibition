@@ -313,7 +313,6 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                      table += '</th>';
                   } else {
 
-<<<<<<< HEAD
                      table += '<th>';
                      table += rowCells[rowCell];
                      table += '</th>';
@@ -330,31 +329,12 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                      table += '</td>';
                   }
                   else if (rowCell == 4) {
-=======
-							table += '<th>';
-							table += rowCells[rowCell];
-							table += '</th>';
-						}
-					} else {
-						//여기에 조건 주기
-						if (rowCells[0]==day){
-			
-						if (rowCell == 0){
-							table += '<td>';
-							table += '<%=(month+1)%>월 '
-							table += rowCells[rowCell];
-							table += '일';
-							table += '</td>';
-						}
-						else if (rowCell == 4) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 
                      table += '<td colspan="2">';
                      table += rowCells[rowCell];
                      table += '</td>';
                   } else {
 
-<<<<<<< HEAD
                      table += '<td>';
                      table += rowCells[rowCell];
                      table += '</td>';
@@ -387,40 +367,6 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
    
       function goCalendar() {
          var form = document.calendarTextBoxForm;
-=======
-							table += '<td>';
-							table += rowCells[rowCell];
-							table += '</td>';
-						
-						}
-						
-					}}
-				}
-				if (singleRow === 0) {
-					table += '</tr>';
-					table += '</thead>';
-					table += '<tbody>';
-				} else {
-					table += '</tr>';
-				}
-			}
-			table += '</tbody>';
-			table += '</table>';
-<<<<<<< HEAD
-			var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+(month+1)+'</strong>월의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
-		
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
-			$('div.d').append(table);
-		}
-		
-		}
-	
-	
-	
-		function goCalendar() {
-			var form = document.calendarTextBoxForm;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 
          if ((form.year.value == "")) {
             alert("'년'을 입력 주세요");
@@ -502,7 +448,6 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                      table += '</th>';
                   } else {
 
-<<<<<<< HEAD
                      table += '<th>';
                      table += rowCells[rowCell];
                      table += '</th>';
@@ -516,21 +461,6 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                      table += '</td>';
                   }
                   else if (rowCell == 4) {
-=======
-							table += '<th>';
-							table += rowCells[rowCell];
-							table += '</th>';
-						}
-					} else {
-						if (rowCell == 0){
-							table += '<td>';
-							table += '<%=(month+1)%>월 '
-							table += rowCells[rowCell];
-							table += '일';
-							table += '</td>';
-						}
-						else if (rowCell == 4) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 
                      table += '<td colspan="2">';
                      table += rowCells[rowCell];
