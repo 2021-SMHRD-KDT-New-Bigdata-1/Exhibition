@@ -172,7 +172,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
             <tr height="30">
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month - 1%>);">◀</a></td>
-               <td width="110" align="center"><%=year%> / <%=month + 1%></td>
+               <td width="110" align="center" id='tddd'><%=year%> / <%=month + 1%></td>
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month + 1%>);">▶</a></td>
             </tr>
@@ -199,7 +199,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 
                // 일주일이 7일 이니 7번 반복
                for (int j = 0; (7 > j); j++) {
-                     out.println("<td");
+                     out.println("<td class='tdd'");
 
                   // 현재 달의 1을의 요일에 해당하는 곳부터 출력하기위함
                   if (oneDayNum == j + 1 || dayCheck) {
@@ -209,9 +209,10 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   if (currentCal.get(Calendar.DAY_OF_WEEK) == 1) {
                      // 일요일이면서 오늘일 경우 글자색은 '빨강', 글자 진하게 아니면 글자색만 '빨강'
                      if (todayCheck_currentCal.equals(currentCal)) {
-                        out.println(" id='"+day+"'  align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='Indianred'><b>" + day + "</b></font>");
+                     	 out.println("id="+day+" align='center' onclick='location.href='date?year="+year+"&month="+(month+1)+"&day="+day+"''><font color='Indianred'><b>" + day + "</b></font>");
+                     	
                      } else {
-                        out.println("id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='Indianred'>" + day + "</font>");
+                        out.println("id="+day+" align='center' onclick='location.href='date?year="+year+"&month="+(month+1)+"&day="+day+"''><font color='Indianred'>" + day + "</font>");
                      }
                      currentCal.set(Calendar.DATE, ++day);
                      dayCheck = true;
@@ -353,11 +354,8 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
          }
          table += '</tbody>';
          table += '</table>';
-<<<<<<< HEAD
          var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+(month+1)+'</strong>월의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
-      
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
+
          $('div.d').append(table);
       }
       
@@ -424,6 +422,24 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 
          dataType : 'text'
       }).done(successFunction);
+      
+      $(".tdd").click(function(){
+		    var day = $(this).text();
+		    var year_month = $("#tddd").text();
+		    alert(day);
+		    alert(year_month);
+		
+      
+      		$.ajax({
+    	  		url :'date',
+    	  		type : 'get',
+    	  		data : {"day" : day, "year_month":year_month},
+    	  		success : function(data){
+    		  	alert("성공..")
+    	  }
+    	  
+      })
+      });
 
       function successFunction(data) {
          var allRows = data.split("\|");
