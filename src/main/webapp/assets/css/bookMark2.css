@@ -1745,6 +1745,7 @@ input, select, textarea {
 
    section, article {
       margin-bottom: 3em;
+      margin-top:3em;
    }
 
       section > :last-child,
@@ -2988,7 +2989,8 @@ input[type="checkbox"],
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		position: relative;
-		margin-right: 2em;
+		/*margin-right: 2em;*/
+		margin: 3em 2em 0 0;
 	}
 
 		.tiles article {

@@ -155,7 +155,7 @@
 			<%if(!img_nm[j].equals("null")){ %>
         <article class="style1">
             <span class="image">
-                <img src="images/<%=img_nm[j]%>" alt=""/>
+                <img class="cover" src="images/<%=img_nm[j]%>" alt="" />
             </span>
             <%if(vo!=null){ %>
             <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
