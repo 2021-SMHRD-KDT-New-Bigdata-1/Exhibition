@@ -263,8 +263,13 @@
 												</tr>
 												
 											</table>
-											<div align="right"><input type="submit" value="검색" id="search_btn"></div>
 											
+											
+											
+											<div align="right"><input type="submit" value="검색" id="search_btn"></div>
+											   	
+													
+			
 										</form>
 										</div>
 										</div>
@@ -296,7 +301,11 @@
 			
 			//region.replace(String.valueOf('|'),"");
 			%>
+			<%if(vo!=null) {%>
 			<tr onclick="location.href='adOnePost.jsp?seq=<%=adlist.get(i).getSeq()%>'" style="cursor:pointer;">
+			<%}else{ %>
+			<tr onclick="location.href='login2.jsp'" style="cursor:pointer;">
+			<%} %>
 			
 			<%
 			out.print("<td>"+adlist.get(i).getSeq()+"</td>");
@@ -349,7 +358,11 @@
 			
 			//region.replace(String.valueOf('|'),"");
 			%>
+			<%if(vo!=null) {%>
 			<tr onclick="location.href='onepost.jsp?seq=<%=list.get(i).getSeq()%>'" style="cursor:pointer;">
+			<%}else{ %>
+			<tr onclick="location.href='login2.jsp'" style="cursor:pointer;">
+			<%} %>
 			
 			<%
 			out.print("<td>"+list.get(i).getSeq()+"</td>");

@@ -277,8 +277,16 @@
 				
 				//region.replace(String.valueOf('|'),"");
 				%>
-				<tr onclick="location.href='adOnePost.jsp?seq=<%=adlist.get(i).getSeq()%>'" style="cursor:pointer;">
 				
+				
+			<%if(vo!=null) {%>
+			<tr onclick="location.href='adOnePost.jsp?seq=<%=adlist.get(i).getSeq()%>'" style="cursor:pointer;">
+			<%}else{ %>
+			<tr onclick="location.href='login2.jsp'" style="cursor:pointer;">
+			<%} %>	
+			
+			
+						
 				<%
 				out.print("<td>"+adlist.get(i).getSeq()+"</td>");
 				out.print("<td>"+adlist.get(i).getContent()+"</td>");
@@ -326,9 +334,17 @@
 			String[] genre_tag = genre.split("\\|");
 			String color = list.get(i).getColor_tag();
 			String[] color_tag = color.split("\\|");
+		%>	
+		
 			
-			//region.replace(String.valueOf('|'),"");
+		<%if(vo!=null) {%>
+			<tr onclick="location.href='onepost.jsp?seq=<%=list.get(i).getSeq()%>'" style="cursor:pointer;">
+			<%}else{ %>
+			<tr onclick="location.href='login2.jsp'" style="cursor:pointer;">
+			<%} %>
 			
+			
+			<%
 			out.print("<tr>");
 			out.print("<td>"+list.get(i).getSeq()+"</td>");
 			out.print("<td>"+list.get(i).getContent()+"</td>");
@@ -370,6 +386,7 @@
 			}
 			//out.print("<td>"+list.get(i).getGenre_tag()+"</td>");
 			//out.print("<td>"+list.get(i).getColor_tag()+"</td>");
+			out.print("<td>"+list.get(i).getLike_tag_cnt()+"</td>");
 			out.print("</tr>");
 		} %>
 	</table>
@@ -422,11 +439,7 @@
             </span>
             <%if(vo!=null){ %>
             <a href="onepost.jsp?seq=<%=list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
-                <h2><%=list.get(i).getTitle()%></h2>
-                <div class="content">
-                    <p>writer :<%=list.get(i).getNick() %></p>
-                </div>
-            </a>
+          
              <%}else{ %>
             <a href="login2.jsp">
             <h2><%=list.get(i).getTitle()%></h2>
