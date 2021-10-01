@@ -219,7 +219,11 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else if (currentCal.get(Calendar.DAY_OF_WEEK) == 7) {
 							// 토요일이면서 오늘일 경우 글자색은 '파랑', 글자 진하게 아니면 글자색만 '파랑'
 							if (todayCheck_currentCal.equals(currentCal)) {
+<<<<<<< HEAD
 								out.println(" id='"+day+"' align='center' onclick='location.href=dateCON?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'><b>" + day + "</b></font>");
+=======
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'><b>" + day + "</b></font>");
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/Exhibition.git
 							} else {
 								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'>" + day + "</font>");
 							}
