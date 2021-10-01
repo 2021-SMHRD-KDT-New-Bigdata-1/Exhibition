@@ -69,7 +69,7 @@
 
                      <div class="row">
                      <form action = "modifyCon" method = "post" >
-                     <table border=1 style="margin-left: auto; margin-right: auto;">
+                     <table  border=1 style="margin-left: auto; margin-right: auto; border-collapse:collapse;">
                      
                      <tr>
                      <td colspan=2 ><h3><strong><font color="black">개인 정보 수정</font></strong></h3></td>
@@ -131,7 +131,7 @@
 
 					<div class="row">
                      <form action="likeTagCon" method="post">
-                     <table style="margin-left: auto; margin-right: auto;">
+                     <table style="margin-left: auto; margin-right: auto; border-collapse:collapse;">
                               <colgroup>
 
                               <col style="width:20%;">
