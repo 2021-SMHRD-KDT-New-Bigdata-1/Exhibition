@@ -33,6 +33,7 @@ public class loginCon extends HttpServlet {
 			
 			
 		}else {
+			response.sendRedirect("login2.jsp");
 			System.out.println("로그인 실패?");
 		}
 		
