@@ -209,9 +209,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						if (currentCal.get(Calendar.DAY_OF_WEEK) == 1) {
 							// 일요일이면서 오늘일 경우 글자색은 '빨강', 글자 진하게 아니면 글자색만 '빨강'
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println(" id='"+day+"'  align='center' onclick='location.href=date?"+year+"&"+(month+1)+"&"+day+"'><font color='Indianred'><b>" + day + "</b></font>");
+								out.println(" id='"+day+"'  align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='Indianred'><b>" + day + "</b></font>");
 							} else {
-								out.println("id='"+day+"' align='center' onclick='location.href=date?"+year+"&"+(month+1)+"&"+day+"'><font color='Indianred'>" + day + "</font>");
+								out.println("id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='Indianred'>" + day + "</font>");
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -219,9 +219,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else if (currentCal.get(Calendar.DAY_OF_WEEK) == 7) {
 							// 토요일이면서 오늘일 경우 글자색은 '파랑', 글자 진하게 아니면 글자색만 '파랑'
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println(" id='"+day+"' align='center' onclick='location.href=date?"+year+"&"+(month+1)+"&"+day+"'><font color='royalblue'><b>" + day + "</b></font>");
+								out.println(" id='"+day+"' align='center' onclick='location.href=dateCON?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'><b>" + day + "</b></font>");
 							} else {
-								out.println(" id='"+day+"' align='center' onclick='location.href=date?"+year+"&"+(month+1)+"&"+day+"'><font color='royalblue'>" + day + "</font>");
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'><font color='royalblue'>" + day + "</font>");
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
@@ -229,9 +229,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 						} else {
 							//  일요일도 아니고 토요일도 아닌데 오늘이면 글자진하게
 							if (todayCheck_currentCal.equals(currentCal)) {
-								out.println(" id='"+day+"' align='center' onclick='location.href=date?"+year+"&"+(month+1)+"&"+day+"'> <b>" + day + "</b>");
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'> <b>" + day + "</b>");
 							} else {
-								out.println(" id='"+day+"' align='center' onclick='location.href=date?"+year+"&"+(month+1)+"&"+day+"'>"+day);
+								out.println(" id='"+day+"' align='center' onclick='location.href=date?year="+year+"&month="+(month+1)+"&day="+day+"'>"+day);
 							}
 							currentCal.set(Calendar.DATE, ++day);
 							dayCheck = true;
