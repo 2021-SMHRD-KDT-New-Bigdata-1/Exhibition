@@ -137,7 +137,8 @@
 									
 									<tr>
 									<td><strong>Date</strong></td>
-									<td>Start : <input type = "date" name = "s_date" value = "yyyy-mm-dd"> End : <input type = "date" name = "e_date" value = "yyyy-mm-dd">
+									<td><label for="s_date">Start </label> <input type = "date" name = "s_date" value = "yyyy-mm-dd" min="1900-01-01" max="9999-12-31"> 
+										<label for="e_date">End</label> <input type = "date" name = "e_date" value = "yyyy-mm-dd" min="1900-01-01" max="9999-12-31">
 									</tr>
 									
 									<tr>
