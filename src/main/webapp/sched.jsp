@@ -324,6 +324,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 			
 						if (rowCell == 0){
 							table += '<td>';
+							table += '<%=(month+1)%>월 '
 							table += rowCells[rowCell];
 							table += '일';
 							table += '</td>';
@@ -353,7 +354,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 			}
 			table += '</tbody>';
 			table += '</table>';
-			var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+day+'</strong>일 이외의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
+			var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+(month+1)+'</strong>월의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
 		
 			$('div.d').append(table);
 			$('div.d').append(ment)
@@ -453,6 +454,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 					} else {
 						if (rowCell == 0){
 							table += '<td>';
+							table += '<%=(month+1)%>월 '
 							table += rowCells[rowCell];
 							table += '일';
 							table += '</td>';
