@@ -374,7 +374,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       }
    */
    
-   /*
+   
       function goCalendar() {
          var form = document.calendarTextBoxForm;
 
@@ -421,7 +421,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
          form.action = "sched.jsp";
          form.target = "_self";
          form.submit();
-      } */
+      } 
    </script>
 
    <script src="assets/js/jquery-3.6.0.min.js"></script>
