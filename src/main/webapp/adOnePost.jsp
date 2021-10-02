@@ -53,7 +53,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<div class="inner">
+			<div class="line">
 
 				<!-- Logo -->
 				 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -90,7 +90,7 @@
 					       <%} %>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
-                                 <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
                                  </li>
                                  
                                  <li class="nav-item">
@@ -121,11 +121,15 @@
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner">
+					
+						<div class="line">
+						<section class="psection">	
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
-                        		<h1><%=list.get(0).getAd_title() %></h1>
-                        		<p><%=list.get(0).getNick() %></p>
+                        		<h2><%=list.get(0).getAd_title() %></h2>
+                        		<p class="postnick"><%=list.get(0).getNick() %></p>
+                        		<hr class="my-hr3">
+                        		
                         		<%for(int i =0; i<4; i++){ %>
                         		<%String f = list.get(0).getAd_img_name();
                        			 f.replaceAll("null", "");
@@ -134,13 +138,15 @@
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
 								<p><%=list.get(0).getContent() %></p>
-									<p>
-			                        #<%=list.get(0).getRegion() %><br>
-			                        #<%=list.get(0).getGenre() %><br>
-			                        #<%=list.get(0).getColor().replaceAll("[|]", " #") %></p>
 							<%}else{
 								
 							}%>
+							
+							
+								
+							
+								
+							
 							
 							<%
 							//좋아요 버튼 다르게
@@ -169,51 +175,42 @@
 							<%}%>
 						
 						</div>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>댓글</h2>
+						<br>
+					<br>
+					
+					</section>
+						<div class="line">
+							<section class="psection">
+							
+								<h2>comment</h2>
 								<%
 								if(list.get(0).getAd_comment()!=null){
 									String comm = list.get(0).getAd_comment();
 									String[] commentlist = comm.split("\\|");
 									for(int i = 0; i<commentlist.length; i++){%>
-										<p><%=commentlist[i]%></p>
+										<p><h5><%=commentlist[i]%></h5></p>
 								<%}}%>
 							
 								
 								<form method="post" action="adcommentCON?seq=<%=seq%>">
+								<hr>
 									<div class="fields">
 										<div class="field">
-											<textarea name="comment" id="message" placeholder="comment"></textarea>
+											<textarea name="comment" id="message" placeholder="Leave a comment"></textarea>
 										</div>
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
+									 <div align="right">
+									 <input type="submit" value="Post Comment" class="like_btn" />
+									 </div>
+										
+									
 								</form>
 							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
+							
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 38℃ All rights reserved</li><br><br>
 							</ul>
 						</div>
-					</footer>
 
 			</div>
 

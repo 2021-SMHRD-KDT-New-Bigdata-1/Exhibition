@@ -89,7 +89,7 @@
                                  </li>
                                  
                                  <li class="nav-item">
-                                 <a class="nav-link" href="myPage2.jsp"><span class="icon solid fa-user"></span></a>
+                                 <a class="nav-link" href="myPage.jsp"><span class="icon solid fa-user"></span></a>
                                  </li>
                               
                               <%}else{ %>
@@ -116,11 +116,24 @@
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner">
+						<div class="line">
+						<section class="psection">
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
-                        		<h1><%=list.get(0).getTitle() %></h1>
-                        		<p><%=list.get(0).getNick() %></p>
+
+								<h1>TITLE:<%=list.get(0).getTitle() %></h1>
+								<p>WRITER:<%=list.get(0).getNick() %></p>
+								<%for(int i =0; i<4; i++){ %>
+								<%String f = list.get(0).getImg_name();
+								f.replaceAll("null", "");
+								String[] img_name = f.split("\\|");
+									if(!img_name[i].equals("null")){%>
+										<span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
+									<% }}
+								%>
+
+                        		<h1>TITLE:<%=list.get(0).getTitle() %></h1>
+                        		<p> WRITER:<%=list.get(0).getNick() %></p>
                         		<%for(int i =0; i<4; i++){ %>
                         		<%String f = list.get(0).getImg_name();
                        			 f.replaceAll("null", "");
@@ -128,11 +141,8 @@
                            		if(!img_name[i].equals("null")){%>
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
-								<p><%=list.get(0).getContent() %></p>
-								<p>
-			                        #<%=list.get(0).getRegion_tag() %><br>
-			                        #<%=list.get(0).getGenre_tag() %><br>
-			                        #<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></p>
+
+								<p>CONTENT:<%=list.get(0).getContent() %></p>
 							<%}else{
 								
 							}%>
@@ -166,12 +176,11 @@
 						
 						</div>
 					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>댓글</h2>
+					</section>
+			
+						<div class="line">
+							<section class="psection">
+								<h2>comment</h2>
 								<%
 								if(list.get(0).getComment()!=null){
 									String comm = list.get(0).getComment();
@@ -209,7 +218,7 @@
 								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
-					</footer>
+					
 
 			</div>
 
