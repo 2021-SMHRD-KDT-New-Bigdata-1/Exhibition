@@ -73,7 +73,7 @@
 					      <a class="nav-link active" href="Main.jsp">HOME</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
+					      <a class="nav-link" href="date?int=1">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
 					      <a class="nav-link" href="all.jsp">SEARCH</a>
@@ -90,7 +90,7 @@
 					       <%} %>
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
-                                 <a class="nav-link" href="bookMark.jsp"><span class="icon solid fa-bookmark"></span></a>
+                                 <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>
                                  </li>
                                  
                                  <li class="nav-item">

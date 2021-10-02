@@ -61,7 +61,7 @@
 					      <a class="nav-link active" href="Main.jsp">HOME</a>
 					      </li>
 					      <li class="nav-item">
-					      <a class="nav-link" href="sched.jsp">SCHEDULE</a>
+					      <a class="nav-link" href="date?int=1">SCHEDULE</a>
 					      </li>
 					      <li class="nav-item">
 					      <a class="nav-link" href="all.jsp">SEARCH</a>

@@ -96,7 +96,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                <ul class="navbar-nav ml-auto align-items-center">
                   <li class="nav-item"><a class="nav-link active"
                      href="Main.jsp">HOME</a></li>
-                  <li class="nav-item"><a class="nav-link" href="sched.jsp">SCHEDULE</a>
+                  <li class="nav-item"><a class="nav-link" href="date?int=1">SCHEDULE</a>
                   </li>
                   <li class="nav-item"><a class="nav-link" href="all.jsp">SEARCH</a></li>
                   <%
