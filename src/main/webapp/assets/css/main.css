@@ -162,6 +162,7 @@ input, select, textarea {
 		}*/
 
 	strong, b {
+		font-size : 1.3em;
 		font-weight: 900;
 	}
 

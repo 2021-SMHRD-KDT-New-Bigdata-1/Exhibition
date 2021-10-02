@@ -1,4 +1,3 @@
-<%@page import="DAO.membersDAO"%>
 <%@page import="DAO.exhDAO"%>
 <%@page import="VO.exhVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -101,14 +100,12 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   <li class="nav-item"><a class="nav-link" href="all.jsp">SEARCH</a></li>
                   <%
                   if (vo != null) {
-                	  membersDAO mdao = new membersDAO();
                   %>
-                  	<%if(mdao.bncheck(vo.getMB_nick()) == true) {%>
-					  <a class="nav-link" href="summernoteBN.jsp">POSTING</a>
-						<%}else{%>
-					  <a class="nav-link" href="summernote.jsp">POSTING</a>
-					  <%} %>
-                  <% } else {%>
+                  <li class="nav-item"><a class="nav-link"
+                     href="summernote.jsp">POSTING</a></li>
+                  <%
+                  } else {
+                  %>
                   <li class="nav-item"><a class="nav-link" href="login2.jsp">POSTING</a>
                   </li>
 
@@ -118,7 +115,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   <%
                   if (vo != null) {
                   %>
-                  <li class="nav-item"><a class="nav-link" href="bookMark2.jsp"><span
+                  <li class="nav-item"><a class="nav-link" href="bookMark.jsp"><span
                         class="icon solid fa-bookmark"></span></a></li>
 
                   <li class="nav-item"><a class="nav-link" href="myPage.jsp"><span
@@ -155,13 +152,36 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
          <article class="box post post-excerpt">
             <div class="info">
 
-               <span class="date"> <span class="month"><%=month + 1%>월</span>
-                     
+               <span class="date"> <span class="month"><%=day_list.get(0).getEx_month()%>월</span>
+                     <%=day_list.get(0).getEx_day()%>일
                </span>
 
             </div>
             <div class="d"></div>
-            <div class="c"></div>
+            <div class="c">
+            <!-- 낄끼.. -->
+            
+            	<table>
+            	<caption><%=day_list.get(0).getEx_year()%>년 <%=day_list.get(0).getEx_month()%>월 <%=day_list.get(0).getEx_day()%>일자 검색 결과</caption>
+            		<thead align='center'>
+            			<td colspan='2'><b>Titles</b></td>
+            			<td><b>Periods</b></td>
+            			<td colspan='2'><b>Places</b></td>
+            			<td colspan='3'><b>Explains</b></td>
+            		</thead>
+            		<%
+            		for(int i = 0 ; i<day_list.size();i++){
+            		%>
+            		<tr>
+            			<td colspan='2'><%=day_list.get(i).getEx_title() %></td>
+            			<td><%=day_list.get(i).getEx_date() %></td>
+            			<td colspan='2'><%=day_list.get(i).getEx_location() %></td>
+            			<td colspan='3'><%=day_list.get(i).getEx_content() %></td>
+            		</tr>
+            		<%} %>
+            		
+            	</table>
+            </div>
          </article>
 
 
@@ -219,10 +239,10 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   if (currentCal.get(Calendar.DAY_OF_WEEK) == 1) {
                      // 일요일이면서 오늘일 경우 글자색은 '빨강', 글자 진하게 아니면 글자색만 '빨강'
                      if (todayCheck_currentCal.equals(currentCal)) {
-                     	 out.println("id="+day+" align='center' onclick='location.href='date?year="+year+"&month="+(month+1)+"&day="+day+"''><font color='Indianred'><b>" + day + "</b></font>");
+                     	 out.println("id="+day+" align='center'><font color='Indianred'><b>" + day + "</b></font>");
                      	
                      } else {
-                        out.println("id="+day+" align='center' onclick='location.href='date?year="+year+"&month="+(month+1)+"&day="+day+"''><font color='Indianred'>" + day + "</font>");
+                        out.println("id="+day+" align='center'><font color='Indianred'>" + day + "</font>");
                      }
                      currentCal.set(Calendar.DATE, ++day);
                      dayCheck = true;
@@ -290,138 +310,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script lang="javascript">
    
-   /* function date(day){ 
-      $.ajax({
-         url : 'exlist21oct.csv',
-         type : 'post',
-         //                    contentType: 'application/x-www-form-urlencoded;charset=EUC-KR',
-         contentType : 'text/html;charset=utf-8',
-
-         dataType : 'text'
-      }).done(successFunction); */
-
-      /* 
-      function successFunction(data) {
-         var allRows = data.split("\|"); //allRows 한 줄씩으로 바꿔줌
-         var table = '<table>';
-         for (var singleRow = 0; singleRow < allRows.length - 1; singleRow++) {
-            if (singleRow === 0) { // singleRow 한줄 <tr> 해주는거
-               table += '<thead>';
-               table += '<tr>';
-            } else {
-               table += '<tr>';
-            }
-            var rowCells = allRows[singleRow].replace('<', '-').replace(
-                  '전시소개 ', '').replace('>', '-').replace('전시기간 :', '')
-                  .replace('전시기간:', '').replaceAll('"', '').replace('전시장소:', '').replace('전시장소 :', '')
-                  .replace('전시명:', '').replace('전시명 :', '').split(',');
-            for (var rowCell = 0; rowCell < rowCells.length - 1; rowCell++) {
-               
-               if (singleRow === 0) {
-                  
-                  if (rowCell == 4) {
-                     table += '<th colspan="2">';
-                     table += rowCells[rowCell];
-                     table += '</th>';
-                  } else {
-
-                     table += '<th>';
-                     table += rowCells[rowCell];
-                     table += '</th>';
-                  }
-               } else {
-                  //여기에 조건 주기
-                  if (rowCells[0]==day){ */
-         		
-                	  /*
-                  if (rowCell == 0){
-                     table += '<td>'; 
-                     table += '</%=(month+1)%>월 '
-                     table += rowCells[rowCell];
-                     table += '일';
-                     table += '</td>';
-                  }
-                  else if (rowCell == 4) {
-
-                     table += '<td colspan="2">';
-                     table += rowCells[rowCell];
-                     table += '</td>';
-                  } else {
-
-                     table += '<td>';
-                     table += rowCells[rowCell];
-                     table += '</td>';
-                  
-                  }
-                  
-               }}
-            } 
-            if (singleRow === 0) {
-               table += '</tr>';
-               table += '</thead>';
-               table += '<tbody>';
-            } else {
-               table += '</tr>';
-            }
-         }
-         table += '</tbody>';
-         table += '</table>';
-         var ment='<br><br><i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i> &nbsp;&nbsp;<strong>'+(month+1)+'</strong>월의 전체 전시회 정보 &nbsp;&nbsp;<i class="fas fa-angle-double-down"></i> <i class="fas fa-angle-double-down"></i><br><br>'
-
-         $('div.d').append(table);
-      }
       
-      }
-   */
-   
-   /*
-      function goCalendar() {
-         var form = document.calendarTextBoxForm;
-
-         if ((form.year.value == "")) {
-            alert("'년'을 입력 주세요");
-            return;
-         }
-         if (form.year.value < 1970) {
-            alert("1970년 1월 1일 이후로 검색해 주세요.");
-            return;
-         }
-         if ((form.month.value == "")) {
-            alert("'월'을 입력 주세요");
-            return;
-         }
-         if ((form.month.value < 1) || form.month.value > 12) {
-            alert("'월'을 올바르게 입력 주세요");
-            return;
-         }
-         form.month.value = form.month.value - 1;
-         form.action = "Calendar.jsp";
-         form.target = "_self";
-         form.submit();
-      }
-
-      function goMonth(month) {
-         var form = document.calendarHiddenForm;
-
-         if ((</%=year%><= 1970) && (month == -1)) {
-            alert("1970년 1월 1일 이후로 검색해 주세요.");
-            return;
-         }
-         if (month == -1) {
-            form.year.value = </%=year - 1%>;
-            form.month.value = 11;
-         } else if (month == 12) {
-            form.year.value =</%=year + 1%>;
-            form.month.value = 0;
-         } else {
-            form.year.value =</%=year%>;
-            form.month.value = month;
-         }
-
-         form.action = "sched.jsp";
-         form.target = "_self";
-         form.submit();
-      } */
    </script>
 
    <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -438,11 +327,11 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       $(".tdd").click(function(){
 		    var day = $(this).text();
 		    var year_month = $("#tddd").text();
-		    /*alert(day);
-		    alert(year_month);*/
+		    alert(day);
+		    alert(year_month);
 		
       
-      		$.ajax({
+		    $.ajax({
     	  		url :'date',
     	  		type : 'get',
     	  		data : {"day" : day, "year_month":year_month},
@@ -453,7 +342,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
     	  
       })
       });
-
+		/*
       function successFunction(data) {
          var allRows = data.split("\|");
          var table = '<table>';
@@ -484,7 +373,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                } else {
                   if (rowCell == 0){
                      table += '<td>';
-                     table += '<%=(month+1)%>월 '
+                     table += '</%=(month+1)%>월 '
                      table += rowCells[rowCell];
                      table += '일';
                      table += '</td>';
@@ -513,7 +402,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
          table += '</tbody>';
          table += '</table>';
          $('div.c').append(table);
-      }
+      }*/
    </script>
 
 </body>

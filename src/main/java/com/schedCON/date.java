@@ -43,7 +43,7 @@ public class date extends HttpServlet {
 			//list ≥—∞‹¡÷±Î
 			HttpSession session = request.getSession();
 			session.setAttribute("day_list", day_list);
-			response.sendRedirect("sched.jsp");
+			response.sendRedirect("schedSearch.jsp");
 		}
 	}
 
