@@ -315,13 +315,13 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
 
    <script src="assets/js/jquery-3.6.0.min.js"></script>
    <script>
-      
+
       
       $(".tdd").click(function(){
 		    var day = $(this).text();
 		    var year_month = $("#tddd").text();
-		    alert(day);
-		    alert(year_month);
+		    //alert(day);
+		    //alert(year_month);
 		
       
 		    $.ajax({
@@ -335,6 +335,67 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
     	  
       })
       });
+		/*
+      function successFunction(data) {
+         var allRows = data.split("\|");
+         var table = '<table>';
+         for (var singleRow = 0; singleRow < allRows.length - 1; singleRow++) {
+            if (singleRow === 0) {
+               table += '<thead>';
+               table += '<tr>';
+            } else {
+               table += '<tr>';
+            }
+            var rowCells = allRows[singleRow].replace('<', '-').replace(
+                  '전시소개 ', '').replace('>', '-').replace('전시기간 :', '')
+                  .replace('전시기간:', '').replaceAll('"', '').replace('전시장소:', '').replace('전시장소 :', '')
+                  .replace('전시명:', '').replace('전시명 :', '').split(',');
+            for (var rowCell = 0; rowCell < rowCells.length - 1; rowCell++) {
+               if (singleRow === 0) {
+                  
+                  if (rowCell == 4) {
+                     table += '<th colspan="2">';
+                     table += rowCells[rowCell];
+                     table += '</th>';
+                  } else {
+
+                     table += '<th>';
+                     table += rowCells[rowCell];
+                     table += '</th>';
+                  }
+               } else {
+                  if (rowCell == 0){
+                     table += '<td>';
+                     table += '</%=(month+1)%>월 '
+                     table += rowCells[rowCell];
+                     table += '일';
+                     table += '</td>';
+                  }
+                  else if (rowCell == 4) {
+
+                     table += '<td colspan="2">';
+                     table += rowCells[rowCell];
+                     table += '</td>';
+                  } else {
+
+                     table += '<td>';
+                     table += rowCells[rowCell];
+                     table += '</td>';
+                  }
+               }
+            }
+            if (singleRow === 0) {
+               table += '</tr>';
+               table += '</thead>';
+               table += '<tbody>';
+            } else {
+               table += '</tr>';
+            }
+         }
+         table += '</tbody>';
+         table += '</table>';
+         $('div.c').append(table);
+      }*/
    </script>
 
 </body>
