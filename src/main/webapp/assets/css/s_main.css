@@ -2531,7 +2531,7 @@ input, select, textarea {
 								whatever you like (or remove it entirely).
 							*/
 
-					max-width: 1500px;
+					max-width: 1038px;
 				}
 
 		/* Copyright */
@@ -2660,7 +2660,7 @@ input, select, textarea {
 
 			#content {
 				padding: 3em 5em 8em 8em;
-				margin-left: 3em;
+				margin-left: 7em;
 			}
 
 	}
