@@ -182,7 +182,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
             <tr height="30">
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month - 1%>);">¢¸</a></td>
-               <td width="110" align="center" id='tddd'><%=year%> / <%=month + 1%></td>
+               <td width="110" align="center" id='tddd' onclick="location.href='sched.jsp';"><%=year%> / <%=month + 1%></td>
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month + 1%>);">¢º</a></td>
             </tr>

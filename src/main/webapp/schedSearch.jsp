@@ -13,6 +13,7 @@
 //로그인 한 세션 받아오기
 membersVO vo = (membersVO) session.getAttribute("vo");
 
+
 //선택한 날짜의 리스트 받아오기
 exhDAO edao = new exhDAO();
 ArrayList<exhVO> day_list = (ArrayList<exhVO>) session.getAttribute("day_list");
@@ -202,7 +203,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
             <tr height="30">
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month - 1%>);">◀</a></td>
-               <td width="110" align="center" id='tddd'><%=year%> / <%=month + 1%></td>
+               <td width='110' align='center' id='tddd' onclick="location.href='sched.jsp';"><%=year%> / <%=month + 1%></td>
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month + 1%>);">▶</a></td>
             </tr>
@@ -335,6 +336,8 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
     	  
       })
       });
+      
+      
 		/*
       function successFunction(data) {
          var allRows = data.split("\|");
