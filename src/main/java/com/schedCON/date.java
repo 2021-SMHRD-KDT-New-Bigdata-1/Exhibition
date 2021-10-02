@@ -28,7 +28,8 @@ public class date extends HttpServlet {
 		Integer iyear = Integer.parseInt(year.trim());
 		Integer imonth = Integer.parseInt(month.trim());
 		Integer iday = Integer.parseInt(day.trim());
-		System.out.println(iyear+imonth+iday);
+		System.out.println(iyear+"년"+imonth+"월"+iday+"일 일정정보를 검색합니다..");
+		
 		
 		
 		exhDAO edao = new exhDAO();
@@ -42,6 +43,7 @@ public class date extends HttpServlet {
 			//list 넘겨주깅
 			HttpSession session = request.getSession();
 			session.setAttribute("day_list", day_list);
+			response.sendRedirect("sched.jsp");
 		}
 	}
 

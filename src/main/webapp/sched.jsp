@@ -1,3 +1,6 @@
+<%@page import="DAO.exhDAO"%>
+<%@page import="VO.exhVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="VO.membersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="EUC-KR"%>
@@ -9,6 +12,10 @@
 <%
 //로그인 한 세션 받아오기
 membersVO vo = (membersVO) session.getAttribute("vo");
+
+//선택한 날짜의 리스트 받아오기
+exhDAO edao = new exhDAO();
+ArrayList<exhVO> day_list = (ArrayList<exhVO>) session.getAttribute("day_list");
 %>
 
 <%
@@ -280,7 +287,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script lang="javascript">
    
-   function date(day){
+   /* function date(day){ 
       $.ajax({
          url : 'exlist21oct.csv',
          type : 'post',
@@ -288,8 +295,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
          contentType : 'text/html;charset=utf-8',
 
          dataType : 'text'
-      }).done(successFunction);
+      }).done(successFunction); */
 
+      /* 
       function successFunction(data) {
          var allRows = data.split("\|"); //allRows 한 줄씩으로 바꿔줌
          var table = '<table>';
@@ -320,11 +328,12 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   }
                } else {
                   //여기에 조건 주기
-                  if (rowCells[0]==day){
-         
+                  if (rowCells[0]==day){ */
+         		
+                	  /*
                   if (rowCell == 0){
-                     table += '<td>';
-                     table += '<%=(month+1)%>월 '
+                     table += '<td>'; 
+                     table += '</%=(month+1)%>월 '
                      table += rowCells[rowCell];
                      table += '일';
                      table += '</td>';
@@ -343,7 +352,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   }
                   
                }}
-            }
+            } 
             if (singleRow === 0) {
                table += '</tr>';
                table += '</thead>';
@@ -360,9 +369,9 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       }
       
       }
+   */
    
-   
-   
+   /*
       function goCalendar() {
          var form = document.calendarTextBoxForm;
 
@@ -391,25 +400,25 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       function goMonth(month) {
          var form = document.calendarHiddenForm;
 
-         if ((<%=year%><= 1970) && (month == -1)) {
+         if ((</%=year%><= 1970) && (month == -1)) {
             alert("1970년 1월 1일 이후로 검색해 주세요.");
             return;
          }
          if (month == -1) {
-            form.year.value = <%=year - 1%>;
+            form.year.value = </%=year - 1%>;
             form.month.value = 11;
          } else if (month == 12) {
-            form.year.value =<%=year + 1%>;
+            form.year.value =</%=year + 1%>;
             form.month.value = 0;
          } else {
-            form.year.value =<%=year%>;
+            form.year.value =</%=year%>;
             form.month.value = month;
          }
 
          form.action = "sched.jsp";
          form.target = "_self";
          form.submit();
-      }
+      } */
    </script>
 
    <script src="assets/js/jquery-3.6.0.min.js"></script>
