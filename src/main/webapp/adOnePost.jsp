@@ -126,8 +126,8 @@
 						<section class="psection">	
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
-                        		<h2><%=list.get(0).getAd_title() %></h2>
-                        		<p class="postnick"><%=list.get(0).getNick() %></p>
+                        		<h2 class="myh2"><%=list.get(0).getAd_title() %></h2>
+                        		<p class="postnick"><strong><%=list.get(0).getNick() %></strong></p>
                         		<hr class="my-hr3">
                         		
                         		<%for(int i =0; i<4; i++){ %>
@@ -182,7 +182,7 @@
 						<div class="line">
 							<section class="psection">
 							
-								<h2>comment</h2>
+								<h2 class="myh22">comment</h2>
 								<%
 								if(list.get(0).getAd_comment()!=null){
 									String comm = list.get(0).getAd_comment();

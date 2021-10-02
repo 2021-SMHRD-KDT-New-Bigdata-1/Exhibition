@@ -121,28 +121,19 @@
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
 
-								<h1>TITLE:<%=list.get(0).getTitle() %></h1>
-								<p>WRITER:<%=list.get(0).getNick() %></p>
+								<h2 class="myh2"><%=list.get(0).getTitle() %></h2>
+                        		<p class="postnick"><strong><%=list.get(0).getNick() %></strong></p>
+                        		<hr class="my-hr3">
+
 								<%for(int i =0; i<4; i++){ %>
 								<%String f = list.get(0).getImg_name();
 								f.replaceAll("null", "");
 								String[] img_name = f.split("\\|");
 									if(!img_name[i].equals("null")){%>
 										<span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
-									<% }}
-								%>
+									<% }}%>
 
-                        		<h1>TITLE:<%=list.get(0).getTitle() %></h1>
-                        		<p> WRITER:<%=list.get(0).getNick() %></p>
-                        		<%for(int i =0; i<4; i++){ %>
-                        		<%String f = list.get(0).getImg_name();
-                       			 f.replaceAll("null", "");
-                        		String[] img_name = f.split("\\|");
-                           		if(!img_name[i].equals("null")){%>
-                              <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
-                           <% }}%>
-
-								<p>CONTENT:<%=list.get(0).getContent() %></p>
+                    			<p><%=list.get(0).getContent() %></p>
 							<%}else{
 								
 							}%>
@@ -175,18 +166,19 @@
 							<%}%>
 						
 						</div>
-					</div>
+					<br>
+					<br>
 					</section>
 			
 						<div class="line">
 							<section class="psection">
-								<h2>comment</h2>
+								<h2 class="myh22">comment</h2>
 								<%
 								if(list.get(0).getComment()!=null){
 									String comm = list.get(0).getComment();
 									String[] commentlist = comm.split("\\|");
 									for(int i = 0; i<commentlist.length; i++){%>
-										<p><%=commentlist[i]%></p>
+										<p><h5><%=commentlist[i]%></h5></p>
 								<%}}%>
 							
 								
@@ -196,26 +188,14 @@
 											<textarea name="comment" id="message" placeholder="comment"></textarea>
 										</div>
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
+										 <div align="right">
+									 <input type="submit" value="Post Comment" class="like_btn" />
+									 </div>
 								</form>
 							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
+							
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 38℃ All rights reserved</li><br><br>
 							</ul>
 						</div>
 					
