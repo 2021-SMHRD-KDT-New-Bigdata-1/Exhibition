@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>38℃ - 로그인</title>
-        <link rel="stylesheet" href="STYLE.css">
+        <link rel="stylesheet" href="assets/css/STYLE.css">
     </head>
     <body>
         <div class="wrap">
