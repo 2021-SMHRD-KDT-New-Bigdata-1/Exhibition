@@ -190,7 +190,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
    </div>
 
    <!-- Sidebar -->
-   <div id="sidebar">
+   <div id="sidebar" style="padding-bottom: 500px">
 
       <!-- Logo -->
       <!--<h1 id="logo"><a href="Main.jsp">38กษ</a></h1>-->
