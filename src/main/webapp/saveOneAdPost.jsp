@@ -117,6 +117,10 @@
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
 								<p><%=list.get(0).getContent() %></p>
+								<p><b>
+								#<%=list.get(0).getRegion() %><br>
+								#<%=list.get(0).getGenre() %><br>
+								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></b></p>
 							<%}else{
 								
 							}%>

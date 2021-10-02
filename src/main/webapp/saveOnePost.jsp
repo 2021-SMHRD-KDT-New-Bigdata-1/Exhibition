@@ -151,6 +151,10 @@
 									String[] commentlist = comm.split("\\|");
 									for(int i = 0; i<commentlist.length; i++){%>
 										<p><%=commentlist[i]%></p>
+										<p><b>
+										#<%=list.get(0).getRegion_tag() %><br>
+										#<%=list.get(0).getGenre_tag() %><br>
+										#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></b></p>
 								<%}}%>
 							
 								<h2>메모 작성</h2>

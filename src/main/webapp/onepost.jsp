@@ -134,6 +134,10 @@
 									<% }}%>
 
                     			<p><%=list.get(0).getContent() %></p>
+                    			<p><b>
+								#<%=list.get(0).getRegion_tag() %><br>
+								#<%=list.get(0).getGenre_tag() %><br>
+								#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></b></p>
 							<%}else{
 								
 							}%>
