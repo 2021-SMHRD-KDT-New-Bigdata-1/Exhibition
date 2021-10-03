@@ -131,6 +131,7 @@
 								 <p class="pcontent"><%=list.get(0).getContent() %></p>
                     			<br><br>
                     			<p class="p_tag"><b>
+                    			#AD<br>
 								#<%=list.get(0).getRegion() %><br>
 								#<%=list.get(0).getGenre() %><br>
 								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></b></p>
