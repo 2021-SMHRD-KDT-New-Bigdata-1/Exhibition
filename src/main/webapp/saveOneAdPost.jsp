@@ -105,6 +105,8 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="line">
+						
+						<section class="psection">
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
                         		<h2 class="myh2"><%=list.get(0).getAd_title() %></h2>
@@ -182,27 +184,29 @@
 											<h5><i class="far fa-user fa-lg"></i>&nbsp;<%=commentlist[i]%></h5>
 										<% }%>
 								<%}}%>
+								
+								<br><hr><br>
 							
-								<h2  class="myh22">Memo</h2>
+								<h2  class="myh22">Memo</h2><br>
 								<%if(memo!=null){
 									out.print("<p>"+memo+"</p>");
 								}%>
 								
 								<form method="post" action="adsavememo?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>">
-									<hr>
+									<br>
 									<div class="fields">
 										<div class="field">
 											<textarea name="message" id="message" placeholder="Post Memo"></textarea>
 										</div>
 									</div>
-									<div align="right">
-										<input type="submit" value="Send" class="primary" />
-									</div>
+										<div align="right">
+											<input type="submit" value="Send" class="primary" />
+										</div>
 								</form>
-							
-							<ul class="copyright">
-								<li>&copy; 38℃ All rights reserved</li><br><br>
-							</ul>
+							</section>
+									<ul class="copyright">
+										<li>&copy; 38℃ All rights reserved</li><br><br>
+									</ul>
 						</div>
 					</div>
 
