@@ -32,10 +32,10 @@
                <!-- Nav -->
                   <nav id="nav">
                      <ul>
-                        <li><a href="Main.jsp" id="Main-link"><span class="icon solid fa-home">Home</span></a></li>
-                        <li><a href="#myInfo" id="myInfo-link"><span class="icon solid fa-user-edit">개인 정보 수정</span></a></li>
-                        <li><a href="#myTag" id="myTag-link"><span class="icon solid fa-th">관심 분야 설정</span></a></li>
-                        <li><a href="logOutCon" id="contact-link"><span class="icon solid fa-power-off">로그아웃</span></a></li>
+                        <li><a href="Main.jsp" id="Main-link" class="icon solid fa-home"> </a></li>
+                        <li><a href="#myInfo" id="myInfo-link" class="icon solid fa-user-edit"> </a></li>
+                        <li><a href="#myTag" id="myTag-link" class="icon solid fa-th"> </a></li>
+                        <li><a href="logOutCon" id="contact-link" class="icon solid fa-power-off"> </a></li>
                      </ul>
                   </nav>
 
@@ -134,9 +134,9 @@
                      <table style="margin-left: auto; margin-right: auto;">
                               <colgroup>
 
-                              <col style="width:20%;">
+                              <col style="width:25%;">
                               
-                              <col style="width:80%;">
+                              <col style="width:75%;">
                               
                               </colgroup>
                               
@@ -362,8 +362,49 @@
                  
               }});
              
-  
-         
+        	$(document).ready(function(){
+          		//1 HOME
+          		$('#Main-link').mouseover(function(){
+          			$(this).removeClass("icon solid fa-home");
+          			$(this).html("HOME");
+          		});
+          		
+          		$('#Main-link').mouseout(function(){
+          			$(this).addClass("icon solid fa-home");
+          			$(this).html("");
+          		});
+          		//2 개인 정보 수정
+          		$('#myInfo-link').mouseover(function(){
+          			$(this).removeClass("icon solid fa-user-edit");
+          			$(this).html("개인 정보 수정");
+          		});
+          		
+          		$('#myInfo-link').mouseout(function(){
+          			$(this).addClass("icon solid fa-user-edit");
+          			$(this).html("");
+          		});
+          		//3 관심 태그 설정
+          		$('#myTag-link').mouseover(function(){
+          			$(this).removeClass("icon solid fa-th");
+          			$(this).html("관심 태그 설정");
+          		});
+          		
+          		$('#myTag-link').mouseout(function(){
+          			$(this).addClass("icon solid fa-th");
+          			$(this).html("");
+          		});
+          		//4 로그아웃
+          		$('#contact-link').mouseover(function(){
+          			$(this).removeClass("icon solid fa-power-off");
+          			$(this).html("로그아웃");
+          		});
+          		
+          		$('#contact-link').mouseout(function(){
+          			$(this).addClass("icon solid fa-power-off");
+          			$(this).html("");
+          		});
+          	});
+
          </script>
    
    
