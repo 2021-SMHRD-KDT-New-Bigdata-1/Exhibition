@@ -249,6 +249,16 @@
 										String rt = (String)session.getAttribute("rt");
 										String gt = (String)session.getAttribute("gt");
 										String ct = (String)session.getAttribute("ct");
+										if(rt.equals("#Seoul #Gyeonggi #Gangwon #Daejeon #Daegu #Busan #Gwangju #Ulsan #Incheon #Jeju #Chungnam #Chungbuk #Gyeongnam #Kyeongbuk #Jeonnam #Jeonbuk")){
+											rt = "#ALL REGION";
+										}
+										if(gt.equals("#Western #Oriental #Design #Installation #Formative #Crafts #Architecture #Picture #Hands-on")){
+											gt = "#ALL GENRE";
+										}
+										if(ct.equals("#White #Black #Gray #Brown #Beige #Green #Blue #Purple #Yellow #Pink #Red #Ivory #LightGray #Khaki #Mint #NeonGreen #Olive #Navy #SkyBlue #Lavender #Mustard #DeepRed")){
+											ct = "#ALL COLOR";
+										}
+										
 										%>
 										<div><p><b><%=rt %> <%=gt %> <%=ct %> 검색 결과</b></p></div>
 										
