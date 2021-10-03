@@ -40,8 +40,8 @@ public class orderbyCON extends HttpServlet{
 		String region  = AL.get(0).getLike_region_tag();
 		String genre = AL.get(0).getLike_genre_tag();
 		String color = AL.get(0).getLike_color_tag();
-//		String[] ar_region = region.split("\\|");
-//		String[] ar_genre = genre.split("\\|");
+		String[] ar_region = region.split("\\|");
+		String[] ar_genre = genre.split("\\|");
 		String[] ar_color = color.split("\\|");
 		
 		//정렬기준??? 1지역-2장르-3컬러
@@ -113,6 +113,17 @@ public class orderbyCON extends HttpServlet{
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("list", order_join);
+		
+		
+		//region, genre, color : DB에 담겨있는 내 관심분야 (|로 구분되어 있음) STRING
+		region = region.replaceAll("[|]", " #");
+		genre = genre.replaceAll("[|]", " #");
+		color = color.replaceAll("[|]", " #");
+		
+		
+		session.setAttribute("rt", "#"+region);
+		session.setAttribute("gt", "#"+genre);
+		session.setAttribute("ct", "#"+color);
 		response.sendRedirect("allorderby.jsp");
 	}
 

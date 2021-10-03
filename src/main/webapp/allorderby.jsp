@@ -244,8 +244,14 @@
 										</form>
 										</div>
 										</div>
+										<%
+										//맞춤추천 정렬이니까
+										String rt = (String)session.getAttribute("rt");
+										String gt = (String)session.getAttribute("gt");
+										String ct = (String)session.getAttribute("ct");
+										%>
+										<div><p><b><%=rt %> <%=gt %> <%=ct %> 맞춤 추천</b></p></div>
 										
-		
 		<!-- 이미지 그리드 형식으로 나타내기 -->
 		<section class="tiles">
 		
