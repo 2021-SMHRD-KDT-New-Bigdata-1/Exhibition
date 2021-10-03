@@ -164,8 +164,17 @@ public class SearchCon extends HttpServlet {
 			if(adlist!=null) {
 				session.setAttribute("adlist", adlist);
 			}
+			
+			
+			//검색한 지역, 장르, 색감도 나타나도록 보내주기
+			String search_region_tag_s = "#"+arrayJoin(" #",region_tag);
+			String search_genre_tag_s = "#"+arrayJoin(" #",genre_tag);
+			String search_color_tag_s = "#"+arrayJoin(" #",color_tag);
+			
+			session.setAttribute("rt", search_region_tag_s);
+			session.setAttribute("gt", search_genre_tag_s);
+			session.setAttribute("ct", search_color_tag_s);
 			response.sendRedirect("allSearch.jsp");
-		
 		
 		
 	}//class 끝

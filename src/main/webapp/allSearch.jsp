@@ -245,7 +245,12 @@
 										</form>
 										</div>
 										</div>
-										<div><p><b># 서울 # ALL GENRE #ALL COLOR 검색 결과</b></p></div>
+										<%
+										String rt = (String)session.getAttribute("rt");
+										String gt = (String)session.getAttribute("gt");
+										String ct = (String)session.getAttribute("ct");
+										%>
+										<div><p><b><%=rt %> <%=gt %> <%=ct %> 검색 결과</b></p></div>
 										
 	<section class="tiles">
 		<!-- 광고게시물 그리드 -->
