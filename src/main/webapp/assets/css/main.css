@@ -363,7 +363,7 @@ input, select, textarea {
   .my-hr3 {
     border: 0;
     height: 3px;
-    width:80%;
+    width:75%;
     background:rgba(47, 98, 0, 0.651);
   }
   .my-hr5{
@@ -2595,6 +2595,11 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+	}
+	.userimg {
+	max-width:25px;
+	border-radius:50%;
+	vertical-align:middle;
 	}
 
 		.image img {

@@ -122,7 +122,22 @@
 							<%if(list!=null && vo!=null){%>
 
 								<h2 class="myh2"><%=list.get(0).getTitle() %></h2>
-                        		<p class="postnick"><strong><%=list.get(0).getNick() %></strong></p>
+                        		<p class="postnick"><strong><%=list.get(0).getNick() %> &nbsp 
+                        		<%
+                        		String nnick = list.get(0).getNick();
+                        		if(nnick.equals("60sunART") || list.get(0).getNick().equals("60limmm")){ //ÀÓÀ¯°æ%>
+                        			<img class="userimg" src='images/60vv.jpg'>
+                        		<%}else if(nnick.equals("ssossososo") || list.get(0).getNick().equals("yeoni")){ //±è¼Ò¿¬93%>
+                        			<img class="userimg" src='images/so93.jpg'>
+                        		<%}else if(nnick.equals("gjBiennale") || list.get(0).getNick().equals("soyanee")){ //±è¼Ò¿¬98%>
+                        			<img class="userimg" src='images/pic06.jpg'>
+                        		<%}else if(nnick.equals("smhrd") || list.get(0).getNick().equals("admin")){ //¹ÚÃ¢¹Î%>
+                        			<img class="userimg" src='images/pic06.jpg'>
+                        		<%}else{ %>
+                        			<img class="userimg" src='images/pic06.jpg'>
+                        		<%} %>
+                        		
+                        		</strong></p>
                         		<hr class="my-hr3">
 								<%int cnt_i = 0;
                         		String f = list.get(0).getImg_name();

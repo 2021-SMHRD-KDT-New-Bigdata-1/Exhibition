@@ -110,7 +110,22 @@
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
                         		<h2 class="myh2"><%=list.get(0).getAd_title() %></h2>
-                        		<p class="postnick"><%=list.get(0).getNick() %></p>
+                        		<p class="postnick"><strong><%=list.get(0).getNick() %> &nbsp 
+                        		<%
+                        		String nnick = list.get(0).getNick();
+                        		if(nnick.equals("60sunART") || list.get(0).getNick().equals("60limmm")){ //임유경%>
+                        			<img class="userimg" src='images/60vv.jpg'>
+                        		<%}else if(nnick.equals("ssossososo") || list.get(0).getNick().equals("yeoni")){ //김소연93%>
+                        			<img class="userimg" src='images/so93.jpg'>
+                        		<%}else if(nnick.equals("gjBiennale") || list.get(0).getNick().equals("soyanee")){ //김소연98%>
+                        			<img class="userimg" src='images/pic06.jpg'>
+                        		<%}else if(nnick.equals("smhrd") || list.get(0).getNick().equals("admin")){ //박창민%>
+                        			<img class="userimg" src='images/pic06.jpg'>
+                        		<%}else{ %>
+                        			<img class="userimg" src='images/pic06.jpg'>
+                        		<%} %>
+                        		
+                        		</strong></p>
                         		<hr class="my-hr3">
                         		
                         		<%int cnt_i = 0;
