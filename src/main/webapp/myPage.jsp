@@ -134,9 +134,9 @@
                      <table style="margin-left: auto; margin-right: auto;">
                               <colgroup>
 
-                              <col style="width:20%;">
+                              <col style="width:25%;">
                               
-                              <col style="width:80%;">
+                              <col style="width:75%;">
                               
                               </colgroup>
                               
