@@ -187,19 +187,20 @@
 										<% }%>
 										
 								<%}}%>
-							
-								<h2 class="myh22">Memo</h2>
+								<br><hr><br>
+								<h2 class="myh22">Memo</h2><br>
 								<%if(memo!=null){
 									out.print("<p>"+memo+"</p>");
 								}%>
 								
 								<form method="post" action="savememo?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>">
-									<hr>
+									<br>
 									<div class="fields">
 										<div class="field">
 											<textarea name="message" id="message" placeholder="Post Memo"></textarea>
 										</div>
 									</div>
+									
 									<div align="right">
 										<input type="submit" value="Post Memo" class="primary" />
 									</div>
