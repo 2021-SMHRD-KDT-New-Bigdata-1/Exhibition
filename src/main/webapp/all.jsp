@@ -235,25 +235,25 @@
 											<label for="color11">Red</label> 
 											<input type="checkbox" name="color" value="Ivory" id="color12" >
 											<label for="color12">Ivory</label>
-											<input type="checkbox" name="color" value="LightGray" id="color13" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="LightGray" id="color13">
 											<label for="color13">Light Gray</label>
 											<input type="checkbox" name="color" value="Khaki" id="color14" >
 											<label for="color14">Khaki</label> 
 											<input type="checkbox" name="color" value="Mint" id="color15" >
 											<label for="color15">Mint</label> 
-											<input type="checkbox" name="color" value="NeonGreen" id="color16" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="NeonGreen" id="color16">
 											<label for="color16">Neon Green</label> 
 											<input type="checkbox" name="color" value="Olive" id="color17" >
 											<label for="color17">Olive</label> 
 											<input type="checkbox" name="color" value="Navy" id="color18" >
 											<label for="color18">Navy</label> 
-											<input type="checkbox" name="color" value="SkyBlue" id="color19" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="SkyBlue" id="color19">
 											<label for="color19">Sky Blue</label> 
 											<input type="checkbox" name="color" value="Lavender" id="color20" >
 											<label for="color20">Lavender</label> 
 											<input type="checkbox" name="color" value="Mustard" id="color21" >
 											<label for="color21">Mustard</label> 
-											<input type="checkbox" name="color" value="DeepRed" id="color22" onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="DeepRed" id="color22">
 											<label for="color22">Deep Red</label>
 													</td>
 												</tr>
