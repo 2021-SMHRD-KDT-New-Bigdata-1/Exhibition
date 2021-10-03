@@ -107,7 +107,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'NaSq';
 		font-weight: 400;
 		color: #565656;
 	}
@@ -122,7 +122,7 @@ input, select, textarea {
 	}
 
 	h2, h3, h4, h5, h6 {
-		font-family: 'Open Sans Condensed', sans-serif;
+		font-family: 'NaSq';
 		font-weight: 700;
 		color: #232323;
 	}
@@ -1670,7 +1670,7 @@ input, select, textarea {
 /* Form */
 
 	form label {
-		font-family: 'Open Sans Condensed', sans-serif;
+		font-family: 'NaSq';
 		font-weight: 700;
 		color: #232323;
 		margin: 0 0 0.75em 0;
@@ -1721,7 +1721,7 @@ input, select, textarea {
 	}
 
 		header > p {
-			font-family: 'Open Sans Condensed', sans-serif;
+			font-family: 'NaSq';
 			font-weight: 300;
 			display: block;
 			margin-top: 1em;
@@ -1789,7 +1789,7 @@ input, select, textarea {
 		text-align: center;
 		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15);
 		color: #fff;
-		font-family: 'Open Sans Condensed', sans-serif;
+		font-family: 'NaSq';
 		font-weight: 700;
 		text-decoration: none;
 		-moz-transition: background-color .25s ease-in-out, color .25s ease-in-out;
@@ -1876,7 +1876,7 @@ input, select, textarea {
 
 	.pagination .pages {
 		display: inline-block;
-		font-family: 'Open Sans Condensed', sans-serif;
+		font-family: 'NaSq';
 		font-weight: 700;
 	}
 
@@ -2217,7 +2217,7 @@ input, select, textarea {
 			color: #fff;
 			line-height: 44px;
 			font-size: 1.25em;
-			font-family: 'Open Sans Condensed', sans-serif;
+			font-family: 'NaSq';
 			font-weight: 700;
 			letter-spacing: 0.1em;
 			text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5);
@@ -2502,7 +2502,7 @@ input, select, textarea {
 		/* Logo */
 
 			#logo {
-				font-family: 'Open Sans Condensed', sans-serif;
+				font-family: 'NaSq';
 				font-weight: 700;
 				font-size: 2em;
 				letter-spacing: 0.1em;
@@ -2609,7 +2609,7 @@ input, select, textarea {
 				.box.post .info .date {
 					position: relative;
 					z-index: 1;
-					font-family: 'Open Sans Condensed', sans-serif;
+					font-family:'NaSq';
 					font-weight: 400;
 					text-align: center;
 					display: block;
@@ -2845,7 +2845,7 @@ input, select, textarea {
 
 				.box.post header > p {
 					font-size: 1em;
-					font-family: 'Source Sans Pro', sans-serif;
+					font-family: 'NaSq';
 					line-height: 1.5em;
 				}
 
