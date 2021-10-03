@@ -50,14 +50,14 @@ public class Posting extends HttpServlet {
 				//이미지 이름을 seq번호와 맞추기 위함 -> 폴더이름을...후
 				postDAO pdao = new postDAO();
 				ArrayList<postVO> list = pdao.allpost_order_seq();
-				int new_seq = list.get(0).getSeq()+2;
-				System.out.println("포스팅 될 시퀀스 : "+new_seq);
+				//int new_seq = list.get(0).getSeq()+2;
+				//System.out.println("포스팅 될 시퀀스 : "+new_seq);
 				
 				//이어서
 				ServletContext context = getServletContext();
 				String uploadFilePath = context.getRealPath(savePath);
 				System.out.println("서버상의 실제 디렉토리 : "+uploadFilePath);
-				System.out.println(uploadFilePath+"\\"+new_seq);
+				//System.out.println(uploadFilePath+"\\"+new_seq);
 				
 				//전역변수 처리
 				String title = null; 
