@@ -148,6 +148,7 @@
 							<input type="button" id="btn2" class="btn next" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
                            
 								<p class="pcontent"><%=list.get(0).getContent() %></p>
+								<p class="p_tag"><b>
 								<p><b>
 								#<%=list.get(0).getRegion() %><br>
 								#<%=list.get(0).getGenre() %><br>
@@ -202,7 +203,13 @@
 									String comm = list.get(0).getAd_comment();
 									String[] commentlist = comm.split("\\|");
 									for(int i = 0; i<commentlist.length; i++){%>
-										<p><h5><%=commentlist[i]%></h5></p>
+										<% if(i%2==0){%>
+
+											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<%}else{ %>
+
+											<h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<% }%>
 								<%}}%>
 							
 								
