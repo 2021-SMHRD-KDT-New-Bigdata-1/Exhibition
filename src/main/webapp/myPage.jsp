@@ -146,10 +146,10 @@
                         <td>
                         </tr>
                                  <tr>
-                                    <td align="center">지역별 태그</td>
+                                    <td align="center">지역</td>
                                     <td>
-                                       <input type="checkbox" name="region" value="" id="region1">
-                                       <label for="region1">전체지역</label>
+                                       <!-- <input type="checkbox" name="region" value="" id="region1">
+                                       <label for="region1">전체지역</label> -->
                                        <input type="checkbox" name="region" value="Seoul" id="region2">
                                        <label for="region2">서울</label> 
                                        <input type="checkbox" name="region" value="Gyeonggi" id="region3">
@@ -185,7 +185,7 @@
                                     </td>
                                  </tr>   
                                  <tr>
-                                    <td align="center">장르별 태그</td>
+                                    <td align="center">장르</td>
                                     <td>
                                        <input type="checkbox" name="genre" value="Western" id="genre1">
                                        <label for="genre1">서양화</label> 
@@ -208,7 +208,7 @@
                                     </td>
                                  </tr>
                                  <tr>
-                                    <td align="center">색감별(분위기) 태그</td>
+                                    <td align="center">색감</td>
                                     <td>
                                        <input type="checkbox" name="color" value="White" id="color1">
                                        <label for="color1">White</label> 
