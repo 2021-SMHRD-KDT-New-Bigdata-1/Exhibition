@@ -124,10 +124,11 @@
                            		<% }%>
                               <span class="image main"><img id="imggg" src="images/<%=img_name[cnt_i] %>" alt="" /></span>
                            
-                            <!--<input type="button" id="btn1" class="btn pre" value="<" onclick="pre('</%=img_name[cnt_i-1]%>',</%=cnt_i%>)">  ¼öÁ¤Àü -->
-                            <input type="button" id="btn1" class="btn pre" value="<" onclick="pre(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>')">
-							<input type="button" id="btn2" class="btn next" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
-                           
+                              <div class="divvv" align="center">
+                              <input type="button" id="btn1" class="btnpre" value="<" onclick="pre(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>')">
+							  <input type="button" id="btn2" class="btnnext" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
+                           	  </div>
+                           	  
 								 <p class="pcontent"><%=list.get(0).getContent() %></p>
                     			<br><br>
                     			<p class="p_tag"><b>
