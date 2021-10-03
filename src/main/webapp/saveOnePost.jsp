@@ -126,9 +126,16 @@
 							<input type="button" id="btn2" class="btn next" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
                            
 								<p><%=list.get(0).getContent() %></p>
+								#<%=list.get(0).getRegion_tag() %><br>
+								#<%=list.get(0).getGenre_tag() %><br>
+								#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></b></p>
+								
 							<%}else{
 								
 							}%>
+							
+							
+							
 							
 							<%
 							//좋아요 관련 버튼 다르게
@@ -164,9 +171,6 @@
 									for(int i = 0; i<commentlist.length; i++){%>
 										<p><%=commentlist[i]%></p>
 										<p><b>
-										#<%=list.get(0).getRegion_tag() %><br>
-										#<%=list.get(0).getGenre_tag() %><br>
-										#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></b></p>
 								<%}}%>
 							
 								<h2>메모 작성</h2>
