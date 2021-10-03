@@ -175,10 +175,10 @@
 									for(int i = 1; i<commentlist.length; i++){%>
 										<% if(i%2==0){%>
 											
-											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
+											<h5><i class="fas fa-user fa-lg"></i>&nbsp;<%=commentlist[i]%></h5>
 										<%}else{ %>
 											
-											<h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
+											<h5><i class="far fa-user fa-lg"></i>&nbsp;<%=commentlist[i]%></h5>
 										<% }%>
 								<%}}%>
 							
