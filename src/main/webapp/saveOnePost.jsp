@@ -106,13 +106,25 @@
 							<%if(list!=null && vo!=null){%>
                         		<h1><%=list.get(0).getTitle() %></h1>
                         		<p><%=list.get(0).getNick() %></p>
-                        		<%for(int i =0; i<4; i++){ %>
-                        		<%String f = list.get(0).getImg_name();
-                       			 f.replaceAll("null", "");
+                        		
+                        		
+                        		<%int cnt_i = 0;
+                        		String f = list.get(0).getImg_name();
                         		String[] img_name = f.split("\\|");
-                           		if(!img_name[i].equals("null")){%>
-                              <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
-                           <% }}%>
+                        		//f.replaceAll("null", "");
+                        		%>
+                        		<%for(int i =0; i<4; i++){ %>
+                        			<%if(!img_name[i].equals("null")){
+                           			cnt_i = i;
+                           			i = 4;}
+                           			%>
+                           		<% }%>
+                              <span class="image main"><img id="imggg" src="images/<%=img_name[cnt_i] %>" alt="" /></span>
+                           
+                            <!--<input type="button" id="btn1" class="btn pre" value="<" onclick="pre('</%=img_name[cnt_i-1]%>',</%=cnt_i%>)">  수정전 -->
+                            <input type="button" id="btn1" class="btn pre" value="<" onclick="pre(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>')">
+							<input type="button" id="btn2" class="btn next" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
+                           
 								<p><%=list.get(0).getContent() %></p>
 							<%}else{
 								
@@ -200,6 +212,68 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+			
+			var img_src = document.getElementById("imggg").getAttribute('src');
+			var next_cnt = 0;
+			
+			
+				function next(cnt,src0,src1,src2,src3,src){
+					//alert(">버튼클릭");
+					next_cnt++ ; //1
+					
+					var list = [src0,src1,src2,src3]; //파일명이 담긴 list
+					for(var i = 0; i<4 ;i++){ //null없애기
+						if(list[i] == 'null'){
+							list.splice(i,1);
+							i--;
+						}
+					}
+					var filenum = list.indexOf(src);
+					
+					//img_src_change = "images/"+list[filenum+next_cnt];
+					img_src_change = "images/"+list[next_cnt];
+						
+					if(filenum+next_cnt >= list.length){ //만약 null제외한 배열길이인 2와 같아진다면
+						alert("마지막 사진입니당~");
+						next_cnt--;
+						//img_src_change = "images/"+list[filenum+next_cnt];
+						img_src_change = "images/"+list[next_cnt];
+					}
+					
+					document.getElementById("imggg").src = img_src_change;
+				}
+				
+				
+				function pre(cnt,src0,src1,src2,src3,src){
+					
+					next_cnt-- ; 
+					
+					var list = [src0,src1,src2,src3]; //파일명이 담긴 list
+					for(var i = 0; i<4 ;i++){ //null없애기
+						if(list[i] == 'null'){
+							list.splice(i,1);
+							i--;
+						}
+					}
+					
+					var filenum = list.indexOf(src);
+					
+					//alert("현재 내 인덱스 위치"+filenum+next_cnt+1); //1번째면.
+					
+					//alert("움직일 인덱스 위치"+(filenum+next_cnt)); //0번째로
+					
+					img_src_change = "images/"+list[next_cnt];
+						
+					if(next_cnt<0){
+						alert("첫 사진 입니당~");
+						next_cnt++;
+						img_src_change = "images/"+list[next_cnt];
+					}
+					document.getElementById("imggg").src = img_src_change;
+				}
+				
+				
+			</script>
 	</body>
 </html>
