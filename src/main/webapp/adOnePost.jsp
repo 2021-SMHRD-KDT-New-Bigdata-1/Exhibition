@@ -149,8 +149,9 @@
 							<input type="button" id="btn2" class="btn next" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
                            
 								<p class="pcontent"><%=list.get(0).getContent() %></p>
+								<br>
+                    			<br>
 								<p class="p_tag"><b>
-								
 								#<%=list.get(0).getRegion() %><br>
 								#<%=list.get(0).getGenre() %><br>
 								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></b></p>
