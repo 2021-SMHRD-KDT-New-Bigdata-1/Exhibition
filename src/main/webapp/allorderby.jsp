@@ -122,7 +122,7 @@
 										
 										</colgroup>
 											<tr>
-												<td><strong>지역별 태그</strong></td>
+												<td><strong>지역</strong></td>
 												<td>
 													<input type="checkbox" name="region" value="Seoul|Gyeonggi|Gangwon|Daejeon|Daegu|Busan|Gwangju|Ulsan|Incheon|Jeju|Chungnam|Chungbuk|Gyeongnam|Kyeongbuk|Jeonnam|Jeonbuk" id="region1">
 													<label for="region1">전체지역</label>
@@ -162,7 +162,7 @@
 											</tr>
 											
 											<tr>
-												<td><strong>장르별 태그</strong></td>
+												<td><strong>장르</strong></td>
 												<td>
 													<input type="checkbox" name="genre" value="Western|Oriental|Design|Installation|Formative|Crafts|Architecture|Picture|Hands-on" id="genre0">
 													<label for="genre0">모든 장르</label>
@@ -188,7 +188,7 @@
 											</tr>
 										
 											<tr>
-												<td><strong>색감별(분위기) 태그</strong></td>
+												<td><strong>색감</strong></td>
 												<td>
 											<input type="checkbox" name="color" value="White|Black|Gray|Brown|Beige|Green|Blue|Purple|Yellow|Pink|Red|Ivory|LightGray|Khaki|Mint|NeonGreen|Olive|Navy|SkyBlue|Lavender|Mustard|DeepRed" id="color0">
 											<label for="color0">ALL COLOR</label>
