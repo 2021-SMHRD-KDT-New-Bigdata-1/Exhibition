@@ -54,7 +54,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<div class="line">
+			<div class="inner">
 
 				<!-- Logo -->
 				 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -124,6 +124,7 @@
 					<div id="main">
 					
 						<div class="line">
+						
 						<section class="psection">	
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
@@ -149,7 +150,7 @@
                            
 								<p class="pcontent"><%=list.get(0).getContent() %></p>
 								<p class="p_tag"><b>
-								<p><b>
+								
 								#<%=list.get(0).getRegion() %><br>
 								#<%=list.get(0).getGenre() %><br>
 								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></b></p>
@@ -190,50 +191,52 @@
 							<%}%>
 						
 						</div>
-						<br>
+					<br>
 					<br>
 					
 					</section>
+					
 						<div class="line">
 							<section class="psection">
 							
-								<h2 class="myh22">comment</h2>
-								<%
-								if(list.get(0).getAd_comment()!=null){
-									String comm = list.get(0).getAd_comment();
-									String[] commentlist = comm.split("\\|");
-									for(int i = 0; i<commentlist.length; i++){%>
-										<% if(i%2==0){%>
-
-											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
-										<%}else{ %>
-
-											<h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
-										<% }%>
-								<%}}%>
-							
 								
-								<form method="post" action="adcommentCON?seq=<%=seq%>">
-								<hr>
-									<div class="fields">
-										<div class="field">
-											<textarea name="comment" id="message" placeholder="Leave a comment"></textarea>
-										</div>
-									</div>
-									 <div align="right">
-									 <input type="submit" value="Post Comment" class="like_btn" />
-									 </div>
-										
-									
-								</form>
-							</section>
+							<h2 class="myh22">comment</h2>
+                        <%
+                        if(list.get(0).getAd_comment()!=null){
+                           String comm = list.get(0).getAd_comment();
+                           String[] commentlist = comm.split("\\|");
+                           for(int i = 1; i<commentlist.length; i++){%>
+                              <% if(i%2==0){%>
+
+                                 <h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
+                              <%}else{ %>
+
+                                 <h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
+                              <% }%>
+                        <%}}%>
+                     
+                        
+                        <form method="post" action="adcommentCON?seq=<%=seq%>">
+                        <hr>
+                           <div class="fields">
+                              <div class="field">
+                                 <textarea name="comment" id="message" placeholder="Leave a comment"></textarea>
+                              </div>
+                           </div>
+                            <div align="right">
+                            <input type="submit" value="Post Comment" class="like_btn" />
+                            </div>
+                              
+                           
+                        </form>
+                     </section>
 							
 							<ul class="copyright">
 								<li>&copy; 38℃ All rights reserved</li><br><br>
 							</ul>
 						</div>
-
-			</div>
+					
+				</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

@@ -184,12 +184,12 @@
 			
 						<div class="line">
 							<section class="psection">
-								<h2 class="myh22">comment</h2>
+								<h2 class="myh22">Comment</h2>
 								<%
 								if(list.get(0).getComment()!=null){
 									String comm = list.get(0).getComment();
 									String[] commentlist = comm.split("\\|");
-									for(int i = 0; i<commentlist.length; i++){%>
+									for(int i = 1; i<commentlist.length; i++){%>
 										<% if(i%2==0){%>
 											
 											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>

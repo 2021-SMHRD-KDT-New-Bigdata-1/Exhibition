@@ -104,11 +104,13 @@
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner">
+						<div class="line">
 							<!-- 게시글 클릭했을 때 해당 게시글의 제목, 내용 등 출력 -->
 							<%if(list!=null && vo!=null){%>
-                        		<h1><%=list.get(0).getAd_title() %></h1>
-                        		<p><%=list.get(0).getNick() %></p>
+                        		<h2 class="myh2"><%=list.get(0).getAd_title() %></h2>
+                        		<p class="postnick"><%=list.get(0).getNick() %></p>
+                        		<hr class="my-hr3">
+                        		
                         		<%int cnt_i = 0;
                         		String f = list.get(0).getAd_img_name();
                         		String[] img_name = f.split("\\|");
@@ -126,8 +128,8 @@
                             <input type="button" id="btn1" class="btn pre" value="<" onclick="pre(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>')">
 							<input type="button" id="btn2" class="btn next" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
                            
-								<p><%=list.get(0).getContent() %></p>
-								<p><b>
+								 <p class="pcontent"><%=list.get(0).getContent() %></p>
+                    			<p class="p_tag"><b>
 								#<%=list.get(0).getRegion() %><br>
 								#<%=list.get(0).getGenre() %><br>
 								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></b></p>
@@ -155,55 +157,52 @@
 							<!-- 저장되면 '저장되었습니다' alert뜨도록 설정 -->
 						
 						</div>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>댓글</h2>
+					
+					<br>
+					<br>
+					
+					
+					</section>
+			
+						<div class="line">
+							<section class="psection">
+								<h2 class="myh22">Comment</h2>
 								<%
 								if(list.get(0).getAd_comment()!=null){
 									String comm = list.get(0).getAd_comment();
 									String[] commentlist = comm.split("\\|");
-									for(int i = 0; i<commentlist.length; i++){%>
-										<p><%=commentlist[i]%></p>
+									for(int i = 1; i<commentlist.length; i++){%>
+										<% if(i%2==0){%>
+											
+											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<%}else{ %>
+											
+											<h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<% }%>
 								<%}}%>
 							
-								<h2>메모 작성</h2>
+								<h2  class="myh22">Memo</h2>
 								<%if(memo!=null){
 									out.print("<p>"+memo+"</p>");
 								}%>
 								
 								<form method="post" action="adsavememo?seq=<%=seq%>&nick=<%=vo.getMB_nick()%>">
+									<hr>
 									<div class="fields">
 										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
+											<textarea name="message" id="message" placeholder="Post Memo"></textarea>
 										</div>
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
+									<div align="right">
+										<input type="submit" value="Send" class="primary" />
+									</div>
 								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
+							
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 38℃ All rights reserved</li><br><br>
 							</ul>
 						</div>
-					</footer>
+					</div>
 
 			</div>
 
