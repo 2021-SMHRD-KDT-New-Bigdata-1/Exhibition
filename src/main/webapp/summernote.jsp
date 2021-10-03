@@ -60,7 +60,7 @@
 					   </ul>
 					   <ul class="navbar-nav ml-auto align-items-center">
 					      <li class="nav-item">
-					      <a class="nav-link active" href="Main.jsp">HOME</a>
+					      <a class="nav-link " href="Main.jsp">HOME</a>
 					      </li>
 					      <li class="nav-item">
 					      <a class="nav-link" href="date?int=1">SCHEDULE</a>
@@ -69,12 +69,12 @@
 					      <a class="nav-link" href="all.jsp">SEARCH</a>
 					      </li>
 					      <%if(vo!=null){ %>
-					      <li class="nav-item">
+					      <li class="nav-item active">
 					      <a class="nav-link" href="summernote.jsp">POSTING</a>
 					      </li>
 					      <%}else{ %>
-					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      <li class="nav-item active">
+					      <a class="nav-link" href="login2.jsp">POSTING</a>
 					      </li>
 					      
 					       <%} %>
