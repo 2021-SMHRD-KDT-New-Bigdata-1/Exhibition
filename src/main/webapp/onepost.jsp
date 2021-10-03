@@ -134,7 +134,7 @@
 									<% }}%>
 
                     			<p class="pcontent"><%=list.get(0).getContent() %></p>
-                    			<p><b>
+                    			<p class="p_tag"><b>
 								#<%=list.get(0).getRegion_tag() %><br>
 								#<%=list.get(0).getGenre_tag() %><br>
 								#<%=list.get(0).getColor_tag().replaceAll("[|]", " #") %></b></p>
@@ -182,11 +182,18 @@
 									String comm = list.get(0).getComment();
 									String[] commentlist = comm.split("\\|");
 									for(int i = 0; i<commentlist.length; i++){%>
-										<p><h5><%=commentlist[i]%></h5></p>
+										<% if(i%2==0){%>
+											
+											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<%}else{ %>
+											
+											<h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<% }%>
 								<%}}%>
 							
 								
 								<form method="post" action="commentCON?seq=<%=seq%>">
+								<hr>
 									<div class="fields">
 										<div class="field">
 											<textarea name="comment" id="message" placeholder="comment"></textarea>

@@ -174,10 +174,15 @@ input, select, textarea {
 		margin: 0em 5em 0 0em;
 	}
 	
-	p.content{
+	p.pcontent{
 	
 		margin: 2em 6em 2em 6em;
 	
+	}
+	
+	p.p_tag{
+	
+		margin: 0 0 2em 0;
 	}
 
 	h1 {
@@ -246,7 +251,10 @@ input, select, textarea {
 	}
 
 	h5 {
-		font-size: 0.8em;
+		      font-size: 1em;
+	    font-weight: 300;
+	    margin: 0 0 0 2em;
+	    line-height: 2.5em;
 	}
 
 	h6 {
@@ -1834,11 +1842,12 @@ input, select, textarea {
 	section.psection{
 	
 		padding-top: 3em;
-		padding-bottom: 3em;
+		padding-bottom: 4em;
 		margin: 3em 3em 3em 3em;
 	
 	
 	}
+	
 
 	
 

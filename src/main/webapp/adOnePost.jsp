@@ -138,7 +138,7 @@
                               <span class="image main"><img src="images/<%=img_name[i] %>" alt="" /></span>
                            <% }}%>
 								<p class="pcontent"><%=list.get(0).getContent() %></p>
-								<p><b>
+								<p class="p_tag"><b>
 								#<%=list.get(0).getRegion() %><br>
 								#<%=list.get(0).getGenre() %><br>
 								#<%=list.get(0).getColor().replaceAll("[|]", " #") %></b></p>
@@ -192,7 +192,13 @@
 									String comm = list.get(0).getAd_comment();
 									String[] commentlist = comm.split("\\|");
 									for(int i = 0; i<commentlist.length; i++){%>
-										<p><h5><%=commentlist[i]%></h5></p>
+										<% if(i%2==0){%>
+											
+											<h5><i class="fas fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<%}else{ %>
+											
+											<h5><i class="far fa-user fa-2x"></i><%=commentlist[i]%></h5>
+										<% }%>
 								<%}}%>
 							
 								
