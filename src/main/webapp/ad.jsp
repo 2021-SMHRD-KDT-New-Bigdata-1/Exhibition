@@ -50,12 +50,12 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="Main.jsp" id="Main-link"><span
-							class="icon solid fa-home">Home</span></a></li>
-					<li><a href="bookMark2.jsp" id="myInfo-link"><span
-							class="icon solid fa-file-export">저장 게시물</span></a></li>
-					<li><a href="ad.jsp" id="myTag-link"><span
-							class="icon solid fa-th">광고 저장 게시물</span></a></li>
+					<li><a href="Main.jsp" id="Main-link"
+							class="icon solid fa-home"> </a></li>
+					<li><a href="bookMark2.jsp" id="myInfo-link"
+							class="icon solid fa-file-export"> </a></li>
+					<li><a href="ad.jsp" id="myTag-link"
+							class="icon solid fa-th"> </a></li>
 				</ul>	
 			</nav>
 
@@ -201,6 +201,41 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/theme.js"></script>
-
+<script>
+	$(document).ready(function(){
+  		//1 HOME
+  		$('#Main-link').mouseover(function(){
+  			$(this).removeClass("icon solid fa-home");
+  			$(this).html("HOME");
+  		});
+  		
+  		$('#Main-link').mouseout(function(){
+  			$(this).addClass("icon solid fa-home");
+  			$(this).html("");
+  		});
+  		//2 저장 게시물
+  		$('#myInfo-link').mouseover(function(){
+  			$(this).removeClass("icon solid fa-file-export");
+  			$(this).html("저장 게시물");
+  		});
+  		
+  		$('#myInfo-link').mouseout(function(){
+  			$(this).addClass("icon solid fa-file-export");
+  			$(this).html("");
+  		});
+  		//3 광고 저장 게시물
+  		$('#myTag-link').mouseover(function(){
+  			$(this).removeClass("icon solid fa-th");
+  			$(this).html("광고 저장 게시물");
+  		});
+  		
+  		$('#myTag-link').mouseout(function(){
+  			$(this).addClass("icon solid fa-th");
+  			$(this).html("");	
+  		});
+  		
+	});
+  			
+</script>
 </body>
 </html>
