@@ -119,11 +119,7 @@
 							</nav>
 						</div>
 					</header>
-						 <%if(vo!=null){ %>
-				   		<%=vo.getMB_nick() %> 님 어서오세영
-				   	<%}else{ %>
-				   	로그인하세요
-				   	<%} %>			
+							
 			
 
 							<!-- Main -->

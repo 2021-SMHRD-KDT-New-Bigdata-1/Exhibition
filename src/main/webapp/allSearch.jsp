@@ -71,7 +71,7 @@
 					      </li>
 					      <%}else{ %>
 					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
+					      <a class="nav-link" href="login2.jsp">POSTING</a>
 					      </li>
 					      
 					       <%} %>
@@ -104,11 +104,7 @@
 								
 						</div>
 					</header>
-					<%if(vo!=null){ %>
-   		<%=vo.getMB_nick() %> 님 어서오세영
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
+			
 			
 
 							<!-- Main -->

@@ -106,11 +106,7 @@
 					
 					
 			
-<%if(vo!=null){ %>
-   		<%=vo.getMB_nick() %> 님 관심분야 자동정렬
-   	<%}else{ %>
-   	로그인하세요
-   	<%} %>
+
 							<!-- Main -->
 							<div id="main">
 							    <div class="inner">
