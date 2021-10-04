@@ -361,6 +361,38 @@ import VO.postVO;
 	  		return list;
 	  		
 	  	}
+	      
+	     //작성자에 따른 게시물 모아보기
+	      
+	      public ArrayList<postVO> mypost(String nick) {
+	    	  conn();
+	    	  ArrayList<postVO> list = new ArrayList<postVO>();
+	    	  String sql = "select * from post_reviews where mb_nick = ?";
+	    	  try {
+	    		  psmt = conn.prepareStatement(sql);
+	    		  psmt.setString(1,nick);
+	    		  rs = psmt.executeQuery();
+	    		  
+	    		  while(rs.next()) {
+		  				int seq = rs.getInt(1);
+		  				String content = rs.getString(2);
+		  				int cnt = rs.getInt(3);
+		  				
+		  				String title = rs.getString(5);
+		  				String region_tag = rs.getString(6);
+		  				String genre_tag = rs.getString(7);
+		  				String color_tag = rs.getString(8);
+		  				String rv_comment = rs.getString(9);
+		  				String like_nick = rs.getString(10);
+		  				String img_name = rs.getString(11);
+
+		  				postVO pvo = new postVO(seq, content, cnt, nick, title, region_tag, genre_tag, color_tag,rv_comment,like_nick,img_name);
+
+	    			list.add(pvo);
+	    		  }
+	    	  } catch(Exception e) {e.printStackTrace();} finally {close();}
+	    	  return list;
+	      }
 
 	}
 
