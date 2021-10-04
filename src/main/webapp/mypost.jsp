@@ -46,7 +46,7 @@
 
                      <!-- Logo -->
                         <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima">MY POST</a>
+					<a class="navbar-brand font-weight-bolder mr-3" href="Main.jsp"><img src="images/logo.png" width="5%" id="logoima"> </a>
 					<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 					</button>
@@ -110,9 +110,9 @@
 
 <div id="main">
     <div class="inner">
-       
+    <div><p><b><%=vo.getMB_nick() %>님이 작성한 게시물</b></p></div>   
     <section class="tiles">
-
+	
     <!-- 일반 포스팅 -->
     <%for(int i = 0;i<list.size();i++){ %>
     	<%
@@ -144,17 +144,6 @@
         
         
         
-        <article class="style2">
-            <span class="image">
-                <img src="images/pic02.jpg" alt=""/>
-            </span>
-            <a href="generic.html">
-                <h2>Lorem</h2>
-                <div class="content">
-                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                </div>
-            </a>
-        </article>
         
         
         
