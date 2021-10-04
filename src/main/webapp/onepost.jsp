@@ -153,10 +153,16 @@
                               <span class="image main">
                               <img id="imggg" src="images/<%=img_name[cnt_i] %>" alt="" />
                               
+                              <%
+                           		String f_nn = f.replaceAll("null\\|", "");
+                           		String[] img_name_nn = f_nn.split("\\|");
+                           		if(img_name_nn.length>=2){
+                           		%>
                               <div class="divvv" align="center">
                               <input type="button" id="btn1" class="btnpre" value="<" onclick="pre(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>')">
 							  <input type="button" id="btn2" class="btnnext" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
                            	  </div>
+                           	  <%} %>
                            	  
                               </span>
                            
