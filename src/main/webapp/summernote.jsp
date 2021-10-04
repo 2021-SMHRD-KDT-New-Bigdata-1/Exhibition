@@ -139,13 +139,13 @@
 									</colgroup>
 									<tr>
 									<td><strong>Title</strong></td>
-									<td><input type="text" id="title" name="title"></td>
+									<td><input type="text" id="title" name="title" required></td>
 									
 									</tr>
 									
 									<tr>
 									<td><strong>Content</strong></td>
-									<td><textarea id="summernote" name="content"></textarea></td></tr>
+									<td><textarea id="summernote" name="content" required></textarea></td></tr>
 									
 									<!-- 사진첨부 -->
 									<tr>
@@ -157,9 +157,9 @@
 									//int new_seq = list.get(0).getSeq()+2;
 									%>
 								<div class="filebox1">
-									<input type="text" class="fileName1" readonly="readonly">
+									<input type="text" class="fileName1" readonly="readonly" >
 									<label for="ex1_file" class="btn_file" >사진첨부 I. (JPG/GIF/PNG)</label>
-									<input type="file" id="ex1_file" name="img1" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName1').value = this.value">
+									<input type="file" id="ex1_file" name="img1" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName1').value = this.value" required>
 								</div>	
 								<div class="filebox2"	>
 									<input type="text" class="fileName2" readonly="readonly">
@@ -306,7 +306,7 @@
 			// 메인화면 페이지 로드 함수
 			$(document).ready(function() {
 				$('#summernote').summernote({
-					placeholder : '내용을 작성하세요',
+					placeholder : '후기를 작성하세요',
 					height : 400,
 					maxHeight : 400,
 					callbacks: {	//여기 부분이 이미지를 첨부하는 부분
@@ -388,6 +388,7 @@
 			var totalChecked = 0;
 			// 설정 끝
 			function CountChecked(field) {
+				
 			if (field.checked)
 			totalChecked += 1;
 			else
@@ -402,6 +403,11 @@
 			totalChecked = 0;
 			}
 			
+			
+
+
+
+
 			</script>
 </body>
 </html>

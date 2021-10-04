@@ -155,9 +155,11 @@ public class Posting extends HttpServlet {
 		
 		
 		//배열 형태 -->String형태로 변환
+				
 		String region_tag = arrayJoin("|",like_region_tag);
 		String genre_tag = arrayJoin("|",like_genre_tag);
 		String color_tag = arrayJoin("|",like_color_tag);
+		
 		
 		postVO pvo = new postVO(title,content,vo.getMB_nick(),region_tag, genre_tag, color_tag,f_db);
 		
@@ -190,11 +192,13 @@ public class Posting extends HttpServlet {
 			System.out.println("포스팅 실패..");
 		}
 		
+		
 	}
 	
 	 public static String arrayJoin(String glue, String array[]) {
+		 
 		    String result = "";
-
+		    
 		    for (int i = 0; i < array.length; i++) {
 		      result += array[i];
 		      if (i < array.length - 1) result += glue;

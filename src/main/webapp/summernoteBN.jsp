@@ -138,18 +138,18 @@
 									</colgroup>
 									<tr>
 									<td><strong>Title</strong></td>
-									<td><input type="text" id="title" name="title"></td>
+									<td><input type="text" id="title" name="title" required></td>
 									</tr>
 									
 									<tr>
 									<td><strong>Date</strong></td>
-									<td><label for="s_date">Start </label> <input type = "date" name = "s_date" value = "yyyy-mm-dd" min="1900-01-01" max="9999-12-31"> 
-										<label for="e_date">End</label> <input type = "date" name = "e_date" value = "yyyy-mm-dd" min="1900-01-01" max="9999-12-31">
+									<td><label for="s_date">Start </label> <input type = "date" name = "s_date" value = "yyyy-mm-dd" min="1900-01-01" max="9999-12-31" required> 
+										<label for="e_date">End</label> <input type = "date" name = "e_date" value = "yyyy-mm-dd" min="1900-01-01" max="9999-12-31" required>
 									</tr>
 									
 									<tr>
 									<td><strong>Content</strong></td>
-									<td><textarea id="summernote" name="content"></textarea></td></tr>
+									<td><textarea id="summernote" name="content" required></textarea></td></tr>
 									
 									<!-- ªÁ¡¯√∑∫Œ -->
 									<tr>
@@ -163,7 +163,7 @@
 									<div class="filebox1">
 									<input type="text" class="fileName1" readonly="readonly">
 									<label for="ex1_file" class="btn_file" >ªÁ¡¯√∑∫Œ I. (JPG/GIF/PNG)</label>
-									<input type="file" id="ex1_file" name="img1" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName1').value = this.value">
+									<input type="file" id="ex1_file" name="img1" accept="image/gif,image/jpeg,image/png" onchange="javascript: document.getElementsByClassName('fileName1').value = this.value" required>
 								</div>	
 								<div class="filebox2"	>
 									<input type="text" class="fileName2" readonly="readonly">
