@@ -313,12 +313,12 @@
           
              <%}else{ %>
             <a href="login2.jsp">
+            <%} %>
             <h2><%=list.get(i).getTitle()%></h2>
                 <div class="content">
                     <p><%=list.get(i).getNick() %></p>
                 </div>
             </a>
-            <%} %>
         </article>
         <%j=3;}}%>
         <%} %>
