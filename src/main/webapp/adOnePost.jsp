@@ -137,7 +137,7 @@
                         		<%}else if(nnick.equals("ssossososo") || list.get(0).getNick().equals("yeoni") || list.get(0).getNick().equals("yeoni")){ //±è¼Ò¿¬93%>
                         			<img class="userimg" src='images/so93.jpg'>
                         		<%}else if(nnick.equals("gjBiennale") || list.get(0).getNick().equals("soyanee")){ //±è¼Ò¿¬98%>
-                        			<img class="userimg" src='images/so982.png'>
+                        			<img class="userimg" src='images/so982.jpg'>
                         		<%}else if(nnick.equals("smhrd") || list.get(0).getNick().equals("admin")){ //¹ÚÃ¢¹Î%>
                         			<img class="userimg" src='images/mini.png'>
                         		<%}else{ %>
