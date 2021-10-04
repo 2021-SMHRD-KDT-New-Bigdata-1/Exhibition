@@ -31,11 +31,12 @@
     
     <%
     String nick = vo.getMB_nick(); 
+    
     postDAO pdao = new postDAO();
     ArrayList<postVO> list = pdao.mypost(nick);
     
     adpostDAO adao = new adpostDAO();
-    ArrayList<adpostVO> ad_list = adao.allpost(); //우선 여기에 저희도 아냐팡이ㅏ냐 잠깐??
+    ArrayList<adpostVO> ad_list = adao.myadpost(nick); //우선 여기에 저희도 아냐팡이ㅏ냐 잠깐??
     %>
         <!-- Wrapper -->
         <div id="wrapper">
@@ -114,6 +115,7 @@
     <section class="tiles">
 
     <!-- 일반 포스팅 -->
+    <%if(mdao.bncheck(vo.getMB_nick()) == false){ %>
     <%for(int i = 0;i<list.size();i++){ %>
     	<%
     	String f = list.get(i).getImg_name();
@@ -140,7 +142,36 @@
             </a>
         </article>
         <%j=3;}}%>
-        <%} %>
+        <%} }else{%>
+            <%for(int i = 0;i<ad_list.size();i++){ %>
+    	<%
+    	String f = ad_list.get(i).getAd_img_name();
+    	f.replaceAll("null", "");
+    	String[] ad_img_nm = f.split("\\|");
+    	%>
+    	<%
+    	for(int j = 0; j<4;j++){
+    	%>
+			<%if(!ad_img_nm[j].equals("null")){ %>
+        <article class="style1">
+            <span class="image">
+                <img src="images/<%=ad_img_nm[j]%>" alt=""/>
+            </span>
+            <%if(vo!=null){ %>
+            <a href="adOnePost.jsp?seq=<%=ad_list.get(i).getSeq() %>"><!-- 쿼리스트링으로 seq 같이 넘기기 -->
+             <%}else{ %>
+            <a href="login2.jsp">
+            <%} %>
+            
+            <h2><%=ad_list.get(i).getAd_title()%></h2>
+                <div class="content">
+                    <p><%=ad_list.get(i).getNick() %></p>
+                </div>
+            </a>
+            
+        </article>
+        <%j=3;}}%>
+        <%} }%>
         
         
         

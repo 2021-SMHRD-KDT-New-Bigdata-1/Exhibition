@@ -276,4 +276,35 @@ public class adpostDAO {
 					
 					return cnt;
 				}
+				
+				public ArrayList<adpostVO> myadpost(String nick) {
+					conn();
+					ArrayList<adpostVO> list = new ArrayList<>();
+					try {
+						String sql = "select * from ad_reviews where mb_nick = ?";
+						psmt = conn.prepareStatement(sql);
+						psmt.setString(1, nick);
+						rs = psmt.executeQuery();
+						
+						while(rs.next()) {
+							int ad_seq = rs.getInt(1);
+							String ad_content = rs.getString(3);
+							String date = rs.getString(4);
+							String ad_region = rs.getString(5);
+							String ad_genre = rs.getString(6);
+							String ad_color = rs.getString(7);
+							int ad_like_cnt = rs.getInt(8);
+							String ad_like_nick = rs.getString(9);
+							String ad_like_comment = rs.getString(10);
+							String ad_title = rs.getString(11);
+							String ad_img_name = rs.getString(12);
+							
+							list.add(new adpostVO(
+									ad_seq,nick,ad_content,date,
+									ad_region,ad_genre,ad_color,
+									ad_like_cnt,ad_like_nick,ad_like_comment,ad_title,ad_img_name));
+						}
+					} catch(Exception e) {e.printStackTrace();} finally {close();}
+					return list;
+				}
 }
