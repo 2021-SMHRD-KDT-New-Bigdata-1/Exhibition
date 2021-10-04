@@ -66,16 +66,20 @@
 					      <li class="nav-item">
 					      <a class="nav-link active" href="all.jsp">SEARCH</a>
 					      </li>
-					      <%if(vo!=null){ %>
 					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
-					      </li>
-					      <%}else{ %>
-					      <li class="nav-item">
-					      <a class="nav-link" href="summernote.jsp">POSTING</a>
-					      </li>
+      						<%if(vo!=null){%>
+					      		<%if(mdao.bncheck(vo.getMB_nick()) == true) {%>
+					      				<a class="nav-link" href="summernoteBN.jsp">POSTING</a>
+					      			
+								<%}else{%>
+					  					<a class="nav-link" href="summernote.jsp">POSTING</a>
 					      
-					       <%} %>
+					       		<%} %>
+					       	<%}else{%>
+					    	   <a class="nav-link" href="login2.jsp">POSTING</a>
+					       	<%} %>
+					       </li>
+					       
                         <%if(vo!=null){ %>
                                  <li class="nav-item">
                                  <a class="nav-link" href="bookMark2.jsp"><span class="icon solid fa-bookmark"></span></a>

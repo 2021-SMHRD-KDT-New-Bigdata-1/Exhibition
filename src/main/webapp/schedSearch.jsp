@@ -1,3 +1,4 @@
+<%@page import="DAO.membersDAO"%>
 <%@page import="DAO.exhDAO"%>
 <%@page import="VO.exhVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -99,14 +100,19 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   <li class="nav-item active"><a class="nav-link" href="date?int=1">SCHEDULE</a>
                   </li>
                   <li class="nav-item"><a class="nav-link" href="all.jsp">SEARCH</a></li>
-                  <%
-                  if (vo != null) {
-                  %>
-                  <li class="nav-item"><a class="nav-link"
-                     href="summernote.jsp">POSTING</a></li>
-                  <%
-                  } else {
-                  %>
+                  <%if(vo!=null){%>
+					
+					<%
+					membersDAO mdao = new membersDAO();
+					if(mdao.bncheck(vo.getMB_nick()) == true) {%>
+					<a class="nav-link" href="summernoteBN.jsp">POSTING</a>
+					      			
+					<%}else{%>
+					<a class="nav-link" href="summernote.jsp">POSTING</a>
+					      
+					<%} %>
+					
+				<%}else{%>
                   <li class="nav-item"><a class="nav-link" href="login2.jsp">POSTING</a>
                   </li>
 
@@ -116,7 +122,7 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   <%
                   if (vo != null) {
                   %>
-                  <li class="nav-item"><a class="nav-link" href="bookMark.jsp"><span
+                  <li class="nav-item"><a class="nav-link" href="bookMark2.jsp"><span
                         class="icon solid fa-bookmark"></span></a></li>
 
                   <li class="nav-item"><a class="nav-link" href="myPage.jsp"><span
