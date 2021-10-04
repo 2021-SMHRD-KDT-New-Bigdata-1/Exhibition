@@ -53,7 +53,7 @@
 					<li><a href="Main.jsp" id="Main-link" class="icon solid fa-home"> </a></li>
 					<li><a href="bookMark2.jsp" id="myInfo-link" class="icon solid fa-file-export"> </a></li>
 					<li><a href="ad.jsp" id="myTag-link" class="icon solid fa-th"> </a></li>
-					<li><a href="" id="myPost-link" class="icon solid fas fa-pencil-alt"> </a></li>
+					<li><a href="mypost.jsp" id="myPost-link" class="icon solid fas fa-pencil-alt"> </a></li>
 				</ul>
 			</nav>
 
