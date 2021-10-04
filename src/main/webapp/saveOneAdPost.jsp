@@ -139,7 +139,7 @@
                            			i = 4;}
                            			%>
                            		<% }%>
-                              <span class="image main"><img id="imggg" src="images/<%=img_name[cnt_i] %>" alt="" /></span>
+                              <span class="image main"><img id="imggg" src="images/<%=img_name[cnt_i] %>" alt="" />
                            
                               <%
                            		String f_nn = f.replaceAll("null\\|", "");
@@ -151,6 +151,7 @@
 							  <input type="button" id="btn2" class="btnnext" value=">" onclick="next(<%=cnt_i%>,'<%=img_name[0]%>','<%=img_name[1]%>','<%=img_name[2]%>','<%=img_name[3]%>','<%=img_name[cnt_i]%>')">
                            	  </div>
                            	  <%} %>
+                           	  </span>
                            	  
 								 <p class="pcontent"><%=list.get(0).getContent() %></p>
                     			<br><br>
