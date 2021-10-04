@@ -49,6 +49,7 @@
 					<li><a href="Main.jsp" id="Main-link" class="icon solid fa-home"> </a></li>
 					<li><a href="bookMark2.jsp" id="myInfo-link" class="icon solid fa-file-export"> </a></li>
 					<li><a href="ad.jsp" id="myTag-link" class="icon solid fa-th"> </a></li>
+					<li><a href="" id="myPost-link" class="icon solid fas fa-pencil-alt"> </a></li>
 				</ul>
 			</nav>
 
@@ -145,6 +146,16 @@
   		
   		$('#myTag-link').mouseout(function(){
   			$(this).addClass("icon solid fa-th");
+  			$(this).html("");	
+  		});
+  		//4.내가 쓴 게시물
+  		$('#myPost-link').mouseover(function(){
+  			$(this).removeClass("icon solid fas fa-pencil-alt");
+  			$(this).html("MY POST");
+  		});
+  		
+  		$('#myPost-link').mouseout(function(){
+  			$(this).addClass("icon solid fas fa-pencil-alt");
   			$(this).html("");	
   		});
   		
