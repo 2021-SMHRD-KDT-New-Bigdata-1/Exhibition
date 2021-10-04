@@ -29,8 +29,8 @@
 		});
 
 	// Touch?
-		if (browser.mobile)
-			$body.addClass('is-touch');
+		//if (browser.mobile)
+			//$body.addClass('is-touch');
 
 	// Forms.
 		var $form = $('form');
