@@ -180,7 +180,7 @@
 									
 									
 									<tr>
-										<td><strong>지역태그</strong></td>
+										<td><strong>지역 태그</strong></td>
 										<td>
 											<input type="radio" name="region" value="Seoul" id="region2">
 											<label for="region2">서울</label> 
@@ -216,7 +216,7 @@
 											<label for="region17">전북</label>
 									</tr>
 									<tr>
-										<td><strong>장르태그</strong></td>
+										<td><strong>장르 태그</strong></td>
 										<td><input type="radio" name="genre" value="Western" id="genre1">
 											<label for="genre1">서양화</label> 
 											<input type="radio" name="genre" value="Oriental" id="genre2">
@@ -238,7 +238,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td><strong>색감별 분위기 태그</strong></td>
+										<td><strong>색감 태그</strong></td>
 										<td>
 											<input type="checkbox" name="color" value="White" id="color1"  onclick=CountChecked(this)>
 											<label for="color1">White</label> 
