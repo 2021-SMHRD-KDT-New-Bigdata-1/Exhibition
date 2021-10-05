@@ -180,8 +180,8 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
       <div class="box calendar inner">
          <table>
             <tr height="30">
-               <td width="30" align="center"><a
-                  href="javascript:goMonth(<%=month - 1%>);">¢¸</a></td>
+               <td width="30" align="center">
+               <a href="javascript:goMonth(<%=month - 1%>);">¢¸</a></td>
                <td width="110" align="center" id='tddd' onclick="location.href='sched.jsp';"><%=year%> / <%=month + 1%></td>
                <td width="30" align="center"><a
                   href="javascript:goMonth(<%=month + 1%>);">¢º</a></td>
@@ -483,22 +483,22 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
                   }
                } else {
                   if (rowCell == 0){
-                     table += '<td>';
+                     table += '<td><b>';
                      table += '<%=(month+1)%>¿ù '
                      table += rowCells[rowCell];
                      table += 'ÀÏ';
-                     table += '</td>';
+                     table += '</b></td>';
                   }
                   else if (rowCell == 4) {
 
-                     table += '<td colspan="2">';
+                     table += '<td colspan="2"><b>';
                      table += rowCells[rowCell];
-                     table += '</td>';
+                     table += '</b></td>';
                   } else {
 
-                     table += '<td>';
+                     table += '<td><b>';
                      table += rowCells[rowCell];
-                     table += '</td>';
+                     table += '</b></td>';
                   }
                }
             }
