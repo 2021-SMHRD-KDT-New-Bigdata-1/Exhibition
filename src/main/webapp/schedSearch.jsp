@@ -171,19 +171,19 @@ int tday = todayCheck_currentCal.get(Calendar.DATE);
             	<table>
             	<caption><%=day_list.get(0).getEx_year()%>년 <%=day_list.get(0).getEx_month()%>월 <%=day_list.get(0).getEx_day()%>일자 검색 결과</caption>
             		<thead align='center'>
-            			<td colspan='2'><b>Titles</b></td>
-            			<td><b>Periods</b></td>
-            			<td colspan='2'><b>Places</b></td>
-            			<td colspan='3'><b>Explains</b></td>
+            			<th colspan='2'><b>Titles</b></th>
+            			<th><b>Periods</b></th>
+            			<th colspan='2'><b>Places</b></th>
+            			<th colspan='3'><b>Explains</b></th>
             		</thead>
             		<%
             		for(int i = 0 ; i<day_list.size();i++){
             		%>
             		<tr>
-            			<td colspan='2'><%=day_list.get(i).getEx_title() %></td>
-            			<td><%=day_list.get(i).getEx_date() %></td>
-            			<td colspan='2'><%=day_list.get(i).getEx_location() %></td>
-            			<td colspan='3'><%=day_list.get(i).getEx_content() %></td>
+            			<td colspan='2'><b><%=day_list.get(i).getEx_title() %></b></td>
+            			<td><b><%=day_list.get(i).getEx_date() %></b></td>
+            			<td colspan='2'><b><%=day_list.get(i).getEx_location() %></b></td>
+            			<td colspan='3'><b><%=day_list.get(i).getEx_content() %></b></td>
             		</tr>
             		<%} %>
             		
