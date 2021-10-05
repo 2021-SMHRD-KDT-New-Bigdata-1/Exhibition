@@ -128,7 +128,7 @@
 							
 								
 													
-							<form action="Posting" method="post" enctype="multipart/form-data">
+							<form name="f" action="Posting" method="post" enctype="multipart/form-data">
 								<table border="1px">
 								<colgroup>
 
@@ -182,7 +182,7 @@
 									<tr>
 										<td><strong>지역 태그</strong></td>
 										<td>
-											<input type="radio" name="region" value="Seoul" id="region2">
+											<input type="radio" name="region" value="Seoul" id="region2" required>
 											<label for="region2">서울</label> 
 											<input type="radio" name="region" value="Gyeonggi" id="region3">
 											<label for="region3">경기</label> 
@@ -217,7 +217,7 @@
 									</tr>
 									<tr>
 										<td><strong>장르 태그</strong></td>
-										<td><input type="radio" name="genre" value="Western" id="genre1">
+										<td><input type="radio" name="genre" value="Western" id="genre1" required>
 											<label for="genre1">서양화</label> 
 											<input type="radio" name="genre" value="Oriental" id="genre2">
 											<label for="genre2">동양화</label> 
@@ -240,7 +240,7 @@
 									<tr>
 										<td><strong>색감 태그</strong></td>
 										<td>
-											<input type="checkbox" name="color" value="White" id="color1"  onclick=CountChecked(this)>
+											<input type="checkbox" name="color" value="White" id="color1"  onclick=CountChecked(this) required>
 											<label for="color1">White</label> 
 											<input type="checkbox" name="color" value="Black" id="color2"  onclick=CountChecked(this)>
 											<label for="color2">Black</label> 
@@ -288,7 +288,7 @@
 								
 								</table>
 								<div align="right">
-								<input type="submit" value="게시">
+								<button type="submit" onclick ="postcheck()">게시</button>
 									</div>
 								</form>
 							
@@ -403,6 +403,34 @@
 			totalChecked = 0;
 			}
 			
+			function postcheck(){
+				var postform = document.f;
+				var color=$("input:checkbox[name='color']");
+				var img=document.getElementById("ex1_file").value;
+				var region=$("input:radio[name='region']");
+				var genre=$("input:radio[name='genre']");
+				var title = postform.title.value;
+				var textarea = $("textarea[name='content']").val().length;
+				
+				if(title.length<=0){
+					alert("제목을 입력하세요");
+				}else if(textarea==0){
+					alert("내용을 입력하세요.");
+				}else if(!img){
+				        alert("파일을 첨부하세요");
+				}
+				else if(region.is(":checked")==false){
+					alert("지역 태그 입력하세요");
+				}else if(genre.is(":checked")==false){
+					alert("장르 태그 입력하세요");
+				} else if(color.is(":checked")==false){
+					alert("색감 태그 입력하세요");
+					color.select();
+				}
+				else{
+					postform.submit();
+				}
+			}
 			
 
 
